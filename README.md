@@ -164,6 +164,21 @@ Marketing brain
 
 ---
 
+## Open source contribution roadmap
+
+I am focusing my public contributions on projects where AI agents, agent skills, marketing workflows, documentation, and practical tooling meet.
+
+[Read the full roadmap](./OPEN_SOURCE_ROADMAP.md)
+
+| Target repo | Contribution angle |
+|---|---|
+| [500-AI-Agents-Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects) | AI agent discovery, categorization, and practical use-case examples |
+| [ai-agents-skills](https://github.com/hoodini/ai-agents-skills) | Agent skills for marketing, content, CRO, research, and campaign work |
+| [Multi-Agent-Marketing-Course](https://github.com/The-Swarm-Corporation/Multi-Agent-Marketing-Course) | Multi-agent workflows for real marketing and agency operations |
+| [ai-marketing-skills](https://github.com/ericosiu/ai-marketing-skills) | Structured marketing skills, prompt packs, and workflow examples |
+
+---
+
 ## GitHub activity
 
 <p align="center">
