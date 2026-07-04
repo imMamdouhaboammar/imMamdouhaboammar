@@ -10,7 +10,7 @@
 
 I work at the intersection of **AI agents**, **marketing systems**, **agentic skills**, **AI workflows**, and **public technical contributions**.
 
-I am not just collecting tools. I am building practical systems that help people move from messy prompts to repeatable work.
+I am building practical systems that help people move from messy prompts to repeatable work.
 
 <p>
   <a href="https://www.linkedin.com/in/mamdouh-aboammar/">
@@ -42,7 +42,7 @@ I am not just collecting tools. I am building practical systems that help people
 
 I come from marketing, content, paid media, CRO, and brand strategy. Now I am building the technical layer around that experience: agents, skills, workflows, CLIs, MCP systems, and quality gates.
 
-The point is simple: AI should not behave like a random chat box. It should work inside clear rules, reusable workflows, shared memory, and review loops.
+The core idea: AI should not act like a random chat box. It should work inside clear rules, reusable workflows, shared memory, and review loops.
 
 <table>
 <tr>
@@ -50,28 +50,28 @@ The point is simple: AI should not behave like a random chat box. It should work
 
 ### AI Agents
 
-I build around Claude Code, Codex-style workflows, MCP tools, local agent systems, and multi-agent task routing.
+Claude Code, Codex-style workflows, MCP tools, local agent systems, and multi-agent task routing.
 
 </td>
 <td width="25%" valign="top">
 
 ### Marketing
 
-I design systems for content, paid media, campaign planning, agency delivery, CRO, briefs, and client-facing outputs.
+Content, paid media, campaign planning, agency delivery, CRO, briefs, and client-facing outputs.
 
 </td>
 <td width="25%" valign="top">
 
 ### Agentic Skills
 
-I care about reusable skills, structured prompts, project context, memory rules, and better agent behavior.
+Reusable skills, structured prompts, project context, memory rules, and better agent behavior.
 
 </td>
 <td width="25%" valign="top">
 
 ### Public Builds
 
-I publish tools, guides, playbooks, and experiments that help builders work better with AI.
+Tools, guides, playbooks, and experiments for builders working with AI.
 
 </td>
 </tr>
@@ -79,32 +79,32 @@ I publish tools, guides, playbooks, and experiments that help builders work bett
 
 ---
 
-## What I am building publicly
+## Featured public projects
 
 <p align="center">
   <a href="https://github.com/imMamdouhaboammar/Riftbook">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=imMamdouhaboammar&repo=Riftbook&theme=transparent&hide_border=true" alt="Riftbook repo card" />
+    <img src="./assets/badges/riftbook.svg" alt="Open Riftbook repository" width="49%" />
   </a>
   <a href="https://github.com/imMamdouhaboammar/unslop-preflight">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=imMamdouhaboammar&repo=unslop-preflight&theme=transparent&hide_border=true" alt="unslop-preflight repo card" />
+    <img src="./assets/badges/unslop-preflight.svg" alt="Open unslop-preflight repository" width="49%" />
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/imMamdouhaboammar/agent-kernel">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=imMamdouhaboammar&repo=agent-kernel&theme=transparent&hide_border=true" alt="agent-kernel repo card" />
+    <img src="./assets/badges/agent-kernel.svg" alt="Open agent-kernel repository" width="49%" />
   </a>
   <a href="https://github.com/imMamdouhaboammar/delegate-team">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=imMamdouhaboammar&repo=delegate-team&theme=transparent&hide_border=true" alt="delegate-team repo card" />
+    <img src="./assets/badges/delegate-team.svg" alt="Open delegate-team repository" width="49%" />
   </a>
 </p>
 
-| Project | What it means |
+| Project | Role in my system |
 |---|---|
-| [Riftbook](https://github.com/imMamdouhaboammar/Riftbook) | A field guide for AI-assisted builders: tools, prompts, skills, workflows, graph context, and real lessons from coding-agent work |
-| [unslop-preflight](https://github.com/imMamdouhaboammar/unslop-preflight) | A CLI quality gate for AI-built frontends, focused on catching fragile UI, accessibility gaps, layout issues, and source slop before shipping |
-| [agent-kernel](https://github.com/imMamdouhaboammar/agent-kernel) | A local-first governance and memory layer for AI coding agents, built around shared rules, approved memories, safety checks, and portable context |
-| [delegate-team](https://github.com/imMamdouhaboammar/delegate-team) | A local agent-routing CLI for sending coding tasks through the right workflow, with memory, rules, and policy checks around the process |
+| [Riftbook](https://github.com/imMamdouhaboammar/Riftbook) | Public field guide for AI-assisted builders |
+| [unslop-preflight](https://github.com/imMamdouhaboammar/unslop-preflight) | Quality gate for AI-built frontend work |
+| [agent-kernel](https://github.com/imMamdouhaboammar/agent-kernel) | Local memory, rules, and safety layer for AI coding agents |
+| [delegate-team](https://github.com/imMamdouhaboammar/delegate-team) | Routing layer for sending coding tasks through the right agentic workflow |
 
 ---
 
@@ -112,13 +112,9 @@ I publish tools, guides, playbooks, and experiments that help builders work bett
 
 **PrePilot Agency Suite** is my product lab for turning real agency work into structured AI systems.
 
-It is built around a simple idea: marketing teams do not need more random prompt output. They need reusable skills, task routing, quality checks, and clear deliverables.
-
-What I am shaping inside PrePilot:
-
 | Area | Direction |
 |---|---|
-| AI skills | Marketing skills that know the structure of agency work |
+| AI skills | Marketing skills that understand agency work |
 | AI workflows | Repeatable flows for paid media, content, strategy, briefs, audits, and client deliverables |
 | MCP and connectors | Connecting AI tools to usable agency systems |
 | Productized services | Turning complex marketing tasks into clear packs, checklists, and outputs |
@@ -143,8 +139,6 @@ What I am shaping inside PrePilot:
   <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=111827" alt="Supabase" />
   <img src="https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="Google Cloud" />
 </p>
-
-I am still learning in public. Some repos are experiments. Some are messy. Some are becoming serious tools. That is the process.
 
 ---
 
@@ -186,7 +180,7 @@ Marketing brain
 
 <p>
   <a href="https://www.linkedin.com/in/mamdouh-aboammar/">
-    <img src="https://img.shields.io/badge/LinkedIn-Let's%20talk-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect on LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect on LinkedIn" />
   </a>
   <a href="https://mamdouhaboammar.com">
     <img src="https://img.shields.io/badge/Website-Read%20more-111827?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" />
