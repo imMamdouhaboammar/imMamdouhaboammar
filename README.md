@@ -40,13 +40,12 @@ That usually means:
 
 ## Featured projects
 
-| Project                                                                                         | What it does                                                                                                                                |
-| ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Riftbook](https://github.com/imMamdouhaboammar/Riftbook)                                       | A practical field guide for AI-assisted builders, covering tools, skills, workflows, prompts, graph context, and real coding-agent practice |
-| [unslop-preflight](https://github.com/imMamdouhaboammar/unslop-preflight)                       | A preflight CLI that scans AI-built frontends before they ship fragile UI, accessibility, layout, and source-quality issues                 |
-| [delegate-team](https://github.com/imMamdouhaboammar/delegate-team)                             | A local agent-routing CLI for sending coding tasks through the right workflow with memory, rules, and policy checks                         |
-| [vibe-coding-standards-skill](https://github.com/imMamdouhaboammar/vibe-coding-standards-skill) | A coding standards skill for adding structure, security rules, and better AI-agent behavior to software projects                            |
-| [PrePilot](https://github.com/imMamdouhaboammar/PrePilot)                                       | Experiments around AI-assisted marketing workflows and agency productivity                                                                  |
+| Project | What it does |
+|---|---|
+| [Riftbook](https://github.com/imMamdouhaboammar/Riftbook) | A practical field guide for AI-assisted builders, covering tools, skills, workflows, prompts, graph context, and real coding-agent practice |
+| [unslop-preflight](https://github.com/imMamdouhaboammar/unslop-preflight) | A preflight CLI that scans AI-built frontends before they ship fragile UI, accessibility, layout, and source-quality issues |
+| [agent-kernel](https://github.com/imMamdouhaboammar/agent-kernel) | A local-first governance and memory layer that gives AI coding agents shared rules, approved memories, safety checks, and portable context |
+| [delegate-team](https://github.com/imMamdouhaboammar/delegate-team) | A local agent-routing CLI for sending coding tasks through the right workflow with memory, rules, and policy checks |
 
 ---
 
@@ -54,11 +53,11 @@ That usually means:
 
 I am currently focused on three connected tracks:
 
-| Track               | Focus                                                                                      |
-| ------------------- | ------------------------------------------------------------------------------------------ |
-| AI for agency work  | Turning marketing tasks into reusable workflows, not one-off prompts                       |
-| Vibe coding quality | Helping builders avoid messy AI-generated code, weak UI, and broken handoffs               |
-| Agent systems       | Building tools that give AI agents clearer context, safer actions, and better review loops |
+| Track | Focus |
+|---|---|
+| AI for agency work | Turning marketing tasks into reusable workflows, not one-off prompts |
+| Vibe coding quality | Helping builders avoid messy AI-generated code, weak UI, and broken handoffs |
+| Agent systems | Building tools that give AI agents clearer context, safer actions, and better review loops |
 
 ---
 
