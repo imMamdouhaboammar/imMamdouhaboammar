@@ -83,19 +83,19 @@ Tools, guides, playbooks, and experiments for builders working with AI.
 
 <p align="center">
   <a href="https://github.com/imMamdouhaboammar/Riftbook">
-    <img src="./assets/badges/riftbook.svg" alt="Open Riftbook repository" width="49%" />
+    <img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/badges/riftbook.svg" alt="Open Riftbook repository" width="49%" />
   </a>
   <a href="https://github.com/imMamdouhaboammar/unslop-preflight">
-    <img src="./assets/badges/unslop-preflight.svg" alt="Open unslop-preflight repository" width="49%" />
+    <img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/badges/unslop-preflight.svg" alt="Open unslop-preflight repository" width="49%" />
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/imMamdouhaboammar/agent-kernel">
-    <img src="./assets/badges/agent-kernel.svg" alt="Open agent-kernel repository" width="49%" />
+    <img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/badges/agent-kernel.svg" alt="Open agent-kernel repository" width="49%" />
   </a>
   <a href="https://github.com/imMamdouhaboammar/delegate-team">
-    <img src="./assets/badges/delegate-team.svg" alt="Open delegate-team repository" width="49%" />
+    <img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/badges/delegate-team.svg" alt="Open delegate-team repository" width="49%" />
   </a>
 </p>
 
@@ -167,11 +167,7 @@ Marketing brain
 ## GitHub activity
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=imMamdouhaboammar&show_icons=true&hide_border=true&theme=transparent&rank_icon=github" alt="Mamdouh's GitHub stats" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=imMamdouhaboammar&layout=compact&hide_border=true&theme=transparent" alt="Top languages" />
+  <img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/badges/github-activity.svg" alt="GitHub activity summary" width="100%" />
 </p>
 
 ---
