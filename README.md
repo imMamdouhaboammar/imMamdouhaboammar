@@ -11,7 +11,8 @@ GitHub is not where I try to look like a pure software engineer. It is where I t
 <p>
   <a href="https://www.linkedin.com/in/mamdouh-aboammar/"><img src="https://img.shields.io/badge/LinkedIn-Mamdouh_Aboammar-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   <a href="https://mamdouhaboammar.com"><img src="https://img.shields.io/badge/Website-mamdouhaboammar.com-111827?style=flat&logo=googlechrome&logoColor=white" alt="Website" /></a>
-  <img src="https://img.shields.io/badge/Product_Lab-PrePilot-F97316?style=flat" alt="PrePilot Agency Suite" />
+  <a href="https://prepilot.cloud/"><img src="https://img.shields.io/badge/PrePilot-Services_AR-F97316?style=flat" alt="PrePilot services" /></a>
+  <a href="https://app.prepilot-system-agency.space/"><img src="https://img.shields.io/badge/PrePilot-System-7C3AED?style=flat" alt="PrePilot system" /></a>
   <a href="https://github.com/imMamdouhaboammar?tab=repositories"><img src="https://img.shields.io/badge/Public_Builds-GitHub-24292F?style=flat&logo=github&logoColor=white" alt="Public repositories" /></a>
 </p>
 
@@ -62,7 +63,8 @@ That background still shapes how I build. I care about clarity, user intent, buy
 | Work | What it shows |
 |---|---|
 | Hajj Conference & Exhibition | Digital coordination and communication work inside a high-context Saudi institutional environment |
-| PrePilot Agency Suite | A product lab for structured AI workflows used in agency tasks: paid media, content, CRO, briefs, proposals, reporting, and client communication |
+| [PrePilot Services](https://prepilot.cloud/) | Arabic-facing service and sales layer for PrePilot offers and agency workflow products |
+| [PrePilot System](https://app.prepilot-system-agency.space/) | The working system layer behind structured AI workflows for agency tasks |
 | [Riftbook](https://github.com/imMamdouhaboammar/Riftbook) | A public guide for AI-assisted builders: tools, prompts, workflows, and practical resources |
 | [unslop-preflight](https://github.com/imMamdouhaboammar/unslop-preflight) | A quality gate mindset for AI-built frontends, focused on spotting weak UX before shipping |
 | [agent-kernel](https://github.com/imMamdouhaboammar/agent-kernel) | Experiments around local agent rules, safer behavior, memory, and coding-agent discipline |
