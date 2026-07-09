@@ -11,7 +11,7 @@ GitHub is not where I try to look like a pure software engineer. It is where I t
 <p>
   <a href="https://www.linkedin.com/in/mamdouh-aboammar/"><img src="https://img.shields.io/badge/LinkedIn-Mamdouh_Aboammar-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   <a href="https://mamdouhaboammar.com"><img src="https://img.shields.io/badge/Website-mamdouhaboammar.com-111827?style=flat&logo=googlechrome&logoColor=white" alt="Website" /></a>
-  <a href="https://writing-ghost.space"><img src="https://img.shields.io/badge/Product_Lab-PrePilot-F97316?style=flat" alt="PrePilot Agency Suite" /></a>
+  <img src="https://img.shields.io/badge/Product_Lab-PrePilot-F97316?style=flat" alt="PrePilot Agency Suite" />
   <a href="https://github.com/imMamdouhaboammar?tab=repositories"><img src="https://img.shields.io/badge/Public_Builds-GitHub-24292F?style=flat&logo=github&logoColor=white" alt="Public repositories" /></a>
 </p>
 
