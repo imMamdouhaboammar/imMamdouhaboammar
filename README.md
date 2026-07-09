@@ -104,6 +104,8 @@ The work I care about is not replacing judgment. It is making judgment easier to
 
 ## Tools and surfaces I work with
 
+**Build stack**
+
 <p>
   <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" alt="Vite" />
@@ -112,14 +114,48 @@ The work I care about is not replacing judgment. It is making judgment easier to
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python" />
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/FastMCP-111827?style=flat" alt="FastMCP" />
+  <img src="https://img.shields.io/badge/MCP-7C3AED?style=flat" alt="MCP" />
   <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=flat&logo=supabase&logoColor=111827" alt="Supabase" />
   <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=flat&logo=googlecloud&logoColor=white" alt="Google Cloud" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white" alt="Vercel" />
   <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white" alt="GitHub Actions" />
   <img src="https://img.shields.io/badge/Markdown-000000?style=flat&logo=markdown&logoColor=white" alt="Markdown" />
   <img src="https://img.shields.io/badge/CLI_Tools-111827?style=flat&logo=gnubash&logoColor=white" alt="CLI tools" />
 </p>
 
-I use code as a way to shape thinking into systems: product interfaces, internal tools, workflow packs, docs, checks, connectors, and small utilities.
+**AI and agent surfaces**
+
+<p>
+  <img src="https://img.shields.io/badge/ChatGPT-111827?style=flat&logo=openai&logoColor=white" alt="ChatGPT" />
+  <img src="https://img.shields.io/badge/OpenAI_Codex-111827?style=flat&logo=openai&logoColor=white" alt="OpenAI Codex" />
+  <img src="https://img.shields.io/badge/Claude-6B4EFF?style=flat" alt="Claude" />
+  <img src="https://img.shields.io/badge/Claude_Code-6B4EFF?style=flat" alt="Claude Code" />
+  <img src="https://img.shields.io/badge/Gemini-4285F4?style=flat&logo=googlegemini&logoColor=white" alt="Gemini" />
+  <img src="https://img.shields.io/badge/Perplexity-1FB8CD?style=flat" alt="Perplexity" />
+  <img src="https://img.shields.io/badge/Cursor-111827?style=flat" alt="Cursor" />
+  <img src="https://img.shields.io/badge/Bolt-111827?style=flat" alt="Bolt" />
+  <img src="https://img.shields.io/badge/Void-111827?style=flat" alt="Void" />
+  <img src="https://img.shields.io/badge/Agent_Skills-F97316?style=flat" alt="Agent Skills" />
+</p>
+
+**Marketing, analytics, and creative surfaces**
+
+<p>
+  <img src="https://img.shields.io/badge/Google_Ads-4285F4?style=flat&logo=googleads&logoColor=white" alt="Google Ads" />
+  <img src="https://img.shields.io/badge/Meta_Ads-0866FF?style=flat&logo=meta&logoColor=white" alt="Meta Ads" />
+  <img src="https://img.shields.io/badge/Performance_Max-4285F4?style=flat" alt="Performance Max" />
+  <img src="https://img.shields.io/badge/TikTok_Ads-000000?style=flat&logo=tiktok&logoColor=white" alt="TikTok Ads" />
+  <img src="https://img.shields.io/badge/LinkedIn_Ads-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn Ads" />
+  <img src="https://img.shields.io/badge/GA4-E37400?style=flat&logo=googleanalytics&logoColor=white" alt="GA4" />
+  <img src="https://img.shields.io/badge/GTM-246FDB?style=flat&logo=googletagmanager&logoColor=white" alt="Google Tag Manager" />
+  <img src="https://img.shields.io/badge/Search_Console-4285F4?style=flat&logo=google&logoColor=white" alt="Google Search Console" />
+  <img src="https://img.shields.io/badge/Looker_Studio-4285F4?style=flat&logo=looker&logoColor=white" alt="Looker Studio" />
+  <img src="https://img.shields.io/badge/Photoshop-31A8FF?style=flat&logo=adobephotoshop&logoColor=001E36" alt="Photoshop" />
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white" alt="Figma" />
+  <img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white" alt="Notion" />
+</p>
+
+I use code, marketing tools, and AI surfaces as one workspace: product interfaces, internal tools, campaign systems, workflow packs, docs, checks, connectors, and small utilities.
 
 ---
 
