@@ -1,244 +1,114 @@
-<!-- Profile README for imMamdouhaboammar -->
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:111827,45:7C3AED,100:F97316&height=190&section=header&text=Mamdouh%20Aboammar&fontColor=ffffff&fontSize=45&fontAlignY=36&desc=Marketing%20Systems%20%7C%20AI%20Agents%20%7C%20Public%20Tools%20%7C%20MENA%20Growth&descSize=16&descAlignY=58" alt="Mamdouh Aboammar profile header" width="100%" />
+<!-- Minimal profile README for imMamdouhaboammar -->
 
 # Mamdouh Aboammar
 
-### Digital Director · Ex-copywriter · Brand & Media Strategist · AI Agency Systems Builder
+Digital Director. Ex-copywriter. Marketing systems builder.
 
-**I build the systems behind better marketing work:** briefs, paid media logic, conversion copy, AI agents, MCP tools, CLIs, documentation, and quality gates.
+I work where marketing strategy, paid media, UX writing, AI workflows, and product-shaped systems meet.
 
-I am not trying to look like a pure software engineer. I am building a public technical layer around years of agency work, client pressure, messy briefs, campaign delivery, and AI-assisted production.
+GitHub is not where I try to look like a pure software engineer. It is where I turn agency thinking into public tools, skills, workflow rules, docs, QA checks, and small systems that can be used, tested, and improved.
 
-<p>
-  <a href="https://www.linkedin.com/in/mamdouh-aboammar/">
-    <img src="https://img.shields.io/badge/LinkedIn-Mamdouh%20Aboammar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="https://mamdouhaboammar.com">
-    <img src="https://img.shields.io/badge/Website-mamdouhaboammar.com-111827?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" />
-  </a>
-  <a href="https://writing-ghost.space">
-    <img src="https://img.shields.io/badge/Product%20Lab-PrePilot%20Agency%20Suite-F97316?style=for-the-badge" alt="PrePilot Agency Suite" />
-  </a>
-  <a href="https://github.com/imMamdouhaboammar?tab=repositories">
-    <img src="https://img.shields.io/badge/Public%20Builds-GitHub-24292F?style=for-the-badge&logo=github&logoColor=white" alt="GitHub repositories" />
-  </a>
-  <img src="https://komarev.com/ghpvc/?username=imMamdouhaboammar&style=for-the-badge&color=F97316" alt="Profile views" />
-</p>
-
-<p>
-  <img src="https://img.shields.io/badge/AI%20Agents-111827?style=flat-square" alt="AI Agents" />
-  <img src="https://img.shields.io/badge/Agentic%20Workflows-7C3AED?style=flat-square" alt="Agentic Workflows" />
-  <img src="https://img.shields.io/badge/Marketing%20Systems-F97316?style=flat-square" alt="Marketing Systems" />
-  <img src="https://img.shields.io/badge/Conversion%20Copy-2563EB?style=flat-square" alt="Conversion Copy" />
-  <img src="https://img.shields.io/badge/Agent%20Skills-16A34A?style=flat-square" alt="Agent Skills" />
-  <img src="https://img.shields.io/badge/MENA%20Markets-DC2626?style=flat-square" alt="MENA Markets" />
-</p>
-
-</div>
+[LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/) · [Website](https://mamdouhaboammar.com) · [PrePilot Agency Suite](https://writing-ghost.space) · [Public repositories](https://github.com/imMamdouhaboammar?tab=repositories)
 
 ---
 
-## Read me like this
+## What I am building toward
 
-Most profiles say what someone knows. I prefer showing how I think.
+I am interested in the work layer around AI agents: the context they need, the rules they follow, the review loops they pass through, and the useful outputs they should produce.
 
-I come from marketing, content, paid media, CRO, UX writing, and brand strategy. My current work sits at the point where agency delivery meets AI systems: reusable skills, workflow rules, local memory, MCP tooling, frontend QA, and public playbooks.
+My current direction:
 
-> The useful part of AI is not the answer. It is the work system around the answer.
-
-<table>
-<tr>
-<td width="20%" valign="top">
-
-### Direction
-
-AI agents, marketing systems, agent skills, documentation, and public tools.
-
-</td>
-<td width="20%" valign="top">
-
-### Background
-
-Paid media, conversion copy, content strategy, campaign architecture, and client delivery.
-
-</td>
-<td width="20%" valign="top">
-
-### Product lab
-
-PrePilot Agency Suite: structured AI workflows for real agency tasks.
-
-</td>
-<td width="20%" valign="top">
-
-### Build style
-
-Specs first. Clear rules. Review loops. Human judgment stays in the loop.
-
-</td>
-<td width="20%" valign="top">
-
-### Markets
-
-Egypt, Saudi Arabia, UAE, Qatar, and Canada.
-
-</td>
-</tr>
-</table>
-
----
-
-## What I build
-
-| When the work looks like this | I build this |
+| Area | What I care about |
 |---|---|
-| Messy client brief | Intake logic, strategy frames, and delivery checklists |
-| Generic AI output | Agent skills, memory rules, and review loops |
-| AI-built frontend slop | Preflight checks, QA gates, and repair lists |
-| Repeated prompting | Reusable workflows, specs, and context packs |
-| Marketing task with too many moving parts | Product-shaped systems that make the work easier to review |
-| Team knowledge stuck in people’s heads | Playbooks, operating docs, and agent-ready instructions |
-
-```mermaid
-flowchart LR
-    A[Messy brief] --> B[Strategy logic]
-    B --> C[Agent skills]
-    C --> D[Workflow rules]
-    D --> E[QA gates]
-    E --> F[Client-ready output]
-```
+| AI agency systems | Turning repeated agency work into structured workflows |
+| Agent skills | Giving AI agents task-specific context, standards, and decision rules |
+| Marketing operations | Making briefs, paid media plans, content systems, audits, and reports easier to review |
+| Product-shaped thinking | Turning knowledge into tools, packs, templates, and repeatable operating logic |
+| Open work | Publishing useful repos, notes, and contributions instead of keeping everything private |
 
 ---
 
-## Featured public projects
+## Background
 
-<p align="center">
-  <a href="https://github.com/imMamdouhaboammar/Riftbook">
-    <img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/badges/riftbook.svg" alt="Open Riftbook repository" width="49%" />
-  </a>
-  <a href="https://github.com/imMamdouhaboammar/unslop-preflight">
-    <img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/badges/unslop-preflight.svg" alt="Open unslop-preflight repository" width="49%" />
-  </a>
-</p>
+I started as a copywriter, then moved deeper into conversion copy, paid media thinking, UX writing, brand strategy, campaign architecture, and digital direction.
 
-<p align="center">
-  <a href="https://github.com/imMamdouhaboammar/agent-kernel">
-    <img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/badges/agent-kernel.svg" alt="Open agent-kernel repository" width="49%" />
-  </a>
-  <a href="https://github.com/imMamdouhaboammar/delegate-team">
-    <img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/badges/delegate-team.svg" alt="Open delegate-team repository" width="49%" />
-  </a>
-</p>
+That background still shapes how I build. I care about clarity, user intent, buyer psychology, handoff quality, and whether the final output can survive real client pressure.
 
-| Project | What it says about my work |
+| Track | Practical experience |
 |---|---|
-| [Riftbook](https://github.com/imMamdouhaboammar/Riftbook) | I care about making AI-assisted building easier to understand and repeat |
-| [unslop-preflight](https://github.com/imMamdouhaboammar/unslop-preflight) | I treat frontend quality as a system, not a last-minute cleanup task |
-| [agent-kernel](https://github.com/imMamdouhaboammar/agent-kernel) | I am exploring local rules, memory, and safer coding-agent behavior |
-| [delegate-team](https://github.com/imMamdouhaboammar/delegate-team) | I think agent work should be routed by task type, not dumped into one chat |
+| Marketing strategy | Positioning, campaign logic, media planning, content systems, offer framing |
+| Copy and UX | Conversion copy, landing page logic, user flows, message hierarchy, editing |
+| Digital delivery | Websites, campaign assets, reporting, QA, launch coordination, client-facing outputs |
+| AI workflows | Agent instructions, skill packs, routing logic, MCP connectors, review systems |
+| Markets | Egypt, Saudi Arabia, UAE, Qatar, and Canada |
 
 ---
 
-## Product lab: PrePilot Agency Suite
+## Proof and projects
 
-**PrePilot Agency Suite** is where I turn real agency work into structured AI systems.
-
-It is built around a simple belief: a useful AI assistant needs more than a prompt. It needs role context, work rules, intake questions, review logic, and output standards.
-
-| Layer | What I am building |
+| Work | What it shows |
 |---|---|
-| Agency skills | Structured skills for paid media, content, strategy, CRO, briefs, audits, and proposals |
-| Workflow packs | Repeatable paths from brief to output, with checks at each step |
-| MCP and connectors | Ways to connect AI tools to the workspace instead of keeping them isolated |
-| Productized delivery | Clear packs, checklists, and outputs that small teams can actually use |
-| Quality control | Guardrails for copy, design logic, tracking, links, specs, and client-facing polish |
+| Hajj Conference & Exhibition | Digital coordination and communication work inside a high-context Saudi institutional environment |
+| PrePilot Agency Suite | A product lab for structured AI workflows used in agency tasks: paid media, content, CRO, briefs, proposals, reporting, and client communication |
+| [Riftbook](https://github.com/imMamdouhaboammar/Riftbook) | A public guide for AI-assisted builders: tools, prompts, workflows, and practical resources |
+| [unslop-preflight](https://github.com/imMamdouhaboammar/unslop-preflight) | A quality gate mindset for AI-built frontends, focused on spotting weak UX before shipping |
+| [agent-kernel](https://github.com/imMamdouhaboammar/agent-kernel) | Experiments around local agent rules, safer behavior, memory, and coding-agent discipline |
+| [delegate-team](https://github.com/imMamdouhaboammar/delegate-team) | Task routing for agent work instead of treating one chat as the whole team |
+| [marketingskills contribution](https://github.com/coreyhaines31/marketingskills/pull/418) | A market research skill added to an open agent-skill library |
 
 ---
 
-## My working stack
+## How I think about AI work
 
-<p>
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111827" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/FastMCP-111827?style=for-the-badge" alt="FastMCP" />
-  <img src="https://img.shields.io/badge/MCP-7C3AED?style=for-the-badge" alt="MCP" />
-  <img src="https://img.shields.io/badge/CLI%20Tools-111827?style=for-the-badge&logo=gnubash&logoColor=white" alt="CLI Tools" />
-  <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm" />
-  <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" />
-  <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=111827" alt="Supabase" />
-  <img src="https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="Google Cloud" />
-</p>
+AI is useful when it has a work system around it.
 
-| I use these for | Practical purpose |
-|---|---|
-| React, Vite, TypeScript | Product interfaces, dashboards, Chrome extension UI, and internal tools |
-| Python, Node.js, CLI tools | Automation, local utilities, tooling experiments, and build scripts |
-| MCP, FastMCP, connectors | Agent access to real tools and workspaces |
-| Supabase, Google Cloud, GitHub Actions | Product backends, deployment paths, and release workflows |
-| Markdown, docs, playbooks | Turning messy thinking into instructions other people and agents can follow |
+A prompt alone is not enough. Good output usually needs a clear role, source context, task boundaries, examples, quality rules, and a human review path.
+
+The work I care about is not replacing judgment. It is making judgment easier to apply:
+
+- clearer briefs
+- sharper intake questions
+- better task routing
+- stricter review checks
+- cleaner handoffs
+- fewer repeated explanations
+- outputs that people can actually use
 
 ---
 
-## GitHub signal
-
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=imMamdouhaboammar&show_icons=true&hide_border=true&rank_icon=github&theme=radical" alt="Mamdouh Aboammar GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=imMamdouhaboammar&layout=compact&hide_border=true&theme=radical" alt="Most used languages on GitHub" />
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/badges/github-activity.svg" alt="GitHub activity summary" width="100%" />
-</p>
-
----
-
-## How I judge good work
+## Working principles
 
 | Principle | What it means in practice |
 |---|---|
-| Clarity before decoration | If the idea is unclear, design will not save it |
-| Proof before claims | Say less, show the system, link the repo |
-| Workflow before output | The process should be repeatable, not lucky |
-| Context before code | A coding agent without project context will make expensive guesses |
-| Review before shipping | AI can produce valid files that still create bad UX |
-| Human judgment stays in the loop | The point is better work, not blind automation |
+| Clarity before decoration | If the idea is unclear, visual polish will not save it |
+| Proof before claims | Say less, show the repo, tool, workflow, or output |
+| Context before automation | A system without context makes expensive guesses |
+| Workflow before output | Good work should be repeatable, not lucky |
+| Review before shipping | Valid files can still create weak user experiences |
+| Human judgment stays close | The goal is better work, not blind delegation |
 
 ---
 
-## Open source contribution roadmap
+## Tools and surfaces I work with
 
-I am focusing my public contributions on projects where AI agents, agent skills, marketing workflows, documentation, and practical tooling meet.
+`React` · `Vite` · `TypeScript` · `JavaScript` · `Python` · `Node.js` · `FastMCP` · `MCP` · `Supabase` · `Google Cloud` · `GitHub Actions` · `Markdown` · `CLI tools`
 
-[Read the full roadmap](./OPEN_SOURCE_ROADMAP.md)
-
-| Target repo | Contribution angle |
-|---|---|
-| [500-AI-Agents-Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects) | AI agent discovery, categorization, and practical use-case examples |
-| [ai-agents-skills](https://github.com/hoodini/ai-agents-skills) | Agent skills for marketing, content, CRO, research, and campaign work |
-| [Multi-Agent-Marketing-Course](https://github.com/The-Swarm-Corporation/Multi-Agent-Marketing-Course) | Multi-agent workflows for real marketing and agency operations |
-| [ai-marketing-skills](https://github.com/ericosiu/ai-marketing-skills) | Structured marketing skills, prompt packs, and workflow examples |
+I use code as a way to shape thinking into systems: product interfaces, internal tools, workflow packs, docs, checks, connectors, and small utilities.
 
 ---
 
-## Connect
+## Current focus
 
-<p>
-  <a href="https://www.linkedin.com/in/mamdouh-aboammar/">
-    <img src="https://img.shields.io/badge/LinkedIn-Let%27s%20talk-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect on LinkedIn" />
-  </a>
-  <a href="https://mamdouhaboammar.com">
-    <img src="https://img.shields.io/badge/Website-Read%20the%20full%20story-111827?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" />
-  </a>
-  <a href="https://writing-ghost.space">
-    <img src="https://img.shields.io/badge/PrePilot-Agency%20Suite-F97316?style=for-the-badge" alt="PrePilot Agency Suite" />
-  </a>
-</p>
+- Building PrePilot Agency Suite as an AI workflow layer for agencies
+- Turning marketing knowledge into agent-ready skills and operating rules
+- Improving frontend quality checks for AI-built interfaces
+- Contributing to public repos around agent skills, marketing workflows, and AI-assisted building
+- Writing cleaner docs that make complex work easier to repeat
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:111827,45:7C3AED,100:F97316&height=110&section=footer" alt="Footer wave" width="100%" />
+---
+
+## Contact
+
+Best place to reach me: [LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/)
+
+For my work, writing, and selected projects: [mamdouhaboammar.com](https://mamdouhaboammar.com)
