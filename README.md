@@ -1,12 +1,14 @@
 <!-- Minimal profile README for imMamdouhaboammar -->
 
+<div align="center">
+
 # Mamdouh Aboammar
 
-Digital Director. Ex-copywriter. Marketing systems builder.
+### Digital Director · Ex-copywriter · Marketing Systems Builder
 
 I work where marketing strategy, paid media, UX writing, AI workflows, and product-shaped systems meet.
 
-GitHub is not where I try to look like a pure software engineer. It is where I turn agency thinking into public tools, skills, workflow rules, docs, QA checks, and small systems that can be used, tested, and improved.
+GitHub is where I turn agency thinking into public tools, skills, workflow rules, docs, QA checks, and small systems that can be used, tested, and improved.
 
 <p>
   <a href="https://www.linkedin.com/in/mamdouh-aboammar/"><img src="https://img.shields.io/badge/LinkedIn-Mamdouh_Aboammar-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
@@ -24,13 +26,15 @@ GitHub is not where I try to look like a pure software engineer. It is where I t
   <img src="https://img.shields.io/badge/MENA_Markets-16A34A?style=flat" alt="MENA Markets" />
 </p>
 
+</div>
+
 ---
 
-## What I am building toward
+<h2 align="center">What I am building toward</h2>
 
-I am interested in the work layer around AI agents: the context they need, the rules they follow, the review loops they pass through, and the useful outputs they should produce.
-
-My current direction:
+<p align="center">
+I am interested in the work layer around AI agents: context, rules, review loops, and useful outputs.
+</p>
 
 | Area | What I care about |
 |---|---|
@@ -42,7 +46,7 @@ My current direction:
 
 ---
 
-## Background
+<h2 align="center">Background</h2>
 
 I started as a copywriter, then moved deeper into conversion copy, paid media thinking, UX writing, brand strategy, campaign architecture, and digital direction.
 
@@ -58,7 +62,7 @@ That background still shapes how I build. I care about clarity, user intent, buy
 
 ---
 
-## Proof and projects
+<h2 align="center">Proof and projects</h2>
 
 | Work | What it shows |
 |---|---|
@@ -73,25 +77,21 @@ That background still shapes how I build. I care about clarity, user intent, buy
 
 ---
 
-## How I think about AI work
+<h2 align="center">How I think about AI work</h2>
 
-AI is useful when it has a work system around it.
+<p align="center"><strong>AI is useful when it has a work system around it.</strong></p>
 
 A prompt alone is not enough. Good output usually needs a clear role, source context, task boundaries, examples, quality rules, and a human review path.
 
 The work I care about is not replacing judgment. It is making judgment easier to apply:
 
-- clearer briefs
-- sharper intake questions
-- better task routing
-- stricter review checks
-- cleaner handoffs
-- fewer repeated explanations
-- outputs that people can actually use
+<p align="center">
+clearer briefs · sharper intake questions · better task routing · stricter review checks · cleaner handoffs · fewer repeated explanations · outputs people can actually use
+</p>
 
 ---
 
-## Working principles
+<h2 align="center">Working principles</h2>
 
 | Principle | What it means in practice |
 |---|---|
@@ -104,9 +104,11 @@ The work I care about is not replacing judgment. It is making judgment easier to
 
 ---
 
-## Tools and surfaces I work with
+<h2 align="center">Tools and surfaces I work with</h2>
 
-**Build stack**
+<div align="center">
+
+<strong>Build stack</strong>
 
 <p>
   <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React" />
@@ -125,7 +127,7 @@ The work I care about is not replacing judgment. It is making judgment easier to
   <img src="https://img.shields.io/badge/CLI_Tools-111827?style=flat&logo=gnubash&logoColor=white" alt="CLI tools" />
 </p>
 
-**AI and agent surfaces**
+<strong>AI and agent surfaces</strong>
 
 <p>
   <img src="https://img.shields.io/badge/ChatGPT-111827?style=flat&logo=openai&logoColor=white" alt="ChatGPT" />
@@ -140,7 +142,7 @@ The work I care about is not replacing judgment. It is making judgment easier to
   <img src="https://img.shields.io/badge/Agent_Skills-F97316?style=flat" alt="Agent Skills" />
 </p>
 
-**Marketing, analytics, and creative surfaces**
+<strong>Marketing, analytics, and creative surfaces</strong>
 
 <p>
   <img src="https://img.shields.io/badge/Google_Ads-4285F4?style=flat&logo=googleads&logoColor=white" alt="Google Ads" />
@@ -159,20 +161,25 @@ The work I care about is not replacing judgment. It is making judgment easier to
 
 I use code, marketing tools, and AI surfaces as one workspace: product interfaces, internal tools, campaign systems, workflow packs, docs, checks, connectors, and small utilities.
 
----
-
-## Current focus
-
-- Building PrePilot Agency Suite as an AI workflow layer for agencies
-- Turning marketing knowledge into agent-ready skills and operating rules
-- Improving frontend quality checks for AI-built interfaces
-- Contributing to public repos around agent skills, marketing workflows, and AI-assisted building
-- Writing cleaner docs that make complex work easier to repeat
+</div>
 
 ---
 
-## Contact
+<h2 align="center">Current focus</h2>
 
-Best place to reach me: [LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/)
+<p align="center">
+Building PrePilot Agency Suite as an AI workflow layer for agencies<br/>
+Turning marketing knowledge into agent-ready skills and operating rules<br/>
+Improving frontend quality checks for AI-built interfaces<br/>
+Contributing to public repos around agent skills, marketing workflows, and AI-assisted building<br/>
+Writing cleaner docs that make complex work easier to repeat
+</p>
 
-For my work, writing, and selected projects: [mamdouhaboammar.com](https://mamdouhaboammar.com)
+---
+
+<h2 align="center">Contact</h2>
+
+<p align="center">
+Best place to reach me: <a href="https://www.linkedin.com/in/mamdouh-aboammar/">LinkedIn</a><br/>
+For my work, writing, and selected projects: <a href="https://mamdouhaboammar.com">mamdouhaboammar.com</a>
+</p>
