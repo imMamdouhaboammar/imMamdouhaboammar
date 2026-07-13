@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    "social-media-skills"
+  ],
+  "marketplaces": [
+    {
+      "source": "charlie947/social-media-skills",
+      "name": "social-media-skills"
+    }
+  ]
+}
