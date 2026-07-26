@@ -7,6 +7,8 @@ import { renderProjectBlock, renderProfileMetricsBlock, renderPushonomicsBlock }
 import { calculateStreaks, aggregateContributionWindows } from '../lib/streaks.mjs';
 import { estimatePushonomics, mergeLineWindows } from '../lib/tokenomics.mjs';
 
+const EMOJI_PATTERN = /[\u{1F300}-\u{1FAFF}]/u;
+
 test('replaceManagedBlock changes only the selected marker range', () => {
   const source = ['before', '<!-- project-story:start -->', 'old', '<!-- project-story:end -->', 'after'].join('\n');
   const result = replaceManagedBlock(source, 'project-story', 'new');
@@ -31,7 +33,7 @@ test('deterministicSummary always returns three to five useful bullets', () => {
   assert.match(bullets.join(' '), /architecture policy|provider approval|v1\.15\.0/i);
 });
 
-test('renderProjectBlock is expandable, visual, and search friendly', () => {
+test('renderProjectBlock is expandable, minimal, and search friendly', () => {
   const block = renderProjectBlock({
     project: {
       name: 'Agent Kernel',
@@ -48,10 +50,12 @@ test('renderProjectBlock is expandable, visual, and search friendly', () => {
   });
   assert.match(block, /<details open>/);
   assert.match(block, /Why I built Agent Kernel/);
-  assert.match(block, /Problem → project/);
+  assert.match(block, /Problem to project/);
   assert.match(block, /Coding agents repeatedly lose project context/);
   assert.match(block, /AI coding agent memory/);
   assert.match(block, /docs\/brand\/agent-kernel-logo\.svg/);
+  assert.doesNotMatch(block, EMOJI_PATTERN);
+  assert.doesNotMatch(block, /for-the-badge/i);
 });
 
 test('calculateStreaks returns current and longest cross-year activity streaks', () => {
@@ -79,7 +83,7 @@ test('aggregateContributionWindows sums totals and de-duplicates calendar days',
   ]);
 });
 
-test('renderProfileMetricsBlock exposes aggregate numbers without private names', () => {
+test('renderProfileMetricsBlock is compact and excludes private names', () => {
   const block = renderProfileMetricsBlock({
     commits: 1200,
     currentStreak: 9,
@@ -91,6 +95,8 @@ test('renderProfileMetricsBlock exposes aggregate numbers without private names'
   assert.match(block, /Current streak/);
   assert.match(block, /Longest streak/);
   assert.doesNotMatch(block, /private\//i);
+  assert.doesNotMatch(block, EMOJI_PATTERN);
+  assert.doesNotMatch(block, /for-the-badge/i);
 });
 
 test('mergeLineWindows sums line totals without exposing repository names', () => {
@@ -118,7 +124,7 @@ test('estimatePushonomics converts changed lines into transparent model scenario
   assert.equal(result.models['Claude Fable 5'].estimatedCostUsd, 0.8);
 });
 
-test('renderPushonomicsBlock uses wordplay and labels the estimate honestly', () => {
+test('renderPushonomicsBlock keeps wordplay without side notes', () => {
   const estimate = estimatePushonomics({ additions: 1000, deletions: 250 });
   const block = renderPushonomicsBlock({
     ...estimate,
@@ -131,4 +137,7 @@ test('renderPushonomicsBlock uses wordplay and labels the estimate honestly', ()
   assert.match(block, /GPT-5\.6 Sol/);
   assert.match(block, /Claude Fable 5/);
   assert.match(block, /estimate, not an invoice/i);
+  assert.doesNotMatch(block, EMOJI_PATTERN);
+  assert.doesNotMatch(block, /for-the-badge/i);
+  assert.doesNotMatch(block, /How these|nutrition label|side note/i);
 });
