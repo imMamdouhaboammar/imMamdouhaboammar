@@ -1,20 +1,29 @@
-<p align="center">
-  <img src="./assets/profile/profile-hero.svg" width="100%" alt="Mamdouh Aboammar, real problems turned into public systems" />
-</p>
+<div align="center">
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/mamdouh-aboammar/">LinkedIn</a>
-  &nbsp;/&nbsp;
-  <a href="https://mamdouhaboammar.com">Portfolio</a>
-  &nbsp;/&nbsp;
-  <a href="https://github.com/imMamdouhaboammar?tab=repositories">Repositories</a>
-</p>
+# Mamdouh Aboammar
 
-<p align="center">
-  <img src="./assets/profile/profile-badges.svg" width="660" alt="AI systems, developer tooling, marketing systems, and conversion copy" />
-</p>
+**Digital Director · Brand Strategist · Founder of PrePilot · Public Systems Builder**
 
-<p align="center"><strong>Real friction. Reusable systems. Public proof.</strong></p>
+Real friction. Reusable systems. Public proof.
+
+[LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/) · [Portfolio](https://mamdouhaboammar.com/) · [X](https://x.com/Bo_ammarrr) · [Instagram](https://www.instagram.com/boammarrr/) · [Facebook](https://www.facebook.com/mamdouhboammar/) · [Repositories](https://github.com/imMamdouhaboammar?tab=repositories)
+
+<img src="./assets/profile/profile-badges.svg" width="660" alt="AI systems, developer tooling, marketing systems, and conversion copy" />
+
+</div>
+
+## Profile
+
+I moved from conversion copywriting into brand strategy, performance media, digital direction, and AI-assisted work systems. I build public tools from recurring problems I meet while leading projects, managing teams, reviewing delivery, and connecting strategy with execution.
+
+<table>
+<tr>
+<td align="center" width="25%"><strong>7+ years</strong><br /><sub>Marketing and digital work</sub></td>
+<td align="center" width="25%"><strong>5 markets</strong><br /><sub>Egypt, Saudi Arabia, UAE, Qatar, Canada</sub></td>
+<td align="center" width="25%"><strong>10 systems</strong><br /><sub>Current public project network</sub></td>
+<td align="center" width="25%"><strong>2 editions</strong><br /><sub>Hajj Conference and Exhibition</sub></td>
+</tr>
+</table>
 
 ## Activity
 
@@ -47,7 +56,53 @@
 </details>
 <!-- pushonomics:end -->
 
-## Projects
+## How I work
+
+<table>
+<tr>
+<td width="50%" valign="top"><strong>Problem before product</strong><br />I start with repeated friction, not a tool category.</td>
+<td width="50%" valign="top"><strong>Context before automation</strong><br />The system should know the audience, repository, rules, and evidence.</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><strong>Proof before claims</strong><br />A test, report, pull request, or measured result should support the conclusion.</td>
+<td width="50%" valign="top"><strong>Human judgment stays close</strong><br />Agents prepare, inspect, and verify. People own consequential decisions.</td>
+</tr>
+</table>
+
+## Career path
+
+<details>
+<summary><strong>Current roles and recent history</strong></summary>
+<br />
+
+| Period | Role | Organization |
+|---|---|---|
+| Jan 2025 to present | Digital Director | 4STEPS, Saudi Arabia |
+| Jun 2024 to present | Senior Brand Strategist, freelance | Momint Advertising |
+| Feb 2024 to Feb 2025 | Director of People Operations | Nights Advertising |
+| Dec 2022 to Feb 2024 | Senior Conversion Copywriter | Nights Advertising |
+| Nov 2023 to Jan 2024 | Senior Content Creator, seasonal | Ministry of Hajj and Umrah |
+| Aug 2023 to Oct 2023 | Digital Marketing Strategist | SEMA Brands |
+| May 2023 to Aug 2023 | Senior Copywriter | Sandpaper |
+| Jan 2023 to Aug 2023 | Branch Manager, part-time | NetArabia |
+| Jan 2022 to Jan 2023 | Senior Copywriter, part-time | BeyondSaudi |
+
+</details>
+
+## Selected work
+
+<table>
+<tr>
+<td width="50%" valign="top"><strong>Hajj Conference and Exhibition</strong><br />Digital direction, branding, media, content, and campaign work across the third and fourth editions.</td>
+<td width="50%" valign="top"><strong>PrePilot</strong><br />Agency systems for research, strategy, content, media, review, and AI-assisted delivery.</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><strong>Saudi projects</strong><br />Work across ministries, semi-government entities, Hajj and Umrah services, conferences, and exhibitions.</td>
+<td width="50%" valign="top"><strong>Cross-market delivery</strong><br />Brand, content, conversion, and digital work across Egypt, Saudi Arabia, UAE, Qatar, and Canada.</td>
+</tr>
+</table>
+
+## Public systems
 
 <table>
 <tr>
@@ -152,6 +207,10 @@ Small animated 2.5D assets for developer documentation.
 </tr>
 </table>
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/mamdouh-aboammar/">Start a conversation</a>
-</p>
+## Current focus
+
+`local AI agent workflows` `repository quality` `marketing skills` `agency systems` `conversion copy` `developer documentation`
+
+## Social
+
+[LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/) · [Website](https://mamdouhaboammar.com/) · [X](https://x.com/Bo_ammarrr) · [Instagram](https://www.instagram.com/boammarrr/) · [Facebook](https://www.facebook.com/mamdouhboammar/) · [GitHub](https://github.com/imMamdouhaboammar)
