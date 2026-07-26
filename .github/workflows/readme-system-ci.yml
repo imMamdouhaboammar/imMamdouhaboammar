@@ -1,0 +1,26 @@
+name: README system CI
+
+on:
+  pull_request:
+    paths:
+      - "readme-system/**"
+      - ".github/workflows/readme-system-ci.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "readme-system/**"
+      - ".github/workflows/readme-system-ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test readme-system/test/*.test.mjs
