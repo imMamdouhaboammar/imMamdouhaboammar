@@ -1,185 +1,159 @@
-<!-- Minimal profile README for imMamdouhaboammar -->
-
 <div align="center">
 
 # Mamdouh Aboammar
 
-### Digital Director · Ex-copywriter · Marketing Systems Builder
+### Digital Director · Ex-copywriter · Brand & Media Strategist · AI Work Systems Builder
 
-I work where marketing strategy, paid media, UX writing, AI workflows, and product-shaped systems meet.
-
-GitHub is where I turn agency thinking into public tools, skills, workflow rules, docs, QA checks, and small systems that can be used, tested, and improved.
+I build public tools from problems I repeatedly meet in real agency work, marketing operations, and AI-assisted software delivery.
 
 <p>
-  <a href="https://www.linkedin.com/in/mamdouh-aboammar/"><img src="https://img.shields.io/badge/LinkedIn-Mamdouh_Aboammar-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="https://mamdouhaboammar.com"><img src="https://img.shields.io/badge/Website-mamdouhaboammar.com-111827?style=flat&logo=googlechrome&logoColor=white" alt="Website" /></a>
-  <a href="https://prepilot.cloud/"><img src="https://img.shields.io/badge/PrePilot-Services_AR-F97316?style=flat" alt="PrePilot services" /></a>
-  <a href="https://app.prepilot-system-agency.space/"><img src="https://img.shields.io/badge/PrePilot-System-7C3AED?style=flat" alt="PrePilot system" /></a>
-  <a href="https://github.com/imMamdouhaboammar?tab=repositories"><img src="https://img.shields.io/badge/Public_Builds-GitHub-24292F?style=flat&logo=github&logoColor=white" alt="Public repositories" /></a>
+  <a href="https://www.linkedin.com/in/mamdouh-aboammar/"><img src="https://img.shields.io/badge/LinkedIn-Mamdouh_Aboammar-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://mamdouhaboammar.com"><img src="https://img.shields.io/badge/Website-mamdouhaboammar.com-111827?style=flat-square&logo=googlechrome&logoColor=white" alt="Website" /></a>
+  <a href="https://prepilot.cloud/"><img src="https://img.shields.io/badge/PrePilot-Agency_Systems-F97316?style=flat-square" alt="PrePilot" /></a>
+  <a href="https://github.com/imMamdouhaboammar?tab=repositories"><img src="https://img.shields.io/badge/Open_Source-Projects-24292F?style=flat-square&logo=github&logoColor=white" alt="Public repositories" /></a>
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/AI_Agents-111827?style=flat" alt="AI Agents" />
-  <img src="https://img.shields.io/badge/Marketing_Systems-F97316?style=flat" alt="Marketing Systems" />
-  <img src="https://img.shields.io/badge/Conversion_Copy-2563EB?style=flat" alt="Conversion Copy" />
-  <img src="https://img.shields.io/badge/MCP-7C3AED?style=flat" alt="MCP" />
-  <img src="https://img.shields.io/badge/MENA_Markets-16A34A?style=flat" alt="MENA Markets" />
+  <img src="https://img.shields.io/badge/AI_Agents-111827?style=flat-square" alt="AI agents" />
+  <img src="https://img.shields.io/badge/Developer_Tooling-7C3AED?style=flat-square" alt="Developer tooling" />
+  <img src="https://img.shields.io/badge/Marketing_Systems-F97316?style=flat-square" alt="Marketing systems" />
+  <img src="https://img.shields.io/badge/Conversion_Copy-2563EB?style=flat-square" alt="Conversion copywriting" />
+  <img src="https://img.shields.io/badge/MENA_Markets-16A34A?style=flat-square" alt="MENA markets" />
 </p>
 
 </div>
 
----
+## What do I build?
 
-<h2 align="center">What I am building toward</h2>
+I build small, focused systems around AI agents, repository quality, marketing workflows, conversion copy, and developer documentation. The common thread is practical: when I repeat an explanation, fight the same regression, or lose context between tools, I try to turn that friction into a reusable public project.
 
-<p align="center">
-I am interested in the work layer around AI agents: context, rules, review loops, and useful outputs.
-</p>
+> **The pattern:** recurring problem → explicit workflow → tested guardrails → public documentation → daily improvement.
 
-| Area | What I care about |
-|---|---|
-| AI agency systems | Turning repeated agency work into structured workflows |
-| Agent skills | Giving AI agents task-specific context, standards, and decision rules |
-| Marketing operations | Making briefs, paid media plans, content systems, audits, and reports easier to review |
-| Product-shaped thinking | Turning knowledge into tools, packs, templates, and repeatable operating logic |
-| Open work | Publishing useful repos, notes, and contributions instead of keeping everything private |
-
----
-
-<h2 align="center">Background</h2>
-
-I started as a copywriter, then moved deeper into conversion copy, paid media thinking, UX writing, brand strategy, campaign architecture, and digital direction.
-
-That background still shapes how I build. I care about clarity, user intent, buyer psychology, handoff quality, and whether the final output can survive real client pressure.
-
-| Track | Practical experience |
-|---|---|
-| Marketing strategy | Positioning, campaign logic, media planning, content systems, offer framing |
-| Copy and UX | Conversion copy, landing page logic, user flows, message hierarchy, editing |
-| Digital delivery | Websites, campaign assets, reporting, QA, launch coordination, client-facing outputs |
-| AI workflows | Agent instructions, skill packs, routing logic, MCP connectors, review systems |
-| Markets | Egypt, Saudi Arabia, UAE, Qatar, and Canada |
-
----
-
-<h2 align="center">Proof and projects</h2>
-
-| Work | What it shows |
-|---|---|
-| Hajj Conference & Exhibition | Digital coordination and communication work inside a high-context Saudi institutional environment |
-| [PrePilot Services](https://prepilot.cloud/) | Arabic-facing service and sales layer for PrePilot offers and agency workflow products |
-| [PrePilot System](https://app.prepilot-system-agency.space/) | The working system layer behind structured AI workflows for agency tasks |
-| [Riftbook](https://github.com/imMamdouhaboammar/Riftbook) | A public guide for AI-assisted builders: tools, prompts, workflows, and practical resources |
-| [unslop-preflight](https://github.com/imMamdouhaboammar/unslop-preflight) | A quality gate mindset for AI-built frontends, focused on spotting weak UX before shipping |
-| [agent-kernel](https://github.com/imMamdouhaboammar/agent-kernel) | Experiments around local agent rules, safer behavior, memory, and coding-agent discipline |
-| [delegate-team](https://github.com/imMamdouhaboammar/delegate-team) | Task routing for agent work instead of treating one chat as the whole team |
-| [marketingskills contribution](https://github.com/coreyhaines31/marketingskills/pull/418) | A market research skill added to an open agent-skill library |
-
----
-
-<h2 align="center">How I think about AI work</h2>
-
-<p align="center"><strong>AI is useful when it has a work system around it.</strong></p>
-
-A prompt alone is not enough. Good output usually needs a clear role, source context, task boundaries, examples, quality rules, and a human review path.
-
-The work I care about is not replacing judgment. It is making judgment easier to apply:
-
-<p align="center">
-clearer briefs · sharper intake questions · better task routing · stricter review checks · cleaner handoffs · fewer repeated explanations · outputs people can actually use
-</p>
-
----
-
-<h2 align="center">Working principles</h2>
-
-| Principle | What it means in practice |
-|---|---|
-| Clarity before decoration | If the idea is unclear, visual polish will not save it |
-| Proof before claims | Say less, show the repo, tool, workflow, or output |
-| Context before automation | A system without context makes expensive guesses |
-| Workflow before output | Good work should be repeatable, not lucky |
-| Review before shipping | Valid files can still create weak user experiences |
-| Human judgment stays close | The goal is better work, not blind delegation |
-
----
-
-<h2 align="center">Tools and surfaces I work with</h2>
-
+<!-- profile-metrics:start -->
 <div align="center">
-
-<strong>Build stack</strong>
-
-<p>
-  <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=111827" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/FastMCP-111827?style=flat" alt="FastMCP" />
-  <img src="https://img.shields.io/badge/MCP-7C3AED?style=flat" alt="MCP" />
-  <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=flat&logo=supabase&logoColor=111827" alt="Supabase" />
-  <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=flat&logo=googlecloud&logoColor=white" alt="Google Cloud" />
-  <img src="https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white" alt="Vercel" />
-  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white" alt="GitHub Actions" />
-  <img src="https://img.shields.io/badge/Markdown-000000?style=flat&logo=markdown&logoColor=white" alt="Markdown" />
-  <img src="https://img.shields.io/badge/CLI_Tools-111827?style=flat&logo=gnubash&logoColor=white" alt="CLI tools" />
-</p>
-
-<strong>AI and agent surfaces</strong>
-
-<p>
-  <img src="https://img.shields.io/badge/ChatGPT-111827?style=flat&logo=openai&logoColor=white" alt="ChatGPT" />
-  <img src="https://img.shields.io/badge/OpenAI_Codex-111827?style=flat&logo=openai&logoColor=white" alt="OpenAI Codex" />
-  <img src="https://img.shields.io/badge/Claude-6B4EFF?style=flat" alt="Claude" />
-  <img src="https://img.shields.io/badge/Claude_Code-6B4EFF?style=flat" alt="Claude Code" />
-  <img src="https://img.shields.io/badge/Gemini-4285F4?style=flat&logo=googlegemini&logoColor=white" alt="Gemini" />
-  <img src="https://img.shields.io/badge/Perplexity-1FB8CD?style=flat" alt="Perplexity" />
-  <img src="https://img.shields.io/badge/Cursor-111827?style=flat" alt="Cursor" />
-  <img src="https://img.shields.io/badge/Bolt-111827?style=flat" alt="Bolt" />
-  <img src="https://img.shields.io/badge/Void-111827?style=flat" alt="Void" />
-  <img src="https://img.shields.io/badge/Agent_Skills-F97316?style=flat" alt="Agent Skills" />
-</p>
-
-<strong>Marketing, analytics, and creative surfaces</strong>
-
-<p>
-  <img src="https://img.shields.io/badge/Google_Ads-4285F4?style=flat&logo=googleads&logoColor=white" alt="Google Ads" />
-  <img src="https://img.shields.io/badge/Meta_Ads-0866FF?style=flat&logo=meta&logoColor=white" alt="Meta Ads" />
-  <img src="https://img.shields.io/badge/Performance_Max-4285F4?style=flat" alt="Performance Max" />
-  <img src="https://img.shields.io/badge/TikTok_Ads-000000?style=flat&logo=tiktok&logoColor=white" alt="TikTok Ads" />
-  <img src="https://img.shields.io/badge/LinkedIn_Ads-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn Ads" />
-  <img src="https://img.shields.io/badge/GA4-E37400?style=flat&logo=googleanalytics&logoColor=white" alt="GA4" />
-  <img src="https://img.shields.io/badge/GTM-246FDB?style=flat&logo=googletagmanager&logoColor=white" alt="Google Tag Manager" />
-  <img src="https://img.shields.io/badge/Search_Console-4285F4?style=flat&logo=google&logoColor=white" alt="Google Search Console" />
-  <img src="https://img.shields.io/badge/Looker_Studio-4285F4?style=flat&logo=looker&logoColor=white" alt="Looker Studio" />
-  <img src="https://img.shields.io/badge/Photoshop-31A8FF?style=flat&logo=adobephotoshop&logoColor=001E36" alt="Photoshop" />
-  <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white" alt="Figma" />
-  <img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white" alt="Notion" />
-</p>
-
-I use code, marketing tools, and AI surfaces as one workspace: product interfaces, internal tools, campaign systems, workflow packs, docs, checks, connectors, and small utilities.
-
+  <table>
+    <tr>
+      <td align="center" width="25%"><strong>1,467</strong><br /><sub>Total commit contributions</sub></td>
+      <td align="center" width="25%"><strong>27 days</strong><br /><sub>Current streak</sub></td>
+      <td align="center" width="25%"><strong>27 days</strong><br /><sub>Longest streak</sub></td>
+      <td align="center" width="25%"><strong>3,111</strong><br /><sub>Contributions this year</sub></td>
+    </tr>
+  </table>
+  <sub>Public and token-visible private activity · repository names stay private · updated 2026-07-26T06:32:23.634Z</sub>
 </div>
 
----
+<details>
+  <summary><strong>How these numbers are calculated</strong></summary>
+  <p>Commit totals use GitHub-recognized commit contributions across yearly contribution windows. Streaks use days containing at least one commit, pull request, issue, or pull-request review. A streak remains current when the latest active day is today or yesterday.</p>
+</details>
+<!-- profile-metrics:end -->
 
-<h2 align="center">Current focus</h2>
+## Projects built from real problems
 
-<p align="center">
-Building PrePilot Agency Suite as an AI workflow layer for agencies<br/>
-Turning marketing knowledge into agent-ready skills and operating rules<br/>
-Improving frontend quality checks for AI-built interfaces<br/>
-Contributing to public repos around agent skills, marketing workflows, and AI-assisted building<br/>
-Writing cleaner docs that make complex work easier to repeat
-</p>
+<table>
+<tr>
+<td width="50%" valign="top">
 
----
+### [Agent Kernel](https://github.com/imMamdouhaboammar/agent-kernel)
+Coding agents lose context, repeat old mistakes, and drift from architecture rules. Agent Kernel adds local memory, reviewed boundaries, and failure lessons around the agents already in use.
 
-<h2 align="center">Contact</h2>
+</td>
+<td width="50%" valign="top">
 
-<p align="center">
-Best place to reach me: <a href="https://www.linkedin.com/in/mamdouh-aboammar/">LinkedIn</a><br/>
-For my work, writing, and selected projects: <a href="https://mamdouhaboammar.com">mamdouhaboammar.com</a>
-</p>
+### [Delegate Team](https://github.com/imMamdouhaboammar/delegate-team)
+One chat should not pretend to be the whole engineering team. Delegate Team routes bounded work through selected local coding agents and keeps the operating mode explicit.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### [Unslop Preflight](https://github.com/imMamdouhaboammar/unslop-preflight)
+AI-built frontends can look finished while hiding accessibility, responsive, and source-quality regressions. Unslop adds preflight checks and low-risk repair loops before handoff.
+
+</td>
+<td width="50%" valign="top">
+
+### [Dokion](https://github.com/imMamdouhaboammar/dokion)
+Software hardening becomes unreliable when an agent chooses its own process. Dokion executes a user-owned playbook, records evidence, validates repairs, and restores rejected changes.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### [Kaku ChatGPT Harness](https://github.com/imMamdouhaboammar/kaku-chatgpt-harness)
+Local ChatGPT coding sessions need authentication, project scope, capability controls, private logs, and rollback. This harness builds those boundaries around Kaku Terminal on macOS.
+
+</td>
+<td width="50%" valign="top">
+
+### [PatchPilot](https://github.com/imMamdouhaboammar/PatchPilot)
+GitHub work from a web chat needs a strict PR boundary. PatchPilot makes ChatGPT inspect live state, create focused changes, open a review-ready pull request, and stop before merge.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### [Riftbook](https://github.com/imMamdouhaboammar/Riftbook)
+AI coding knowledge is scattered across tools, prompts, skills, and half-documented habits. Riftbook organizes practical routes, tested resources, and real workflow stories.
+
+</td>
+<td width="50%" valign="top">
+
+### [Growth Hacker Skills](https://github.com/imMamdouhaboammar/Growth-Hacker-Skills)
+Marketing context often disappears between research, strategy, copy, design, publishing, and analysis. This connected skill network carries approved decisions through each handoff.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### [Conversion Copywriting Engine](https://github.com/imMamdouhaboammar/conversion-copywriting-engine)
+Generic AI copy skips customer psychology, market language, funnel context, and delivery checks. This engine packages seven-plus years of conversion-copywriting practice into a repeatable workflow.
+
+</td>
+<td width="50%" valign="top">
+
+### [Vibe SVGs](https://github.com/imMamdouhaboammar/vibe-svgs)
+Developer pages need expressive visual assets that still respect accessibility, reduced motion, and inline SVG safety. Vibe SVGs is a reusable 2.5D asset library built around those contracts.
+
+</td>
+</tr>
+</table>
+
+## How the repositories connect
+
+| Layer | Repositories | Purpose |
+|---|---|---|
+| Agent context and control | Agent Kernel, Kaku ChatGPT Harness | Keep local AI work scoped, remembered, and reviewable |
+| Task routing and change delivery | Delegate Team, PatchPilot | Move bounded work through clear agent and PR paths |
+| Hardening and frontend quality | Dokion, Unslop Preflight | Find weak changes, validate repairs, and keep evidence |
+| Knowledge and reusable behavior | Riftbook, Growth Hacker Skills | Turn lessons and methods into navigable workflows |
+| Creative and commercial systems | Conversion Copywriting Engine, Vibe SVGs | Package real copy and documentation practice into reusable assets |
+
+## Professional background
+
+I started as a copywriter and moved through conversion copywriting, UX writing, paid media, brand strategy, campaign architecture, and digital direction. I now lead digital and media work while building public systems around the gaps I see between strategy, execution, AI tools, and final review.
+
+My work has covered Egypt, Saudi Arabia, UAE, Qatar, and Canada, including digital coordination and communication work for the Hajj Conference & Exhibition and other high-context Saudi projects.
+
+## Working principles
+
+| Principle | In practice |
+|---|---|
+| Problem before product | Start from repeated friction, not a fashionable tool category |
+| Context before automation | A workflow should know the repository, audience, rules, and evidence |
+| Proof before claims | Show the code, test, report, or pull request |
+| Review before shipping | A valid build can still create a weak user experience |
+| Human judgment stays close | Agents can prepare and verify work; people still own consequential decisions |
+| Public notes compound | Useful lessons become clearer when others can inspect and challenge them |
+
+## Current focus
+
+Building safer local AI-agent workflows, improving frontend and repository quality checks, packaging marketing knowledge as agent-ready skills, and documenting what actually works in daily use.
+
+## Contact
+
+The best place to reach me is [LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/). Selected work and writing are available at [mamdouhaboammar.com](https://mamdouhaboammar.com).

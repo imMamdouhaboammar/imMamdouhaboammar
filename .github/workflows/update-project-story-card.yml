@@ -1,0 +1,67 @@
+name: Update project story card
+
+on:
+  workflow_call:
+    inputs:
+      openai_model:
+        description: Optional OpenAI model used for the public activity summary.
+        required: false
+        type: string
+        default: gpt-5-mini
+    secrets:
+      OPENAI_API_KEY:
+        description: Optional key. The workflow always has a deterministic fallback.
+        required: false
+
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+
+concurrency:
+  group: readme-story-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out target repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 20
+
+      - name: Check out central README system
+        uses: actions/checkout@v4
+        with:
+          repository: imMamdouhaboammar/imMamdouhaboammar
+          ref: main
+          path: .readme-intelligence-source
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Update managed README block
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_SUMMARY_MODEL: ${{ inputs.openai_model }}
+          TARGET_REPOSITORY: ${{ github.repository }}
+        run: node .readme-intelligence-source/readme-system/update-project.mjs
+
+      - name: Commit changed README
+        shell: bash
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: refresh daily project summary"
+          git push origin "HEAD:${{ github.event.repository.default_branch }}"
