@@ -15,6 +15,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,7 +26,7 @@ jobs:
         with:
           node-version: 22
 
-      - name: Build aggregate contribution metrics
+      - name: Build activity and Pushonomics metrics
         env:
           PROFILE_METRICS_TOKEN: ${{ secrets.PROFILE_METRICS_TOKEN }}
           PROFILE_USERNAME: imMamdouhaboammar
@@ -36,15 +37,15 @@ jobs:
           fi
           node readme-system/update-profile.mjs
 
-      - name: Commit changed profile README
+      - name: Commit changed profile data
         shell: bash
         run: |
-          if git diff --quiet -- README.md; then
-            echo "Profile metrics are already current."
+          if git diff --quiet -- README.md readme-system/generated/push-lines.json; then
+            echo "Profile metrics and Pushonomics are already current."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git commit -m "docs: refresh profile contribution metrics"
+          git add README.md readme-system/generated/push-lines.json
+          git commit -m "docs: refresh profile activity and pushonomics"
           git push origin HEAD:main
