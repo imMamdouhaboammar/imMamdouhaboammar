@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 390" role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">Mamdouh Aboammar, real problems turned into public systems</title>
+  <desc id="hero-desc">Animated developer profile banner showing a workflow from recurring problem to tested public project.</desc>
+  <defs>
+    <linearGradient id="hero-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#090D18"/>
+      <stop offset="0.52" stop-color="#12172A"/>
+      <stop offset="1" stop-color="#071925"/>
+    </linearGradient>
+    <linearGradient id="hero-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#FF7A45"/>
+      <stop offset="0.5" stop-color="#A855F7"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <radialGradient id="hero-orb-orange">
+      <stop stop-color="#F97316" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hero-orb-purple">
+      <stop stop-color="#7C3AED" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="hero-grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#94A3B8" stroke-opacity="0.08"/>
+    </pattern>
+    <filter id="hero-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .hero-copy{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+      .hero-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+      .hero-flow{animation:hero-dash 8s linear infinite}
+      .hero-pulse{animation:hero-pulse 3.2s ease-in-out infinite}
+      .hero-float-a{animation:hero-float-a 12s ease-in-out infinite alternate}
+      .hero-float-b{animation:hero-float-b 15s ease-in-out infinite alternate}
+      @keyframes hero-dash{to{stroke-dashoffset:-80}}
+      @keyframes hero-pulse{0%,100%{opacity:.55}50%{opacity:1}}
+      @keyframes hero-float-a{to{transform:translate(44px,18px) scale(1.08)}}
+      @keyframes hero-float-b{to{transform:translate(-38px,-14px) scale(.94)}}
+      @media (prefers-reduced-motion:reduce){.hero-flow,.hero-pulse,.hero-float-a,.hero-float-b{animation:none}}
+    </style>
+  </defs>
+  <rect width="1200" height="390" rx="28" fill="url(#hero-bg)"/>
+  <rect width="1200" height="390" rx="28" fill="url(#hero-grid)"/>
+  <circle class="hero-float-a" cx="1040" cy="70" r="190" fill="url(#hero-orb-purple)"/>
+  <circle class="hero-float-b" cx="120" cy="330" r="185" fill="url(#hero-orb-orange)"/>
+  <rect x="1" y="1" width="1198" height="388" rx="27" fill="none" stroke="url(#hero-accent)" stroke-opacity="0.55" stroke-width="2"/>
+
+  <g class="hero-copy">
+    <text x="64" y="76" fill="#94A3B8" font-size="15" font-weight="700" letter-spacing="3">DIGITAL DIRECTION · BRAND STRATEGY · PUBLIC SYSTEMS</text>
+    <text x="64" y="142" fill="#F8FAFC" font-size="54" font-weight="850" letter-spacing="-1.6">Mamdouh Aboammar</text>
+    <rect x="64" y="162" width="525" height="4" rx="2" fill="url(#hero-accent)"/>
+    <text x="64" y="207" fill="#CBD5E1" font-size="23" font-weight="550">Real problems. Public systems. Daily proof.</text>
+  </g>
+
+  <g class="hero-copy" transform="translate(64 245)">
+    <g><rect width="150" height="38" rx="19" fill="#111827" stroke="#F97316" stroke-opacity=".8"/><circle cx="20" cy="19" r="5" fill="#F97316"/><text x="34" y="24" fill="#F8FAFC" font-size="14" font-weight="700">AI AGENTS</text></g>
+    <g transform="translate(164)"><rect width="194" height="38" rx="19" fill="#111827" stroke="#A855F7" stroke-opacity=".8"/><circle cx="20" cy="19" r="5" fill="#A855F7"/><text x="34" y="24" fill="#F8FAFC" font-size="14" font-weight="700">MARKETING SYSTEMS</text></g>
+    <g transform="translate(372)"><rect width="190" height="38" rx="19" fill="#111827" stroke="#22D3EE" stroke-opacity=".8"/><circle cx="20" cy="19" r="5" fill="#22D3EE"/><text x="34" y="24" fill="#F8FAFC" font-size="14" font-weight="700">DEVELOPER TOOLING</text></g>
+  </g>
+
+  <g transform="translate(690 92)">
+    <rect width="444" height="226" rx="22" fill="#0B1220" fill-opacity=".86" stroke="#334155"/>
+    <g class="hero-mono" font-size="15">
+      <text x="26" y="38" fill="#64748B">// build loop</text>
+      <text x="26" y="76" fill="#F97316">problem</text><text x="105" y="76" fill="#64748B">→</text>
+      <text x="132" y="76" fill="#A855F7">system</text><text x="198" y="76" fill="#64748B">→</text>
+      <text x="225" y="76" fill="#22D3EE">test</text><text x="270" y="76" fill="#64748B">→</text>
+      <text x="297" y="76" fill="#4ADE80">ship</text><text x="339" y="76" fill="#64748B">→</text>
+      <text x="366" y="76" fill="#FACC15">learn</text>
+      <path class="hero-flow" d="M28 102H416" fill="none" stroke="url(#hero-accent)" stroke-width="2" stroke-dasharray="8 10"/>
+      <text x="26" y="137" fill="#CBD5E1">while (friction.repeats) {</text>
+      <text x="48" y="169" fill="#CBD5E1">build(reusable_answer);</text>
+      <text x="48" y="197" fill="#CBD5E1">publish(evidence);</text>
+      <text x="26" y="222" fill="#CBD5E1">}</text>
+    </g>
+    <circle class="hero-pulse" cx="412" cy="28" r="7" fill="#4ADE80" filter="url(#hero-glow)"/>
+  </g>
+
+  <g class="hero-copy" transform="translate(64 326)">
+    <text x="0" y="24" fill="#94A3B8" font-size="14">EGYPT</text><circle cx="68" cy="19" r="3" fill="#475569"/>
+    <text x="84" y="24" fill="#94A3B8" font-size="14">SAUDI ARABIA</text><circle cx="206" cy="19" r="3" fill="#475569"/>
+    <text x="222" y="24" fill="#94A3B8" font-size="14">UAE</text><circle cx="267" cy="19" r="3" fill="#475569"/>
+    <text x="283" y="24" fill="#94A3B8" font-size="14">QATAR</text><circle cx="340" cy="19" r="3" fill="#475569"/>
+    <text x="356" y="24" fill="#94A3B8" font-size="14">CANADA</text>
+  </g>
+</svg>
