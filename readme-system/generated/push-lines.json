@@ -1,5 +1,70 @@
 {
   "version": 1,
-  "updatedAt": null,
-  "years": {}
+  "updatedAt": "2026-07-26T07:40:35.704Z",
+  "years": {
+    "2019": {
+      "year": 2019,
+      "additions": 0,
+      "deletions": 0,
+      "commits": 0,
+      "mergesExcluded": 0,
+      "complete": true
+    },
+    "2020": {
+      "year": 2020,
+      "additions": 0,
+      "deletions": 0,
+      "commits": 0,
+      "mergesExcluded": 0,
+      "complete": true
+    },
+    "2021": {
+      "year": 2021,
+      "additions": 0,
+      "deletions": 0,
+      "commits": 0,
+      "mergesExcluded": 0,
+      "complete": true
+    },
+    "2022": {
+      "year": 2022,
+      "additions": 0,
+      "deletions": 0,
+      "commits": 0,
+      "mergesExcluded": 0,
+      "complete": true
+    },
+    "2023": {
+      "year": 2023,
+      "additions": 0,
+      "deletions": 0,
+      "commits": 0,
+      "mergesExcluded": 0,
+      "complete": true
+    },
+    "2024": {
+      "year": 2024,
+      "additions": 0,
+      "deletions": 0,
+      "commits": 0,
+      "mergesExcluded": 0,
+      "complete": true
+    },
+    "2025": {
+      "year": 2025,
+      "additions": 107851,
+      "deletions": 4528,
+      "commits": 32,
+      "mergesExcluded": 0,
+      "complete": true
+    },
+    "2026": {
+      "year": 2026,
+      "additions": 9225293,
+      "deletions": 1599670,
+      "commits": 2734,
+      "mergesExcluded": 98,
+      "complete": false
+    }
+  }
 }
