@@ -1,0 +1,50 @@
+name: Update profile metrics
+
+on:
+  schedule:
+    - cron: "23 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-readme-metrics
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build aggregate contribution metrics
+        env:
+          PROFILE_METRICS_TOKEN: ${{ secrets.PROFILE_METRICS_TOKEN }}
+          PROFILE_USERNAME: imMamdouhaboammar
+        run: |
+          if [ -z "$PROFILE_METRICS_TOKEN" ]; then
+            echo "::error::Add the PROFILE_METRICS_TOKEN repository secret before running this workflow."
+            exit 1
+          fi
+          node readme-system/update-profile.mjs
+
+      - name: Commit changed profile README
+        shell: bash
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "Profile metrics are already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: refresh profile contribution metrics"
+          git push origin HEAD:main

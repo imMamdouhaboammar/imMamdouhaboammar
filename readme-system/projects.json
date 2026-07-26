@@ -1,0 +1,162 @@
+{
+  "imMamdouhaboammar/agent-kernel": {
+    "name": "Agent Kernel",
+    "slug": "agent-kernel",
+    "repository": "imMamdouhaboammar/agent-kernel",
+    "logo": "./docs/brand/agent-kernel-logo.svg",
+    "description": "A local memory and governance layer for the AI coding agents developers already use.",
+    "problem": "Coding agents repeatedly lose repository context, repeat rejected mistakes, and weaken architecture boundaries across sessions.",
+    "goal": "Keep durable local memory, reviewed rules, failure lessons, and architecture controls around existing coding agents without replacing them.",
+    "audience": "Developers and teams using Claude Code, Codex, Cursor, Gemini CLI, OpenCode, or AGENTS.md-compatible tools.",
+    "keywords": [
+      "AI coding agent memory",
+      "local agent governance",
+      "architecture guardrails",
+      "coding agent context"
+    ]
+  },
+  "imMamdouhaboammar/delegate-team": {
+    "name": "Delegate Team",
+    "slug": "delegate-team",
+    "repository": "imMamdouhaboammar/delegate-team",
+    "logo": "./assets/readme/project-mark.svg",
+    "description": "A CLI that routes coding tasks through selected local agent workflows and optional governance checks.",
+    "problem": "One chat or one coding agent is often treated as the entire team, even when research, implementation, review, and verification need different workflows.",
+    "goal": "Route bounded tasks to the right local coding agents while keeping permissions, evidence, and final judgment explicit.",
+    "audience": "Developers coordinating ChatGPT Web, Codex, Claude Code, Gemini CLI, OpenCode, and other local coding CLIs.",
+    "keywords": [
+      "multi-agent coding orchestration",
+      "coding task delegation",
+      "local AI agent CLI",
+      "agent workflow routing"
+    ]
+  },
+  "imMamdouhaboammar/unslop-preflight": {
+    "name": "Unslop Preflight",
+    "slug": "unslop-preflight",
+    "repository": "imMamdouhaboammar/unslop-preflight",
+    "logo": "./assets/readme/project-mark.svg",
+    "description": "A preflight quality gate and bounded repair loop for AI-built frontend repositories.",
+    "problem": "AI-generated frontends can look finished while hiding accessibility errors, fragile layout fixes, sample-data leaks, and repeatable visual regressions.",
+    "goal": "Detect common frontend slop before shipping, apply only low-risk deterministic repairs, and leave evidence for the remaining human review.",
+    "audience": "Vibe coders, frontend developers, agencies, and coding agents preparing React, Vue, or web projects for handoff.",
+    "keywords": [
+      "AI frontend quality checks",
+      "vibe coding guardrails",
+      "frontend preflight",
+      "UI regression detection"
+    ]
+  },
+  "imMamdouhaboammar/Riftbook": {
+    "name": "Riftbook",
+    "slug": "riftbook",
+    "repository": "imMamdouhaboammar/Riftbook",
+    "logo": "./assets/branding/riftbook-mark.svg",
+    "description": "A curated field guide for builders who use AI coding agents in real projects.",
+    "problem": "Useful agent tools, prompts, skills, lessons, and review practices are scattered, while many collections provide links without an operating workflow.",
+    "goal": "Organize practical AI-assisted building knowledge into clear routes, tested tools, reusable skills, and real workflow stories.",
+    "audience": "Beginners, solo builders, frontend developers, agency operators, and experienced coding-agent users.",
+    "keywords": [
+      "AI coding field guide",
+      "vibe coding playbook",
+      "coding agent tools",
+      "agent workflow resources"
+    ]
+  },
+  "imMamdouhaboammar/Growth-Hacker-Skills": {
+    "name": "Growth Hacker Skills",
+    "slug": "growth-hacker-skills",
+    "repository": "imMamdouhaboammar/Growth-Hacker-Skills",
+    "logo": "./assets/readme/project-mark.svg",
+    "description": "A connected agent-skill network for research, positioning, content, creative production, and performance review.",
+    "problem": "Marketing work loses context whenever it moves from research to strategy, copy, design, publishing, and analysis through isolated prompts.",
+    "goal": "Carry approved evidence and decisions through specialist marketing skills with explicit routing and handoff contracts.",
+    "audience": "Growth marketers, content teams, agencies, founders, and AI agents producing connected marketing work.",
+    "keywords": [
+      "AI marketing skills",
+      "growth marketing agent",
+      "marketing workflow automation",
+      "connected agent skills"
+    ]
+  },
+  "imMamdouhaboammar/kaku-chatgpt-harness": {
+    "name": "Kaku ChatGPT Harness",
+    "slug": "kaku-chatgpt-harness",
+    "repository": "imMamdouhaboammar/kaku-chatgpt-harness",
+    "logo": "./assets/readme/project-mark.svg",
+    "description": "A project-scoped local control plane for authenticated ChatGPT coding sessions through Kaku Terminal on macOS.",
+    "problem": "Remote terminal access becomes unsafe and unreliable when sessions lack clear authentication, project boundaries, capability policies, and regression tests.",
+    "goal": "Give ChatGPT a bounded local coding path with short-lived leases, safe process execution, private logs, verification, and rollback.",
+    "audience": "macOS developers connecting ChatGPT to Kaku Terminal for controlled local repository work.",
+    "keywords": [
+      "ChatGPT local coding harness",
+      "Kaku Terminal MCP",
+      "project scoped terminal access",
+      "authenticated coding session"
+    ]
+  },
+  "imMamdouhaboammar/dokion": {
+    "name": "Dokion",
+    "slug": "dokion",
+    "repository": "imMamdouhaboammar/dokion",
+    "logo": "./assets/readme/project-mark.svg",
+    "description": "A user-directed hardening runtime that executes an explicit software repair playbook across coding agents.",
+    "problem": "Hardening work drifts when agents choose tools, reorder checks, or claim readiness without durable evidence and bounded rollback.",
+    "goal": "Let the user own the hardening playbook while Dokion validates execution, journals evidence, verifies repairs, and restores rejected changes.",
+    "audience": "Developers using Claude Code, Codex, Gemini CLI, and shell tools for repeatable software hardening.",
+    "keywords": [
+      "software hardening agent",
+      "AI repair validation",
+      "user directed agent runtime",
+      "evidence based code repair"
+    ]
+  },
+  "imMamdouhaboammar/vibe-svgs": {
+    "name": "Vibe SVGs",
+    "slug": "vibe-svgs",
+    "repository": "imMamdouhaboammar/vibe-svgs",
+    "logo": "./assets/readme/project-mark.svg",
+    "description": "An accessible collection of animated 2.5D SVG assets for developer documentation and project pages.",
+    "problem": "Developer READMEs often rely on generic badges or inconsistent AI-made illustrations that break accessibility, motion, or inline SVG safety.",
+    "goal": "Provide expressive reusable SVG mascots, badges, scenes, and banners with clear accessibility and technical contracts.",
+    "audience": "Open-source maintainers, developer-tool builders, technical writers, and AI-assisted design workflows.",
+    "keywords": [
+      "developer README SVG",
+      "animated coding mascots",
+      "accessible SVG assets",
+      "AI developer illustrations"
+    ]
+  },
+  "imMamdouhaboammar/conversion-copywriting-engine": {
+    "name": "Conversion Copywriting Engine",
+    "slug": "conversion-copywriting-engine",
+    "repository": "imMamdouhaboammar/conversion-copywriting-engine",
+    "logo": "./assets/readme/project-mark.svg",
+    "description": "A structured conversion-copywriting system packaged as an agent skill and Claude plugin.",
+    "problem": "Generic AI copy skips product analysis, customer psychology, market dialects, funnel context, and the quality checks used in real campaign delivery.",
+    "goal": "Turn seven-plus years of campaign practice into a repeatable research, strategy, writing, and copy-audit workflow.",
+    "audience": "Copywriters, marketers, agencies, founders, and AI agents working across Egypt, Saudi Arabia, UAE, Qatar, MENA, and Canada.",
+    "keywords": [
+      "conversion copywriting AI",
+      "Arabic copywriting agent",
+      "campaign copy framework",
+      "CRO copy audit"
+    ]
+  },
+  "imMamdouhaboammar/PatchPilot": {
+    "name": "PatchPilot",
+    "slug": "patchpilot",
+    "repository": "imMamdouhaboammar/PatchPilot",
+    "logo": "./assets/readme/project-mark.svg",
+    "description": "A PR-only operating kit for disciplined GitHub repository work from ChatGPT Web.",
+    "problem": "Chat-based repository work can touch default branches, mix unrelated changes, or claim tests without evidence when the operating boundary is vague.",
+    "goal": "Make ChatGPT inspect live repository state, create focused branches and commits, open review-ready pull requests, and stop before merge.",
+    "audience": "Open-source maintainers and developers preparing bounded GitHub changes from ChatGPT Web.",
+    "keywords": [
+      "ChatGPT GitHub coding agent",
+      "PR only AI agent",
+      "review ready pull requests",
+      "GitHub workflow guardrails"
+    ]
+  }
+}
