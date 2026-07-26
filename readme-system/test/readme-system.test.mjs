@@ -3,8 +3,9 @@ import assert from 'node:assert/strict';
 
 import { replaceManagedBlock } from '../lib/markers.mjs';
 import { deterministicSummary } from '../lib/summarize.mjs';
-import { renderProjectBlock, renderProfileMetricsBlock } from '../lib/render.mjs';
+import { renderProjectBlock, renderProfileMetricsBlock, renderPushonomicsBlock } from '../lib/render.mjs';
 import { calculateStreaks, aggregateContributionWindows } from '../lib/streaks.mjs';
+import { estimatePushonomics, mergeLineWindows } from '../lib/tokenomics.mjs';
 
 test('replaceManagedBlock changes only the selected marker range', () => {
   const source = ['before', '<!-- project-story:start -->', 'old', '<!-- project-story:end -->', 'after'].join('\n');
@@ -30,7 +31,7 @@ test('deterministicSummary always returns three to five useful bullets', () => {
   assert.match(bullets.join(' '), /architecture policy|provider approval|v1\.15\.0/i);
 });
 
-test('renderProjectBlock is expandable, readable, and search friendly', () => {
+test('renderProjectBlock is expandable, visual, and search friendly', () => {
   const block = renderProjectBlock({
     project: {
       name: 'Agent Kernel',
@@ -47,6 +48,7 @@ test('renderProjectBlock is expandable, readable, and search friendly', () => {
   });
   assert.match(block, /<details open>/);
   assert.match(block, /Why I built Agent Kernel/);
+  assert.match(block, /Problem → project/);
   assert.match(block, /Coding agents repeatedly lose project context/);
   assert.match(block, /AI coding agent memory/);
   assert.match(block, /docs\/brand\/agent-kernel-logo\.svg/);
@@ -89,4 +91,44 @@ test('renderProfileMetricsBlock exposes aggregate numbers without private names'
   assert.match(block, /Current streak/);
   assert.match(block, /Longest streak/);
   assert.doesNotMatch(block, /private\//i);
+});
+
+test('mergeLineWindows sums line totals without exposing repository names', () => {
+  const merged = mergeLineWindows([
+    { year: 2025, additions: 800, deletions: 200, commits: 10, mergesExcluded: 1 },
+    { year: 2026, additions: 1200, deletions: 300, commits: 20, mergesExcluded: 2 },
+  ]);
+  assert.deepEqual(merged, {
+    additions: 2000,
+    deletions: 500,
+    changedLines: 2500,
+    commits: 30,
+    mergesExcluded: 3,
+  });
+  assert.doesNotMatch(JSON.stringify(merged), /repository/i);
+});
+
+test('estimatePushonomics converts changed lines into transparent model scenarios', () => {
+  const result = estimatePushonomics({ additions: 1000, deletions: 250 });
+  assert.equal(result.changedLines, 1250);
+  assert.equal(result.estimatedOutputTokens, 10000);
+  assert.equal(result.estimatedInputTokens, 30000);
+  assert.equal(result.estimatedSessionTokens, 40000);
+  assert.equal(result.models['GPT-5.6 Sol'].estimatedCostUsd, 0.45);
+  assert.equal(result.models['Claude Fable 5'].estimatedCostUsd, 0.8);
+});
+
+test('renderPushonomicsBlock uses wordplay and labels the estimate honestly', () => {
+  const estimate = estimatePushonomics({ additions: 1000, deletions: 250 });
+  const block = renderPushonomicsBlock({
+    ...estimate,
+    commitsScanned: 30,
+    mergesExcluded: 2,
+    updatedAt: '2026-07-26T06:00:00.000Z',
+  });
+  assert.match(block, /Pushonomics/);
+  assert.match(block, /Every line has a token tab/);
+  assert.match(block, /GPT-5\.6 Sol/);
+  assert.match(block, /Claude Fable 5/);
+  assert.match(block, /estimate, not an invoice/i);
 });
