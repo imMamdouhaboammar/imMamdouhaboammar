@@ -47,39 +47,24 @@ export function renderProjectBlock({ project, bullets, updatedAt, source }) {
       <td width="116" align="center" valign="middle">
         <img src="${logo}" width="88" alt="${name} repository mark" />
       </td>
-      <td valign="top">
-        <h3>${name}, in one answer</h3>
-        <p>${escapeHtml(project.description || project.goal)}</p>
-      </td>
+      <td valign="top"><h3>${name}, in one answer</h3><p>${escapeHtml(project.description || project.goal)}</p></td>
     </tr>
   </table>
   <table>
     <tr>
-      <td width="50%" valign="top">
-        <strong>🔴 The recurring problem</strong><br />
-        ${escapeHtml(project.problem)}
-      </td>
-      <td width="50%" valign="top">
-        <strong>🟢 The practical goal</strong><br />
-        ${escapeHtml(project.goal)}
-      </td>
+      <td width="50%" valign="top"><strong>🔴 The recurring problem</strong><br />${escapeHtml(project.problem)}</td>
+      <td width="50%" valign="top"><strong>🟢 The practical goal</strong><br />${escapeHtml(project.goal)}</td>
     </tr>
     <tr>
-      <td width="50%" valign="top">
-        <strong>👥 Built for</strong><br />
-        ${escapeHtml(project.audience)}
-      </td>
-      <td width="50%" valign="top">
-        <strong>🔎 Search map</strong><br />
-        ${keywords}
-      </td>
+      <td width="50%" valign="top"><strong>👥 Built for</strong><br />${escapeHtml(project.audience)}</td>
+      <td width="50%" valign="top"><strong>🔎 Search map</strong><br />${keywords}</td>
     </tr>
   </table>
   <blockquote><strong>⚡ Daily build pulse</strong></blockquote>
   <ul>
 ${bulletHtml}
   </ul>
-  <p align="right"><sub>Updated ${escapeHtml(updatedAt)} · ${source === 'openai' ? 'AI-assisted public summary with deterministic fallback' : 'Deterministic public-activity summary'}</sub></p>
+  <p align="right"><sub>Updated ${escapeHtml(updatedAt)} · ${source === 'openai' ? 'AI-assisted public summary' : 'Deterministic public summary'}</sub></p>
 </details>`;
 }
 
@@ -99,13 +84,8 @@ export function renderProfileMetricsBlock({ commits, currentStreak, longestStrea
       <td align="center" width="25%"><strong>📈 ${formatNumber(yearContributions)}</strong><br /><sub>Contributions this year</sub></td>
     </tr>
   </table>
-  <sub>Public and token-visible private activity · private repository names stay private · updated ${escapeHtml(updatedAt)}</sub>
-</div>
-
-<details>
-  <summary><strong>📐 How the activity numbers are calculated</strong></summary>
-  <p>Commit totals use GitHub-recognized commit contributions across yearly contribution windows. Streaks use days containing at least one commit, pull request, issue, or pull-request review. A streak remains current when the latest active day is today or yesterday.</p>
-</details>`;
+  <sub>Public + private aggregate · updated ${escapeHtml(updatedAt)}</sub>
+</div>`;
 }
 
 export function renderPushonomicsBlock({
@@ -144,22 +124,11 @@ export function renderPushonomicsBlock({
   </table>
   <table>
     <tr>
-      <td width="50%" valign="top">
-        <strong>☀️ GPT-5.6 Sol scenario</strong><br />
-        Estimated tab: <strong>${formatUsd(sol?.estimatedCostUsd)}</strong><br />
-        <sub>${formatUsd(sol?.inputUsdPerMillion)}/M input · ${formatUsd(sol?.outputUsdPerMillion)}/M output</sub>
-      </td>
-      <td width="50%" valign="top">
-        <strong>📖 Claude Fable 5 scenario</strong><br />
-        Estimated tab: <strong>${formatUsd(fable?.estimatedCostUsd)}</strong><br />
-        <sub>${formatUsd(fable?.inputUsdPerMillion)}/M input · ${formatUsd(fable?.outputUsdPerMillion)}/M output</sub>
-      </td>
+      <td width="50%" align="center"><strong>☀️ GPT-5.6 Sol · Ultra effort</strong><br /><strong>${formatUsd(sol?.estimatedCostUsd)}</strong><br /><sub>${formatUsd(sol?.inputUsdPerMillion)}/M in · ${formatUsd(sol?.outputUsdPerMillion)}/M out</sub></td>
+      <td width="50%" align="center"><strong>📖 Claude Fable 5</strong><br /><strong>${formatUsd(fable?.estimatedCostUsd)}</strong><br /><sub>${formatUsd(fable?.inputUsdPerMillion)}/M in · ${formatUsd(fable?.outputUsdPerMillion)}/M out</sub></td>
     </tr>
   </table>
-  <blockquote>
-    <strong>Code has calories. This is the nutrition label.</strong><br />
-    The estimate treats each changed line as ${escapeHtml(tokensPerChangedLine)} visible output tokens, then applies a ${escapeHtml(sessionMultiplier)}× session multiplier for prompts, repository context, tool calls, and reasoning. That produces roughly ${formatNumber(estimatedInputTokens)} input tokens and ${formatNumber(estimatedOutputTokens)} output tokens.
-  </blockquote>
-  <p><sub>This is an estimate, not an invoice. It counts additions plus deletions from ${formatNumber(commitsScanned)} authored, searchable, non-merge commits. ${formatNumber(mergesExcluded)} merge commits were excluded to reduce double counting. Actual product usage, caching, hidden reasoning, retries, subscription allowances, and provider routing can change the real cost substantially. Updated ${escapeHtml(updatedAt)}.</sub></p>
+  <p align="center"><strong>Code has calories. Pushonomics is the nutrition label.</strong></p>
+  <p align="center"><sub>${formatNumber(estimatedInputTokens)} input + ${formatNumber(estimatedOutputTokens)} output · ${escapeHtml(tokensPerChangedLine)} tokens/line · ${escapeHtml(sessionMultiplier)}× session factor · ${formatNumber(mergesExcluded)} merges excluded · estimate, not an invoice · ${escapeHtml(updatedAt)}</sub></p>
 </details>`;
 }
