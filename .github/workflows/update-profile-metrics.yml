@@ -1,6 +1,13 @@
 name: Update profile metrics
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - "readme-system/lib/**"
+      - "readme-system/update-profile.mjs"
+      - ".github/workflows/update-profile-metrics.yml"
   schedule:
     - cron: "23 3 * * *"
   workflow_dispatch:
