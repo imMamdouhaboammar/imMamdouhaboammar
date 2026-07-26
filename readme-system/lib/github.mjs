@@ -20,9 +20,9 @@ export async function githubRequest(path, {
   });
 
   if (!response.ok) {
-    const text = await response.text();
     const safeTarget = logLabel || (path.startsWith('http') ? 'GitHub resource' : path);
-    throw new Error(`GitHub API ${method} ${safeTarget} failed with HTTP ${response.status}: ${text.slice(0, 180)}`);
+    const detail = logLabel ? '' : `: ${(await response.text()).slice(0, 180)}`;
+    throw new Error(`GitHub API ${method} ${safeTarget} failed with HTTP ${response.status}${detail}`);
   }
   return response.json();
 }
