@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 28" role="img" aria-labelledby="title desc">
+  <title id="title">Profile focus badges</title>
+  <desc id="desc">AI systems, developer tooling, marketing systems, and conversion copy.</desc>
+  <style>text{font:600 11px ui-sans-serif,system-ui,-apple-system,sans-serif;letter-spacing:.35px}</style>
+  <g>
+    <rect width="145" height="28" rx="6" fill="#111827"/><circle cx="14" cy="14" r="3" fill="#8B5CF6"/><text x="24" y="18" fill="#E5E7EB">AI SYSTEMS</text>
+  </g>
+  <g transform="translate(153)">
+    <rect width="158" height="28" rx="6" fill="#111827"/><circle cx="14" cy="14" r="3" fill="#38BDF8"/><text x="24" y="18" fill="#E5E7EB">DEVELOPER TOOLING</text>
+  </g>
+  <g transform="translate(319)">
+    <rect width="158" height="28" rx="6" fill="#111827"/><circle cx="14" cy="14" r="3" fill="#F59E0B"/><text x="24" y="18" fill="#E5E7EB">MARKETING SYSTEMS</text>
+  </g>
+  <g transform="translate(485)">
+    <rect width="175" height="28" rx="6" fill="#111827"/><circle cx="14" cy="14" r="3" fill="#22C55E"/><text x="24" y="18" fill="#E5E7EB">CONVERSION COPY</text>
+  </g>
+</svg>

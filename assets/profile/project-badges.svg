@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 28" role="img" aria-labelledby="title desc">
+  <title id="title">Project status badges</title>
+  <desc id="desc">Built from real friction, building in public, and daily pulse.</desc>
+  <style>text{font:600 10.5px ui-sans-serif,system-ui,-apple-system,sans-serif;letter-spacing:.3px}</style>
+  <g><rect width="162" height="28" rx="6" fill="#111827"/><circle cx="14" cy="14" r="3" fill="#F97316"/><text x="24" y="18" fill="#E5E7EB">REAL FRICTION</text></g>
+  <g transform="translate(170)"><rect width="158" height="28" rx="6" fill="#111827"/><circle cx="14" cy="14" r="3" fill="#8B5CF6"/><text x="24" y="18" fill="#E5E7EB">BUILDING IN PUBLIC</text></g>
+  <g transform="translate(336)"><rect width="152" height="28" rx="6" fill="#111827"/><circle cx="14" cy="14" r="3" fill="#22C55E"/><text x="24" y="18" fill="#E5E7EB">DAILY PULSE</text></g>
+</svg>
