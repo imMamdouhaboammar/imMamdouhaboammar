@@ -2,7 +2,10 @@ import { githubRequest } from './github.mjs';
 
 const MAX_SEARCH_RESULTS = 1000;
 const SEARCH_PAGE_SIZE = 100;
-const DETAIL_CONCURRENCY = 8;
+const SEARCH_INTERVAL_MS = 2200;
+const GRAPHQL_BATCH_SIZE = 100;
+
+let lastSearchRequestAt = 0;
 
 function toIso(date) {
   return new Date(date).toISOString();
@@ -12,29 +15,33 @@ function midpoint(from, to) {
   return new Date((new Date(from).getTime() + new Date(to).getTime()) / 2);
 }
 
-async function mapConcurrent(items, limit, worker) {
-  const results = new Array(items.length);
-  let cursor = 0;
-
-  async function run() {
-    while (cursor < items.length) {
-      const index = cursor;
-      cursor += 1;
-      results[index] = await worker(items[index], index);
-    }
+function chunk(items, size) {
+  const groups = [];
+  for (let index = 0; index < items.length; index += size) {
+    groups.push(items.slice(index, index + size));
   }
+  return groups;
+}
 
-  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, run));
-  return results;
+async function waitForSearchSlot() {
+  const elapsed = Date.now() - lastSearchRequestAt;
+  const delay = Math.max(0, SEARCH_INTERVAL_MS - elapsed);
+  if (delay > 0) await new Promise((resolve) => setTimeout(resolve, delay));
+  lastSearchRequestAt = Date.now();
 }
 
 async function searchCommitPage({ username, token, from, to, page }) {
+  await waitForSearchSlot();
   const query = `author:${username} committer-date:${toIso(from)}..${toIso(to)}`;
   return githubRequest(`/search/commits?q=${encodeURIComponent(query)}&sort=committer-date&order=asc&per_page=${SEARCH_PAGE_SIZE}&page=${page}`, {
     token,
     accept: 'application/vnd.github+json',
     logLabel: 'commit search',
   });
+}
+
+function uniqueCommits(items) {
+  return [...new Map(items.map((item) => [item.node_id || `${item.repository?.id || 'repo'}:${item.sha}`, item])).values()];
 }
 
 async function searchCommitsInRange({ username, token, from, to }) {
@@ -45,12 +52,12 @@ async function searchCommitsInRange({ username, token, from, to }) {
 
   if (first.total_count > MAX_SEARCH_RESULTS) {
     const split = midpoint(from, to);
-    const [left, right] = await Promise.all([
-      searchCommitsInRange({ username, token, from, to: split }),
-      searchCommitsInRange({ username, token, from: split, to }),
-    ]);
-    const unique = new Map([...left, ...right].map((item) => [`${item.repository?.id || 'repo'}:${item.sha}`, item]));
-    return [...unique.values()];
+    if (split <= from || split >= to) {
+      throw new Error('Commit search range could not be split below the GitHub result limit.');
+    }
+    const left = await searchCommitsInRange({ username, token, from, to: new Date(split.getTime() - 1) });
+    const right = await searchCommitsInRange({ username, token, from: split, to });
+    return uniqueCommits([...left, ...right]);
   }
 
   const items = [...first.items];
@@ -61,8 +68,43 @@ async function searchCommitsInRange({ username, token, from, to }) {
     items.push(...result.items);
   }
 
-  const unique = new Map(items.map((item) => [`${item.repository?.id || 'repo'}:${item.sha}`, item]));
-  return [...unique.values()];
+  return uniqueCommits(items);
+}
+
+const COMMIT_STATS_QUERY = `
+query($ids: [ID!]!) {
+  nodes(ids: $ids) {
+    ... on Commit {
+      oid
+      additions
+      deletions
+      parents(first: 2) { totalCount }
+    }
+  }
+}`;
+
+async function collectCommitStats({ commits, token }) {
+  const stats = [];
+  for (const group of chunk(commits, GRAPHQL_BATCH_SIZE)) {
+    const ids = group.map((item) => item.node_id).filter(Boolean);
+    if (ids.length !== group.length) {
+      throw new Error('GitHub commit search omitted one or more commit node IDs.');
+    }
+    const payload = await githubRequest('/graphql', {
+      token,
+      method: 'POST',
+      body: { query: COMMIT_STATS_QUERY, variables: { ids } },
+      logLabel: 'commit stats batch',
+    });
+    if (payload.errors?.length) {
+      throw new Error(`GitHub commit stats query failed: ${payload.errors[0].message}`);
+    }
+    if (!Array.isArray(payload.data?.nodes) || payload.data.nodes.some((node) => !node)) {
+      throw new Error('GitHub commit stats query returned incomplete nodes.');
+    }
+    stats.push(...payload.data.nodes);
+  }
+  return stats;
 }
 
 async function scanYear({ username, token, year, now }) {
@@ -70,10 +112,7 @@ async function scanYear({ username, token, year, now }) {
   const endOfYear = new Date(Date.UTC(year + 1, 0, 1) - 1000);
   const to = endOfYear < now ? endOfYear : now;
   const commits = await searchCommitsInRange({ username, token, from, to });
-  const details = await mapConcurrent(commits, DETAIL_CONCURRENCY, (item) => githubRequest(item.url, {
-    token,
-    logLabel: 'commit details',
-  }));
+  const details = await collectCommitStats({ commits, token });
 
   let additions = 0;
   let deletions = 0;
@@ -81,13 +120,12 @@ async function scanYear({ username, token, year, now }) {
   let mergesExcluded = 0;
 
   for (const detail of details) {
-    if ((detail.parents || []).length > 1) {
+    if (Number(detail.parents?.totalCount || 0) > 1) {
       mergesExcluded += 1;
       continue;
     }
-    if (!detail.stats) throw new Error('GitHub commit details did not include line statistics.');
-    additions += Number(detail.stats.additions || 0);
-    deletions += Number(detail.stats.deletions || 0);
+    additions += Number(detail.additions || 0);
+    deletions += Number(detail.deletions || 0);
     countedCommits += 1;
   }
 
