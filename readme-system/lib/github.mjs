@@ -1,10 +1,16 @@
 const API_ROOT = 'https://api.github.com';
 
-export async function githubRequest(path, { token, method = 'GET', body } = {}) {
+export async function githubRequest(path, {
+  token,
+  method = 'GET',
+  body,
+  accept = 'application/vnd.github+json',
+  logLabel,
+} = {}) {
   const response = await fetch(path.startsWith('http') ? path : `${API_ROOT}${path}`, {
     method,
     headers: {
-      accept: 'application/vnd.github+json',
+      accept,
       authorization: token ? `Bearer ${token}` : undefined,
       'content-type': body ? 'application/json' : undefined,
       'x-github-api-version': '2022-11-28',
@@ -14,18 +20,15 @@ export async function githubRequest(path, { token, method = 'GET', body } = {}) 
   });
 
   if (!response.ok) {
-    const text = await response.text();
-    throw new Error(`GitHub API ${method} ${path} failed with HTTP ${response.status}: ${text.slice(0, 180)}`);
+    const safeTarget = logLabel || (path.startsWith('http') ? 'GitHub resource' : path);
+    const detail = logLabel ? '' : `: ${(await response.text()).slice(0, 180)}`;
+    throw new Error(`GitHub API ${method} ${safeTarget} failed with HTTP ${response.status}${detail}`);
   }
   return response.json();
 }
 
 function asDate(value) {
   return value ? new Date(value) : new Date(0);
-}
-
-function within(items, since, dateKey) {
-  return items.filter((item) => asDate(item[dateKey]) >= since);
 }
 
 export async function collectRepositoryActivity({ repository, token, now = new Date(), primaryWindowDays = 1, fallbackWindowDays = 7 }) {
