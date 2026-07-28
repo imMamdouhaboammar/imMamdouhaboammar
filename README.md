@@ -2,222 +2,235 @@
 
 # Mamdouh Aboammar
 
-**Digital Director · Brand Strategist · Founder of PrePilot · Public Systems Builder**
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=26&pause=1400&color=A371F7&center=true&vCenter=true&width=820&height=56&lines=vibe+coder;conversion+copywriter+who+ships+code;agentic+tooling+for+marketing+work;%2F%2F+the+manual+version+cost+me+a+week" alt="vibe coder, conversion copywriter who ships code, agentic tooling for marketing work">
 
-Real friction. Reusable systems. Public proof.
+<br>
 
-[LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/) · [Portfolio](https://mamdouhaboammar.com/) · [X](https://x.com/Bo_ammarrr) · [Instagram](https://www.instagram.com/boammarrr/) · [Facebook](https://www.facebook.com/mamdouhboammar/) · [Repositories](https://github.com/imMamdouhaboammar?tab=repositories)
+<a href="https://mamdouhaboammar.com/"><img src="https://img.shields.io/badge/Site-mamdouhaboammar.com-161B22?style=for-the-badge&logo=safari&logoColor=E6EDF3&labelColor=0D1117" alt="Mamdouh Aboammar website"></a>
+<a href="https://www.linkedin.com/in/mamdouh-aboammar/"><img src="https://img.shields.io/badge/LinkedIn-Mamdouh_Aboammar-0A66C2?style=for-the-badge&labelColor=0D1117" alt="Mamdouh Aboammar on LinkedIn"></a>
+<a href="https://x.com/Bo_ammarrr"><img src="https://img.shields.io/badge/X-Bo__ammarrr-161B22?style=for-the-badge&logo=x&logoColor=E6EDF3&labelColor=0D1117" alt="Mamdouh Aboammar on X"></a>
+<a href="https://github.com/imMamdouhaboammar?tab=followers"><img src="https://img.shields.io/github/followers/imMamdouhaboammar?style=for-the-badge&label=Follow&labelColor=0D1117&color=161B22" alt="Follow imMamdouhaboammar"></a>
 
-<img src="./assets/profile/profile-badges.svg" width="660" alt="AI systems, developer tooling, marketing systems, and conversion copy" />
+<br><br>
 
-</div>
+<img src="https://img.shields.io/badge/%3Cvibe%3Ecoder%3C%2Fvibe%3E-0D1117?style=for-the-badge" alt="vibe coder written as an html tag">
+<img src="https://img.shields.io/badge/----no--slop-0D1117?style=for-the-badge" alt="no slop flag">
+<img src="https://img.shields.io/badge/LGTM-Looks_Good_To_Marketing-161B22?style=for-the-badge&labelColor=0D1117" alt="LGTM means Looks Good To Marketing">
+<img src="https://img.shields.io/badge/README.me-0D1117?style=for-the-badge" alt="README dot me">
 
-## Profile
+<br><br>
 
-I moved from conversion copywriting into brand strategy, performance media, digital direction, and AI-assisted work systems. I build public tools from recurring problems I meet while leading projects, managing teams, reviewing delivery, and connecting strategy with execution.
+**Mamdouh Aboammar is a vibe coder and conversion copywriter who builds agentic tooling for marketing work.**
 
-<table>
-<tr>
-<td align="center" width="25%"><strong>7+ years</strong><br /><sub>Marketing and digital work</sub></td>
-<td align="center" width="25%"><strong>5 markets</strong><br /><sub>Egypt, Saudi Arabia, UAE, Qatar, Canada</sub></td>
-<td align="center" width="25%"><strong>10 systems</strong><br /><sub>Current public project network</sub></td>
-<td align="center" width="25%"><strong>2 editions</strong><br /><sub>Hajj Conference and Exhibition</sub></td>
-</tr>
-</table>
+<sub>Agent governance, frontend quality gates, PR-only coding workflows, and Arabic conversion copy systems.<br>
+Every repository here started as a manual process that wasted enough of my week to be worth automating.</sub>
 
-## Activity
+<br>
 
-<!-- profile-metrics:start -->
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="25%"><strong>1,632</strong><br /><sub>Commit contributions</sub></td>
-      <td align="center" width="25%"><strong>28 days</strong><br /><sub>Current streak</sub></td>
-      <td align="center" width="25%"><strong>28 days</strong><br /><sub>Longest streak</sub></td>
-      <td align="center" width="25%"><strong>3,356</strong><br /><sub>Contributions this year</sub></td>
-    </tr>
-  </table>
-</div>
-<!-- profile-metrics:end -->
+<img src="https://img.shields.io/badge/Real_friction-A371F7?style=flat-square&labelColor=0D1117" alt="Real friction">
+<img src="https://img.shields.io/badge/Reusable_systems-58A6FF?style=flat-square&labelColor=0D1117" alt="Reusable systems">
+<img src="https://img.shields.io/badge/Public_proof-3FB950?style=flat-square&labelColor=0D1117" alt="Public proof">
 
-<!-- pushonomics:start -->
-<details open>
-  <summary><strong>Pushonomics: Every line has a token tab</strong></summary>
-  <br />
-  <p align="center"><img src="./assets/profile/model-badges.svg" width="410" alt="GPT-5.6 Sol Ultra and Claude Fable 5" /></p>
-  <table>
-    <tr>
-      <td width="25%" align="center"><strong>9,333,144</strong><br /><sub>Lines added</sub></td>
-      <td width="25%" align="center"><strong>1,604,198</strong><br /><sub>Lines deleted</sub></td>
-      <td width="25%" align="center"><strong>10,937,342</strong><br /><sub>Lines changed</sub></td>
-      <td width="25%" align="center"><strong>349,994,944</strong><br /><sub>Estimated tokens</sub></td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td width="50%" align="center"><strong>GPT-5.6 Sol / Ultra</strong><br />$3,937.44<br /><sub>$5.00/M input · $30.00/M output</sub></td>
-      <td width="50%" align="center"><strong>Claude Fable 5</strong><br />$6,999.90<br /><sub>$10.00/M input · $50.00/M output</sub></td>
-    </tr>
-  </table>
-  <p align="center"><strong>Estimate model:</strong> 2,766 commits · 262,496,208 input + 87,498,736 output · 8 tokens per line · 4x session factor · 98 merges excluded · estimate, not an invoice.</p>
-</details>
-<!-- pushonomics:end -->
-
-## How I work
-
-<table>
-<tr>
-<td width="50%" valign="top"><strong>Problem before product</strong><br />I start with repeated friction, not a tool category.</td>
-<td width="50%" valign="top"><strong>Context before automation</strong><br />The system should know the audience, repository, rules, and evidence.</td>
-</tr>
-<tr>
-<td width="50%" valign="top"><strong>Proof before claims</strong><br />A test, report, pull request, or measured result should support the conclusion.</td>
-<td width="50%" valign="top"><strong>Human judgment stays close</strong><br />Agents prepare, inspect, and verify. People own consequential decisions.</td>
-</tr>
-</table>
-
-## Career path
-
-<details>
-<summary><strong>Current roles and recent history</strong></summary>
-<br />
-
-| Period | Role | Organization |
-|---|---|---|
-| Jan 2025 to present | Digital Director | 4STEPS, Saudi Arabia |
-| Jun 2024 to present | Senior Brand Strategist, freelance | Momint Advertising |
-| Feb 2024 to Feb 2025 | Director of People Operations | Nights Advertising |
-| Dec 2022 to Feb 2024 | Senior Conversion Copywriter | Nights Advertising |
-| Nov 2023 to Jan 2024 | Senior Content Creator, seasonal | Ministry of Hajj and Umrah |
-| Aug 2023 to Oct 2023 | Digital Marketing Strategist | SEMA Brands |
-| May 2023 to Aug 2023 | Senior Copywriter | Sandpaper |
-| Jan 2023 to Aug 2023 | Branch Manager, part-time | NetArabia |
-| Jan 2022 to Jan 2023 | Senior Copywriter, part-time | BeyondSaudi |
-
-</details>
-
-## Selected work
-
-<table>
-<tr>
-<td width="50%" valign="top"><strong>Hajj Conference and Exhibition</strong><br />Digital direction, branding, media, content, and campaign work across the third and fourth editions.</td>
-<td width="50%" valign="top"><strong>PrePilot</strong><br />Agency systems for research, strategy, content, media, review, and AI-assisted delivery.</td>
-</tr>
-<tr>
-<td width="50%" valign="top"><strong>Saudi projects</strong><br />Work across ministries, semi-government entities, Hajj and Umrah services, conferences, and exhibitions.</td>
-<td width="50%" valign="top"><strong>Cross-market delivery</strong><br />Brand, content, conversion, and digital work across Egypt, Saudi Arabia, UAE, Qatar, and Canada.</td>
-</tr>
-</table>
+<br><br>
 
 ## Public systems
 
+</div>
+
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### [Agent Kernel](https://github.com/imMamdouhaboammar/agent-kernel)
+#### [Agent Kernel](https://github.com/imMamdouhaboammar/agent-kernel)
 
-`agent memory` `governance` `architecture`
+Memory, trust boundaries, and failure lessons for Claude Code, Codex, Cursor, and Gemini CLI. Keeps an agent inside the rules you set.
 
-Memory and trust boundaries around coding agents already in use.
-
-</td>
-<td width="50%" valign="top">
-
-### [Delegate Team](https://github.com/imMamdouhaboammar/delegate-team)
-
-`task routing` `multi-agent` `local CLI`
-
-Routes bounded coding work through selected local agents.
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### [Unslop Preflight](https://github.com/imMamdouhaboammar/unslop-preflight)
-
-`frontend QA` `repair loop` `regression checks`
-
-Preflight checks and bounded repairs for AI-built frontends.
+<img src="https://img.shields.io/badge/agent_memory-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/governance-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/JS-0D1117?style=flat-square&logo=javascript&logoColor=F7DF1E" alt="">
 
 </td>
 <td width="50%" valign="top">
 
-### [Dokion](https://github.com/imMamdouhaboammar/dokion)
+#### [Unslop Preflight](https://github.com/imMamdouhaboammar/unslop-preflight)
 
-`hardening` `evidence` `rollback`
+23 design gates that run before an agent writes UI code. Generic layouts get blocked at the plan stage, well before review.
 
-Executes a user-owned hardening playbook with validation.
+<img src="https://img.shields.io/badge/frontend_QA-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/design_gates-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/JS-0D1117?style=flat-square&logo=javascript&logoColor=F7DF1E" alt="">
 
 </td>
 </tr>
+
 <tr>
 <td width="50%" valign="top">
 
-### [Kaku ChatGPT Harness](https://github.com/imMamdouhaboammar/kaku-chatgpt-harness)
+#### [Delegate Team](https://github.com/imMamdouhaboammar/delegate-team)
 
-`local control` `project scope` `MCP`
+One CLI that routes bounded coding work across local agents, with a curated integration catalog and a full shipping chain.
 
-Authenticated ChatGPT coding sessions through Kaku Terminal.
+<img src="https://img.shields.io/badge/multi--agent-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/task_routing-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Python-0D1117?style=flat-square&logo=python&logoColor=3776AB" alt="">
 
 </td>
 <td width="50%" valign="top">
 
-### [PatchPilot](https://github.com/imMamdouhaboammar/PatchPilot)
+#### [PatchPilot](https://github.com/imMamdouhaboammar/PatchPilot)
 
-`PR only` `review ready` `GitHub workflow`
+Turns ChatGPT Web into a PR-only GitHub agent. It inspects a repo, implements one focused change, opens a reviewable PR, and stops there.
 
-A PR-only operating kit for repository work from ChatGPT Web.
+<img src="https://img.shields.io/badge/PR_only-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/review_ready-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Python-0D1117?style=flat-square&logo=python&logoColor=3776AB" alt="">
 
 </td>
 </tr>
+
 <tr>
 <td width="50%" valign="top">
 
-### [Riftbook](https://github.com/imMamdouhaboammar/Riftbook)
+#### [Conversion Copywriting Engine](https://github.com/imMamdouhaboammar/conversion-copywriting-engine)
 
-`field guide` `playbooks` `agent workflows`
+Research, drafting, and copy-audit pipeline tuned for MENA markets and Arabic conversion work.
 
-Practical routes and field notes for AI-assisted builders.
+<img src="https://img.shields.io/badge/conversion_copy-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/MENA-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/copy_audit-0D1117?style=flat-square" alt="">
 
 </td>
 <td width="50%" valign="top">
 
-### [Growth Hacker Skills](https://github.com/imMamdouhaboammar/Growth-Hacker-Skills)
+#### [Riftbook](https://github.com/imMamdouhaboammar/Riftbook)
 
-`marketing agents` `context handoff` `growth`
+Field notes, prompts, and routes for building vibe-coded apps with less guesswork and more reusable parts.
 
-A connected skill network from research to review.
+<img src="https://img.shields.io/badge/field_guide-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/playbooks-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/workflows-0D1117?style=flat-square" alt="">
 
 </td>
 </tr>
+
 <tr>
 <td width="50%" valign="top">
 
-### [Conversion Copywriting Engine](https://github.com/imMamdouhaboammar/conversion-copywriting-engine)
+#### [Dokion](https://github.com/imMamdouhaboammar/dokion)
 
-`conversion copy` `MENA` `copy audit`
+Runs a hardening playbook you own, validating each step and keeping a rollback path open.
 
-A repeatable research, writing, and copy-audit system.
+<img src="https://img.shields.io/badge/hardening-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/evidence-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/rollback-0D1117?style=flat-square" alt="">
 
 </td>
 <td width="50%" valign="top">
 
-### [Vibe SVGs](https://github.com/imMamdouhaboammar/vibe-svgs)
+#### [Vibe SVGs](https://github.com/imMamdouhaboammar/vibe-svgs)
 
-`animated SVG` `accessible` `developer docs`
+Small animated 2.5D assets for developer docs and READMEs. Accessible by default, no build step.
 
-Small animated 2.5D assets for developer documentation.
+<img src="https://img.shields.io/badge/animated_SVG-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/a11y-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/docs-0D1117?style=flat-square" alt="">
 
 </td>
 </tr>
 </table>
 
+<div align="center">
+<sub><a href="https://github.com/imMamdouhaboammar?tab=repositories">All repositories →</a></sub>
+
+<br><br>
+
+## How I work
+
+</div>
+
+<table>
+<tr>
+<td width="25%" align="center" valign="top"><br><b>Problem before product</b><br><br><sub>The starting point is repeated friction, never a tool category.</sub><br><br></td>
+<td width="25%" align="center" valign="top"><br><b>Context before automation</b><br><br><sub>The system knows the audience, the repo, the rules, and the evidence before it acts.</sub><br><br></td>
+<td width="25%" align="center" valign="top"><br><b>Proof before claims</b><br><br><sub>A test, a report, a PR, or a measured result carries the conclusion.</sub><br><br></td>
+<td width="25%" align="center" valign="top"><br><b>Judgment stays close</b><br><br><sub>Agents prepare, inspect, and verify. People own the consequential calls.</sub><br><br></td>
+</tr>
+</table>
+
+<div align="center">
+
+<br>
+
+## Working with
+
+<sub>AGENTS AND MODELS</sub>
+
+<img src="https://img.shields.io/badge/Claude-161B22?style=for-the-badge&logo=claude&logoColor=D97757&labelColor=0D1117" alt="Claude">
+<img src="https://img.shields.io/badge/Claude_Code-161B22?style=for-the-badge&logo=anthropic&logoColor=D97757&labelColor=0D1117" alt="Claude Code">
+<img src="https://img.shields.io/badge/Codex-161B22?style=for-the-badge&labelColor=0D1117" alt="Codex">
+<img src="https://img.shields.io/badge/MCP-161B22?style=for-the-badge&logo=modelcontextprotocol&logoColor=E6EDF3&labelColor=0D1117" alt="Model Context Protocol">
+<img src="https://img.shields.io/badge/SKILL.sh-161B22?style=for-the-badge&labelColor=0D1117" alt="SKILL.sh">
+<img src="https://img.shields.io/badge/Cursor-161B22?style=for-the-badge&logo=cursor&logoColor=E6EDF3&labelColor=0D1117" alt="Cursor">
+<img src="https://img.shields.io/badge/Copilot-161B22?style=for-the-badge&logo=githubcopilot&logoColor=E6EDF3&labelColor=0D1117" alt="GitHub Copilot">
+
+<br>
+
+<sub>BUILD AND RUNTIME</sub>
+
+<img src="https://img.shields.io/badge/Bun-161B22?style=for-the-badge&logo=bun&logoColor=FBF0DF&labelColor=0D1117" alt="Bun">
+<img src="https://img.shields.io/badge/Node.js-161B22?style=for-the-badge&logo=nodedotjs&logoColor=5FA04E&labelColor=0D1117" alt="Node.js">
+<img src="https://img.shields.io/badge/Python-161B22?style=for-the-badge&logo=python&logoColor=3776AB&labelColor=0D1117" alt="Python">
+<img src="https://img.shields.io/badge/FastAPI-161B22?style=for-the-badge&logo=fastapi&logoColor=009688&labelColor=0D1117" alt="FastAPI">
+<img src="https://img.shields.io/badge/TypeScript-161B22?style=for-the-badge&logo=typescript&logoColor=3178C6&labelColor=0D1117" alt="TypeScript">
+<img src="https://img.shields.io/badge/JavaScript-161B22?style=for-the-badge&logo=javascript&logoColor=F7DF1E&labelColor=0D1117" alt="JavaScript">
+<img src="https://img.shields.io/badge/VS_Code-161B22?style=for-the-badge&labelColor=0D1117" alt="VS Code">
+
+<br>
+
+<sub>PIPES AND DATA</sub>
+
+<img src="https://img.shields.io/badge/n8n-161B22?style=for-the-badge&logo=n8n&logoColor=EA4B71&labelColor=0D1117" alt="n8n">
+<img src="https://img.shields.io/badge/Supabase-161B22?style=for-the-badge&logo=supabase&logoColor=3FCF8E&labelColor=0D1117" alt="Supabase">
+<img src="https://img.shields.io/badge/PostgreSQL-161B22?style=for-the-badge&logo=postgresql&logoColor=4169E1&labelColor=0D1117" alt="PostgreSQL">
+<img src="https://img.shields.io/badge/Actions-161B22?style=for-the-badge&logo=githubactions&logoColor=2088FF&labelColor=0D1117" alt="GitHub Actions">
+<img src="https://img.shields.io/badge/Vercel-161B22?style=for-the-badge&logo=vercel&logoColor=E6EDF3&labelColor=0D1117" alt="Vercel">
+<img src="https://img.shields.io/badge/Docker-161B22?style=for-the-badge&logo=docker&logoColor=2496ED&labelColor=0D1117" alt="Docker">
+
+<br>
+
+<sub>MARKETING SURFACE</sub>
+
+<img src="https://img.shields.io/badge/Agentic_Marketing-161B22?style=for-the-badge&labelColor=0D1117" alt="Agentic Marketing">
+<img src="https://img.shields.io/badge/Meta_Ads-161B22?style=for-the-badge&logo=meta&logoColor=0866FF&labelColor=0D1117" alt="Meta Ads">
+<img src="https://img.shields.io/badge/Google_Ads-161B22?style=for-the-badge&logo=googleads&logoColor=4285F4&labelColor=0D1117" alt="Google Ads">
+<img src="https://img.shields.io/badge/GA4-161B22?style=for-the-badge&logo=googleanalytics&logoColor=E37400&labelColor=0D1117" alt="Google Analytics 4">
+
+<br><br>
+
 ## Current focus
 
-`local AI agent workflows` `repository quality` `marketing skills` `agency systems` `conversion copy` `developer documentation`
+<img src="https://img.shields.io/badge/local_agent_workflows-0D1117?style=flat-square" alt="">
+<img src="https://img.shields.io/badge/repository_quality-0D1117?style=flat-square" alt="">
+<img src="https://img.shields.io/badge/marketing_skills-0D1117?style=flat-square" alt="">
+<img src="https://img.shields.io/badge/Arabic_conversion_copy-0D1117?style=flat-square" alt="">
+<img src="https://img.shields.io/badge/developer_docs-0D1117?style=flat-square" alt="">
 
-## Social
+</div>
 
-[LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/) · [Website](https://mamdouhaboammar.com/) · [X](https://x.com/Bo_ammarrr) · [Instagram](https://www.instagram.com/boammarrr/) · [Facebook](https://www.facebook.com/mamdouhboammar/) · [GitHub](https://github.com/imMamdouhaboammar)
+<br>
+
+<details>
+<summary><b>Build log and token cost</b></summary>
+
+<br>
+
+I keep a tab on what agent-assisted building costs, because the bill is part of the engineering decision.
+
+| Commits | Merges excluded | Lines changed | Estimated tokens | Estimated spend |
+|---|---|---|---|---|
+| `TBD` | `TBD` | `TBD` | `TBD` | `TBD` |
+
+
+</details>
+
+<div align="center">
+
+<br>
+
+<img src="https://img.shields.io/badge/%24_git_push_origin-taste-A371F7?style=for-the-badge&labelColor=0D1117" alt="git push origin taste">
+
+<br><br>
+
+<sub>
+Open to conversations about agent tooling, conversion systems, and MENA market work.<br>
+<a href="https://mamdouhaboammar.com/">Site</a> ·
+<a href="https://www.linkedin.com/in/mamdouh-aboammar/">LinkedIn</a> ·
+<a href="https://x.com/Bo_ammarrr">X</a> ·
+<a href="https://www.instagram.com/boammarrr/">Instagram</a>
+</sub>
+
+</div>
