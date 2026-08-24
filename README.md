@@ -25,6 +25,11 @@
 <sub>Agent governance, frontend quality gates, PR-only coding workflows, and Arabic conversion copy systems.<br>
 Every repository here started as a manual process that wasted enough of my week to be worth automating.</sub>
 
+<br><br>
+
+**I don't want to become a software engineer**<br>
+I want to become exceptionally good at deciding what technology should be built, why it should exist, how it should work, and whether it is actually succeeding
+
 <br>
 
 <img src="https://img.shields.io/badge/Real_friction-A371F7?style=flat-square&labelColor=0D1117" alt="Real friction">
@@ -166,7 +171,7 @@ Small animated 2.5D assets for developer docs and READMEs. Accessible by default
 <img src="https://img.shields.io/badge/Python-161B22?style=for-the-badge&logo=python&logoColor=3776AB&labelColor=0D1117" alt="Python">
 <img src="https://img.shields.io/badge/FastAPI-161B22?style=for-the-badge&logo=fastapi&logoColor=009688&labelColor=0D1117" alt="FastAPI">
 <img src="https://img.shields.io/badge/TypeScript-161B22?style=for-the-badge&logo=typescript&logoColor=3178C6&labelColor=0D1117" alt="TypeScript">
-<img src="https://img.shields.io/badge/JavaScript-161B22?style=for-the-badge&logo=javascript&logoColor=F7DF1E&labelColor=0D1117" alt="JavaScript">
+<img src="https://img.shields.io/badge/JavaScript-161B22?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript">
 <img src="https://img.shields.io/badge/VS_Code-161B22?style=for-the-badge&labelColor=0D1117" alt="VS Code">
 
 <br>
