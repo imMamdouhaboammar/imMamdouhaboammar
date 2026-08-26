@@ -32,6 +32,17 @@ I want to become exceptionally good at deciding what technology should be built,
 
 <br>
 
+<details>
+<summary>Career path</summary>
+
+<br>
+
+Founder of PrePilot — conversion infrastructure for Arabic-speaking markets. Digital Director with a background in performance marketing, Meta and Google campaign architecture, and direct-response systems for the MENA region. Earlier work included large-scale event marketing at the Hajj Conference and Exhibition. Now building open-source agentic tooling that makes the manual version of every workflow unnecessary.
+
+</details>
+
+<br>
+
 <img src="https://img.shields.io/badge/Real_friction-A371F7?style=flat-square&labelColor=0D1117" alt="Real friction">
 <img src="https://img.shields.io/badge/Reusable_systems-58A6FF?style=flat-square&labelColor=0D1117" alt="Reusable systems">
 <img src="https://img.shields.io/badge/Public_proof-3FB950?style=flat-square&labelColor=0D1117" alt="Public proof">
@@ -439,42 +450,49 @@ Brand voice mirroring and content style extraction. Analyzes existing copy and r
 
 <br>
 
+<div align="center">
+
+## Activity
+
+<!-- profile-metrics:start -->
+<table>
+  <tr>
+    <td align="center" width="25%"><strong>—</strong><br /><sub>Commit contributions</sub></td>
+    <td align="center" width="25%"><strong>— days</strong><br /><sub>Current streak</sub></td>
+    <td align="center" width="25%"><strong>— days</strong><br /><sub>Longest streak</sub></td>
+    <td align="center" width="25%"><strong>—</strong><br /><sub>Contributions this year</sub></td>
+  </tr>
+</table>
+<!-- profile-metrics:end -->
+
+</div>
+
+<br>
+
 <details>
-<summary><b>Build log and token cost</b></summary>
+<summary><b>Pushonomics: Every line has a token tab</b></summary>
 
 <br>
 
-<sub>I keep a tab on what agent-assisted building costs, because the bill is part of the engineering decision.</sub>
+I keep a tab on what agent-assisted building costs, because the bill is part of the engineering decision.
 
+<!-- pushonomics:start -->
 <table>
   <tr>
-    <td align="center" valign="top" width="16%">📦<br><img src="https://img.shields.io/badge/commits_scanned-computing...-3FB950?style=flat-square&labelColor=161B22" alt="commits scanned"><br><sub>commits scanned</sub></td>
-    <td align="center" valign="top" width="16%">⛔<br><img src="https://img.shields.io/badge/merges_excluded-computing...-6E7681?style=flat-square&labelColor=161B22" alt="merges excluded"><br><sub>merges excluded</sub></td>
-    <td align="center" valign="top" width="16%">➕<br><img src="https://img.shields.io/badge/lines_added-computing...-58A6FF?style=flat-square&labelColor=161B22" alt="lines added"><br><sub>lines added</sub></td>
-    <td align="center" valign="top" width="16%">➖<br><img src="https://img.shields.io/badge/lines_deleted-computing...-F85149?style=flat-square&labelColor=161B22" alt="lines deleted"><br><sub>lines deleted</sub></td>
-    <td align="center" valign="top" width="16%">🔀<br><img src="https://img.shields.io/badge/lines_changed-computing...-A371F7?style=flat-square&labelColor=161B22" alt="lines changed"><br><sub>lines changed</sub></td>
-    <td align="center" valign="top" width="16%">🪙<br><img src="https://img.shields.io/badge/estimated_tokens-computing...-E3B341?style=flat-square&labelColor=161B22" alt="estimated tokens"><br><sub>estimated tokens</sub></td>
+    <td width="25%" align="center"><strong>—</strong><br /><sub>Lines added</sub></td>
+    <td width="25%" align="center"><strong>—</strong><br /><sub>Lines deleted</sub></td>
+    <td width="25%" align="center"><strong>—</strong><br /><sub>Lines changed</sub></td>
+    <td width="25%" align="center"><strong>—</strong><br /><sub>Estimated tokens</sub></td>
   </tr>
 </table>
-
-<br>
-
 <table>
   <tr>
-    <td width="50%" align="center">
-      🤖 <img src="https://img.shields.io/badge/GPT--5.6_Sol-computing...-E3B341?style=flat-square&labelColor=161B22" alt="GPT-5.6 Sol cost"><br>
-      <sub>$5.00/M in · $30.00/M out</sub>
-    </td>
-    <td width="50%" align="center">
-      🧠 <img src="https://img.shields.io/badge/Claude_Fable_5-computing...-E06C75?style=flat-square&labelColor=161B22" alt="Claude Fable 5 cost"><br>
-      <sub>$10.00/M in · $50.00/M out</sub>
-    </td>
+    <td width="50%" align="center"><strong>GPT-5.6 Sol / Ultra</strong><br />—<br /><sub>$5.00/M input · $30.00/M output</sub></td>
+    <td width="50%" align="center"><strong>Claude Fable 5</strong><br />—<br /><sub>$10.00/M input · $50.00/M output</sub></td>
   </tr>
 </table>
-
-<br>
-
-<p align="center"><code>8 tok/line · 4× session factor · estimate — not an invoice · refreshes daily at 03:23 UTC</code></p>
+<p align="center"><strong>Estimate model:</strong> — commits scanned · — merges excluded · 8 tokens per changed line · 4x session factor · estimate, not an invoice</p>
+<!-- pushonomics:end -->
 
 </details>
 

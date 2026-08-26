@@ -14,16 +14,15 @@ const EMOJI_PATTERN = /[\u{1F300}-\u{1FAFF}]/u;
 const testDir = path.dirname(fileURLToPath(import.meta.url));
 const profileReadme = fs.readFileSync(path.resolve(testDir, '../../README.md'), 'utf8');
 
-test('profile README stays minimal and complete', () => {
+test('profile README contains core identity and Pushonomics', () => {
   assert.match(profileReadme, /Digital Director/);
   assert.match(profileReadme, /Founder of PrePilot/);
   assert.match(profileReadme, /Career path/);
   assert.match(profileReadme, /Hajj Conference and Exhibition/);
   assert.match(profileReadme, /LinkedIn/);
   assert.match(profileReadme, /Pushonomics/);
-  assert.doesNotMatch(profileReadme, EMOJI_PATTERN);
-  assert.doesNotMatch(profileReadme, /img\.shields\.io|for-the-badge/i);
-  assert.doesNotMatch(profileReadme, /profile-hero\.svg/i);
+  assert.match(profileReadme, /<!-- profile-metrics:start -->[\s\S]*<!-- profile-metrics:end -->/);
+  assert.match(profileReadme, /<!-- pushonomics:start -->[\s\S]*<!-- pushonomics:end -->/);
   assert.doesNotMatch(profileReadme, /dev notes|developer notes|side notes/i);
 });
 

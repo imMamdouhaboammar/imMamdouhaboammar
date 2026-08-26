@@ -20,28 +20,6 @@ function formatUsd(value) {
   }).format(Number(value || 0));
 }
 
-/** Encode a value for use inside a shields.io badge URL label or message. */
-function shieldEncode(str) {
-  return String(str)
-    .replace(/-/g, '--')
-    .replace(/_/g, '__')
-    .replace(/ /g, '_');
-}
-
-/** Build a shields.io static badge img tag.
- *  label   — left side (dark)
- *  message — right side (colored)
- *  color   — hex or named color for the right side
- *  logo    — optional shields.io logo name (simple-icons slug)
- */
-function badge({ label, message, color = '0D1117', labelColor = '0D1117', style = 'flat-square', logo = '' }) {
-  const l = shieldEncode(label);
-  const m = shieldEncode(message);
-  const logoParam = logo ? `&logo=${encodeURIComponent(logo)}&logoColor=white` : '';
-  const src = `https://img.shields.io/badge/${encodeURIComponent(l)}-${encodeURIComponent(m)}-${color}?style=${style}&labelColor=${labelColor}${logoParam}`;
-  return `<img src="${src}" alt="${escapeHtml(label)}: ${escapeHtml(message)}">`;
-}
-
 const PROJECT_BADGES = 'https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/profile/project-badges.svg';
 const MODEL_BADGES = 'https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/profile/model-badges.svg';
 
@@ -107,66 +85,34 @@ export function renderPushonomicsBlock({
   const sol = models['GPT-5.6 Sol'];
   const fable = models['Claude Fable 5'];
 
-  // ── metric rows ────────────────────────────────────────────────────────────
-  const rows = [
-    { icon: '📦', label: 'commits scanned',   value: formatNumber(commitsScanned),          color: '3FB950' },
-    { icon: '⛔', label: 'merges excluded',    value: formatNumber(mergesExcluded),          color: '6E7681' },
-    { icon: '➕', label: 'lines added',        value: formatNumber(additions),               color: '58A6FF' },
-    { icon: '➖', label: 'lines deleted',      value: formatNumber(deletions),               color: 'F85149' },
-    { icon: '🔀', label: 'lines changed',      value: formatNumber(changedLines),            color: 'A371F7' },
-    { icon: '🪙', label: 'estimated tokens',   value: formatNumber(estimatedSessionTokens),  color: 'E3B341' },
-  ];
-
-  const badgeRows = rows.map(({ icon, label, value, color }) => {
-    const b = badge({ label, message: value, color, labelColor: '161B22', style: 'flat-square' });
-    return `    <td align="center" valign="top" width="16%">${icon}<br />${b}<br /><sub>${escapeHtml(label)}</sub></td>`;
-  }).join('\n');
-
-  // ── per-model cost cards ───────────────────────────────────────────────────
-  const solCost   = badge({ label: 'GPT-5.6 Sol',    message: formatUsd(sol?.estimatedCostUsd),   color: 'E3B341', labelColor: '161B22', style: 'flat-square' });
-  const fableCost = badge({ label: 'Claude Fable 5', message: formatUsd(fable?.estimatedCostUsd), color: 'E06C75', labelColor: '161B22', style: 'flat-square' });
-  const solRate    = `<sub>${formatUsd(sol?.inputUsdPerMillion)}/M in · ${formatUsd(sol?.outputUsdPerMillion)}/M out</sub>`;
-  const fableRate  = `<sub>${formatUsd(fable?.inputUsdPerMillion)}/M in · ${formatUsd(fable?.outputUsdPerMillion)}/M out</sub>`;
-
-  // ── estimate footnote ──────────────────────────────────────────────────────
   const footnote = [
-    `${formatNumber(commitsScanned)} commits`,
-    `${formatNumber(estimatedInputTokens)} input + ${formatNumber(estimatedOutputTokens)} output tokens`,
-    `${escapeHtml(String(tokensPerChangedLine))} tok/line`,
-    `${escapeHtml(String(sessionMultiplier))}× session factor`,
+    `${formatNumber(commitsScanned)} commits scanned`,
     `${formatNumber(mergesExcluded)} merges excluded`,
-    `estimate — not an invoice`,
+    `${formatNumber(estimatedInputTokens)} input + ${formatNumber(estimatedOutputTokens)} output tokens`,
+    `${escapeHtml(String(tokensPerChangedLine))} tokens per changed line`,
+    `${escapeHtml(String(sessionMultiplier))}x session factor`,
+    `estimate, not an invoice`,
   ].join(' · ');
 
   return `<details open>
-  <summary><strong>Build log and token cost</strong></summary>
+  <summary><strong>Pushonomics: Every line has a token tab</strong></summary>
   <br />
   <p align="center"><img src="${MODEL_BADGES}" width="410" alt="GPT-5.6 Sol and Claude Fable 5" /></p>
   <p><sub>I keep a tab on what agent-assisted building costs, because the bill is part of the engineering decision.</sub></p>
-
   <table>
     <tr>
-${badgeRows}
+      <td width="25%" align="center"><strong>${formatNumber(additions)}</strong><br /><sub>Lines added</sub></td>
+      <td width="25%" align="center"><strong>${formatNumber(deletions)}</strong><br /><sub>Lines deleted</sub></td>
+      <td width="25%" align="center"><strong>${formatNumber(changedLines)}</strong><br /><sub>Lines changed</sub></td>
+      <td width="25%" align="center"><strong>${formatNumber(estimatedSessionTokens)}</strong><br /><sub>Estimated tokens</sub></td>
     </tr>
   </table>
-
-  <br />
-
   <table>
     <tr>
-      <td width="50%" align="center">
-        🤖 ${solCost}<br />
-        ${solRate}
-      </td>
-      <td width="50%" align="center">
-        🧠 ${fableCost}<br />
-        ${fableRate}
-      </td>
+      <td width="50%" align="center"><strong>GPT-5.6 Sol / Ultra</strong><br />${formatUsd(sol?.estimatedCostUsd)}<br /><sub>${formatUsd(sol?.inputUsdPerMillion)}/M input · ${formatUsd(sol?.outputUsdPerMillion)}/M output</sub></td>
+      <td width="50%" align="center"><strong>Claude Fable 5</strong><br />${formatUsd(fable?.estimatedCostUsd)}<br /><sub>${formatUsd(fable?.inputUsdPerMillion)}/M input · ${formatUsd(fable?.outputUsdPerMillion)}/M output</sub></td>
     </tr>
   </table>
-
-  <br />
-
-  <p align="center"><code>${footnote}</code></p>
+  <p align="center"><strong>Estimate model:</strong> ${footnote}</p>
 </details>`;
 }
