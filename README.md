@@ -126,6 +126,237 @@ Small animated 2.5D assets for developer docs and READMEs. Accessible by default
 
 </td>
 </tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [GSD Skillpack](https://github.com/imMamdouhaboammar/get-things-done-skillpack)
+
+Autonomous execution & work modeling engine for AI agents. Converts fuzzy ideas into verifiable deliverables with phase planning, evidence gates, and parallel workstreams.
+
+<img src="https://img.shields.io/badge/execution_engine-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Claude_Code-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Gemini_CLI-0D1117?style=flat-square" alt="">
+
+</td>
+<td width="50%" valign="top">
+
+#### [Riqor](https://github.com/imMamdouhaboammar/riqor)
+
+Evidence gates and session continuity for AI coding agents. No evidence, no ship.
+
+<img src="https://img.shields.io/badge/evidence_gates-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/session_continuity-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/TypeScript-0D1117?style=flat-square&logo=typescript&logoColor=3178C6" alt="">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [Antigravity Superpowers](https://github.com/imMamdouhaboammar/antigravity-superpowers)
+
+100+ Autonomous Skills & Specialized Division agents for Google Antigravity and Gemini CLI, covering engineering, design, security, and marketing.
+
+<img src="https://img.shields.io/badge/Antigravity-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Gemini_CLI-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/100+_skills-0D1117?style=flat-square" alt="">
+
+</td>
+<td width="50%" valign="top">
+
+#### [Omni Skill](https://github.com/imMamdouhaboammar/omni-skill)
+
+Universal Cross-Host Agent Skill Compiler for ChatGPT, Codex, Claude Code, and Antigravity. Write a skill once, deploy it everywhere.
+
+<img src="https://img.shields.io/badge/cross_host-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/skill_compiler-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/universal-0D1117?style=flat-square" alt="">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [Get Fable](https://github.com/imMamdouhaboammar/get-fable)
+
+Make the model you already use work more like a frontier model — better planning, persistent context, skills, hooks, failure handling, and verification.
+
+<img src="https://img.shields.io/badge/planning-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/persistent_context-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/verification-0D1117?style=flat-square" alt="">
+
+</td>
+<td width="50%" valign="top">
+
+#### [NowGuard](https://github.com/imMamdouhaboammar/nowguard-temporal-freshness)
+
+Temporal freshness guard for LLM agents, coding clients, MCP servers, and API middleware. Prevents stale reasoning from reaching production.
+
+<img src="https://img.shields.io/badge/temporal_freshness-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/LLM_agents-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/MCP-0D1117?style=flat-square" alt="">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [Loop Engineering Skill](https://github.com/imMamdouhaboammar/loop-engineering-skill)
+
+AI Agent skill for Multi-Agent Swarm Orchestration with budget caps, minimal fixes, and continuous Dev-QA gates.
+
+<img src="https://img.shields.io/badge/swarm_orchestration-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/budget_caps-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Dev_QA-0D1117?style=flat-square" alt="">
+
+</td>
+<td width="50%" valign="top">
+
+#### [WhatsApp AI Supervisor](https://github.com/imMamdouhaboammar/whatsapp-ai-supervisor)
+
+Model-agnostic AI supervisor and deterministic permission engine for WhatsApp Cloud API.
+
+<img src="https://img.shields.io/badge/WhatsApp_API-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/permission_engine-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/model_agnostic-0D1117?style=flat-square" alt="">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [ChatGPT Codex Autopilot](https://github.com/imMamdouhaboammar/chatgpt-codex-plugin-autopilot)
+
+Self-hosting ChatGPT/Codex Plugin autopilot for validation, deterministic packaging, and release verification.
+
+<img src="https://img.shields.io/badge/ChatGPT-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Codex-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/automation-0D1117?style=flat-square" alt="">
+
+</td>
+<td width="50%" valign="top">
+
+#### [Marketing Council Pack](https://github.com/imMamdouhaboammar/marketing-council-pack)
+
+Cross-agent marketing strategy pack with 29 Agent Skills, 24 specialist agents, neural marketing graph, and evidence challenge gates.
+
+<img src="https://img.shields.io/badge/strategy-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/29_skills-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/24_agents-0D1117?style=flat-square" alt="">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [Marketing Skills](https://github.com/imMamdouhaboammar/marketing-skills)
+
+49+ AI agent skills & 51 CLI execution tools for technical marketers, founders, and AI coding agents.
+
+<img src="https://img.shields.io/badge/49+_skills-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/51_CLI_tools-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/founders-0D1117?style=flat-square" alt="">
+
+</td>
+<td width="50%" valign="top">
+
+#### [CopyScore](https://github.com/imMamdouhaboammar/CopyScore)
+
+Copy quality scoring engine. Rates persuasiveness, clarity, and conversion potential before copy ships.
+
+<img src="https://img.shields.io/badge/copy_scoring-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/quality_gate-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/evaluation-0D1117?style=flat-square" alt="">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [Copycorn Content Writer](https://github.com/imMamdouhaboammar/copycorn-content-writer)
+
+Elite conversion copywriting & direct-response agent skill for Arab markets with AI anti-cliché filters.
+
+<img src="https://img.shields.io/badge/Arabic_markets-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/direct_response-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/anti_cliche-0D1117?style=flat-square" alt="">
+
+</td>
+<td width="50%" valign="top">
+
+#### [Direct Response Funnel Auditor](https://github.com/imMamdouhaboammar/direct-response-funnel-auditor)
+
+Senior CRO & funnel auditor skill for landing pages, bundle offers, and A/B split-testing.
+
+<img src="https://img.shields.io/badge/CRO-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/funnel_audit-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/A/B_testing-0D1117?style=flat-square" alt="">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [Viral Content Engine](https://github.com/imMamdouhaboammar/viral-content-engine)
+
+Reverse-engineered viral post generation for LinkedIn & Facebook with psychological hook triggers and zero-friction CTAs.
+
+<img src="https://img.shields.io/badge/LinkedIn-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Facebook-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/viral_hooks-0D1117?style=flat-square" alt="">
+
+</td>
+<td width="50%" valign="top">
+
+#### [PrePilot Partner Card Funnel Strategist](https://github.com/imMamdouhaboammar/prepilot-partner-card-funnel-strategist)
+
+End-to-end tripwire & sample-to-paid funnel architecture skill for digital products and Meta CAPI.
+
+<img src="https://img.shields.io/badge/tripwire-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Meta_CAPI-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/funnel_architecture-0D1117?style=flat-square" alt="">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [LinkedIn Editorial Content System](https://github.com/imMamdouhaboammar/linkedin-editorial-content-system)
+
+Multi-format LinkedIn editorial system with visual layout prompts, hooks bank, and bilingual copywriting engines.
+
+<img src="https://img.shields.io/badge/LinkedIn-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/bilingual-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/editorial-0D1117?style=flat-square" alt="">
+
+</td>
+<td width="50%" valign="top">
+
+#### [LinkedIn Animated Infographics](https://github.com/imMamdouhaboammar/linkedin-animated-infographics)
+
+Claude Skill & CLI pipeline for deterministic, looping GIF infographics for LinkedIn. RTL & Arabic supported.
+
+<img src="https://img.shields.io/badge/GIF_infographics-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/RTL-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Arabic-0D1117?style=flat-square" alt="">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [Jedar Script Writer](https://github.com/imMamdouhaboammar/jedar-script-writer)
+
+Influencer video scriptwriting skill in Gulf & Egyptian dialects for crisis management and PR defense.
+
+<img src="https://img.shields.io/badge/Arabic_dialects-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/video_scripts-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/PR_defense-0D1117?style=flat-square" alt="">
+
+</td>
+<td width="50%" valign="top">
+
+#### [Designly](https://github.com/imMamdouhaboammar/designly)
+
+Commercial Art Direction & Design Neural Mesh with 21 skills, dramaturgy-first AI video directing, and model-physics image direction.
+
+<img src="https://img.shields.io/badge/art_direction-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/AI_video-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/21_skills-0D1117?style=flat-square" alt="">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [Patter Design System](https://github.com/imMamdouhaboammar/patter-design-system)
+
+Design system and pattern library for consistent, scalable UI across agent-generated interfaces and marketing surfaces.
+
+<img src="https://img.shields.io/badge/design_system-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/pattern_library-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/UI-0D1117?style=flat-square" alt="">
+
+</td>
+<td width="50%" valign="top">
+
+#### [Mimera](https://github.com/imMamdouhaboammar/Mimera)
+
+Brand voice mirroring and content style extraction. Analyzes existing copy and reconstructs the author's style for AI-consistent output.
+
+<img src="https://img.shields.io/badge/brand_voice-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/style_extraction-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/voice_mirroring-0D1117?style=flat-square" alt="">
+
+</td>
+</tr>
 </table>
 
 <div align="center">
@@ -213,12 +444,37 @@ Small animated 2.5D assets for developer docs and READMEs. Accessible by default
 
 <br>
 
-I keep a tab on what agent-assisted building costs, because the bill is part of the engineering decision.
+<sub>I keep a tab on what agent-assisted building costs, because the bill is part of the engineering decision.</sub>
 
-| Commits | Merges excluded | Lines changed | Estimated tokens | Estimated spend |
-|---|---|---|---|---|
-| `TBD` | `TBD` | `TBD` | `TBD` | `TBD` |
+<table>
+  <tr>
+    <td align="center" valign="top" width="16%">📦<br><img src="https://img.shields.io/badge/commits_scanned-computing...-3FB950?style=flat-square&labelColor=161B22" alt="commits scanned"><br><sub>commits scanned</sub></td>
+    <td align="center" valign="top" width="16%">⛔<br><img src="https://img.shields.io/badge/merges_excluded-computing...-6E7681?style=flat-square&labelColor=161B22" alt="merges excluded"><br><sub>merges excluded</sub></td>
+    <td align="center" valign="top" width="16%">➕<br><img src="https://img.shields.io/badge/lines_added-computing...-58A6FF?style=flat-square&labelColor=161B22" alt="lines added"><br><sub>lines added</sub></td>
+    <td align="center" valign="top" width="16%">➖<br><img src="https://img.shields.io/badge/lines_deleted-computing...-F85149?style=flat-square&labelColor=161B22" alt="lines deleted"><br><sub>lines deleted</sub></td>
+    <td align="center" valign="top" width="16%">🔀<br><img src="https://img.shields.io/badge/lines_changed-computing...-A371F7?style=flat-square&labelColor=161B22" alt="lines changed"><br><sub>lines changed</sub></td>
+    <td align="center" valign="top" width="16%">🪙<br><img src="https://img.shields.io/badge/estimated_tokens-computing...-E3B341?style=flat-square&labelColor=161B22" alt="estimated tokens"><br><sub>estimated tokens</sub></td>
+  </tr>
+</table>
 
+<br>
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      🤖 <img src="https://img.shields.io/badge/GPT--5.6_Sol-computing...-E3B341?style=flat-square&labelColor=161B22" alt="GPT-5.6 Sol cost"><br>
+      <sub>$5.00/M in · $30.00/M out</sub>
+    </td>
+    <td width="50%" align="center">
+      🧠 <img src="https://img.shields.io/badge/Claude_Fable_5-computing...-E06C75?style=flat-square&labelColor=161B22" alt="Claude Fable 5 cost"><br>
+      <sub>$10.00/M in · $50.00/M out</sub>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<p align="center"><code>8 tok/line · 4× session factor · estimate — not an invoice · refreshes daily at 03:23 UTC</code></p>
 
 </details>
 
