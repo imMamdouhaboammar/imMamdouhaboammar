@@ -455,14 +455,16 @@ Brand voice mirroring and content style extraction. Analyzes existing copy and r
 ## Activity
 
 <!-- profile-metrics:start -->
-<table>
-  <tr>
-    <td align="center" width="25%"><strong>—</strong><br /><sub>Commit contributions</sub></td>
-    <td align="center" width="25%"><strong>— days</strong><br /><sub>Current streak</sub></td>
-    <td align="center" width="25%"><strong>— days</strong><br /><sub>Longest streak</sub></td>
-    <td align="center" width="25%"><strong>—</strong><br /><sub>Contributions this year</sub></td>
-  </tr>
-</table>
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="25%"><strong>3,544</strong><br /><sub>Commit contributions</sub></td>
+      <td align="center" width="25%"><strong>58 days</strong><br /><sub>Current streak</sub></td>
+      <td align="center" width="25%"><strong>58 days</strong><br /><sub>Longest streak</sub></td>
+      <td align="center" width="25%"><strong>6,136</strong><br /><sub>Contributions this year</sub></td>
+    </tr>
+  </table>
+</div>
 <!-- profile-metrics:end -->
 
 </div>
@@ -477,21 +479,27 @@ Brand voice mirroring and content style extraction. Analyzes existing copy and r
 I keep a tab on what agent-assisted building costs, because the bill is part of the engineering decision.
 
 <!-- pushonomics:start -->
-<table>
-  <tr>
-    <td width="25%" align="center"><strong>—</strong><br /><sub>Lines added</sub></td>
-    <td width="25%" align="center"><strong>—</strong><br /><sub>Lines deleted</sub></td>
-    <td width="25%" align="center"><strong>—</strong><br /><sub>Lines changed</sub></td>
-    <td width="25%" align="center"><strong>—</strong><br /><sub>Estimated tokens</sub></td>
-  </tr>
-</table>
-<table>
-  <tr>
-    <td width="50%" align="center"><strong>GPT-5.6 Sol / Ultra</strong><br />—<br /><sub>$5.00/M input · $30.00/M output</sub></td>
-    <td width="50%" align="center"><strong>Claude Fable 5</strong><br />—<br /><sub>$10.00/M input · $50.00/M output</sub></td>
-  </tr>
-</table>
-<p align="center"><strong>Estimate model:</strong> — commits scanned · — merges excluded · 8 tokens per changed line · 4x session factor · estimate, not an invoice</p>
+<details open>
+  <summary><strong>Pushonomics: Every line has a token tab</strong></summary>
+  <br />
+  <p align="center"><img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/profile/model-badges.svg" width="410" alt="GPT-5.6 Sol and Claude Fable 5" /></p>
+  <p><sub>I keep a tab on what agent-assisted building costs, because the bill is part of the engineering decision.</sub></p>
+  <table>
+    <tr>
+      <td width="25%" align="center"><strong>9,333,144</strong><br /><sub>Lines added</sub></td>
+      <td width="25%" align="center"><strong>1,604,198</strong><br /><sub>Lines deleted</sub></td>
+      <td width="25%" align="center"><strong>10,937,342</strong><br /><sub>Lines changed</sub></td>
+      <td width="25%" align="center"><strong>349,994,944</strong><br /><sub>Estimated tokens</sub></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td width="50%" align="center"><strong>GPT-5.6 Sol / Ultra</strong><br />$3,937.44<br /><sub>$5.00/M input · $30.00/M output</sub></td>
+      <td width="50%" align="center"><strong>Claude Fable 5</strong><br />$6,999.90<br /><sub>$10.00/M input · $50.00/M output</sub></td>
+    </tr>
+  </table>
+  <p align="center"><strong>Estimate model:</strong> 2,766 commits scanned · 98 merges excluded · 262,496,208 input + 87,498,736 output tokens · 8 tokens per changed line · 4x session factor · estimate, not an invoice</p>
+</details>
 <!-- pushonomics:end -->
 
 </details>
