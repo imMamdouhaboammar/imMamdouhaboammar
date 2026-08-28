@@ -1,0 +1,180 @@
+دي نسخة مختصرة ومباشرة، متقسمة حسب نوع المهمة وتبدأ بالـ Plugins المناسبة
+
+### 1. Engineering / Coding
+
+## Build / Improve a Repo
+
+@Superpowers @GitHub @Context7 @Codex Engineering Guardrails @CodeRabbit @get-fable @Riqor
+
+Workflow:
+Inspect current state → understand architecture → identify gaps → plan → implement in small atomic changes → test → review → verify → report only confirmed results
+
+Do not restart existing work
+Do not claim tests or changes that were not executed
+
+## Debug a Problem
+
+@Superpowers @Context7 @Fallow Code Analysis @CodeRabbit @GitHub
+
+Workflow:
+Reproduce → isolate root cause → inspect relevant code → verify against current docs → apply smallest correct fix → run targeted tests → check regressions → summarize cause and fix
+
+## Code Review / PR Review
+
+@CodeRabbit @PR Readiness Check @GitHub @Superpowers @Codex Engineering Guardrails @Fallow Code Analysis
+
+Workflow:
+Read requirements → inspect diff → check architecture → find bugs and regressions → inspect tests → check security and maintainability → rank findings by severity → verify readiness
+
+## Security Review
+
+@Codex Security @ArmorCodex @Fallow Code Analysis @SonarQube @GitHub @Superpowers
+
+Workflow:
+Map attack surface → inspect trust boundaries → review auth and secrets → check input handling → inspect dependencies → test high-risk paths → report confirmed issues with remediation
+
+## Build a ChatGPT / Codex Plugin
+
+@OpenAI Developers @Plugin Autopilot @Plugin Eval @Skill Submission Pack Writer @Superpowers @Context7 @GitHub
+
+Workflow:
+Inspect existing plugin → define jobs and surfaces → build router → create focused skills → connect tools → define triggers and exclusions → validate manifests → test routing → evaluate → prepare listing and docs
+
+## Build / Improve an Agent Skill Pack
+
+@Superpowers @Matt Skills Curated @ThoughtfulBits Skills @Plugin Eval @Skill Submission Pack Writer @get-fable
+
+Workflow:
+Define job → inspect existing skills → remove overlap → create router → define specialist skills → add trigger and exclusion rules → add workflows and examples → test invocation → evaluate → refine
+
+## Frontend / Web App
+
+@Build Web Apps @01 Superdesign @Impeccable @Context7 @Superpowers @Testifly
+
+Workflow:
+Understand user flow → define information hierarchy → build structure → implement UI → verify responsive behavior → test interactions → inspect accessibility → review visual quality → fix regressions
+
+## Architecture / System Design
+
+@Superpowers @IcePanel @Mermaid Chart @Context7 @Codex Engineering Guardrails
+
+Workflow:
+Clarify requirements → map components → define data and control flow → identify boundaries → evaluate failure modes → document decisions → produce implementation-ready architecture
+
+### 2. Marketing / Content / Research
+
+## Write a Social Post
+
+@Creator Workspace @Conversational Narrative @Slop Curator @Parallel Search
+
+Workflow:
+Recall relevant context → research facts when needed → choose one strong angle → write in my natural voice → remove generic AI phrasing → fact-check → return one publish-ready post only
+
+## Deep Marketing Analysis
+
+@Marketing Swarm @Marketing Council @Parallel Search @PrePilot Lite
+
+Workflow:
+Define business question → collect evidence → analyze audience, offer, funnel, media and creative → challenge assumptions → identify root problems → prioritize actions → give specific recommendations
+
+## Paid Media Analysis
+
+@Marketing Swarm @Adobe Marketing Agent @LinkedIn Ads @pipeboard @ChatGPT Ads Manager
+
+Workflow:
+Inspect objectives → review account structure → analyze spend, delivery and conversion quality → isolate weak stages → inspect creative and audience → identify wasted spend → recommend prioritized actions
+
+## Marketing Strategy
+
+@Marketing Council @Marketing Swarm @Parallel Search @Creator Workspace
+
+Workflow:
+Understand business context → research market and audience → define problem → identify positioning → map customer decision process → define channels and messages → prioritize experiments → build action plan
+
+## Deep Research
+
+@Deep Research @Parallel Search @Tavily AI @Creator Workspace
+
+Workflow:
+Define exact research question → gather recent primary and credible sources → compare conflicting evidence → separate facts from claims → identify patterns → synthesize findings → cite sources → state uncertainty
+
+## Content Research + Writing
+
+@Creator Workspace @Parallel Search @Conversational Narrative @Slop Curator
+
+Workflow:
+Recall what I already said about the topic → research new evidence → avoid repeated angles → find a useful insight → write naturally → remove filler → verify facts → deliver final copy only
+
+## LinkedIn Animated Infographic
+
+@LinkedIn Animated Infographics @Creator Workspace @01 Superdesign @Impeccable
+
+Workflow:
+Define one communication job → extract narrative → structure visual hierarchy → define scenes → plan motion → control reading time → check spacing and typography → review frame by frame → prepare final design spec
+
+### 3. Design / Creative / Operations
+
+## Key Visual / Creative Direction
+
+@Designly @01 Superdesign @Creative Production @Impeccable
+
+Workflow:
+Understand brief → define communication job → interpret brand → generate distinct directions → select strongest concept → define composition, typography and visual logic → review against brief → refine details
+
+## Presentation
+
+@Presentations @Designly @Creator Workspace @Impeccable
+
+Workflow:
+Define audience and outcome → build narrative → assign one job per slide → structure content → define visual direction → design hierarchy → remove clutter → review slide by slide → verify consistency
+
+## Canva Design Task
+
+@Canva @Designly @01 Superdesign @Impeccable
+
+Workflow:
+Understand format → define visual hierarchy → choose concept → build design → check typography, spacing and alignment → adapt sizes if needed → review final output
+
+## Video / Motion
+
+@Remotion @Creative Production @01 Superdesign
+
+Workflow:
+Define narrative → break into scenes → set timing → design transitions → implement motion → add captions/audio if needed → preview → inspect pacing → render → verify final output
+
+## Documentation
+
+@Documents @GitBook @Creator Workspace @Slop Curator
+
+Workflow:
+Understand reader → define information structure → write concise sections → add examples where useful → remove repetition → verify terminology → check navigation → publish clean documentation
+
+## Task / Project Planning
+
+@Superpowers @AI Task Brief Builder @Create State @taskplane
+
+Workflow:
+Extract goal → separate confirmed facts from assumptions → define scope → break into executable tasks → define dependencies → define acceptance criteria → save project state → track progress
+
+## Long-Running Engineering Task
+
+@get-fable @Riqor @Create State @Superpowers @Adaptive Codex Orchestrator
+
+Workflow:
+Restore current state → inspect unfinished work → load decisions and constraints → choose next highest-value step → execute → verify → persist state → continue until completion criteria are met
+
+## Website QA
+
+@Testifly @Agent Ready @Impeccable @Build Web Apps
+
+Workflow:
+Inspect site → test main flows → check responsive behavior → inspect accessibility → scan agent readability → find visual and interaction issues → prioritize defects → verify fixes
+
+## API / Backend
+
+@3Min API @FastAPI Cloud @Supabase @Context7 @Superpowers
+
+Workflow:
+Define contract → design data model → define validation and errors → implement endpoints → secure access → test happy and failure paths → document API → verify deployment behavior
+
+ممكن تعتبرهم الـ default routing library بتاعتك، وتضيف فقط تفاصيل المهمة تحت البلوك المناسب
