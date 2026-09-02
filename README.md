@@ -458,10 +458,10 @@ Brand voice mirroring and content style extraction. Analyzes existing copy and r
 <div align="center">
   <table>
     <tr>
-      <td align="center" width="25%"><strong>3,966</strong><br /><sub>Commit contributions</sub></td>
-      <td align="center" width="25%"><strong>64 days</strong><br /><sub>Current streak</sub></td>
-      <td align="center" width="25%"><strong>64 days</strong><br /><sub>Longest streak</sub></td>
-      <td align="center" width="25%"><strong>6,717</strong><br /><sub>Contributions this year</sub></td>
+      <td align="center" width="25%"><strong>4,005</strong><br /><sub>Commit contributions</sub></td>
+      <td align="center" width="25%"><strong>65 days</strong><br /><sub>Current streak</sub></td>
+      <td align="center" width="25%"><strong>65 days</strong><br /><sub>Longest streak</sub></td>
+      <td align="center" width="25%"><strong>6,771</strong><br /><sub>Contributions this year</sub></td>
     </tr>
   </table>
 </div>
