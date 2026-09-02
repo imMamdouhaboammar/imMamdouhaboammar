@@ -1,180 +1,1903 @@
-دي نسخة مختصرة ومباشرة، متقسمة حسب نوع المهمة وتبدأ بالـ Plugins المناسبة
+# Use ChatGPT with My Installed Plugins
 
-### 1. Engineering / Coding
+A copy-ready prompt library for routing work to the right ChatGPT plugins by task type
 
-## Build / Improve a Repo
+The goal is not to mention every installed plugin in every prompt. The goal is to call the smallest useful stack, in the correct order, using the exact installed plugin names
 
-@Superpowers @GitHub @Context7 @Codex Engineering Guardrails @CodeRabbit @get-fable @Riqor
+## Global Plugin Rules
+
+Use these rules with every prompt in this file
+
+```text
+Use the listed @plugins when they are actually available and materially useful for this task
+
+Do not claim a plugin, skill, tool, review, test, deployment, search, code change, file change, commit, PR action, or external action was used unless it was actually executed
+
+If a listed plugin is installed but its callable interface is not exposed in the current session, continue with the useful available stack and explicitly say which requested capability could not be invoked
+
+Prefer the smallest useful plugin stack
+Do not invoke unrelated plugins just because they are installed
+
+For continuation work:
+- restore current state before planning
+- inspect live files, repo, branch, PRs, issues, deployments, or connected data first
+- do not restart from zero
+- do not duplicate completed work
+- treat live state as source of truth over old handoffs
+
+For implementation work:
+- inspect first
+- plan only as much as needed
+- make small reversible changes
+- test the changed behavior
+- check regressions
+- review the final diff
+- verify completion against explicit acceptance criteria
+
+For research:
+- prefer current primary sources
+- compare dates carefully
+- separate verified facts from estimates and opinions
+- cite material factual claims
+
+For final reporting:
+- report completed work
+- report evidence
+- report blockers
+- report remaining work
+- never use vague completion language
+```
+
+---
+
+# 1. Engineering and Coding
+
+## Build or Improve an Existing Repository
+
+```text
+@Superpowers @GitHub @Remote Desktop Commander @Context7 @Codex Engineering Guardrails @get-fable @CodeRabbit
+
+Task:
+[TASK]
+
+Repository:
+[REPO]
+
+Local checkout if available:
+[LOCAL_PATH]
+
+Work as a senior/staff engineer
+
+Start from the live repository state
+
+Execution:
+1. Inspect repository metadata, default branch, active branches, recent commits, open PRs, relevant issues, CI state, and the local working tree when available
+2. Restore existing decisions and unfinished work before proposing anything new
+3. Map the relevant architecture and identify the smallest set of files/modules that should change
+4. Verify framework/library behavior with current documentation through @Context7 when version-specific behavior matters
+5. Produce a short implementation plan with dependencies, acceptance criteria, tests, and rollback considerations
+6. Implement in small coherent changes that fit the current architecture
+7. Run targeted tests after each meaningful change
+8. Run wider regression checks before completion
+9. Use @CodeRabbit for final code review when available
+10. Verify every acceptance criterion against actual evidence
+
+Rules:
+- do not restart completed work
+- do not silently rewrite unrelated code
+- do not create duplicate implementations
+- preserve local user changes
+- do not use destructive Git operations unless explicitly required
+- do not claim success from code inspection alone when runtime verification is possible
+
+Completion gate:
+Return COMPLETE only when implementation, tests, regressions, review, and acceptance criteria have all been verified
+Otherwise return PARTIAL with the exact remaining blockers
+```
+
+## Continue a Long Existing Coding Session
+
+```text
+@get-fable @Superpowers @Adaptive Codex Orchestrator @Create State @Riqor @Remote Desktop Commander @GitHub
+
+Continue this existing project without restarting:
+[TASK]
+
+Repository:
+[REPO]
+
+Local checkout:
+[LOCAL_PATH]
+
+Execution:
+1. Restore durable project context and previous handoff if available
+2. Inspect live GitHub state and local working tree
+3. Reconcile stored context with current files, commits, PRs, CI, and unresolved review comments
+4. Build a current truth table with completed, in-progress, blocked, and not-started items
+5. Pick the next highest-value unfinished item
+6. Execute it fully
+7. Test and verify it
+8. Persist only decisions and state that will be useful for the next session
+9. Continue through remaining work as long as progress is safe and verifiable
+
+Do not stop after planning if implementation is possible
+Do not ask me to repeat information already available in the repo, state, or current conversation
+Do not mark a sprint complete until its completion gate passes
+```
+
+## Deep Repository Audit and Enterprise Readiness
+
+```text
+@GitHub @Remote Desktop Commander @Superpowers @Fallow Code Analysis @Codex Engineering Guardrails @Codex Security @SonarQube @CodeRabbit @PR Readiness Check @Testifly
+
+Repository:
+[REPO]
+
+Goal:
+Assess how close this product is to production or enterprise readiness and identify what is actually missing
+
+Audit dimensions:
+- architecture and maintainability
+- correctness and error handling
+- authentication and authorization
+- secrets and configuration
+- database and data boundaries
+- dependency health
+- test coverage and test quality
+- CI/CD
+- observability
+- deployment safety
+- performance
+- accessibility
+- responsive behavior
+- user-flow reliability
+- documentation
+- operational readiness
+- rollback/recovery
+
+Execution:
+Inspect live evidence first
+Separate confirmed gaps from assumptions
+Rank findings P0/P1/P2/P3
+For every major gap provide evidence, impact, remediation, verification method, and suggested owner/sprint
+
+Return:
+- readiness percentage with a transparent scoring model
+- what is already complete
+- what is partially complete
+- what is missing
+- release blockers
+- recommended execution order
+```
+
+## Implement a New Feature
+
+```text
+@Superpowers @AI Task Brief Builder @GitHub @Remote Desktop Commander @Context7 @Codex Engineering Guardrails @CodeRabbit @Testifly
+
+Feature:
+[TASK]
+
+Repository:
+[REPO]
+
+Execution:
+1. Inspect related existing flows and data contracts
+2. Convert the request into confirmed requirements, assumptions, out-of-scope items, and acceptance criteria
+3. Identify data, API, UI, auth, migration, analytics, accessibility, and test impact
+4. Define the smallest complete implementation slice
+5. Add or update tests before or alongside implementation
+6. Implement using existing patterns
+7. Exercise happy path, validation failures, authorization failures, edge cases, and nearby regressions
+8. Review final diff
+9. Verify acceptance criteria one by one
+
+Avoid speculative refactors unless they are required to deliver the feature safely
+```
+
+## Debug a Bug Properly
+
+```text
+@Superpowers @Fallow Code Analysis @Context7 @GitHub @Remote Desktop Commander @CodeRabbit
+
+Bug:
+[TASK]
+
+Repository:
+[REPO]
+
+Debug discipline:
+Reproduce first
+Collect evidence
+Trace the failing path
+Identify the first incorrect state or behavior
+Form ranked hypotheses
+Eliminate hypotheses with evidence
+Verify library/framework behavior against current docs when relevant
+Fix the confirmed root cause with the smallest correct change
+Add regression coverage
+Retest nearby behavior
+
+Do not patch symptoms before identifying the cause
+Do not stop at "likely fixed"
+Return the reproduction, root cause, exact fix, tests executed, and final verification evidence
+```
+
+## Investigate a Hard or Intermittent Bug
+
+```text
+@Superpowers @Fallow Code Analysis @Create State @GitHub @Remote Desktop Commander @Context7
+
+Issue:
+[TASK]
+
+Focus on race conditions, stale state, async ordering, caching, retries, eventual consistency, browser-specific behavior, data-dependent behavior, and environment differences
+
+Execution:
+Gather logs and failure evidence
+Inspect recent relevant changes
+Map possible states and transition order
+Create ranked hypotheses
+Design focused reproduction experiments
+Instrument only where useful
+Eliminate hypotheses systematically
+Fix only the confirmed failure mechanism
+Add regression coverage capable of catching the same class of failure
+```
+
+## Review a Pull Request
+
+```text
+@GitHub @CodeRabbit @PR Readiness Check @Superpowers @Fallow Code Analysis @Codex Engineering Guardrails
+
+PR:
+[PR_URL_OR_NUMBER]
+
+Requirements:
+[REQUIREMENTS]
+
+Review order:
+1. Understand intended behavior and acceptance criteria
+2. Inspect PR metadata, changed files, diff, tests, CI, comments, and unresolved review threads
+3. Trace changed behavior through important call paths
+4. Check correctness, regressions, failure handling, maintainability, and security implications
+5. Verify test evidence rather than trusting descriptions
+6. Rank findings as blocker, high, medium, low, or suggestion
+7. Distinguish confirmed defects from optional improvements
+
+Return a clear READY or NOT READY verdict with evidence
+```
+
+## Fix, Review, Merge, and Close PRs
+
+```text
+@GitHub @Remote Desktop Commander @Superpowers @CodeRabbit @PR Readiness Check @PR Completion @Codex Engineering Guardrails
+
+Repository:
+[REPO]
+
+Goal:
+Inspect open PRs, validate them aggressively, fix the ones worth keeping, merge only the ones that pass, and close work that is obsolete or invalid
+
+For each PR:
+1. Read intent, issue context, comments, review threads, changed files, and CI
+2. Reproduce or test important changed behavior when possible
+3. Classify as VALID, FIXABLE, OBSOLETE, DUPLICATE, or UNSAFE
+4. For VALID: finish missing verification, resolve legitimate review comments, and merge only after the completion gate passes
+5. For FIXABLE: repair on the proper branch, add tests, rerun checks, review again, then merge if it passes
+6. For OBSOLETE/DUPLICATE: close with a concise evidence-based explanation
+7. For UNSAFE: do not merge; explain the blocking risk
+
+Merge gate:
+- required checks pass
+- no unresolved blocker review threads
+- acceptance criteria verified
+- no known regression
+- security-sensitive changes reviewed when applicable
+- head SHA has not unexpectedly moved
+
+Never merge just because CI is green
+```
+
+## Fix a Failing CI Pipeline
+
+```text
+@GitHub @Superpowers @Context7 @Codex Engineering Guardrails @CodeRabbit
+
+Repository:
+[REPO]
+
+Failure:
+[WORKFLOW_RUN_OR_ERROR]
+
+Execution:
+Inspect the failed workflow and job logs
+Find the first meaningful failure instead of the last cascade error
+Determine whether the failure is code, environment, dependency, credentials, action version, test flake, timeout, or infrastructure
+Reproduce locally when practical
+Patch the root cause
+Run the narrowest relevant checks locally
+Rerun only the necessary CI jobs when possible
+Confirm the final workflow state
+
+Do not blindly rerun a failing workflow without understanding it
+```
+
+## Dependency Upgrade
+
+```text
+@Dependency Upgrade Plan @Context7 @GitHub @Superpowers @Codex Engineering Guardrails @CodeRabbit
+
+Repository:
+[REPO]
+
+Dependency / framework:
+[PACKAGE_AND_TARGET_VERSION]
+
+Execution:
+Inspect current versions and lockfiles
+Read official release and migration notes
+Identify breaking changes and deprecated behavior that affect this repo
+Create a compatibility and rollback plan
+Upgrade in controlled steps
+Fix incompatibilities
+Run typecheck, tests, build, lint, and affected E2E flows
+Inspect generated lockfile changes
+Review transitive dependency/security impact
+
+Return exact migration changes and unresolved risks
+```
+
+## Refactor Without Changing Behavior
+
+```text
+@Superpowers @Fallow Code Analysis @CodeRabbit @GitHub @Context7
+
+Refactor target:
+[TASK]
+
+Repository:
+[REPO]
+
+First define behavior that must remain unchanged
+Identify call sites and implicit contracts
+Add safety tests where coverage is weak
+Refactor incrementally
+Run tests after meaningful steps
+Compare behavior before/after
+Review complexity, readability, error handling, and public API stability
+
+No feature changes unless explicitly requested
+```
+
+## Security Review and Hardening
+
+```text
+@Codex Security @ArmorCodex @Fallow Code Analysis @SonarQube @GitHub @Superpowers @Context7
+
+Target:
+[REPO_OR_COMPONENT]
+
+Threat-model first:
+- actors and identities
+- trust boundaries
+- public/private data boundaries
+- privileged operations
+- authentication/session lifecycle
+- authorization and ownership
+- secrets
+- input/output handling
+- uploads/storage
+- database/RLS
+- external integrations
+- code execution surfaces
+- dependencies
+- logging and information leakage
+
+Execution:
+Inspect live code/configuration
+Test high-risk paths safely
+Verify current provider/framework guidance
+Separate confirmed vulnerabilities from hypotheses
+Rank findings by exploitability and impact
+For each confirmed issue provide remediation and a verification test
+
+Never expose secrets in output
+```
+
+## Supabase Schema, Migration, RLS, and Runtime Verification
+
+```text
+@Supabase @Superpowers @Codex Security @ArmorCodex @Context7 @Remote Desktop Commander
+
+Repository:
+[REPO]
+
+Supabase change:
+[TASK]
+
+Execution:
+1. Inspect existing migrations, generated types, auth assumptions, RLS policies, RPCs, storage policies, and app queries
+2. Define intended data boundary for anon, authenticated, role-based, owner, admin, and service contexts
+3. Design a forward migration and rollback path
+4. Validate constraints, indexes, nullability, defaults, uniqueness, FK behavior, and deletion semantics
+5. Review every new table/function/view for RLS and grants
+6. Deploy only to the explicitly authorized project/environment
+7. Run runtime tests against the migrated environment
+8. Verify denied paths as aggressively as allowed paths
+9. Confirm the public/client payload does not expose private fields
+10. Regenerate types if required and run application regression tests
+
+Do not treat SQL that merely parses as a successful migration
+Completion requires runtime evidence
+```
+
+## Deploy SQL Migrations to Supabase from an Existing Repo
+
+```text
+@Remote Desktop Commander @Supabase @Superpowers @Codex Security @Context7
+
+Repository:
+[REPO]
+
+Local checkout:
+[LOCAL_PATH]
+
+Goal:
+Deploy pending repository migrations to the authorized Supabase environment, using credentials already configured for the project, then verify the database and application behavior
+
+Rules:
+- inspect .env usage without printing secrets
+- identify the exact Supabase project before writing
+- never deploy to production unless the environment is explicitly confirmed as production-authorized
+- never expose credentials in logs or final output
+
+Execution:
+Inspect migration order and drift
+Confirm target project
+Apply pending migrations
+Verify schema objects and migration history
+Test constraints, RLS, RPC permissions, and relevant app flows
+Run security/performance advisors when available
+Run repository integration tests that depend on the migrated schema
+Report exact migration files applied and test evidence
+```
+
+## Improve All Forms: Validation, Feedback, Success, Errors
+
+```text
+@Remote Desktop Commander @Build Web Apps @Frontend Design Premium @Impeccable @Superpowers @Testifly @CodeRabbit
+
+Repository:
+[REPO]
+
+Goal:
+Audit every user-facing and admin form and remove silent failures or ambiguous submission states
+
+Required behavior:
+- visible required-field indicators
+- field-level validation messages next to the field
+- clear invalid states using accessible semantics, not color alone
+- explicit loading/submitting state
+- success confirmation after a successful action
+- clear failure message after a failed action
+- preserve user input after recoverable errors
+- actionable guidance instead of generic "something went wrong"
+- confirmation or warning for destructive actions
+- disabled states only when they help prevent invalid actions
+- keyboard accessibility and focus movement to the first meaningful error when appropriate
+- screen reader-friendly validation and status announcements
+
+Execution:
+Inventory all forms
+Group shared patterns/components
+Define one consistent feedback model
+Fix shared primitives first
+Apply across all forms
+Test happy path, missing fields, invalid values, backend errors, network errors, duplicate submissions, permission failures, and retry behavior
+Use @Testifly to validate real flows where available
+```
+
+## Frontend Implementation or Redesign
+
+```text
+@Build Web Apps @Frontend Design Premium @01 Superdesign @Impeccable @Superpowers @Context7 @Testifly
+
+Page / feature:
+[TASK]
+
+Repository or URL:
+[INPUT]
+
+Execution:
+Understand the user job and existing design language
+Inspect current components and design tokens
+Define hierarchy, layout, interaction states, responsive behavior, accessibility, and content density
+Implement with existing reusable primitives where possible
+Check desktop, tablet, mobile, RTL/LTR if applicable, keyboard navigation, focus, empty/loading/error/success states
+Use @Testifly for interaction QA
+Use @Impeccable for final visual review
+
+Avoid generic AI-looking dashboard/card patterns unless they are actually appropriate
+```
+
+## Remove AI UI Slop from an Existing Product
+
+```text
+@Frontend Design Premium @Impeccable @01 Superdesign @Build Web Apps @Testifly
+
+Target:
+[REPO_OR_URL]
+
+Goal:
+Remove generic AI-generated visual patterns without destroying useful functionality or the established brand
+
+Audit for:
+- excessive cards and nested containers
+- random gradients/glows
+- oversized pill controls
+- decorative badges with no information value
+- repeated icon-title-description blocks
+- weak hierarchy
+- fake dashboard density
+- arbitrary shadows
+- inconsistent radii
+- excessive empty space
+- repetitive hero patterns
+- meaningless decorative illustrations
+- poor typography rhythm
+- desktop-first layouts that collapse badly on mobile
+
+Execution:
+Identify the product's real visual grammar
+Define a tighter component and spacing language
+Fix the highest-impact shared patterns first
+Preserve usability and accessibility
+Test key flows after visual changes
+Return before/after rationale based on specific UI decisions, not taste statements
+```
+
+## Admin Dashboard Upgrade
+
+```text
+@Build Web Apps @Frontend Design Premium @Impeccable @01 Superdesign @Superpowers @Testifly
+
+Admin area:
+[TASK]
+
+Execution:
+Map admin jobs, frequency, and risk
+Separate high-frequency operations from settings and destructive actions
+Improve information hierarchy, tables, filters, search, bulk actions, forms, feedback, loading states, empty states, and permission visibility
+Keep admin UI dense enough for real work without becoming cluttered
+Add clear audit/status information where operators need confidence
+Test create/edit/delete/publish/archive/filter/search/pagination and permission-restricted flows
+```
+
+## React / Next.js Review
+
+```text
+@Build Web Apps @Context7 @Superpowers @CodeRabbit @Fallow Code Analysis
+
+Repository:
+[REPO]
+
+Focus:
+[TASK]
+
+Inspect component boundaries, server/client boundaries, data fetching, caching, mutations, loading/error states, hydration, rendering performance, bundle impact, route behavior, and current framework conventions
+
+Verify current React/Next.js behavior with @Context7 when version-specific
+Recommend focused changes with evidence
+```
+
+## Performance Investigation
+
+```text
+@Fallow Code Analysis @SonarQube @Superpowers @Context7 @GitHub @Testifly
+
+Performance problem:
+[TASK]
+
+Define a measurable symptom first
+Collect a baseline
+Inspect frontend rendering, network, caching, server compute, DB queries, asset sizes, third-party scripts, and concurrency as relevant
+Profile before changing code
+Rank bottlenecks by measured impact
+Fix the highest-impact confirmed bottleneck
+Measure again using the same baseline
+Check regressions
+
+Do not recommend performance work based only on intuition
+```
+
+## Architecture and System Design
+
+```text
+@Superpowers @IcePanel @Mermaid Chart @AI Task Brief Builder @Context7 @Codex Engineering Guardrails
+
+System / feature:
+[TASK]
+
+Inputs:
+[INPUT]
+
+Execution:
+Define actors, user jobs, workloads, constraints, security boundaries, ownership boundaries, data lifecycle, external integrations, failure modes, observability, scaling assumptions, and operational responsibilities
+Create a current-state model when replacing an existing architecture
+Compare realistic alternatives and tradeoffs
+Choose a recommended architecture
+Produce implementation slices, migration path, rollback strategy, and acceptance criteria
+Use @Mermaid Chart or @IcePanel for diagrams where they materially improve clarity
+```
+
+## API / Backend Design and Implementation
+
+```text
+@3Min API @FastAPI Cloud @Supabase @Superpowers @Context7 @Codex Security
+
+API task:
+[TASK]
+
+Define consumers, resources, request/response contracts, validation, authentication, authorization, error semantics, idempotency, pagination, rate limits, webhooks, observability, and data model
+Implement the smallest useful contract
+Test happy path and failure paths
+Verify unauthorized and invalid requests
+Document examples
+Verify deployed behavior where deployment is part of the task
+```
+
+## Vercel Deployment and Production Verification
+
+```text
+@Vercel @GitHub @Superpowers @Testifly @Agent Ready
+
+Repository / project:
+[INPUT]
+
+Goal:
+Deploy or verify a Vercel application safely
+
+Execution:
+Inspect project linkage and deployment configuration
+Verify environment-variable requirements without exposing secret values
+Inspect build output and framework settings
+Deploy to preview first when appropriate
+Run smoke tests on the preview
+Check important routes, forms, API calls, auth callbacks, redirects, assets, and responsive behavior
+Inspect deployment/build/runtime errors
+Promote or deploy to production only when explicitly authorized and checks pass
+Run post-deploy smoke tests
+```
+
+## Workflow / Durable Automation
+
+```text
+@Temporal @Adaptive Codex Orchestrator @Create State @Superpowers @Context7
 
 Workflow:
-Inspect current state → understand architecture → identify gaps → plan → implement in small atomic changes → test → review → verify → report only confirmed results
+[TASK]
 
-Do not restart existing work
-Do not claim tests or changes that were not executed
+Define trigger, states, durable data, retries, timeouts, idempotency, cancellation, compensation, human approval points, concurrency, observability, recovery, and completion semantics
+Simulate partial failures and retries
+Verify that repeated execution does not corrupt state
+Document operational recovery steps
+```
 
-## Debug a Problem
+---
 
-@Superpowers @Context7 @Fallow Code Analysis @CodeRabbit @GitHub
-
-Workflow:
-Reproduce → isolate root cause → inspect relevant code → verify against current docs → apply smallest correct fix → run targeted tests → check regressions → summarize cause and fix
-
-## Code Review / PR Review
-
-@CodeRabbit @PR Readiness Check @GitHub @Superpowers @Codex Engineering Guardrails @Fallow Code Analysis
-
-Workflow:
-Read requirements → inspect diff → check architecture → find bugs and regressions → inspect tests → check security and maintainability → rank findings by severity → verify readiness
-
-## Security Review
-
-@Codex Security @ArmorCodex @Fallow Code Analysis @SonarQube @GitHub @Superpowers
-
-Workflow:
-Map attack surface → inspect trust boundaries → review auth and secrets → check input handling → inspect dependencies → test high-risk paths → report confirmed issues with remediation
+# 2. AI Agents, Skills, Plugins, and MCP
 
 ## Build a ChatGPT / Codex Plugin
 
+```text
 @OpenAI Developers @Plugin Autopilot @Plugin Eval @Skill Submission Pack Writer @Superpowers @Context7 @GitHub
 
-Workflow:
-Inspect existing plugin → define jobs and surfaces → build router → create focused skills → connect tools → define triggers and exclusions → validate manifests → test routing → evaluate → prepare listing and docs
+Plugin idea / repository:
+[INPUT]
 
-## Build / Improve an Agent Skill Pack
+Execution:
+Inspect the current package before designing new pieces
+Define user jobs and exact surfaces
+Map tools, data sources, write actions, permissions, and risk
+Create a thin routing layer and focused skills rather than one giant instruction file
+Define positive triggers, negative triggers, exclusions, tool contracts, and failure behavior
+Use current OpenAI guidance from @OpenAI Developers and @Context7
+Test realistic invocation prompts and non-invocation prompts
+Use @Plugin Eval to evaluate routing and instruction quality
+Prepare submission/listing metadata with @Skill Submission Pack Writer when relevant
 
-@Superpowers @Matt Skills Curated @ThoughtfulBits Skills @Plugin Eval @Skill Submission Pack Writer @get-fable
+Do not create redundant skills or pretend unavailable tools exist
+```
 
-Workflow:
-Define job → inspect existing skills → remove overlap → create router → define specialist skills → add trigger and exclusion rules → add workflows and examples → test invocation → evaluate → refine
+## Build or Improve an Agent Skill Pack
 
-## Frontend / Web App
+```text
+@Superpowers @Matt Skills Curated @ThoughtfulBits Skills @Skillquiver @Plugin Eval @Skill Submission Pack Writer @get-fable
 
-@Build Web Apps @01 Superdesign @Impeccable @Context7 @Superpowers @Testifly
+Skill pack:
+[TASK]
 
-Workflow:
-Understand user flow → define information hierarchy → build structure → implement UI → verify responsive behavior → test interactions → inspect accessibility → review visual quality → fix regressions
+Execution:
+Define the user jobs first
+Inspect existing skills and references
+Map overlap, missing coverage, handoffs, and companion skills
+Create or refine the router
+Keep specialist skills focused
+Write strong descriptions, triggers, exclusions, workflows, completion criteria, and failure behavior
+Add realistic examples and adversarial/ambiguous prompts
+Test invocation quality
+Evaluate the pack
+Refine based on evidence
+```
 
-## Architecture / System Design
+## Evaluate a Skill or Plugin
 
-@Superpowers @IcePanel @Mermaid Chart @Context7 @Codex Engineering Guardrails
+```text
+@Plugin Eval @Matt Skills Curated @ThoughtfulBits Skills @Superpowers
 
-Workflow:
-Clarify requirements → map components → define data and control flow → identify boundaries → evaluate failure modes → document decisions → produce implementation-ready architecture
+Target:
+[REPO_OR_SKILL]
 
-### 2. Marketing / Content / Research
+Evaluation:
+- clarity of job
+- trigger quality
+- false-positive risk
+- false-negative risk
+- routing overlap
+- instruction quality
+- tool contracts
+- safety boundaries
+- token efficiency
+- examples
+- failure recovery
+- verification discipline
+- maintainability
 
-## Write a Social Post
+Run realistic positive, negative, and ambiguous scenarios
+Return the highest-impact fixes first
+```
 
-@Creator Workspace @Conversational Narrative @Slop Curator @Parallel Search
+## Plugin Selection / Routing for an Unknown Task
 
-Workflow:
-Recall relevant context → research facts when needed → choose one strong angle → write in my natural voice → remove generic AI phrasing → fact-check → return one publish-ready post only
+```text
+@Plugin Autopilot @Plugin Management
 
-## Deep Marketing Analysis
+Task:
+[TASK]
 
-@Marketing Swarm @Marketing Council @Parallel Search @PrePilot Lite
+First classify the task and its current stage
+Then choose the smallest useful installed plugin stack
 
-Workflow:
-Define business question → collect evidence → analyze audience, offer, funnel, media and creative → challenge assumptions → identify root problems → prioritize actions → give specific recommendations
+Selection rules:
+- source of truth plugin first when connected data is required
+- research plugin only when external verification is necessary
+- specialist execution plugin for the actual work
+- review plugin after implementation
+- QA plugin when runtime behavior matters
+- security plugin only when the changed surface is security-sensitive
+- state/orchestration plugin only for long-running or multi-session work
 
-## Paid Media Analysis
+Return:
+1. chosen plugin stack using exact @Plugin Name syntax
+2. why each plugin is included
+3. plugins deliberately excluded and why
+4. the final copy-ready prompt
+```
 
-@Marketing Swarm @Adobe Marketing Agent @LinkedIn Ads @pipeboard @ChatGPT Ads Manager
+## Agent Orchestration for a Large Task
 
-Workflow:
-Inspect objectives → review account structure → analyze spend, delivery and conversion quality → isolate weak stages → inspect creative and audience → identify wasted spend → recommend prioritized actions
+```text
+@Adaptive Codex Orchestrator @Superpowers @get-fable @Create State @Riqor
 
-## Marketing Strategy
+Goal:
+[TASK]
 
-@Marketing Council @Marketing Swarm @Parallel Search @Creator Workspace
+Execution:
+Break the work into independent and dependent streams
+Define one source of truth
+Define shared constraints and interfaces before parallel work
+Use specialized agents only where work can be safely separated
+Create explicit handoff contracts
+Review outputs before integration
+Use one final verification gate for the combined result
+Persist state needed for continuation
 
-Workflow:
-Understand business context → research market and audience → define problem → identify positioning → map customer decision process → define channels and messages → prioritize experiments → build action plan
+Avoid parallel work that edits the same files or relies on unresolved shared decisions
+```
 
-## Deep Research
+## Agent Tool Policy / Security
 
-@Deep Research @Parallel Search @Tavily AI @Creator Workspace
+```text
+@ArmorCodex @Codex Security @Codex Engineering Guardrails @Superpowers
 
-Workflow:
-Define exact research question → gather recent primary and credible sources → compare conflicting evidence → separate facts from claims → identify patterns → synthesize findings → cite sources → state uncertainty
+Agent / workflow:
+[TASK]
 
-## Content Research + Writing
+Define:
+- available tools
+- read-only operations
+- low-risk writes
+- approval-required writes
+- destructive operations
+- denied operations
+- production boundaries
+- secret handling
+- external communication boundaries
+- code execution boundaries
+- logging/redaction
 
-@Creator Workspace @Parallel Search @Conversational Narrative @Slop Curator
+Test the policy against realistic tool-call scenarios including prompt injection and confused-deputy cases
+```
 
-Workflow:
-Recall what I already said about the topic → research new evidence → avoid repeated angles → find a useful insight → write naturally → remove filler → verify facts → deliver final copy only
+## Make a Website Easier for AI Agents to Read
 
-## LinkedIn Animated Infographic
+```text
+@Agent Ready @GitBook @Documents @Context7 @Testifly
 
-@LinkedIn Animated Infographics @Creator Workspace @01 Superdesign @Impeccable
+Website:
+[URL]
 
-Workflow:
-Define one communication job → extract narrative → structure visual hierarchy → define scenes → plan motion → control reading time → check spacing and typography → review frame by frame → prepare final design spec
+Audit:
+robots.txt
+sitemap
+llms.txt when appropriate
+metadata
+structured data
+semantic HTML
+navigation
+crawlable documentation
+stable URLs
+content hidden behind client-only interactions
+ambiguous page structure
+blocked assets or APIs needed for understanding
 
-### 3. Design / Creative / Operations
+Prioritize changes that improve machine readability without hurting human UX or security
+Rescan after changes and compare results
+```
 
-## Key Visual / Creative Direction
+---
 
-@Designly @01 Superdesign @Creative Production @Impeccable
+# 3. Product, UX, and QA
 
-Workflow:
-Understand brief → define communication job → interpret brand → generate distinct directions → select strongest concept → define composition, typography and visual logic → review against brief → refine details
+## Turn a Rough Product Idea into an Executable Plan
 
-## Presentation
+```text
+@AI Task Brief Builder @Superpowers @taskplane @Create State
 
-@Presentations @Designly @Creator Workspace @Impeccable
+Idea:
+[INPUT]
 
-Workflow:
-Define audience and outcome → build narrative → assign one job per slide → structure content → define visual direction → design hierarchy → remove clutter → review slide by slide → verify consistency
+Execution:
+Extract the intended outcome
+Separate confirmed facts from assumptions
+Define users, jobs, triggers, current workaround, pain, desired outcome, constraints, risks, and out-of-scope items
+Break the idea into capabilities
+Define the smallest coherent version
+Map dependencies
+Define milestones/sprints
+Define acceptance criteria and tests for every slice
+Define analytics/instrumentation where relevant
+Create a handoff that an implementation agent can execute without rediscovering the product logic
+```
 
-## Canva Design Task
+## UX Flow Review
 
-@Canva @Designly @01 Superdesign @Impeccable
+```text
+@01 Superdesign @Impeccable @Build Web Apps @Testifly @Creator Workspace
 
-Workflow:
-Understand format → define visual hierarchy → choose concept → build design → check typography, spacing and alignment → adapt sizes if needed → review final output
+Flow:
+[INPUT]
 
-## Video / Motion
+Review the user goal, entry point, information needs, decision points, labels, feedback, validation, errors, recovery, mobile behavior, accessibility, and completion state
 
-@Remotion @Creative Production @01 Superdesign
-
-Workflow:
-Define narrative → break into scenes → set timing → design transitions → implement motion → add captions/audio if needed → preview → inspect pacing → render → verify final output
-
-## Documentation
-
-@Documents @GitBook @Creator Workspace @Slop Curator
-
-Workflow:
-Understand reader → define information structure → write concise sections → add examples where useful → remove repetition → verify terminology → check navigation → publish clean documentation
-
-## Task / Project Planning
-
-@Superpowers @AI Task Brief Builder @Create State @taskplane
-
-Workflow:
-Extract goal → separate confirmed facts from assumptions → define scope → break into executable tasks → define dependencies → define acceptance criteria → save project state → track progress
-
-## Long-Running Engineering Task
-
-@get-fable @Riqor @Create State @Superpowers @Adaptive Codex Orchestrator
-
-Workflow:
-Restore current state → inspect unfinished work → load decisions and constraints → choose next highest-value step → execute → verify → persist state → continue until completion criteria are met
+Identify friction by severity
+For every proposed change explain the user problem it fixes
+Avoid redesigning working parts just for visual novelty
+```
 
 ## Website QA
 
-@Testifly @Agent Ready @Impeccable @Build Web Apps
+```text
+@Testifly @Impeccable @Build Web Apps @Agent Ready
+
+Website:
+[URL]
+
+Critical flows:
+[INPUT]
+
+Test:
+- navigation
+- forms
+- authentication where authorized
+- validation
+- loading/error/success states
+- responsive behavior
+- keyboard accessibility
+- focus management
+- broken links
+- visual regressions
+- client/runtime errors
+- agent readability where relevant
+
+Return reproducible defects with severity, exact steps, expected behavior, actual behavior, and evidence
+Retest after fixes
+```
+
+## Android App QA
+
+```text
+@Test Android Apps @Superpowers
+
+App/build:
+[INPUT]
+
+Flow / bug:
+[TASK]
+
+Reproduce in emulator
+Inspect UI tree when useful
+Capture relevant screenshots
+Inspect logs
+Identify the failure
+Verify the fix
+Check nearby regressions
+Collect CPU, frame, memory, or trace evidence when the problem is performance-related
+```
+
+## Release Readiness
+
+```text
+@PR Completion @PR Readiness Check @GitHub @CodeRabbit @Superpowers @Testifly
+
+Release / PR:
+[INPUT]
+
+Verify:
+- intended scope complete
+- required tests executed and passing
+- CI passing
+- unresolved review threads handled
+- migrations safe
+- rollback available where needed
+- docs updated
+- environment/config changes known
+- user-facing flows smoke-tested
+- security-sensitive changes reviewed
+- no known release blocker
+
+Return READY, READY WITH NON-BLOCKING FOLLOW-UPS, or NOT READY
+Every verdict must include evidence
+```
+
+---
+
+# 4. Research, Marketing, Strategy, and Content
+
+## Deep Research
+
+```text
+@Deep Research @Parallel Search @Tavily AI
+
+Research question:
+[TASK]
+
+Date/window if relevant:
+[DATE_OR_WINDOW]
+
+Execution:
+Break the question into sub-questions
+Find recent primary sources first
+Add credible independent sources for context or challenge
+Compare publication date with event date
+Separate facts, claims, estimates, and opinions
+Look for conflicting evidence
+Identify patterns and implications
+State uncertainty explicitly
+Cite material claims
+
+Return a synthesized answer, not a search-result dump
+```
+
+## Current Tech News Research and Daily Post
+
+```text
+@Parallel Search @Tavily AI @Creator Workspace @Conversational Narrative @Slop Curator
+
+Date:
+[DATE]
+
+Theme:
+[TECH / AI / MARKETING / STARTUPS]
+
+First research the most meaningful developments from the exact requested date/window
+Prioritize impact over noise
+Verify dates, numbers, announcements, and primary sources
+Select only stories worth the reader's attention
+Explain why each matters in practical terms
+
+Then write one publish-ready post in my natural conversational voice
+Keep technical details where they make the story interesting
+Remove generic AI phrasing, fake excitement, repetitive hooks, and headline dumping
+Do not invent connections between unrelated stories
+```
+
+## Write a Social Post from an Idea or Notes
+
+```text
+@Creator Workspace @Conversational Narrative @Slop Curator @AI Humanizer
+
+Topic / notes:
+[INPUT]
+
+Audience:
+[AUDIENCE]
+
+Goal:
+[TASK]
+
+Identify the one idea the reader should remember
+Choose the strongest angle
+Write like a smart human speaking naturally, not a content template
+Use concrete details and examples where useful
+Vary sentence rhythm
+Remove generic transitions, filler, fake authority, predictable summaries, and over-produced phrasing
+Preserve my point of view
+Return publish-ready copy
+```
+
+## Rewrite or Humanize Existing Copy
+
+```text
+@AI Humanizer @Conversational Narrative @Slop Curator @Creator Workspace
+
+Draft:
+[INPUT]
+
+Goal / tone:
+[TASK]
+
+Preserve meaning and important specifics
+Improve natural rhythm, transitions, clarity, and voice
+Remove generic AI wording, repetition, stiff structure, excessive headings, fake punchiness, and unnatural symmetry
+Do not make the copy vaguer in the name of sounding human
+Return the finished version
+```
+
+## Marketing Strategy
+
+```text
+@Marketing Council @Marketing Swarm @Parallel Search @Creator Workspace
+
+Business / brand:
+[INPUT]
+
+Goal:
+[TASK]
+
+Analyze:
+market context
+category alternatives
+audience
+awareness stage
+customer job
+trigger
+desired outcome
+obstacles
+risk
+objections
+proof
+offer
+positioning
+message hierarchy
+channels
+creative role
+landing experience
+measurement
+
+Challenge assumptions with evidence
+Prioritize actions instead of producing a generic framework dump
+Return a strategy with explicit decisions, tradeoffs, experiments, KPIs, and next actions
+```
+
+## Deep Marketing Diagnosis
+
+```text
+@Marketing Swarm @Marketing Council @Parallel Search @PrePilot Lite
+
+Business question:
+[TASK]
+
+Context/data:
+[INPUT]
+
+Find the actual constraint before recommending tactics
+Review audience, positioning, offer, funnel, media, creative, landing experience, sales handoff, retention, and measurement as relevant
+Separate symptoms from root causes
+Rank findings by likely business impact and confidence
+Return prioritized actions with what to measure next
+```
+
+## Campaign Strategy and Creative Brief
+
+```text
+@Marketing Council @Marketing Swarm @Creator Workspace @Designly
+
+Campaign:
+[TASK]
+
+Define:
+objective
+audience
+awareness
+trigger
+primary communication job
+desired action
+main obstacle
+risk/objection
+proof
+offer
+message hierarchy
+channel role
+creative territories
+visual behavior
+landing experience
+measurement
+experiments
+
+Keep one primary message per asset
+Reject generic category ideas that could belong to any competitor
+```
+
+## Paid Media Account Analysis
+
+```text
+@Adobe Marketing Agent @LinkedIn Ads @pipeboard @ChatGPT Ads Manager @Marketing Swarm @Marketing Council
+
+Account / campaigns:
+[INPUT]
+
+Goal:
+[TASK]
+
+Use only the connected ad-platform plugins relevant to the actual account/platform
+Do not force every ad plugin into the analysis
+
+Inspect objective, attribution, conversion tracking, account structure, spend, delivery, audience, placements, creative, lead/sale quality, landing experience, frequency/fatigue, marginal performance, and budget allocation
+
+Find where efficiency is actually being lost
+Return evidence-based actions ranked by likely impact, confidence, and effort
+```
+
+## Meta Ads Analysis
+
+```text
+@pipeboard @Marketing Swarm @Marketing Council
+
+Account / campaign:
+[INPUT]
+
+Inspect objective and attribution first
+Then review campaign structure, budget allocation, delivery, audience overlap, creative diversity/fatigue, placement behavior, conversion quality, and landing-page mismatch
+
+Separate scaling problems from tracking problems and creative problems
+Return specific tests rather than generic recommendations
+```
+
+## LinkedIn Ads Analysis
+
+```text
+@LinkedIn Ads @Marketing Swarm @Marketing Council
+
+Campaign/account:
+[INPUT]
+
+Review objective, targeting, audience size, bidding/delivery, spend concentration, creative-message fit, form/landing friction, lead quality, sales feedback, and expensive segments
+
+Prioritize what to stop, what to keep, and what to test next
+```
+
+## Adobe Marketing Analysis
+
+```text
+@Adobe Marketing Agent @Marketing Council @Marketing Swarm
+
+Question:
+[TASK]
+
+Use connected Adobe data where available
+Start from the business question, not the dashboard
+Identify the minimum dimensions/segments needed to answer it
+Check data quality and attribution caveats
+Compare meaningful cohorts or periods
+Explain what changed, why it may have changed, and what action the evidence supports
+```
+
+## Competitor and Category Research
+
+```text
+@Parallel Search @Tavily AI @Marketing Council @Marketing Swarm
+
+Market / competitors:
+[INPUT]
+
+Map direct and indirect alternatives
+Inspect positioning, offers, pricing when public, proof, channels, creative patterns, onboarding, landing pages, and customer language
+Identify repeated category conventions and areas of sameness
+Identify credible whitespace or underserved jobs
+Separate observable evidence from inference
+```
+
+## Positioning and Messaging
+
+```text
+@Marketing Council @Creator Workspace @Parallel Search @Slop Curator
+
+Brand / product:
+[INPUT]
+
+Identify category context, customer job, alternatives, current claims, competitor language, credible differentiation, proof, audience, problem framing, value, risk reduction, and action
+
+Produce:
+- positioning statement
+- message hierarchy
+- proof hierarchy
+- key objections and responses
+- language to avoid
+- example headline/message directions
+
+Do not rely on empty superlatives
+```
+
+## Landing Page Conversion Review
+
+```text
+@Marketing Swarm @Creator Workspace @Testifly @Slop Curator @Impeccable
+
+URL / page:
+[INPUT]
+
+Review traffic intent and message match
+Inspect first-screen clarity, offer, proof, objections, pricing/value communication, CTA hierarchy, form friction, trust, mobile behavior, speed/interaction problems, and error states
+
+Prioritize changes by likely conversion impact
+Separate copy problems from UX problems and technical problems
+```
+
+---
+
+# 5. Design, Creative, Presentations, and Motion
+
+## Key Visual / Creative Direction
+
+```text
+@Designly @01 Superdesign @Creative Production @Impeccable
+
+Brief:
+[INPUT]
+
+Define the communication job first
+Interpret brand constraints
+Analyze audience/context
+Generate genuinely distinct visual directions rather than cosmetic variations
+For each direction define concept, composition, hierarchy, typography behavior, image/illustration logic, color behavior, and how the brand appears
+Reject generic category imagery
+Select the strongest direction against the brief
+Refine into a production-ready creative direction
+```
+
+## Design Critique
+
+```text
+@Designly @Impeccable @01 Superdesign
+
+Design / screenshot / file:
+[INPUT]
+
+Review communication job, hierarchy, composition, spacing, typography, color, contrast, imagery, brand consistency, accessibility/readability, and interaction states when relevant
+
+Rank specific problems by impact
+For every recommendation explain what to change and why
+Avoid vague feedback like "make it cleaner" or "make it more premium"
+```
+
+## Reference-Led Design Direction
+
+```text
+@Designly @01 Superdesign @Impeccable
+
+Reference:
+[REFERENCE]
+
+New brief:
+[TASK]
+
+Analyze the reference's composition, hierarchy, typography, density, spacing rhythm, image treatment, contrast, visual motifs, and overall behavior
+Extract reusable design rules without copying literal content
+Adapt the rules to the new brand/content
+Create a distinct final direction
+```
+
+## Presentation Creation or Redesign
+
+```text
+@Presentations @Designly @Creator Workspace @Impeccable
+
+Presentation:
+[TASK]
+
+Audience:
+[AUDIENCE]
+
+Decision/outcome:
+[OUTCOME]
+
+Build a narrative around what the audience needs to understand, feel, decide, or do
+Assign one communication job per slide
+Remove filler slides
+Keep evidence and claims traceable
+Control text density
+Define a consistent visual language
+Use charts only when the data supports them
+Review slide by slide for hierarchy, consistency, and readability
+End with the actual required decision/action, not a generic thank-you slide
+```
+
+## Canva Design Task
+
+```text
+@Canva @Designly @01 Superdesign @Impeccable
+
+Design:
+[TASK]
+
+Format / sizes:
+[INPUT]
+
+Understand purpose and brand rules
+Create or edit the design
+Check hierarchy, typography, spacing, alignment, image treatment, safe areas, and readability
+Adapt to required sizes without simply stretching the layout
+Review the final result after edits
+```
+
+## LinkedIn Animated Infographic
+
+```text
+@LinkedIn Animated Infographics @Creator Workspace @01 Superdesign @Impeccable
+
+Topic/content:
+[INPUT]
+
+Define one communication job
+Build the narrative before motion
+Structure scenes/frames and reading order
+Define emphasis, transitions, timing, and loop behavior
+Keep text readable at normal feed speed
+Avoid simultaneous motion competing for attention
+Review frame by frame and as a full sequence
+```
+
+## Video / Motion with Remotion
+
+```text
+@Remotion @Creative Production @01 Superdesign
+
+Video:
+[TASK]
+
+Define narrative, duration, aspect ratio, scenes, visual hierarchy, timing, transitions, audio, captions, and asset requirements
+Implement motion with readable pacing
+Preview the full piece
+Inspect timing, text legibility, clipping, safe areas, and audio sync
+Render only after preview issues are fixed
+Verify the exported output
+```
+
+---
+
+# 6. Documentation, Files, Email, and Knowledge Work
+
+## Documentation / Knowledge Base
+
+```text
+@Documents @GitBook @Google Drive @Notion @Creator Workspace @Slop Curator
+
+Task:
+[TASK]
+
+Source material:
+[INPUT]
+
+Use only the connected source plugins that actually contain the material
+Identify the reader and job
+Design information architecture before writing
+Separate concepts, setup, procedures, examples, reference, and troubleshooting
+Remove duplication and stale instructions
+Verify terminology and commands
+Use links/citations to connected source material where appropriate
+```
+
+## README for a Real Repository
+
+```text
+@GitHub @Documents @Creator Workspace @Slop Curator
+
+Repository:
+[REPO]
+
+Inspect the actual repository before writing
+Explain what it does, who it is for, fastest useful path, installation, configuration, usage, examples, architecture only where useful, testing, troubleshooting, contribution, and limitations
+
+Do not document commands, features, environment variables, or architecture that are not actually present
+```
+
+## Gmail Inbox Research / Response
+
+```text
+@Gmail
+
+Task:
+[TASK]
+
+Search/read the relevant messages first
+Use the actual thread context before summarizing or drafting a response
+Distinguish what the sender explicitly said from inference
+When drafting, preserve names, dates, commitments, attachments, and requested actions accurately
+Do not send, archive, delete, label, or modify mail unless the task explicitly requires that action
+```
+
+## Hostinger Mail Task
+
+```text
+@Hostinger Mail
+
+Task:
+[TASK]
+
+Search or read the relevant mailbox content first
+Use the actual message/thread context
+Only send or modify message state when explicitly requested
+Summarize any action taken and preserve important dates, senders, recipients, and commitments accurately
+```
+
+## Google Drive Research
+
+```text
+@Google Drive
+
+Task:
+[TASK]
+
+Find the relevant Drive files first
+Read the source material instead of inferring from filenames
+Use the newest authoritative version when duplicates exist
+Summarize findings with file-level traceability
+Do not overwrite or reorganize Drive content unless explicitly requested
+```
+
+## Notion Research or Documentation
+
+```text
+@Notion
+
+Workspace task:
+[TASK]
+
+Search relevant pages/databases first
+Identify the current authoritative page or database entries
+Read before editing
+Preserve existing structure and properties unless the requested change requires them
+When creating documentation, connect it to the right existing workspace context rather than producing an isolated duplicate
+```
+
+## Spreadsheet Analysis
+
+```text
+@Spreadsheets
+
+File / data:
+[INPUT]
+
+Question:
+[TASK]
+
+Inspect structure, headers, data types, missing values, formulas, and obvious quality problems first
+Keep raw data separate from derived calculations
+Use formulas where the workbook should remain dynamic
+Validate totals and key calculations
+Use charts only when they clarify a decision
+Return the important findings and any modified file
+```
+
+## PDF Analysis
+
+```text
+@PDF
+
+PDF:
+[INPUT]
+
+Task:
+[TASK]
+
+Read the relevant pages rather than relying only on metadata
+Preserve page references for important claims
+Inspect tables/figures where they affect interpretation
+Separate what the PDF states from your analysis
+If the task is to edit or create a PDF, preserve layout quality and verify the rendered result
+```
+
+---
+
+# 7. Search, Models, APIs, and Specialized Technical Work
+
+## Current Technical Documentation Research
+
+```text
+@Context7 @Parallel Search
+
+Library / platform:
+[INPUT]
+
+Question:
+[TASK]
+
+Identify the exact version when possible
+Prefer official documentation
+Check migration/version differences when relevant
+Return concrete implementation guidance with the source/version context needed to avoid stale advice
+```
+
+## Web Research / Fact Check
+
+```text
+@Parallel Search @Tavily AI
+
+Question or claim:
+[TASK]
+
+Find the original/primary source first when possible
+Check publication date and event date
+Compare at least one independent credible source when material
+Identify missing context
+Return supported, misleading, outdated, uncertain, or false for factual claims
+Keep the reasoning evidence-based and concise
+```
+
+## Hugging Face Model or Dataset Research
+
+```text
+@Hugging Face @Parallel Search
+
+Task:
+[TASK]
+
+Inspect the actual model/dataset/Space metadata and documentation
+Check license, task, architecture, size, formats, hardware requirements, intended use, limitations, update history, and available evaluation evidence
+Compare alternatives only on metrics that are actually comparable
+Flag unclear or missing licensing/safety information
+```
+
+## Deploy or Operate an MCP / Agent Service
+
+```text
+@Manufact @GitHub @Superpowers @Codex Security
+
+Service / repository:
+[INPUT]
+
+Task:
+[TASK]
+
+Inspect current deployment state and logs first
+Verify repository/config linkage
+Check build/runtime errors
+Protect secrets and production settings
+Deploy only the requested revision/environment
+Smoke-test exposed tools/resources after deployment
+Verify logs and health after the change
+```
+
+---
+
+# 8. Plugin Management and Meta Work
+
+## Audit My Installed Plugin Stack for a Task Category
+
+```text
+@Plugin Management @Plugin Autopilot
+
+Task category:
+[INPUT]
+
+Goal:
+Identify the smallest high-value subset of my installed plugins for this category
+
+Classify each relevant plugin as:
+- primary source / connected data
+- execution
+- research
+- planning/orchestration
+- review
+- security
+- QA
+- documentation
+- optional specialist
+
+Identify overlap and redundant combinations
+Recommend a default stack and stage-specific optional additions
+Use exact installed plugin names in @Plugin Name syntax
+Do not invent plugins
+```
+
+## Review Plugin Permissions
+
+```text
+@Plugin Management
+
+Plugin:
+[PLUGIN_NAME]
+
+Explain its current ChatGPT permission mode, what that mode means for reads/writes, and whether it inherits the global default
+Do not change permissions unless I explicitly request a new mode
+```
+
+## Install or Find a Missing Plugin
+
+```text
+@Plugin Management @Universal Plugin Installer
+
+Capability I need:
+[TASK]
+
+First check whether an already installed plugin covers the capability
+If not, find suitable installable options
+Prefer a focused plugin with a clear job and minimal unnecessary access
+Do not install anything without my explicit request when installation requires a separate action
+```
+
+---
+
+# 9. Quick Stage Router
+
+Use this when you know the task but do not know which prompt above fits
+
+```text
+Use my installed plugin stack intelligently for the task below
+
+Task:
+[TASK]
+
+First classify:
+1. task domain
+2. current stage: research / planning / implementation / debugging / review / security / QA / release / documentation
+3. source of truth
+4. whether external connected data is required
+5. whether code/file/account mutations are required
+6. whether runtime verification is required
+
+Then choose only the smallest useful plugin stack using exact installed @Plugin Name syntax
+
+Routing principles:
+- connected source plugin first when my private/account data is required
+- @GitHub for repository state and PR/issues
+- @Remote Desktop Commander for authorized local machine/repo execution
+- @Context7 for current library/framework docs
+- @Superpowers for disciplined engineering workflows
+- @get-fable / @Create State / @Adaptive Codex Orchestrator for long-running stateful engineering work
+- @CodeRabbit / @PR Readiness Check / @PR Completion after implementation or before merge/release
+- @Codex Security / @ArmorCodex for security-sensitive surfaces
+- @Testifly / @Impeccable for runtime UI/UX verification
+- @Parallel Search / @Tavily AI / @Deep Research when current external evidence matters
+- domain-specific marketing/design/product plugins only when the task actually needs them
+
+Do not invoke unrelated plugins
+Do not claim a plugin was executed unless it was actually available and used
 
 Workflow:
-Inspect site → test main flows → check responsive behavior → inspect accessibility → scan agent readability → find visual and interaction issues → prioritize defects → verify fixes
+Classify -> route -> inspect -> execute -> verify -> report
+```
 
-## API / Backend
+---
 
-@3Min API @FastAPI Cloud @Supabase @Context7 @Superpowers
+# 10. Stage-Based Plugin Stacks
 
-Workflow:
-Define contract → design data model → define validation and errors → implement endpoints → secure access → test happy and failure paths → document API → verify deployment behavior
+## Research Stage
 
-ممكن تعتبرهم الـ default routing library بتاعتك، وتضيف فقط تفاصيل المهمة تحت البلوك المناسب
+```text
+@Parallel Search @Tavily AI @Deep Research @Context7
+
+Research only what is required to remove material uncertainty
+Prefer primary and current sources
+Return findings that directly affect the task
+```
+
+## Product Planning Stage
+
+```text
+@AI Task Brief Builder @Superpowers @taskplane @Create State
+
+Turn confirmed information into executable scope
+Define dependencies, acceptance criteria, tests, risks, and explicit out-of-scope items
+```
+
+## Engineering Implementation Stage
+
+```text
+@Superpowers @GitHub @Remote Desktop Commander @Context7 @Codex Engineering Guardrails
+
+Implement the approved scope in small verifiable changes
+Follow existing architecture unless evidence requires a change
+Test continuously
+```
+
+## Code Review Stage
+
+```text
+@CodeRabbit @Fallow Code Analysis @Codex Engineering Guardrails @PR Readiness Check @GitHub
+
+Review correctness, regressions, tests, maintainability, and requirement coverage
+Rank concrete findings by severity
+```
+
+## Security Stage
+
+```text
+@Codex Security @ArmorCodex @SonarQube
+
+Inspect the changed attack surface and trust boundaries
+Focus on confirmed security consequences and testable remediation
+```
+
+## UI / UX QA Stage
+
+```text
+@Testifly @Impeccable @Build Web Apps @Agent Ready
+
+Test real user flows, responsive behavior, accessibility, visual regressions, feedback states, and agent readability where relevant
+```
+
+## Release Stage
+
+```text
+@PR Completion @PR Readiness Check @GitHub @CodeRabbit
+
+Require evidence for CI, tests, review closure, migrations, rollback, docs, and release blockers before marking ready
+```
+
+## Handoff / Long Session State Stage
+
+```text
+@Create State @Riqor @get-fable @Adaptive Codex Orchestrator
+
+Persist only the current truth:
+completed work
+decisions
+changed branches/files
+verified tests/evidence
+blockers
+exact next steps
+
+Make the next session resumable without repeating discovery
+```
+
+---
+
+# 11. High-Value Combined Prompts
+
+## Full Staff Engineer Long Session
+
+```text
+@Remote Desktop Commander @GitHub @Superpowers @get-fable @Adaptive Codex Orchestrator @Context7 @Codex Engineering Guardrails @CodeRabbit @PR Readiness Check @Codex Security @Testifly @Impeccable
+
+Repository:
+[REPO]
+
+Local checkout:
+[LOCAL_PATH]
+
+Mission:
+[TASK]
+
+Operate as a long-running staff engineer session
+Restore live state first
+Build a current completion map
+Continue the existing plan rather than restarting it
+Execute the next highest-value unfinished work
+Use current docs when needed
+Implement in atomic coherent changes
+Test aggressively
+Review security-sensitive boundaries
+Run UI/E2E checks for affected user flows
+Review the final diff
+Check PR/release readiness
+Continue until the mission's verified completion criteria are met or a real external blocker prevents further progress
+
+Every meaningful checkpoint should state:
+- what changed
+- evidence/tests
+- what remains
+
+Never stop at a plan when safe implementation is possible
+Never claim 100% until every completion gate passes
+```
+
+## Research -> Strategy -> Copy
+
+```text
+@Deep Research @Parallel Search @Tavily AI @Marketing Council @Marketing Swarm @Creator Workspace @Conversational Narrative @Slop Curator
+
+Topic / business problem:
+[INPUT]
+
+Goal:
+[TASK]
+
+Phase 1: research current evidence and context
+Phase 2: derive the strategic implication
+Phase 3: decide the single strongest communication angle
+Phase 4: write the final publish-ready copy
+
+Keep facts traceable
+Do not turn research notes directly into copy before deciding what actually matters
+Remove generic AI phrasing in the final writing
+```
+
+## Product Feature -> Implementation -> QA -> PR
+
+```text
+@AI Task Brief Builder @Superpowers @GitHub @Remote Desktop Commander @Context7 @Codex Engineering Guardrails @CodeRabbit @Testifly @PR Readiness Check
+
+Feature:
+[TASK]
+
+Repository:
+[REPO]
+
+1. Restore current product/repo state
+2. Convert feature intent into requirements and acceptance criteria
+3. Identify affected data/API/UI/auth paths
+4. Implement the smallest complete slice
+5. Test happy, failure, edge, and regression paths
+6. Review code
+7. Run real user-flow QA
+8. Check PR readiness against requirements and evidence
+
+Return a completion matrix, not a vague summary
+```
+
+## Design Brief -> Creative Direction -> Production Review
+
+```text
+@Marketing Council @Designly @01 Superdesign @Creative Production @Impeccable
+
+Brief:
+[INPUT]
+
+First clarify the communication job and strategic message
+Then create genuinely distinct creative directions
+Select the direction that best solves the communication problem
+Translate it into composition, hierarchy, typography, imagery, color behavior, and execution rules
+Review the production result against the original brief
+
+Do not choose visual novelty over message clarity
+```
+
+---
+
+## Final Reminder
+
+These prompts are a routing library, not a rule that every named plugin must always be called
+
+The strongest ChatGPT workflow is usually:
+
+```text
+right source of truth
++ right specialist plugin
++ right verification plugin
++ explicit completion gate
+```
+
+Add the task-specific context under the closest block, remove plugins that do not apply, and keep the exact installed `@Plugin Name` syntax so ChatGPT can route correctly
