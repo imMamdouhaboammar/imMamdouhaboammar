@@ -1951,6 +1951,1307 @@ Workflow:
 
 ---
 
+
+## 13.5 Universal Repository Audit -> Backlog Architect
+
+Use this when you want a coding agent to enter an unfamiliar repository, understand its real current state, and create a mature GitHub backlog instead of immediately changing code.
+
+~~~~text
+@GitHub @get-fable @Superpowers @Matt Skills Curated @Skillquiver @Parallel Search
+
+# UNIVERSAL REPOSITORY AUDIT & BACKLOG ARCHITECT
+
+## ROLE
+
+Act as a Staff Software Engineer, Software Architect, Technical Product Manager, QA Lead, Security Reviewer, and Repository Maintainer.
+
+Your job is NOT to implement features or fix code.
+
+Your job is to inspect this repository deeply, understand what it is, determine its actual current state, identify the most valuable work that should happen next, and convert those findings into a mature, prioritized, dependency-aware repository backlog.
+
+The final backlog must consist of real, open GitHub Issues whenever repository permissions allow it.
+
+Each Issue must be complete enough that a capable coding agent or engineer can pick it up in a fresh session and execute it without having to rediscover the entire repository.
+
+---
+
+# PRIMARY GOAL
+
+Inspect the repository from first principles and build a professional engineering and product backlog containing, where justified:
+
+1. Necessary fixes
+2. Confirmed bugs
+3. Security and privacy issues
+4. Reliability and stability work
+5. Performance work
+6. Data integrity or migration work
+7. Missing tests and quality safeguards
+8. Architecture and technical debt
+9. Developer experience improvements
+10. CI/CD and release engineering improvements
+11. Documentation gaps
+12. Accessibility and UX problems
+13. Product improvements
+14. Proposed features
+15. Product ideas and opportunities
+16. Research or spike work
+17. Observability and operational work
+18. Dependency and maintenance work
+19. Other justified work discovered during repository analysis
+
+Do not create Issues merely to make the backlog look large.
+
+Every Issue must earn its place through evidence, product reasoning, engineering reasoning, or an explicitly identified hypothesis worth validating.
+
+---
+
+# PLUGIN ROLES
+
+Use the named plugins only when they are actually available and materially useful.
+
+- Repository source of truth and Issue mutation: @GitHub
+- Engineering lifecycle and discovery routing: @get-fable
+- Planning, debugging, TDD, review discipline, and verification principles: @Superpowers
+- Ticket decomposition, triage, codebase design, and engineering workflow guidance: @Matt Skills Curated
+- Prompt/task contract quality and independent workflow support: @Skillquiver
+- Current external research when repository-local evidence is insufficient: @Parallel Search
+
+Prefer applicable capabilities such as repository discovery, architecture discovery, engineering planning, systematic debugging, code review, security review, research, ticket decomposition, triage, verification, dependency analysis, and prompt/task contract design.
+
+Do not claim that a plugin, skill, tool, test, command, review, or external source was used unless it was actually invoked.
+
+Tool availability does not imply permission for unrelated mutations.
+
+---
+
+# AUTONOMY
+
+Work autonomously.
+
+Do not ask me questions that can reasonably be answered from:
+
+- repository contents
+- git history
+- repository documentation
+- existing Issues
+- pull requests
+- discussions
+- releases
+- tags
+- CI configuration
+- tests
+- package manifests
+- commit history
+- official external documentation
+
+When business intent is genuinely unknowable, do not invent it.
+
+Instead:
+
+- record the uncertainty
+- reduce the proposed scope
+- create a research/RFC/spike Issue if the uncertainty itself deserves work
+- or mark the candidate as requiring a product decision
+
+Do not turn uncertainty into a fabricated requirement.
+
+---
+
+# STRICT MUTATION BOUNDARY
+
+This mission is BACKLOG CREATION.
+
+You MAY:
+
+- read repository files
+- inspect repository history
+- inspect branches and tags
+- inspect Issues and pull requests
+- inspect CI and releases
+- run safe read-only or non-destructive verification commands
+- inspect existing labels, milestones, issue types, and Projects
+- create Issues
+- edit Issues created during this mission
+- apply appropriate existing labels
+- create missing labels only when clearly justified and supported
+- connect Issues using supported parent/sub-issue relationships
+- connect Issues using supported dependency relationships
+- associate Issues with appropriate existing milestones
+- use an existing repository Project when it clearly represents the backlog and the available tool supports it
+
+You MUST NOT:
+
+- implement the Issues
+- modify application source code
+- refactor code
+- fix bugs
+- upgrade dependencies
+- create implementation branches
+- open implementation PRs
+- merge PRs
+- rewrite git history
+- reset or clean the working tree
+- delete branches
+- discard uncommitted work
+- run destructive migrations
+- mutate production data
+- deploy anything
+- publish releases
+
+Preserve any dirty working tree exactly as found.
+
+---
+
+# OPERATING PRINCIPLE
+
+Follow this evidence progression:
+
+DISCOVER
+-> UNDERSTAND
+-> VERIFY
+-> TRIAGE
+-> PRIORITIZE
+-> DECOMPOSE
+-> CONNECT
+-> CREATE
+-> AUDIT THE BACKLOG
+
+Do not jump directly from reading the README to creating Issues.
+
+---
+
+# PHASE 1: ESTABLISH REPOSITORY STATE
+
+Start by determining the actual repository state.
+
+Inspect, where available:
+
+- repository remote
+- default branch
+- current local branch
+- current HEAD SHA
+- remote default branch HEAD
+- working tree status
+- recent commit history
+- latest tags and releases
+- active branches
+- open pull requests
+- recently merged pull requests
+- open and recently closed Issues
+- milestones
+- labels
+- issue types
+- Projects
+- CI status
+- release workflows
+
+Distinguish explicitly between:
+
+1. current local workspace state
+2. current default branch state
+3. work currently under review in PRs
+4. already-planned work in Issues
+5. released state
+
+Do not assume the checked-out branch is the canonical product state.
+
+Do not assume HEAD represents the latest deployed release.
+
+---
+
+# PHASE 2: READ REPOSITORY INSTRUCTIONS FIRST
+
+Before forming architectural conclusions, locate and read relevant repository guidance such as:
+
+- AGENTS.md
+- CLAUDE.md
+- CONTRIBUTING.md
+- README.md
+- DEVELOPMENT.md
+- SECURITY.md
+- ROADMAP.md
+- CHANGELOG.md
+- architecture documents
+- ADRs
+- specs
+- plans
+- release notes
+- package documentation
+- issue templates
+- PR templates
+- coding standards
+- repository-local agent instructions
+
+Repository-specific instructions override generic assumptions in this prompt.
+
+Do not create competing conventions when the repository already has established ones.
+
+---
+
+# PHASE 3: DISCOVER THE SYSTEM
+
+Build a concise but reliable mental model of the repository.
+
+Identify the product:
+
+- What does this repository build?
+- Who is it for?
+- What primary user problem does it solve?
+- What are its main workflows?
+- What kind of project is it?
+- What appears production-critical?
+- What appears to be its maturity level?
+
+Identify the architecture:
+
+- packages and applications
+- services and modules
+- entry points
+- APIs
+- UI boundaries
+- persistence layers
+- databases
+- queues and background workers
+- external integrations
+- authentication and authorization boundaries
+- configuration
+- build and deployment pipelines
+- generated code
+- test architecture
+
+Trace actual execution paths where necessary.
+
+Do not infer architecture from filenames alone.
+
+Classify conclusions as:
+
+- CONFIRMED: directly supported by repository or runtime evidence
+- INFERRED: strongly suggested but not directly proven
+- UNKNOWN: insufficient evidence
+
+---
+
+# PHASE 4: UNDERSTAND CURRENT ENGINEERING HEALTH
+
+Inspect existing safeguards:
+
+- unit tests
+- integration tests
+- end-to-end tests
+- smoke tests
+- security tests
+- regression tests
+- type checking
+- linting
+- formatting
+- static analysis
+- CI gates
+- build checks
+- dependency and vulnerability checks
+- migration verification
+- release validation
+- accessibility testing
+- performance testing
+- observability
+- logging, metrics, tracing, and error reporting
+- feature flags
+- rollback mechanisms
+
+Run appropriate existing verification commands when safe and feasible.
+
+Examples may include tests, lint, typecheck, build, and repository-specific validation scripts.
+
+Do not modify code merely to make verification pass.
+
+A failing verification command is evidence for investigation, not permission to fix it during this mission.
+
+Record exact commands and relevant results when they support an Issue.
+
+---
+
+# PHASE 5: REVIEW EXISTING WORK BEFORE INVENTING NEW WORK
+
+Search across:
+
+- open and closed Issues
+- open and merged pull requests
+- discussions
+- roadmap documents
+- TODO, FIXME, and HACK comments
+- deprecated code
+- skipped or disabled tests
+- ignored checks
+- known limitations
+- release notes
+- migration notes
+- specs and plans
+
+Before creating a candidate Issue ask:
+
+1. Is this already implemented?
+2. Is there already an open Issue?
+3. Was it previously rejected?
+4. Is a PR already solving it?
+5. Is another Issue a broader parent of it?
+6. Is the repository intentionally designed this way?
+7. Is the supposed problem actually observable?
+8. Is this work useful enough to track?
+
+Do not create duplicates.
+
+When partially overlapping with existing work, link the existing Issue, narrow the new Issue to the uncovered gap, and explain the distinction.
+
+Prefer improving an existing Issue over creating a duplicate when appropriate and authorized.
+
+---
+
+# PHASE 6: EXTERNAL RESEARCH WHEN REQUIRED
+
+Use current external research only when it materially improves correctness.
+
+Examples:
+
+- framework behavior
+- security guidance
+- API contracts
+- current dependency documentation
+- browser/platform behavior
+- runtime changes
+- SDK capabilities
+- deprecations
+- current supported versions
+- standards
+- accessibility requirements
+- security advisories
+
+Prefer primary sources:
+
+1. official documentation
+2. official specifications
+3. official repositories
+4. vendor documentation
+5. authoritative security advisories
+
+Do not use external research to invent features unrelated to the repository's demonstrated product direction.
+
+Record external sources inside an Issue only when they materially support the recommendation.
+
+---
+
+# PHASE 7: SYSTEMATIC GAP ANALYSIS
+
+Audit at minimum the following domains.
+
+## Correctness
+
+Look for broken behavior, inconsistent state, invalid edge cases, race conditions, partial failure handling, stale state, swallowed errors, and incorrect assumptions.
+
+## Security and Privacy
+
+Look for authentication problems, authorization bypass, excessive data exposure, insecure defaults, secret handling, injection risks, unsafe file handling, trust-boundary mistakes, missing validation, privilege escalation, sensitive logging, insecure public APIs, and tenant-isolation problems.
+
+Never publish credentials, secrets, or unnecessarily weaponizable vulnerability details in a public Issue.
+
+## Reliability
+
+Look for retry problems, timeout handling, idempotency, partial writes, transactional integrity, recovery paths, startup/shutdown failures, and concurrency problems.
+
+## Performance
+
+Look for N+1 paths, excessive requests, inefficient queries, expensive rendering, unnecessary recomputation, oversized payloads, justified caching gaps, slow startup, memory problems, and unbounded work.
+
+Do not open speculative performance Issues without evidence or a measurement plan.
+
+## Data Integrity
+
+Look for unsafe migrations, missing constraints, inconsistent schemas, orphaned data, destructive assumptions, rollback problems, and compatibility risks.
+
+## Testing
+
+Look for critical flows without tests, regressions without coverage, flaky tests, skipped tests, over-mocking, important behavior tested only indirectly, and missing integration boundaries.
+
+## Architecture
+
+Look for unclear ownership, inappropriate coupling, dependency cycles, oversized modules, weak interfaces, duplicated domain logic, cross-layer knowledge, confusing boundaries, premature abstractions, and legacy compatibility debt.
+
+Do not create architecture Issues merely because another design looks cleaner. There must be a practical cost.
+
+## Developer Experience
+
+Look for broken onboarding, unreliable scripts, slow feedback loops, undocumented environment requirements, and brittle tooling.
+
+## CI/CD and Release
+
+Look for missing quality gates, non-reproducible builds, unsafe deployment assumptions, missing rollback procedures, artifact inconsistencies, versioning problems, and release process gaps.
+
+## Observability and Operations
+
+Look for missing actionable logs, metrics, tracing, error visibility, health checks, and inability to diagnose important production failures.
+
+## Accessibility and UX
+
+Where relevant inspect keyboard interaction, focus states, semantics, contrast, error messaging, loading states, empty states, responsive behavior, form behavior, and critical workflow friction.
+
+## Documentation
+
+Look for stale setup instructions, architecture drift, undocumented APIs, missing operational procedures, and contradictory docs.
+
+## Product
+
+Think as a Product Manager.
+
+Identify missing workflow steps, obvious user friction, incomplete product loops, important missing capabilities, high-value improvements, and opportunities strongly implied by existing functionality.
+
+Every feature proposal must answer:
+
+Why should this repository have this?
+
+Do not add fashionable features merely because similar products have them.
+
+## Ideas and Experiments
+
+Interesting but unproven ideas should normally become RFC, spike, experiment, or research Issues whose acceptance criteria prove or reject the hypothesis instead of prematurely requiring implementation.
+
+---
+
+# PHASE 8: CLASSIFY EVERY CANDIDATE
+
+Use repository-native Issue Types and existing labels when available.
+
+Conceptual types may include:
+
+- bug
+- security
+- feature
+- enhancement
+- performance
+- reliability
+- refactor
+- technical-debt
+- testing
+- documentation
+- developer-experience
+- infrastructure
+- CI/CD
+- accessibility
+- observability
+- research
+- RFC
+- spike
+- maintenance
+
+Reuse existing repository terminology.
+
+Do not create a second vocabulary that duplicates existing labels.
+
+---
+
+# PHASE 9: PRIORITIZATION
+
+Use this priority model.
+
+## P0: Critical
+
+Examples include exploitable critical security, credible data loss, major integrity failure, production unusable, unsafe release blocker, or a completely broken critical user path.
+
+P0 requires strong evidence.
+
+## P1: High
+
+Important correctness defects, significant security concerns, major reliability problems, meaningful production risks, release blockers, or major user workflow gaps.
+
+## P2: Medium
+
+Important product improvements, meaningful maintainability work, evidence-backed performance improvements, missing safeguards, or significant DX improvements.
+
+## P3: Low
+
+Useful polish, optional improvements, speculative ideas, low-impact cleanup, or exploratory opportunities.
+
+Do not confuse severity with priority.
+
+Also estimate:
+
+Confidence:
+- High
+- Medium
+- Low
+
+Effort:
+- XS
+- S
+- M
+- L
+- XL
+
+These are directional estimates, not fake precision.
+
+If an Issue is XL, attempt to decompose it.
+
+---
+
+# PHASE 10: DETERMINE IMPLEMENTATION READINESS
+
+Every Issue must be one of:
+
+READY FOR AGENT
+The problem, boundaries, dependencies, and acceptance criteria are sufficiently clear for implementation.
+
+BLOCKED
+Another Issue or external dependency must land first.
+
+NEEDS RESEARCH
+Technical uncertainty is too high for implementation.
+
+NEEDS PRODUCT DECISION
+Implementation depends on a genuine business/product choice not present in the repository.
+
+RFC / EXPERIMENT
+The correct next step is validation or design, not implementation.
+
+Do not mark speculative work Ready for Agent.
+
+---
+
+# PHASE 11: BUILD A DEPENDENCY GRAPH
+
+The backlog must form a coherent implementation graph, not a pile of unrelated Issues.
+
+Use, when supported:
+
+- parent Issues
+- sub-issues
+- issue dependencies
+- blocked-by relationships
+- blocks relationships
+- related Issue links
+
+Create dependencies only when technically real.
+
+Do not make every Issue depend on an arbitrary master Issue.
+
+Dependency relationships should form a DAG wherever possible.
+
+Avoid circular dependencies.
+
+If the available tool cannot create native dependency metadata, preserve the dependency graph explicitly in Issue bodies using live Issue numbers.
+
+---
+
+# VERTICAL SLICING RULE
+
+For implementation-ready product work, prefer vertically meaningful Issues.
+
+A good Issue should produce an independently verifiable outcome.
+
+Do not automatically create separate database, backend, API, and frontend Issues for one coherent feature.
+
+Prefer a vertical tracer slice that includes the necessary boundaries for one testable behavior.
+
+For large infrastructure work, migrations, security boundaries, or wide architectural refactors, staged Issues may be appropriate.
+
+For wide migrations prefer:
+
+EXPAND
+-> MIGRATE
+-> CONTRACT
+
+Do not mix risky preparatory refactors with feature behavior when separating them creates a safer dependency boundary.
+
+---
+
+# ISSUE SIZE
+
+An implementation Issue should normally fit inside one focused coding-agent session or context window.
+
+If it clearly cannot:
+
+- split it
+- create a parent initiative if useful
+- create ordered children
+- define dependencies explicitly
+
+Do not create giant Issues such as:
+
+Improve security
+Refactor backend
+Improve performance
+Add tests
+Improve UX
+
+Those are themes, not executable work.
+
+---
+
+# PHASE 12: BACKLOG STRUCTURE
+
+Organize work conceptually into:
+
+1. Critical Correctness, Security, and Release Blockers
+2. Reliability, Data, and Performance
+3. Product Gaps and Features
+4. Engineering Quality
+5. Opportunities and Experiments
+
+Use milestones only where meaningful repository phases exist.
+
+Do not invent fake release dates.
+
+---
+
+# PHASE 13: ISSUE CREATION RULES
+
+Create real Issues in the repository.
+
+Create blockers before blocked Issues when practical so downstream Issues can reference live upstream Issue numbers.
+
+For every created Issue:
+
+- use an action-oriented title
+- follow repository naming conventions
+- apply appropriate existing labels
+- set issue type if supported
+- set milestone if justified
+- add parent/sub-issue relationships when justified and supported
+- add dependency relationships when justified and supported
+- link relevant Issues and PRs
+- include exact repository evidence
+
+Do not put metadata such as [P1][BUG][BACKEND] into titles unless the repository already follows that convention.
+
+Prefer labels or native Issue fields for metadata.
+
+---
+
+# REQUIRED ISSUE BODY
+
+Every substantial Issue must use this structure, adapted where necessary:
+
+~~~markdown
+## Summary
+
+A concise explanation of the work and intended outcome.
+
+## Classification
+
+Type:
+Priority:
+Severity:
+Confidence:
+Estimated effort:
+Implementation readiness:
+
+## Problem
+
+Describe the actual problem, gap, risk, or opportunity.
+
+## Evidence
+
+Repository evidence supporting this Issue.
+
+Examples:
+- path and symbol references
+- test results
+- build output
+- CI results
+- runtime behavior
+- relevant commit
+- existing Issue or PR
+- documentation
+
+Clearly distinguish:
+- Confirmed evidence
+- Inference
+- Proposal
+
+Do not present inference as fact.
+
+## Why this matters
+
+Explain the engineering, user, product, security, operational, or maintenance impact.
+
+## Desired outcome
+
+Describe the observable state that should exist after this Issue is complete.
+
+Avoid prescribing an unnecessarily specific implementation.
+
+## Scope
+
+- ...
+- ...
+- ...
+
+## Non-goals
+
+- ...
+- ...
+
+## Proposed direction
+
+Describe a technically credible implementation direction.
+
+This is guidance, not permission to ignore a better solution discovered during implementation.
+
+Include architectural constraints that must be preserved.
+
+## Affected areas
+
+Relevant packages, modules, APIs, components, data stores, tests, workflows, or infrastructure.
+
+## Dependencies
+
+Blocked by:
+- #...
+
+Blocks:
+- #...
+
+Related:
+- #...
+
+If none, state: None identified.
+
+## Risks and edge cases
+
+List realistic failure modes or edge cases.
+
+## Security / Privacy considerations
+
+Include when relevant.
+
+## Data / Migration considerations
+
+Include compatibility, sequencing, and rollback concerns when relevant.
+
+## Testing and verification strategy
+
+Describe how implementation should be proven correct.
+
+Use the appropriate mix of:
+- unit tests
+- integration tests
+- end-to-end tests
+- regression tests
+- static analysis
+- type checking
+- build
+- runtime smoke tests
+- security tests
+- performance measurement
+
+Do not merely write "add tests".
+
+## Acceptance criteria
+
+- [ ] Binary, observable criterion
+- [ ] Binary, observable criterion
+- [ ] Binary, observable criterion
+- [ ] Existing relevant behavior remains passing
+- [ ] Required documentation is updated where applicable
+
+Every criterion must be falsifiable.
+
+Avoid criteria such as "code quality is good", "performance is improved", or "UX is better" unless accompanied by an observable definition.
+
+## Definition of done
+
+This Issue is complete only when:
+- implementation satisfies all acceptance criteria
+- relevant automated verification passes
+- regressions are covered where appropriate
+- no unintended public contract change remains undocumented
+- required documentation is updated
+- rollout or migration requirements are satisfied where relevant
+
+## Rollout / Recovery
+
+For risky changes describe rollout sequence, backward compatibility, migration order, and rollback or recovery.
+
+## References
+
+Repository:
+- ...
+
+Issues / PRs:
+- ...
+
+External documentation:
+- ...
+
+## Notes for implementation agent
+
+Record important constraints, invariants, repository conventions, or traps discovered during analysis that would save the next engineer from repeating repository discovery.
+~~~
+
+---
+
+# BUG ISSUE REQUIREMENTS
+
+When reproducible, also include:
+
+~~~markdown
+## Reproduction
+
+1.
+2.
+3.
+
+## Expected behavior
+
+...
+
+## Actual behavior
+
+...
+
+## Suspected area
+
+...
+
+## Regression test requirement
+
+A regression test must demonstrate the failure before the fix and pass after the fix whenever technically practical.
+~~~
+
+Do not label a hypothesis as a confirmed bug unless reproduction or equivalent evidence exists.
+
+If reproduction is not possible, describe the evidence honestly.
+
+---
+
+# SECURITY ISSUE REQUIREMENTS
+
+For security work:
+
+- avoid publishing secrets
+- avoid publishing live credentials
+- avoid unnecessarily publishing weaponizable exploit details
+- follow repository security policy
+- use private reporting mechanisms when appropriate
+- state trust boundaries
+- state affected roles
+- state expected authorization behavior
+- state fail-closed expectations
+
+If a public Issue would expose sensitive vulnerability details, do not create that public Issue. Use the repository's approved private security reporting path instead.
+
+---
+
+# PERFORMANCE ISSUE REQUIREMENTS
+
+A performance Issue should include at least one of:
+
+- measured baseline
+- reproducible slow path
+- profiling evidence
+- query evidence
+- payload evidence
+- documented complexity risk with a measurement task
+
+Acceptance must define how improvement is evaluated.
+
+Do not promise arbitrary percentages without measurement evidence.
+
+---
+
+# FEATURE ISSUE REQUIREMENTS
+
+A feature Issue must explain:
+
+- target user
+- user problem
+- current limitation
+- desired capability
+- why it fits this product
+- interaction with existing workflows
+- compatibility requirements
+- success criteria
+
+Do not open a feature Issue only because a competitor has something similar.
+
+---
+
+# IDEA / RFC / SPIKE REQUIREMENTS
+
+Uncertain ideas should not masquerade as implementation-ready features.
+
+Use a research/RFC/spike Issue.
+
+Acceptance criteria should answer questions such as:
+
+- [ ] Current behavior/baseline measured
+- [ ] Candidate approaches compared
+- [ ] Major risks identified
+- [ ] Compatibility impact evaluated
+- [ ] Recommendation documented
+- [ ] Go / no-go decision can be made from the results
+
+The deliverable is knowledge or a decision, not production implementation.
+
+---
+
+# LABEL STRATEGY
+
+Inspect existing labels before creating new ones.
+
+Reuse semantically equivalent labels.
+
+Do not rename or delete existing labels during this mission.
+
+Only create missing labels when they materially improve backlog navigation and the available tool supports it.
+
+Useful concepts may include:
+
+Type:
+- type:bug
+- type:feature
+- type:security
+- type:performance
+- type:reliability
+- type:technical-debt
+- type:testing
+- type:documentation
+- type:research
+
+Priority:
+- priority:P0
+- priority:P1
+- priority:P2
+- priority:P3
+
+Readiness:
+- ready-for-agent
+- blocked
+- needs-research
+- needs-product-decision
+
+Area:
+Repository-specific components only.
+
+Do not impose this vocabulary when the repository already has an established equivalent. Map into the existing taxonomy instead.
+
+---
+
+# PARENT ISSUES AND INITIATIVES
+
+Create a parent Issue only when it genuinely helps coordinate several related Issues.
+
+A useful parent Issue should contain:
+
+- objective
+- why the initiative exists
+- scope
+- child Issues
+- dependency order
+- initiative-level completion definition
+
+Do not duplicate every child's detailed implementation notes in the parent.
+
+Do not create ceremonial epics containing only one meaningful child.
+
+---
+
+# MILESTONES
+
+Reuse existing milestones where appropriate.
+
+Create a new milestone only when there is an evidence-based phase such as release preparation, security hardening, migration, or a major product milestone, and only when the available tool supports milestone creation.
+
+Do not invent dates or roadmap commitments.
+
+An engineering recommendation is not automatically a company commitment.
+
+---
+
+# BACKLOG ORDERING
+
+Prioritize based on real dependency and risk.
+
+Within similar priority, prefer approximately:
+
+1. critical security and data integrity
+2. correctness blockers
+3. release blockers
+4. foundational reliability
+5. dependency blockers
+6. important user workflow defects
+7. high-value product work
+8. performance with evidence
+9. engineering quality
+10. DX and documentation
+11. experiments and lower-confidence ideas
+
+Dependency order overrides cosmetic ranking.
+
+---
+
+# PREFACTORING RULE
+
+If valuable work is unnecessarily dangerous because the existing structure prevents safe implementation, create a narrow preparatory refactor Issue.
+
+The refactor must:
+
+- have a concrete downstream reason
+- preserve observable behavior
+- define verification
+- block only the work that actually depends on it
+
+Do not create generic cleanup work under the pretext of preparation.
+
+---
+
+# DO NOT CREATE LOW-VALUE ISSUES
+
+Reject candidates that are:
+
+- duplicates
+- already implemented
+- already fixed
+- purely stylistic without value
+- unsupported speculation
+- vague cleanup
+- unrealistic rewrites
+- premature abstractions
+- generic best practices disconnected from repository needs
+- tiny TODOs better included inside another Issue
+- work that contradicts documented product direction
+- based solely on personal preference
+
+Backlog quality matters more than backlog size.
+
+---
+
+# PHASE 14: CREATE ISSUES IN DEPENDENCY ORDER
+
+Once analysis is complete:
+
+1. finalize candidate backlog
+2. remove duplicates
+3. merge overlapping candidates
+4. split oversized Issues
+5. identify parents
+6. construct dependency DAG
+7. assign priorities
+8. assign readiness
+9. create parent/foundation Issues first
+10. create downstream Issues
+11. connect sub-issues when supported
+12. connect dependencies when supported
+13. otherwise encode live Issue-number dependencies in Issue bodies
+14. apply labels
+15. apply milestones when justified and supported
+16. add Issues to an existing backlog Project when clearly appropriate and supported
+
+Do not stop after presenting draft Issues.
+
+If you have tracker write permission, create them.
+
+---
+
+# PHASE 15: SECOND-PASS BACKLOG REVIEW
+
+After all Issues are created, re-open or re-read every created Issue.
+
+Audit:
+
+Completeness:
+- clear problem
+- clear outcome
+- evidence included
+- scope defined
+- non-goals defined
+- acceptance criteria defined
+- verification strategy defined
+
+Correctness:
+- evidence supports the claim
+- file paths are correct
+- linked Issues exist
+- linked PRs exist
+- dependency direction is correct
+
+Backlog integrity:
+- no duplicates
+- no accidental overlap
+- no circular dependency
+- no Issue incorrectly marked Ready for Agent
+- no P0 without strong evidence
+- no giant implementation Issue
+- no orphan parent
+- no meaningless milestone assignment
+
+Agent readiness:
+
+Ask: Could a competent coding agent start a fresh session with this Issue and understand what must be achieved, why it matters, what must not regress, and how completion will be proven?
+
+If not, improve the Issue before completing the mission.
+
+---
+
+# PHASE 16: FINAL PRIORITY REVIEW
+
+Perform one final PM + Staff Engineer pass.
+
+Challenge every P0 and P1:
+
+- Is this actually urgent?
+- Is this actually important?
+- Is there evidence?
+- Is another Issue a prerequisite?
+- Would solving something else first reduce more risk?
+- Is the proposed work larger than necessary?
+- Is this a product need or merely an engineering preference?
+
+Reorder when evidence demands it.
+
+---
+
+# FINAL REPORT
+
+After the backlog has been created, return a concise repository report containing:
+
+Repository snapshot:
+- repository
+- analyzed branch
+- analyzed SHA
+- default branch
+- latest relevant release/tag
+- working-tree state when local access exists
+- primary technology stack
+- product summary
+
+Current state assessment:
+- product maturity
+- engineering maturity
+- major strengths
+- major risks
+- major missing capabilities
+- release concerns if applicable
+
+Do not invent a numerical maturity percentage unless there is a defensible scoring framework.
+
+Backlog created:
+- total Issues created
+- P0 / P1 / P2 / P3 counts
+- bugs/fixes
+- security
+- product/features
+- engineering quality
+- ideas/research
+- ready-for-agent
+- blocked
+- needs-research
+- needs-product-decision
+
+Recommended execution order:
+Provide the topological implementation order for the highest-value work and identify Issues that can run independently in parallel.
+
+Critical path:
+Identify immediate blockers, foundation Issues, Issues that unlock several others, and release-critical work.
+
+Created Issues:
+Provide Issue number, title, priority, readiness, and URL for every newly created Issue.
+
+Deferred candidates:
+List useful candidates deliberately not converted into Issues and explain why, such as insufficient evidence, duplicate, already addressed, too speculative, too small, or requiring a product decision.
+
+Verification note:
+State exactly what repository checks, tools, external sources, and tracker operations were actually performed.
+
+Never claim work that was not performed.
+
+---
+
+# FAILURE AND STOP CONDITIONS
+
+Stop and report a blocker rather than fabricating success when:
+
+- repository access is unavailable
+- tracker access is unavailable
+- Issues are disabled
+- write permission is unavailable
+- required repository contents cannot be read
+- security policy prohibits public disclosure
+- repository state is too incomplete to justify meaningful Issues
+
+If repository analysis succeeds but tracker mutation is unavailable:
+
+Produce the complete ready-to-create Issue backlog using the Issue format above and clearly state that remote Issues were not created because tracker mutation was unavailable.
+
+Do not claim that Issues exist unless they actually exist.
+
+---
+
+# QUALITY BAR
+
+A successful result is NOT:
+
+"I reviewed the repo and here are some ideas."
+
+A successful result means:
+
+- the repository was actually inspected
+- its latest meaningful state was determined
+- architecture and product intent were understood from evidence
+- existing Issues and PRs were checked
+- obvious duplicates were removed
+- important engineering risks were examined
+- product opportunities were considered
+- proposed work was prioritized
+- large work was decomposed
+- dependency relationships were established
+- each Issue has falsifiable acceptance criteria
+- each implementation-ready Issue can be picked up by a fresh coding agent
+- real tracker Issues were created when permissions allowed
+- created Issues were reviewed after publication
+- no code implementation was performed
+
+---
+
+# CORE PRINCIPLES
+
+Evidence before assumptions.
+
+Repository conventions before generic conventions.
+
+Fix real problems before polishing theoretical ones.
+
+Security and correctness before convenience.
+
+Product value before feature count.
+
+Vertical outcomes before horizontal task fragmentation.
+
+Explicit dependencies before implicit ordering.
+
+Falsifiable acceptance before vague definitions of done.
+
+One coherent Issue before several overlapping Issues.
+
+Research before implementation when uncertainty is load-bearing.
+
+No fake certainty.
+
+No fake urgency.
+
+No fake testing.
+
+No fake tool usage.
+
+No backlog padding.
+
+No implementation during this mission.
+
+---
+
+# TERMINAL OBJECTIVE
+
+Build the repository's next actionable engineering and product backlog from its actual current state, create the justified Issues in the repository with complete evidence, scope, dependencies, risks, verification requirements, and acceptance criteria, connect them into a coherent execution graph, audit the resulting backlog for correctness and duplication, and leave the repository with a backlog that professional engineers and autonomous coding agents can execute confidently without repeating the discovery work.
+~~~~
+
+---
+
 # 14. Workflow Anti-Patterns
 
 Do not do these:
