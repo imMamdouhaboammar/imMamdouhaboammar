@@ -40,10 +40,53 @@
 
   // Initialize App
   function init() {
+    initTheme();
     renderFeaturedShowcase();
     renderCategoryPills();
     attachEventListeners();
     applyFiltersAndRender();
+  }
+
+  // Theme Manager (agency-ux-architect)
+  function initTheme() {
+    const storedTheme = localStorage.getItem('theme') || 'light';
+    applyTheme(storedTheme);
+
+    const toggle = document.querySelector('.theme-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', (e) => {
+        const option = e.target.closest('.theme-toggle-option');
+        if (option) {
+          const newTheme = option.dataset.theme;
+          applyTheme(newTheme);
+        }
+      });
+    }
+
+    // System theme change listener
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (localStorage.getItem('theme') === 'system') {
+        document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+      }
+    });
+  }
+
+  function applyTheme(theme) {
+    if (theme === 'system') {
+      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      localStorage.setItem('theme', 'system');
+    } else {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
+
+    const options = document.querySelectorAll('.theme-toggle-option');
+    options.forEach(opt => {
+      const active = opt.dataset.theme === theme;
+      opt.classList.toggle('active', active);
+      opt.setAttribute('aria-checked', active ? 'true' : 'false');
+    });
   }
 
   // Toast Notification
@@ -79,7 +122,7 @@
     try {
       document.execCommand('copy');
       showToast(`Copied ${label || 'text'} to clipboard!`);
-    } catch (e) {
+    } catch {
       alert(`Clone command: ${text}`);
     }
     document.body.removeChild(textarea);
@@ -282,11 +325,11 @@
           </div>
 
           <div class="repo-accordion">
-            <button class="accordion-toggle" onclick="window.toggleAccordion('${cardId}', this)">
+            <button class="accordion-toggle" aria-expanded="false" aria-controls="${cardId}" onclick="window.toggleAccordion('${cardId}', this)">
               <span>Why I Built This & History</span>
               <span class="toggle-icon">+</span>
             </button>
-            <div class="accordion-body" id="${cardId}">
+            <div class="accordion-body" id="${cardId}" role="region" aria-label="Why I Built This & History for ${escapeHtml(repo.name)}">
               <div class="accordion-item-group">
                 <span class="accordion-item-label font-mono">[WHY CRAFTED]</span>
                 <p>${escapeHtml(repo.whyCrafted)}</p>
@@ -301,11 +344,11 @@
           <div class="repo-card-actions">
             <span class="pill fork">${repo.stars > 0 ? `${repo.stars} stars` : 'Verified'}</span>
             <div class="action-btn-group">
-              <button class="btn-icon-text" onclick="window.copyToClipboard('${cloneCmd}', 'clone command')">
+              <button class="btn-icon-text" aria-label="Copy git clone command for ${escapeHtml(repo.name)}" onclick="window.copyToClipboard('${cloneCmd}', 'clone command')">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                 Clone
               </button>
-              <button class="btn-icon-text" onclick="window.openRepoModal('${escapeHtml(repo.name)}')">
+              <button class="btn-icon-text" aria-label="View deep architectural details for ${escapeHtml(repo.name)}" onclick="window.openRepoModal('${escapeHtml(repo.name)}')">
                 Details
               </button>
             </div>
@@ -323,11 +366,15 @@
     if (isOpen) {
       el.classList.remove('open');
       button.classList.remove('open');
-      button.querySelector('.toggle-icon').textContent = '+';
+      button.setAttribute('aria-expanded', 'false');
+      const icon = button.querySelector('.toggle-icon');
+      if (icon) icon.textContent = '+';
     } else {
       el.classList.add('open');
       button.classList.add('open');
-      button.querySelector('.toggle-icon').textContent = '−';
+      button.setAttribute('aria-expanded', 'true');
+      const icon = button.querySelector('.toggle-icon');
+      if (icon) icon.textContent = '−';
     }
   };
 

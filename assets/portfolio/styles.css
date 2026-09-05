@@ -11,14 +11,15 @@
   --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* 2. Color Tokens */
+  /* 2. Color Tokens (WCAG AA Compliant) */
   /* Ink & Neutrals */
   --ink-primary: #000000;
   --ink-dark: #1a1a1a;
-  --ink-body: #4a4a4a;
-  --ink-muted: #aaaaaa;
-  --ink-faint: #cbcbcb;
-  --divider: #eeeeee;
+  --ink-body: #2b2b2b;
+  --ink-muted: #595959;
+  --ink-faint: #767676;
+  --divider: #000000;
+  --divider-light: #e5e5e5;
 
   /* Surfaces */
   --surface-base: #ffffff;
@@ -26,6 +27,7 @@
   --surface-warm: #fff8ef;
   --surface-cool: #ebf0f5;
   --surface-code: #fafaf8;
+  --surface-nav: rgba(255, 255, 255, 0.94);
 
   /* Signature Peach Accent */
   --accent-peach: #df9367;
@@ -48,6 +50,74 @@
   --shadow-card-sm: 0 4px 0 0 #000000;
   --shadow-card-md: 12px 12px 0 -1px #f6f6f4, 12px 12px 0 0 #000000;
   --shadow-window: 0 16px 0 -8px #f6f6f4, 0 16px 0 -6px #000000;
+}
+
+[data-theme="dark"] {
+  --ink-primary: #f5f5f5;
+  --ink-dark: #ffffff;
+  --ink-body: #d1d5db;
+  --ink-muted: #a3a3a3;
+  --ink-faint: #737373;
+  --divider: #383d47;
+  --divider-light: #2d3139;
+
+  --surface-base: #0e1015;
+  --surface-cream: #161920;
+  --surface-warm: #1f1c19;
+  --surface-cool: #131a24;
+  --surface-code: #12141a;
+  --surface-nav: rgba(14, 16, 21, 0.94);
+
+  --accent-peach: #df9367;
+  --accent-peach-deep: #f3a579;
+  --accent-peach-light: #4d3121;
+  --accent-peach-cream: #261911;
+
+  --border-default: 1.5px solid #f5f5f5;
+  --border-thick: 2px solid #f5f5f5;
+
+  --shadow-btn: 0 4px 0 0 #000000;
+  --shadow-btn-hover: 0 6px 0 0 #000000;
+  --shadow-btn-press: 0 2px 0 0 #000000;
+
+  --shadow-card-sm: 0 4px 0 0 #000000;
+  --shadow-card-md: 8px 8px 0 -1px #161920, 8px 8px 0 0 #000000;
+  --shadow-window: 0 16px 0 -8px #161920, 0 16px 0 -6px #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink-primary: #f5f5f5;
+    --ink-dark: #ffffff;
+    --ink-body: #d1d5db;
+    --ink-muted: #a3a3a3;
+    --ink-faint: #737373;
+    --divider: #383d47;
+    --divider-light: #2d3139;
+
+    --surface-base: #0e1015;
+    --surface-cream: #161920;
+    --surface-warm: #1f1c19;
+    --surface-cool: #131a24;
+    --surface-code: #12141a;
+    --surface-nav: rgba(14, 16, 21, 0.94);
+
+    --accent-peach: #df9367;
+    --accent-peach-deep: #f3a579;
+    --accent-peach-light: #4d3121;
+    --accent-peach-cream: #261911;
+
+    --border-default: 1.5px solid #f5f5f5;
+    --border-thick: 2px solid #f5f5f5;
+
+    --shadow-btn: 0 4px 0 0 #000000;
+    --shadow-btn-hover: 0 6px 0 0 #000000;
+    --shadow-btn-press: 0 2px 0 0 #000000;
+
+    --shadow-card-sm: 0 4px 0 0 #000000;
+    --shadow-card-md: 8px 8px 0 -1px #161920, 8px 8px 0 0 #000000;
+    --shadow-window: 0 16px 0 -8px #161920, 0 16px 0 -6px #000000;
+  }
 
   /* Layout & Geometry */
   --radius-pill: 999px;
@@ -260,7 +330,7 @@ input, select {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.94);
+  background-color: var(--surface-nav);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: var(--border-default);
@@ -320,7 +390,51 @@ input, select {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.75rem;
+}
+
+/* Theme Toggle Component (Patter Neo-Brutalist Segmented) */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--surface-cream);
+  border: var(--border-default);
+  border-radius: var(--radius-pill);
+  padding: 2px;
+  gap: 2px;
+}
+
+.theme-toggle-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-muted);
+  background: transparent;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-tactile);
+  min-height: 32px;
+}
+
+.theme-toggle-option:hover {
+  color: var(--ink-primary);
+}
+
+.theme-toggle-option.active {
+  background-color: var(--ink-primary);
+  color: var(--surface-base);
+  border-color: var(--ink-primary);
+}
+
+[data-theme="dark"] .theme-toggle-option.active {
+  background-color: var(--accent-peach);
+  color: #000000;
+  border-color: var(--accent-peach);
 }
 
 /* ==========================================================================
@@ -816,11 +930,16 @@ input, select {
 }
 
 .segment-btn {
-  padding: 0.35rem 0.85rem;
-  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.82rem;
   font-weight: 600;
   border-radius: var(--radius-pill);
   color: var(--ink-body);
+  min-height: 36px;
+  cursor: pointer;
   transition: all var(--transition-tactile);
 }
 
@@ -830,11 +949,17 @@ input, select {
 
 .segment-btn.active {
   background-color: var(--ink-primary);
-  color: #ffffff;
+  color: var(--surface-base);
+}
+
+[data-theme="dark"] .segment-btn.active {
+  background-color: var(--accent-peach);
+  color: #000000;
 }
 
 .select-wrap select {
-  padding: 0.55rem 2rem 0.55rem 1rem;
+  min-height: 44px;
+  padding: 0.55rem 2.2rem 0.55rem 1rem;
   background-color: var(--surface-base);
   border: var(--border-default);
   border-radius: var(--radius-pill);
@@ -861,6 +986,8 @@ input, select {
   gap: 0.6rem;
   overflow-x: auto;
   padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
 }
 
@@ -877,15 +1004,17 @@ input, select {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.35rem 0.9rem;
+  padding: 0.4rem 0.95rem;
+  min-height: 40px;
   background-color: var(--surface-base);
   border: var(--border-default);
   border-radius: var(--radius-pill);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--ink-primary);
   white-space: nowrap;
   box-shadow: 0 2px 0 0 #000000;
+  cursor: pointer;
   transition: all var(--transition-tactile);
 }
 
@@ -897,8 +1026,14 @@ input, select {
 
 .cat-pill-btn.active {
   background-color: var(--ink-primary);
-  color: #ffffff;
+  color: var(--surface-base);
   box-shadow: 0 3px 0 0 #000000;
+}
+
+[data-theme="dark"] .cat-pill-btn.active {
+  background-color: var(--accent-peach);
+  color: #000000;
+  border-color: var(--accent-peach);
 }
 
 .cat-pill-btn .count {
@@ -908,7 +1043,7 @@ input, select {
   color: var(--ink-primary);
   padding: 0.1rem 0.45rem;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--divider);
+  border: 1px solid var(--divider-light);
 }
 
 .cat-pill-btn.active .count {
@@ -1146,12 +1281,18 @@ input, select {
   font-family: var(--font-mono);
   font-size: 1.5rem;
   line-height: 1;
-  padding: 0.2rem 0.6rem;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: var(--radius-sm);
   border: var(--border-default);
   background-color: var(--surface-cream);
   color: var(--ink-primary);
   box-shadow: 0 2px 0 0 #000000;
+  cursor: pointer;
+  transition: all var(--transition-tactile);
 }
 
 .modal-close-btn:hover {

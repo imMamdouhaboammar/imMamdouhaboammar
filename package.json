@@ -1,0 +1,14 @@
+{
+  "name": "immamdouhaboammar",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "oxlint",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@oxlint/plugins": "^1.81.0",
+    "oxlint": "^1.81.0"
+  }
+}

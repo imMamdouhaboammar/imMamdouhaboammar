@@ -51,7 +51,7 @@ export function deterministicSummary(activity) {
 }
 
 function extractResponseText(payload) {
-  if (typeof payload?.output_text === 'string') return payload.output_text;
+  if (payload?.output_text) return String(payload.output_text);
   return (payload?.output || [])
     .flatMap((item) => item.content || [])
     .map((part) => part.text || '')

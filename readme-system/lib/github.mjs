@@ -7,7 +7,7 @@ export async function githubRequest(path, {
   accept = 'application/vnd.github+json',
   logLabel,
 } = {}) {
-  const response = await fetch(path.startsWith('http') ? path : `${API_ROOT}${path}`, {
+  const fetchOptions = {
     method,
     headers: {
       accept,
@@ -16,8 +16,11 @@ export async function githubRequest(path, {
       'x-github-api-version': '2022-11-28',
       'user-agent': 'mamdouh-readme-intelligence',
     },
-    body: body ? JSON.stringify(body) : undefined,
-  });
+  };
+  if (body) {
+    fetchOptions.body = JSON.stringify(body);
+  }
+  const response = await fetch(path.startsWith('http') ? path : `${API_ROOT}${path}`, fetchOptions);
 
   if (!response.ok) {
     const safeTarget = logLabel || (path.startsWith('http') ? 'GitHub resource' : path);
