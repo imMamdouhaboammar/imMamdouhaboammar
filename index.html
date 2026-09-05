@@ -187,10 +187,10 @@
   }
   </script>
 
-  <!-- Typography: Instrument Sans (Display/UI) & JetBrains Mono (Code/Data) -->
+  <!-- Typography: IBM Plex Sans (Display/UI) & JetBrains Mono (Code/Data) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300..700;1,300..700&family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   
   <!-- Patter Design System & Portfolio Stylesheet -->
   <link rel="stylesheet" href="patter.css">
@@ -209,7 +209,7 @@
         <span class="terminal-prompt">&gt;</span>
         <span>mamdouh-aboammar</span>
         <span class="nav-status">
-          <span class="pulse-dot"></span>
+          <span class="status-dot"></span>
           LIVE ON GITHUB PAGES
         </span>
       </div>
@@ -456,29 +456,29 @@
     <div class="modal-window">
       <div class="modal-header">
         <div>
-          <h2 id="modal-title" style="font-size: 1.35rem; font-weight: 800; color: var(--ink-primary); letter-spacing: -0.02em;">Repo Details</h2>
-          <span id="modal-category" class="card-category-tag" style="margin-top: 0.25rem; display: inline-block;">Category</span>
+          <h2 id="modal-title" class="modal-title">Repo Details</h2>
+          <span id="modal-category" class="card-category-tag modal-category-badge">Category</span>
         </div>
         <button class="modal-close-btn" id="modal-close" aria-label="Close modal">&times;</button>
       </div>
 
       <div class="modal-section">
         <span class="modal-section-title">Description</span>
-        <p id="modal-desc" style="font-size: 0.95rem; color: var(--ink-body); line-height: 1.6;"></p>
+        <p id="modal-desc" class="modal-desc-text"></p>
       </div>
 
       <div class="modal-section">
-        <span class="modal-section-title font-mono">[VIBE FACT]</span>
+        <span class="modal-section-title font-mono">Vibe Fact</span>
         <div class="card-fact-box" id="modal-fact"></div>
       </div>
 
       <div class="modal-section">
-        <span class="modal-section-title font-mono">[WHY CRAFTED / PAIN POINT]</span>
-        <p id="modal-why" style="font-size: 0.9rem; color: var(--ink-body); line-height: 1.6;"></p>
+        <span class="modal-section-title font-mono">Why Crafted &amp; Problem Solved</span>
+        <p id="modal-why" class="modal-why-text"></p>
       </div>
 
       <div class="modal-section">
-        <span class="modal-section-title font-mono">[HISTORICAL CONTEXT &amp; SNIPPETS]</span>
+        <span class="modal-section-title font-mono">Historical Context &amp; Snippets</span>
         <div class="modal-code-block" id="modal-snippets"></div>
       </div>
 
@@ -487,7 +487,7 @@
         <div class="modal-code-block" id="modal-clone-cmd">git clone https://github.com/...</div>
       </div>
 
-      <div class="modal-actions" style="display: flex; justify-content: flex-end; gap: 0.75rem; border-top: 1px solid var(--divider); padding-top: 1.25rem;">
+      <div class="modal-actions">
         <button class="btn-patter" id="modal-copy-btn" aria-label="Copy clone command">Copy Clone</button>
         <a href="#" target="_blank" rel="noopener noreferrer" class="btn-patter primary" id="modal-github-link" aria-label="Open repository on GitHub">
           Open on GitHub
@@ -533,10 +533,10 @@
     <div class="container footer-inner">
       <div class="footer-top">
         <div>
-          <div style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 800; color: var(--ink-primary); letter-spacing: -0.02em;">
+          <div class="footer-brand-title">
             Mamdouh Aboammar
           </div>
-          <p style="font-size: 0.85rem; color: var(--ink-body); margin-top: 0.35rem; max-width: 600px;">
+          <p class="footer-brand-desc">
             Deterministic architecture, anti-slop engineering, and autonomous agent systems. Founder of PrePilot LLC, Dubai, UAE.
           </p>
         </div>
@@ -554,8 +554,8 @@
 
       <div class="footer-bottom">
         <div>&copy; 2026 Mamdouh Aboammar. All systems operational.</div>
-        <div style="display: flex; gap: 0.5rem; align-items: center;">
-          <span class="eyebrow-tag" style="padding: 2px 8px; font-size: 11px;">Patter Design System</span>
+        <div class="footer-badge-group">
+          <span class="eyebrow-tag footer-badge">Patter Design System</span>
           <span>142 Cataloged Repos</span>
         </div>
       </div>

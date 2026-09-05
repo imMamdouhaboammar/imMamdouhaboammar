@@ -161,7 +161,7 @@
           <p class="card-desc">${escapeHtml(repo.description || 'System component and engineering engine.')}</p>
 
           <div class="card-fact-box">
-            <span class="fact-title font-mono">[VIBE FACT]</span>
+            <span class="fact-title font-mono">Vibe Fact</span>
             ${escapeHtml(repo.funnyFact)}
           </div>
 
@@ -310,7 +310,7 @@
                 ${isFeatured ? '<span class="pill-badge-flagship font-mono">[FLAGSHIP]</span> ' : ''}${escapeHtml(repo.name)}
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
-              <div class="card-category-tag" style="margin-top: 0.2rem;">${escapeHtml(repo.category)}</div>
+              <div class="card-category-tag">${escapeHtml(repo.category)}</div>
             </div>
             <div class="card-badges">
               ${repo.language ? `<span class="pill lang">${escapeHtml(repo.language)}</span>` : ''}
@@ -321,7 +321,7 @@
           <p class="repo-desc">${escapeHtml(repo.description || 'Production system component.')}</p>
 
           <div class="card-fact-box">
-            <span class="fact-title font-mono">[VIBE FACT]</span>
+            <span class="fact-title font-mono">Vibe Fact</span>
             ${escapeHtml(repo.funnyFact)}
           </div>
 
@@ -332,11 +332,11 @@
             </button>
             <div class="accordion-body" id="${cardId}" role="region" aria-label="Why I Built This & History for ${escapeHtml(repo.name)}">
               <div class="accordion-item-group">
-                <span class="accordion-item-label font-mono">[WHY CRAFTED]</span>
+                <span class="accordion-item-label font-mono">Why Crafted &amp; Problem Solved</span>
                 <p>${escapeHtml(repo.whyCrafted)}</p>
               </div>
               <div class="accordion-item-group">
-                <span class="accordion-item-label font-mono">[HISTORICAL CONTEXT &amp; SNIPPETS]</span>
+                <span class="accordion-item-label font-mono">Historical Context &amp; Snippets</span>
                 <p>${escapeHtml(repo.snippetsHistory)}</p>
               </div>
             </div>

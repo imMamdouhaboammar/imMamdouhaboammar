@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "oxlint",
+    "lint": "oxlint --ignore-pattern '.agents/**' --ignore-pattern '.claude/**' --ignore-pattern '.github/**' --ignore-pattern '.impeccable/**'",
     "test": "bun test"
   },
   "devDependencies": {

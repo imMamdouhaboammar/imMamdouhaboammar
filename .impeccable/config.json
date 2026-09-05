@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "instrument sans",
+        "createdAt": "2026-09-05T06:46:31.084Z",
+        "reason": "Patter design system approved brand font"
+      }
+    ]
+  }
+}
