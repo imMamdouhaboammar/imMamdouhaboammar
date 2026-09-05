@@ -7,6 +7,8 @@
 <br>
 
 <a href="https://mamdouhaboammar.com/"><img src="https://img.shields.io/badge/Site-mamdouhaboammar.com-161B22?style=for-the-badge&logo=safari&logoColor=E6EDF3&labelColor=0D1117" alt="Mamdouh Aboammar website"></a>
+<a href="https://immamdouhaboammar.github.io/imMamdouhaboammar/"><img src="https://img.shields.io/badge/Portfolio_Engine-Live_Pages-4F46E5?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=0D1117" alt="Live Portfolio Engine"></a>
+<a href="REPOSITORIES.md"><img src="https://img.shields.io/badge/Catalog-142_Repos-059669?style=for-the-badge&logo=markdown&logoColor=white&labelColor=0D1117" alt="Complete 142 Repositories Catalog"></a>
 <a href="https://www.linkedin.com/in/mamdouh-aboammar/"><img src="https://img.shields.io/badge/LinkedIn-Mamdouh_Aboammar-0A66C2?style=for-the-badge&labelColor=0D1117" alt="Mamdouh Aboammar on LinkedIn"></a>
 <a href="https://x.com/Bo_ammarrr"><img src="https://img.shields.io/badge/X-Bo__ammarrr-161B22?style=for-the-badge&logo=x&logoColor=E6EDF3&labelColor=0D1117" alt="Mamdouh Aboammar on X"></a>
 <a href="https://github.com/imMamdouhaboammar?tab=followers"><img src="https://img.shields.io/github/followers/imMamdouhaboammar?style=for-the-badge&label=Follow&labelColor=0D1117&color=161B22" alt="Follow imMamdouhaboammar"></a>
