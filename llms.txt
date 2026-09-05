@@ -1,0 +1,28 @@
+# Mamdouh Aboammar
+
+> Vibe coder, conversion copywriter, and founder of PrePilot LLC. Building autonomous agentic tooling, conversion infrastructure, and developer quality gates.
+
+## Overview
+Mamdouh Aboammar is a developer, conversion copywriter, and founder based in Dubai and the United Arab Emirates. His technical systems focus on agent governance, frontend quality gates, autonomous coding workflows, and high-performance conversion infrastructure.
+
+## Core Projects & Flagship Systems
+- [PrePilot LLC](https://prepilot-system-agency.space/): Conversion infrastructure and AI agent systems for the MENA region.
+- [Agent Kernel](https://github.com/imMamdouhaboammar/agent-kernel): Multi-agent orchestration kernel, policy engine, and deterministic agent execution framework.
+- [AOS - Antigravity Omni-Agentic Superplatform](https://github.com/imMamdouhaboammar/aos): Dual-loop cognitive orchestrator with AST blast-radius checking and verification gates.
+- [Fable Code Lifecycle](https://github.com/imMamdouhaboammar/get-fable): Bounded, evidence-based coding lifecycle for autonomous agents.
+- [Taste-Skill Suite](https://github.com/imMamdouhaboammar/taste-skill): Anti-slop design system enforcement, eliminating AI visual tropes and em-dashes.
+- [Stop-Slop](https://github.com/imMamdouhaboammar/stop-slop): Linter and pattern analyzer eradicating predictable AI writing tropes from software copy.
+
+## Verification & Documentation
+- [Interactive Portfolio Engine](https://immamdouhaboammar.github.io/imMamdouhaboammar/): Live interactive catalog of all 142 repositories with search, filters, and clone commands.
+- [Complete Repositories Catalog](https://immamdouhaboammar.github.io/imMamdouhaboammar/REPOSITORIES.md): Detailed markdown catalog organized into 10 specialized categories.
+- [Extended Knowledge Base](https://immamdouhaboammar.github.io/imMamdouhaboammar/llms-full.txt): Complete repository manifests, snippets, and architecture notes.
+
+## Verified Profiles & Networks
+- GitHub: https://github.com/imMamdouhaboammar
+- LinkedIn: https://www.linkedin.com/in/mamdouh-aboammar/
+- X / Twitter: https://x.com/Bo_ammarrr
+- PrePilot LLC: https://prepilot-system-agency.space/
+- Personal Site: https://mamdouhaboammar.com/
+- Instagram: https://www.instagram.com/boammarrr/
+- Facebook: https://www.facebook.com/mamdouhboammar

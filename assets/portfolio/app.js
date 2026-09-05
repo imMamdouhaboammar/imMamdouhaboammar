@@ -13,20 +13,26 @@
   let currentSort = 'FEATURED'; // 'FEATURED', 'STARS', 'UPDATED', 'NAME'
   let searchQuery = '';
 
-  // Elements
+  // Elements (with defensive fallbacks)
   const featuredGrid = document.getElementById('featured-grid');
   const reposGrid = document.getElementById('repos-grid');
   const searchInput = document.getElementById('search-input');
+  const searchClearBtn = document.getElementById('search-clear-btn');
   const sortSelect = document.getElementById('sort-select');
   const categoryPillsContainer = document.getElementById('category-pills');
   const segmentBtns = document.querySelectorAll('.segment-btn');
   const resultsCountEl = document.getElementById('results-count');
   const activeFiltersDesc = document.getElementById('active-filters-desc');
   const resetFiltersBtn = document.getElementById('reset-filters-btn');
-  const toast = document.getElementById('toast-notice');
-  const toastMessage = document.getElementById('toast-message');
+  const toast = document.getElementById('toast-notice') || document.getElementById('toast');
+  const toastMessage = document.getElementById('toast-message') || document.getElementById('toast-msg');
 
-  // Modal elements
+  // Hero CTAs & Quick Filters
+  const heroCrownJewelsBtn = document.getElementById('hero-crown-jewels-btn');
+  const heroCopyContactBtn = document.getElementById('hero-copy-contact-btn');
+  const metricCards = document.querySelectorAll('.metric-card');
+
+  // Modal elements (with defensive fallbacks)
   const repoModal = document.getElementById('repo-modal');
   const modalClose = document.getElementById('modal-close');
   const modalTitle = document.getElementById('modal-title');
@@ -35,8 +41,9 @@
   const modalFact = document.getElementById('modal-fact');
   const modalWhy = document.getElementById('modal-why');
   const modalSnippets = document.getElementById('modal-snippets');
-  const modalCloneCmd = document.getElementById('modal-clone-cmd');
-  const modalGithubLink = document.getElementById('modal-github-link');
+  const modalCloneCmd = document.getElementById('modal-clone-cmd') || document.getElementById('modal-clone');
+  const modalCopyBtn = document.getElementById('modal-copy-btn');
+  const modalGithubLink = document.getElementById('modal-github-link') || document.getElementById('modal-view-github');
 
   // Initialize App
   function init() {
@@ -92,7 +99,7 @@
   // Toast Notification
   function showToast(message) {
     if (!toast) return;
-    toastMessage.textContent = message;
+    if (toastMessage) toastMessage.textContent = message;
     toast.classList.add('show');
     setTimeout(() => {
       toast.classList.remove('show');
@@ -101,6 +108,7 @@
 
   // Copy helper
   window.copyToClipboard = function (text, label) {
+    if (!text) return;
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(() => {
         showToast(`Copied ${label || 'text'} to clipboard!`);
@@ -123,7 +131,7 @@
       document.execCommand('copy');
       showToast(`Copied ${label || 'text'} to clipboard!`);
     } catch {
-      alert(`Clone command: ${text}`);
+      alert(`Copy: ${text}`);
     }
     document.body.removeChild(textarea);
   }
@@ -160,11 +168,11 @@
           <div class="card-footer-actions">
             <span class="pill fork">${repo.stars > 0 ? `${repo.stars} stars` : 'Production'}</span>
             <div class="action-btn-group">
-              <button class="btn-icon-text" onclick="window.copyToClipboard('${cloneCmd}', 'clone command')">
+              <button class="btn-icon-text" aria-label="Copy clone command for ${escapeHtml(repo.name)}" onclick="window.copyToClipboard('${cloneCmd}', 'clone command')">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                 Clone
               </button>
-              <button class="btn-icon-text primary" onclick="window.openRepoModal('${escapeHtml(repo.name)}')">
+              <button class="btn-icon-text primary" aria-label="Read story for ${escapeHtml(repo.name)}" onclick="window.openRepoModal('${escapeHtml(repo.name)}')">
                 Read Story
               </button>
             </div>
@@ -178,7 +186,6 @@
   function renderCategoryPills() {
     if (!categoryPillsContainer) return;
 
-    // Calculate counts
     const categoryCounts = {};
     allRepos.forEach(r => {
       categoryCounts[r.category] = (categoryCounts[r.category] || 0) + 1;
@@ -206,7 +213,6 @@
 
     categoryPillsContainer.innerHTML = pillsHtml;
 
-    // Attach click handlers to category buttons
     categoryPillsContainer.querySelectorAll('.cat-pill-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         currentCategory = btn.getAttribute('data-category');
@@ -220,16 +226,13 @@
   // Filter and Sort Logic
   function getFilteredRepos() {
     return allRepos.filter(repo => {
-      // Category filter
       if (currentCategory === 'FEATURED' && !repo.isFeatured) return false;
       if (currentCategory !== 'ALL' && currentCategory !== 'FEATURED' && repo.category !== currentCategory) return false;
 
-      // Visibility filter
       if (currentVisibility === 'PUBLIC' && repo.private) return false;
       if (currentVisibility === 'PRIVATE' && !repo.private) return false;
       if (currentVisibility === 'FORK' && !repo.fork) return false;
 
-      // Search Query filter
       if (searchQuery.trim() !== '') {
         const query = searchQuery.toLowerCase().trim();
         const matchesName = repo.name.toLowerCase().includes(query);
@@ -269,18 +272,16 @@
   function applyFiltersAndRender() {
     const filtered = getFilteredRepos();
 
-    // Update count indicator
     if (resultsCountEl) {
       resultsCountEl.textContent = `${filtered.length} of ${allRepos.length} Repositories`;
     }
 
-    // Update active filter text
     if (activeFiltersDesc) {
       let desc = [];
       if (currentCategory !== 'ALL') desc.push(`Category: "${currentCategory}"`);
       if (currentVisibility !== 'ALL') desc.push(`Visibility: ${currentVisibility}`);
       if (searchQuery.trim()) desc.push(`Query: "${searchQuery}"`);
-      activeFiltersDesc.textContent = desc.length > 0 ? desc.join(' • ') : 'Showing All Repositories';
+      activeFiltersDesc.textContent = desc.length > 0 ? desc.join(' · ') : 'Showing All Repositories';
     }
 
     if (!reposGrid) return;
@@ -326,7 +327,7 @@
 
           <div class="repo-accordion">
             <button class="accordion-toggle" aria-expanded="false" aria-controls="${cardId}" onclick="window.toggleAccordion('${cardId}', this)">
-              <span>Why I Built This & History</span>
+              <span>Why I Built This &amp; History</span>
               <span class="toggle-icon">+</span>
             </button>
             <div class="accordion-body" id="${cardId}" role="region" aria-label="Why I Built This & History for ${escapeHtml(repo.name)}">
@@ -374,7 +375,7 @@
       button.classList.add('open');
       button.setAttribute('aria-expanded', 'true');
       const icon = button.querySelector('.toggle-icon');
-      if (icon) icon.textContent = '−';
+      if (icon) icon.textContent = '-';
     }
   };
 
@@ -385,10 +386,12 @@
     currentSort = 'FEATURED';
     searchQuery = '';
     if (searchInput) searchInput.value = '';
+    if (searchClearBtn) searchClearBtn.style.display = 'none';
     if (sortSelect) sortSelect.value = 'FEATURED';
 
     segmentBtns.forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-vis') === 'ALL');
+      btn.setAttribute('aria-selected', btn.getAttribute('data-vis') === 'ALL' ? 'true' : 'false');
     });
 
     if (categoryPillsContainer) {
@@ -405,14 +408,14 @@
     const repo = allRepos.find(r => r.name === repoName);
     if (!repo || !repoModal) return;
 
-    modalTitle.textContent = repo.name;
-    modalCategory.textContent = `${repo.category} • ${repo.language || 'Codebase'} • ${repo.private ? 'Private Architecture' : 'Public Open-Source'}`;
-    modalDesc.textContent = repo.description || 'No description provided.';
-    modalFact.textContent = repo.funnyFact || 'N/A';
-    modalWhy.textContent = repo.whyCrafted || 'N/A';
-    modalSnippets.textContent = repo.snippetsHistory || 'N/A';
-    modalCloneCmd.textContent = `git clone ${repo.url}.git`;
-    modalGithubLink.href = repo.url;
+    if (modalTitle) modalTitle.textContent = repo.name;
+    if (modalCategory) modalCategory.textContent = `${repo.category} · ${repo.language || 'Codebase'} · ${repo.private ? 'Private Architecture' : 'Public Open-Source'}`;
+    if (modalDesc) modalDesc.textContent = repo.description || 'No description provided.';
+    if (modalFact) modalFact.textContent = repo.funnyFact || 'N/A';
+    if (modalWhy) modalWhy.textContent = repo.whyCrafted || 'N/A';
+    if (modalSnippets) modalSnippets.textContent = repo.snippetsHistory || 'N/A';
+    if (modalCloneCmd) modalCloneCmd.textContent = `git clone ${repo.url}.git`;
+    if (modalGithubLink) modalGithubLink.href = repo.url;
 
     repoModal.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -430,7 +433,23 @@
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
         searchQuery = e.target.value;
+        if (searchClearBtn) {
+          searchClearBtn.style.display = searchQuery.trim() ? 'block' : 'none';
+        }
         applyFiltersAndRender();
+      });
+    }
+
+    // Search clear button
+    if (searchClearBtn) {
+      searchClearBtn.addEventListener('click', () => {
+        if (searchInput) {
+          searchInput.value = '';
+          searchQuery = '';
+          searchClearBtn.style.display = 'none';
+          searchInput.focus();
+          applyFiltersAndRender();
+        }
       });
     }
 
@@ -456,8 +475,12 @@
     // Segmented Visibility buttons
     segmentBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        segmentBtns.forEach(b => b.classList.remove('active'));
+        segmentBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
         currentVisibility = btn.getAttribute('data-vis');
         applyFiltersAndRender();
       });
@@ -466,6 +489,78 @@
     // Reset button
     if (resetFiltersBtn) {
       resetFiltersBtn.addEventListener('click', window.resetAllFilters);
+    }
+
+    // Hero Quick Action Buttons
+    if (heroCrownJewelsBtn) {
+      heroCrownJewelsBtn.addEventListener('click', () => {
+        const featuredSection = document.getElementById('featured-grid');
+        if (featuredSection) {
+          featuredSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
+
+    if (heroCopyContactBtn) {
+      heroCopyContactBtn.addEventListener('click', () => {
+        const url = window.location.href;
+        window.copyToClipboard(url, 'portfolio link');
+      });
+    }
+
+    // Interactive Metric Cards
+    metricCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const filterType = card.getAttribute('data-metric-filter');
+        if (!filterType) return;
+
+        if (filterType === 'ALL') {
+          window.resetAllFilters();
+          const explorer = document.getElementById('explorer');
+          if (explorer) explorer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (filterType === 'FEATURED') {
+          const featuredSection = document.getElementById('featured-grid');
+          if (featuredSection) featuredSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (filterType === 'PUBLIC') {
+          currentVisibility = 'PUBLIC';
+          segmentBtns.forEach(b => {
+            const isMatch = b.getAttribute('data-vis') === 'PUBLIC';
+            b.classList.toggle('active', isMatch);
+            b.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+          });
+          applyFiltersAndRender();
+          const explorer = document.getElementById('explorer');
+          if (explorer) explorer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (filterType === 'PRIVATE') {
+          currentVisibility = 'PRIVATE';
+          segmentBtns.forEach(b => {
+            const isMatch = b.getAttribute('data-vis') === 'PRIVATE';
+            b.classList.toggle('active', isMatch);
+            b.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+          });
+          applyFiltersAndRender();
+          const explorer = document.getElementById('explorer');
+          if (explorer) explorer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (filterType === 'DOMAINS') {
+          const catPills = document.getElementById('category-pills');
+          if (catPills) catPills.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else if (filterType === 'UPDATED') {
+          currentSort = 'UPDATED';
+          if (sortSelect) sortSelect.value = 'UPDATED';
+          applyFiltersAndRender();
+          const explorer = document.getElementById('explorer');
+          if (explorer) explorer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Modal Copy Clone button
+    if (modalCopyBtn) {
+      modalCopyBtn.addEventListener('click', () => {
+        if (modalCloneCmd) {
+          window.copyToClipboard(modalCloneCmd.textContent.trim(), 'clone command');
+        }
+      });
     }
 
     // Modal close

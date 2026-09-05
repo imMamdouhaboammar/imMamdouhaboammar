@@ -1,0 +1,33 @@
+# robots.txt for https://immamdouhaboammar.github.io/imMamdouhaboammar/
+# Configured for Wave 1 (SEO), Wave 2 (AEO/GEO Citations), and Wave 3 (Agentic Task Completion)
+
+User-agent: *
+Allow: /
+
+# Explicit rules for major AI & Citation Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Discovery endpoints
+Sitemap: https://immamdouhaboammar.github.io/imMamdouhaboammar/sitemap.xml
