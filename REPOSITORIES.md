@@ -82,7 +82,7 @@ Complete conversion copywriting operating system for Claude and Gemini, complete
 | **Link** | [https://github.com/imMamdouhaboammar/delegate-team](https://github.com/imMamdouhaboammar/delegate-team) |
 
 **Description:**  
-Agentic engineering supersystem — one CLI to run the full /mavis-ship chain. Bundles 38 curated integrations + 1890 skills + the v2.7.1 arsenal (orchestrate.py + catalog.py + autopilot + mavis-ship-uni + big-boss persona). MIT.
+Agentic engineering supersystem  -  one CLI to run the full /mavis-ship chain. Bundles 38 curated integrations + 1890 skills + the v2.7.1 arsenal (orchestrate.py + catalog.py + autopilot + mavis-ship-uni + big-boss persona). MIT.
 
 **🎭 Facts with Funny Wordplaying:**  
 > *Why hire a 10-person dev team when you can summon 10 specialized AI agents and watch them aggressively peer-review each other's pull requests?*
@@ -404,7 +404,7 @@ Multi-agent CLI and skill suite featuring rhythmic variation scoring, filler wor
 | **Link** | [https://github.com/imMamdouhaboammar/unslop-preflight](https://github.com/imMamdouhaboammar/unslop-preflight) |
 
 **Description:**  
-23-gate design quality enforcer for AI coding agents — autopilot CLI that blocks generic UI slop before implementation
+23-gate design quality enforcer for AI coding agents  -  autopilot CLI that blocks generic UI slop before implementation
 
 **🎭 Facts with Funny Wordplaying:**  
 > *Bans 1000px border-radii, neon purple gradients, and the phrase 'In today's fast-paced digital world' before a single line of CSS touches Git.*
@@ -481,7 +481,7 @@ Agent-first framework for safe vibe coding. Turns messy ideas into structured sp
 - **Link:** [https://github.com/imMamdouhaboammar/athr](https://github.com/imMamdouhaboammar/athr)
 - **Type & Stack:** `[PUBLIC]`  | `TypeScript`
 - **Description:** High-leverage engineering & agentic tooling by Mamdouh Aboammar.
-- **Facts with Funny Wordplaying:** *Impact in Arabic is 'Athr' — making sure every pixel and line of code leaves a measurable positive impact.*
+- **Facts with Funny Wordplaying:** *Impact in Arabic is 'Athr'  -  making sure every pixel and line of code leaves a measurable positive impact.*
 - **Why I Crafted / Contributed In:** Core design and technology architecture supporting social and business initiatives across the Gulf region.
 - **Snippets / History:** TypeScript web repository with responsive digital components for Saudi commercial initiatives.
 
@@ -624,7 +624,7 @@ Agent-first framework for safe vibe coding. Turns messy ideas into structured sp
 
 - **Link:** [https://github.com/imMamdouhaboammar/pixolink](https://github.com/imMamdouhaboammar/pixolink)
 - **Type & Stack:** `[PRIVATE]`  | `TypeScript`
-- **Description:** PixoLink SDK is a unified developer toolkit designed for modern builders who code with vibes, not burnout. It’s a smart, ready-to-inject SDK that merges AI logic, payment systems, security layers, logic guards, and admin dashboards — all under one simple import.
+- **Description:** PixoLink SDK is a unified developer toolkit designed for modern builders who code with vibes, not burnout. It’s a smart, ready-to-inject SDK that merges AI logic, payment systems, security layers, logic guards, and admin dashboards  -  all under one simple import.
 - **Facts with Funny Wordplaying:** *Code with vibes, not burnout. One simple import that gives you AI logic, billing, security, and admin dashboards.*
 - **Why I Crafted / Contributed In:** Every new SaaS project requires rebuilding auth, Stripe checkout, error boundaries, and admin panels. PixoLink unifies them into one clean SDK.
 - **Snippets / History:** Unified developer toolkit for vibe coders merging AI logic, payment systems, security layers, and admin components.
@@ -774,7 +774,7 @@ Agent-first framework for safe vibe coding. Turns messy ideas into structured sp
 
 - **Link:** [https://github.com/imMamdouhaboammar/unslop-preflight](https://github.com/imMamdouhaboammar/unslop-preflight)
 - **Type & Stack:** `[PUBLIC]`  | `JavaScript`
-- **Description:** 23-gate design quality enforcer for AI coding agents — autopilot CLI that blocks generic UI slop before implementation
+- **Description:** 23-gate design quality enforcer for AI coding agents  -  autopilot CLI that blocks generic UI slop before implementation
 - **Facts with Funny Wordplaying:** *Bans 1000px border-radii, neon purple gradients, and the phrase 'In today's fast-paced digital world' before a single line of CSS touches Git.*
 - **Why I Crafted / Contributed In:** Tired of AI agents generating generic SaaS landing pages that look like a bootlegged Dribbble template from 2021. Built 23 pre-commit design quality gates.
 - **Snippets / History:** Evaluates layout hierarchy, contrast ratios, typography discipline, and DOM depth before code review. Zero generic slop allowed.
@@ -966,16 +966,16 @@ Agent-first framework for safe vibe coding. Turns messy ideas into structured sp
 
 - **Link:** [https://github.com/imMamdouhaboammar/consult-dad](https://github.com/imMamdouhaboammar/consult-dad)
 - **Type & Stack:** `[PUBLIC]`  | `TypeScript`
-- **Description:** Local escalation bridge for AI coding agents — consult a higher-trust advisor without surrendering control
+- **Description:** Local escalation bridge for AI coding agents  -  consult a higher-trust advisor without surrendering control
 - **Facts with Funny Wordplaying:** *Zero percent boilerplate filler, one hundred percent real-world intention. Powered by TypeScript and unapologetic execution.*
-- **Why I Crafted / Contributed In:** Crafted to solve: Local escalation bridge for AI coding agents — consult a higher-trust advisor without surrendering control. Doing this manually wasted hours every week that were better spent shipping.
+- **Why I Crafted / Contributed In:** Crafted to solve: Local escalation bridge for AI coding agents  -  consult a higher-trust advisor without surrendering control. Doing this manually wasted hours every week that were better spent shipping.
 - **Snippets / History:** Initialized as Open-source codebase. Core stack: TypeScript. Part of the Mamdouh Aboammar high-velocity agent ecosystem.
 
 ### [delegate-team](https://github.com/imMamdouhaboammar/delegate-team) ⭐ **[FEATURED]**
 
 - **Link:** [https://github.com/imMamdouhaboammar/delegate-team](https://github.com/imMamdouhaboammar/delegate-team)
 - **Type & Stack:** `[PUBLIC]`  | `Python`
-- **Description:** Agentic engineering supersystem — one CLI to run the full /mavis-ship chain. Bundles 38 curated integrations + 1890 skills + the v2.7.1 arsenal (orchestrate.py + catalog.py + autopilot + mavis-ship-uni + big-boss persona). MIT.
+- **Description:** Agentic engineering supersystem  -  one CLI to run the full /mavis-ship chain. Bundles 38 curated integrations + 1890 skills + the v2.7.1 arsenal (orchestrate.py + catalog.py + autopilot + mavis-ship-uni + big-boss persona). MIT.
 - **Facts with Funny Wordplaying:** *Why hire a 10-person dev team when you can summon 10 specialized AI agents and watch them aggressively peer-review each other's pull requests?*
 - **Why I Crafted / Contributed In:** Single agent context windows degrade when one agent tries to be the backend architect, security auditor, tester, and copywriter at the same time. Delegate-team routes tasks across specialized subagents.
 - **Snippets / History:** One unified CLI to run the entire /matrix of specialized agents with isolated worktrees, curated tools, and an end-to-end automated shipping chain.
@@ -1056,9 +1056,9 @@ Agent-first framework for safe vibe coding. Turns messy ideas into structured sp
 
 - **Link:** [https://github.com/imMamdouhaboammar/loop.js](https://github.com/imMamdouhaboammar/loop.js)
 - **Type & Stack:** `[PUBLIC]` `[FORK]` | `Markdown/Text`
-- **Description:** A loop engineering framework — state a Goal; Rounds run until a skeptical, read-only Verify agent settles it.
+- **Description:** A loop engineering framework  -  state a Goal; Rounds run until a skeptical, read-only Verify agent settles it.
 - **Facts with Funny Wordplaying:** *Forked and turbocharged. Because good vibe coders create, but great vibe coders take open-source and make it do backflips.*
-- **Why I Crafted / Contributed In:** Crafted to solve: A loop engineering framework — state a Goal; Rounds run until a skeptical, read-only Verify agent settles it.. Doing this manually wasted hours every week that were better spent shipping.
+- **Why I Crafted / Contributed In:** Crafted to solve: A loop engineering framework  -  state a Goal; Rounds run until a skeptical, read-only Verify agent settles it.. Doing this manually wasted hours every week that were better spent shipping.
 - **Snippets / History:** Initialized as Open-source codebase. Core stack: Markdown/Text. Part of the Mamdouh Aboammar high-velocity agent ecosystem.
 
 ### [PatchPilot](https://github.com/imMamdouhaboammar/PatchPilot) ⭐ **[FEATURED]**
@@ -1221,7 +1221,7 @@ Agent-first framework for safe vibe coding. Turns messy ideas into structured sp
 
 - **Link:** [https://github.com/imMamdouhaboammar/4steps-web](https://github.com/imMamdouhaboammar/4steps-web)
 - **Type & Stack:** `[PRIVATE]`  | `HTML`
-- **Description:** 4STEPS — Arabic-first bilingual marketing site (Next.js + Bun). Private archive.
+- **Description:** 4STEPS  -  Arabic-first bilingual marketing site (Next.js + Bun). Private archive.
 - **Facts with Funny Wordplaying:** *Four steps to conversion: simple, direct, and completely free of corporate hesitation.*
 - **Why I Crafted / Contributed In:** Built an Arabic-first bilingual marketing landing page demonstrating high-speed Next.js delivery for MENA audiences.
 - **Snippets / History:** Next.js + Bun responsive web application with RTL layout support, localized typography, and micro-interactions.
@@ -1275,7 +1275,7 @@ Agent-first framework for safe vibe coding. Turns messy ideas into structured sp
 
 - **Link:** [https://github.com/imMamdouhaboammar/open-design](https://github.com/imMamdouhaboammar/open-design)
 - **Type & Stack:** `[PUBLIC]` `[FORK]` | `Markdown/Text`
-- **Description:** 🎨 The open-source Claude Design alternative. 🖥️ Local-first desktop app. 🖼️ Your coding agent becomes the design engine: prototypes, landing pages, dashboards, slides, images & video — real files, HTML/PDF/PPTX/MP4 export. 🤖 Claude Code / Codex / Cursor / Gemini / OpenCode / Qwen & 20+ CLIs via BYOK.
+- **Description:** 🎨 The open-source Claude Design alternative. 🖥️ Local-first desktop app. 🖼️ Your coding agent becomes the design engine: prototypes, landing pages, dashboards, slides, images & video  -  real files, HTML/PDF/PPTX/MP4 export. 🤖 Claude Code / Codex / Cursor / Gemini / OpenCode / Qwen & 20+ CLIs via BYOK.
 - **Facts with Funny Wordplaying:** *Why pay monthly SaaS subscriptions when you can own your local-first design workstation?*
 - **Why I Crafted / Contributed In:** Open-source desktop alternative to proprietary AI design software, giving builders total ownership over their design assets.
 - **Snippets / History:** Local-first desktop application fork focused on canvas manipulation, vector generation, and zero-telemetry workflows.
@@ -1302,7 +1302,7 @@ Agent-first framework for safe vibe coding. Turns messy ideas into structured sp
 
 - **Link:** [https://github.com/imMamdouhaboammar/StaticFlow](https://github.com/imMamdouhaboammar/StaticFlow)
 - **Type & Stack:** `[PRIVATE]`  | `TypeScript`
-- **Description:** Automated SSG Engine for React SPAs — Zero-config static site generation with AI-first optimization.
+- **Description:** Automated SSG Engine for React SPAs  -  Zero-config static site generation with AI-first optimization.
 - **Facts with Funny Wordplaying:** *Static sites with dynamic swagger: zero-config SSG that builds before your coffee cools.*
 - **Why I Crafted / Contributed In:** SPAs suffer from poor SEO and slow initial load. StaticFlow pre-renders React applications into blazing-fast static pages.
 - **Snippets / History:** Automated SSG Engine for React SPAs with AI-first asset optimization and automated route discovery.
@@ -1371,7 +1371,7 @@ Agent-first framework for safe vibe coding. Turns messy ideas into structured sp
 
 - **Link:** [https://github.com/imMamdouhaboammar/cybersecurity-skills](https://github.com/imMamdouhaboammar/cybersecurity-skills)
 - **Type & Stack:** `[PUBLIC]`  | `JavaScript`
-- **Description:** 29 professional cybersecurity skills & CLI suite for AI coding agents — code audit, cloud, recon, incident response, AI security, and compliance
+- **Description:** 29 professional cybersecurity skills & CLI suite for AI coding agents  -  code audit, cloud, recon, incident response, AI security, and compliance
 - **Facts with Funny Wordplaying:** *29 cybersecurity skills ready to hunt down vulnerabilities before script kiddies find them.*
 - **Why I Crafted / Contributed In:** Equipped autonomous coding agents with proactive security scanning capabilities, credential leak detection, and OWASP audits.
 - **Snippets / History:** Comprehensive suite of 29 professional cybersecurity skills & CLI tools for AI coding assistants.
@@ -1530,7 +1530,7 @@ Agent-first framework for safe vibe coding. Turns messy ideas into structured sp
 
 - **Link:** [https://github.com/imMamdouhaboammar/digital-marketing-pro](https://github.com/imMamdouhaboammar/digital-marketing-pro)
 - **Type & Stack:** `[PUBLIC]` `[FORK]` | `Markdown/Text`
-- **Description:** Open-source AI marketing plugin for agencies & in-house teams — 158 skills, 25 specialist agents, 12-Part Strategy Flow, Cowork team-persistent, EU AI Act Article 50 ready, 6-platform AEO/GEO incl. Google AI Mode. Installs on Claude Code, Cowork, Codex, Cursor, Copilot CLI, Antigravity. MIT-licensed.
+- **Description:** Open-source AI marketing plugin for agencies & in-house teams  -  158 skills, 25 specialist agents, 12-Part Strategy Flow, Cowork team-persistent, EU AI Act Article 50 ready, 6-platform AEO/GEO incl. Google AI Mode. Installs on Claude Code, Cowork, Codex, Cursor, Copilot CLI, Antigravity. MIT-licensed.
 - **Facts with Funny Wordplaying:** *Professional marketing without the corporate buzzwords and 3-hour status meetings.*
 - **Why I Crafted / Contributed In:** Open-source AI marketing plugin for agencies and in-house teams looking to automate repetitive campaign setup.
 - **Snippets / History:** Modular plugin architecture for AI assistants managing campaign creation, ad copywriting, and asset preparation.
@@ -1548,7 +1548,7 @@ Agent-first framework for safe vibe coding. Turns messy ideas into structured sp
 
 - **Link:** [https://github.com/imMamdouhaboammar/growth-marketing-os](https://github.com/imMamdouhaboammar/growth-marketing-os)
 - **Type & Stack:** `[PUBLIC]` `[FORK]` | `Markdown/Text`
-- **Description:** Growth Marketing OS | Mahmoud Omar — open-source AI marketing prompts, Claude skills, agents & growth playbooks (EN + AR)
+- **Description:** Growth Marketing OS | Mahmoud Omar  -  open-source AI marketing prompts, Claude skills, agents & growth playbooks (EN + AR)
 - **Facts with Funny Wordplaying:** *An entire marketing operating system that runs in your terminal instead of a 40-slide PowerPoint presentation.*
 - **Why I Crafted / Contributed In:** Standardized agency client onboarding, performance auditing, and weekly reporting into a repeatable code architecture.
 - **Snippets / History:** Open-source growth marketing operating system providing standardized frameworks for agency campaigns.
@@ -1698,9 +1698,9 @@ Agent-first framework for safe vibe coding. Turns messy ideas into structured sp
 
 - **Link:** [https://github.com/imMamdouhaboammar/PrePilot-oss](https://github.com/imMamdouhaboammar/PrePilot-oss)
 - **Type & Stack:** `[PRIVATE]`  | `Python`
-- **Description:** PrePilot Open Source — AI Marketing Agency Suite. MCP-first, multi-agent orchestration, 1040+ skills.
+- **Description:** PrePilot Open Source  -  AI Marketing Agency Suite. MCP-first, multi-agent orchestration, 1040+ skills.
 - **Facts with Funny Wordplaying:** *Classified enterprise weaponry. Built with Python to solve a high-stakes problem without broadcasting trade secrets.*
-- **Why I Crafted / Contributed In:** Crafted to solve: PrePilot Open Source — AI Marketing Agency Suite. MCP-first, multi-agent orchestration, 1040+ skills.. Doing this manually wasted hours every week that were better spent shipping.
+- **Why I Crafted / Contributed In:** Crafted to solve: PrePilot Open Source  -  AI Marketing Agency Suite. MCP-first, multi-agent orchestration, 1040+ skills.. Doing this manually wasted hours every week that were better spent shipping.
 - **Snippets / History:** Initialized as Private enterprise asset. Core stack: Python. Part of the Mamdouh Aboammar high-velocity agent ecosystem.
 
 ### [prepilot-partner-card-funnel-strategist](https://github.com/imMamdouhaboammar/prepilot-partner-card-funnel-strategist) 

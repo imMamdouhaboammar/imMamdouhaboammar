@@ -1312,3 +1312,35 @@ input, select {
     grid-template-columns: 1fr;
   }
 }
+
+/* Flagship Monospace Badge */
+.pill-badge-flagship {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--accent-peach-deep);
+  color: var(--accent-peach-deep);
+  background-color: var(--surface-warm);
+  margin-right: 0.45rem;
+  vertical-align: middle;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   PERFORMANCE & ACCESSIBILITY GUARDRAILS (taste-skill section 6.B)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .pulse-dot {
+    animation: none !important;
+  }
+}

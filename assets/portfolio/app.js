@@ -1,5 +1,5 @@
 /**
- * MAMDOUH ABOAMMAR — PORTFOLIO ENGINE (Geist Mono / Zero-Slop Architecture)
+ * MAMDOUH ABOAMMAR : PORTFOLIO ENGINE (Zero-Slop Architecture)
  * Renders 142 repositories with real-time filtering, search, modal story view, and copy actions.
  */
 
@@ -110,12 +110,12 @@
           <p class="card-desc">${escapeHtml(repo.description || 'System component and engineering engine.')}</p>
 
           <div class="card-fact-box">
-            <span class="fact-title">⚡ VIBE FACT</span>
+            <span class="fact-title font-mono">[VIBE FACT]</span>
             ${escapeHtml(repo.funnyFact)}
           </div>
 
           <div class="card-footer-actions">
-            <span class="pill fork">${repo.stars > 0 ? `★ ${repo.stars}` : 'Production'}</span>
+            <span class="pill fork">${repo.stars > 0 ? `${repo.stars} stars` : 'Production'}</span>
             <div class="action-btn-group">
               <button class="btn-icon-text" onclick="window.copyToClipboard('${cloneCmd}', 'clone command')">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
@@ -148,7 +148,7 @@
         All Repos <span class="count">${allRepos.length}</span>
       </button>
       <button class="cat-pill-btn ${currentCategory === 'FEATURED' ? 'active' : ''}" data-category="FEATURED">
-        ⭐ Crown Jewels <span class="count">${allRepos.filter(r => r.isFeatured).length}</span>
+        Crown Jewels <span class="count">${allRepos.filter(r => r.isFeatured).length}</span>
       </button>
     `;
 
@@ -263,7 +263,7 @@
           <div class="repo-card-header">
             <div>
               <a href="${repo.url}" target="_blank" rel="noopener noreferrer" class="repo-name-link">
-                ${isFeatured ? '<span style="color: #D97706;">★</span> ' : ''}${escapeHtml(repo.name)}
+                ${isFeatured ? '<span class="pill-badge-flagship font-mono">[FLAGSHIP]</span> ' : ''}${escapeHtml(repo.name)}
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
               <div class="card-category-tag" style="margin-top: 0.2rem;">${escapeHtml(repo.category)}</div>
@@ -277,7 +277,7 @@
           <p class="repo-desc">${escapeHtml(repo.description || 'Production system component.')}</p>
 
           <div class="card-fact-box">
-            <span class="fact-title">🎭 VIBE FACT</span>
+            <span class="fact-title font-mono">[VIBE FACT]</span>
             ${escapeHtml(repo.funnyFact)}
           </div>
 
@@ -288,18 +288,18 @@
             </button>
             <div class="accordion-body" id="${cardId}">
               <div class="accordion-item-group">
-                <span class="accordion-item-label">🎯 Why Crafted</span>
+                <span class="accordion-item-label font-mono">[WHY CRAFTED]</span>
                 <p>${escapeHtml(repo.whyCrafted)}</p>
               </div>
               <div class="accordion-item-group">
-                <span class="accordion-item-label">📜 Snippets & History</span>
+                <span class="accordion-item-label font-mono">[HISTORICAL CONTEXT &amp; SNIPPETS]</span>
                 <p>${escapeHtml(repo.snippetsHistory)}</p>
               </div>
             </div>
           </div>
 
           <div class="repo-card-actions">
-            <span class="pill fork">${repo.stars > 0 ? `★ ${repo.stars}` : 'Verified'}</span>
+            <span class="pill fork">${repo.stars > 0 ? `${repo.stars} stars` : 'Verified'}</span>
             <div class="action-btn-group">
               <button class="btn-icon-text" onclick="window.copyToClipboard('${cloneCmd}', 'clone command')">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
