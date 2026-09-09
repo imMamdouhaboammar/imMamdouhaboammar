@@ -991,6 +991,8 @@ The objective is not to invoke everything. The objective is to ensure every avai
 | Capability | Primary job | Enter when | Evidence / output | Write authority | Typical continuation | Do not substitute for |
 | --- | --- | --- | --- | --- | --- | --- |
 | `@ThoughtfulBits Skills` | Product-plan, feature, board, post-editing, and rigorous UI/UX evaluation lenses | One of its actual product/UX/communication lenses matches the task | Product critique, UI/UX method scores, board feedback, or post edits | Usually advisory/read-only unless the selected Skill says otherwise | design / implementation / decision | Generic engineering orchestration |
+| `@Impeccable` | Frontend design, UX, accessibility, responsive behavior, hierarchy, interaction, and UI hardening | A user-facing interface needs design or quality work | Design/UX critique, bounded UI implementation, audit or hardening evidence | Conditional on selected command and write owner | runtime QA / code review / verification | Backend-only engineering or human usability research |
+| `@Testifly` | Browser/E2E test management and runtime validation | Real browser behavior or maintained Testifly test assets matter and the connector is available | Test/project/run evidence or test asset mutations | Conditional and explicit | runtime evidence / repair / release gate | Unit/integration tests or accessibility conformance claims |
 | `@gstack review` | Second-opinion pre-landing review | The change is stable and needs defects that CI may miss surfaced | Review findings | Read-only | repair / ship | Primary implementation |
 | `@gstack retro` | Delivery retrospective | A meaningful delivery cycle completed | Evidence-backed lessons and workflow improvements | Documentation/state only as authorized | handbook/process improvement | Mid-task debugging |
 | `@ZzzOps review-agentic-engineering` | Evidence-based practice review | Completed agentic engineering work should improve future operating practice | One or two concrete practice improvements | Read-only | handbook/process updates | Automatic scorecard or repository mutation |
@@ -1142,6 +1144,23 @@ The capability exists, but permission, billing, auth, policy, or repository stat
 ```
 
 Never silently promote one state into another.
+
+Availability is a runtime snapshot, not a permanent property.
+
+For machine-readable routing:
+
+```text
+availability
+One canonical state from the vocabulary above
+
+block_reason
+Optional reason a normally usable capability is currently BLOCKED
+
+refresh_required_before_action
+Re-check live availability before relying on the snapshot for a mutation or external action
+```
+
+Do not create new availability states for every failure mode. Keep the state vocabulary stable and put details such as `rate_limited`, `billing_blocked`, `auth_missing`, or `device_offline` in `block_reason` or a bounded runtime-constraint field.
 
 ### Currently unresolved names
 

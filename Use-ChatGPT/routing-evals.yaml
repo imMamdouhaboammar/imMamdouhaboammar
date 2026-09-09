@@ -292,6 +292,26 @@ families:
           - prefer_git_sync_for_large_changes
           - do_not_bypass_git_because_gitbook_api_is_callable
 
+  registry_integrity:
+    - id: registry_canonical_availability
+      prompt: "Validate the machine-readable capability registry before an agent uses it."
+      expected:
+        required_rules:
+          - every_capability_has_canonical_availability
+          - block_reason_carries_temporary_failure_detail
+          - refresh_snapshot_before_mutation
+        forbidden_rules:
+          - invent_availability_state_per_failure_mode
+
+    - id: router_registry_ui_consistency
+      prompt: "The fast router selects Impeccable and Testifly for UI/runtime work. Verify the machine registry can resolve both."
+      expected:
+        required_registry_entries:
+          - impeccable
+          - testifly
+        forbidden_outcomes:
+          - router_references_unregistered_capability
+
 holdout_policy:
   note: "Do not repeatedly tune against the same held-out cases. Promote exposed failures into checked cases and create fresh unseen holdouts before claiming benchmark improvement."
   executed_model_benchmark: false

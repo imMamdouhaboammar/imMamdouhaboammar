@@ -10,6 +10,13 @@ principles:
   reviewer_is_not_executable_proof: true
   landing_owner_count: 1
 
+availability_snapshot:
+  captured_on: 2026-09-09
+  scope: current_chatgpt_session
+  refresh_required_before_action: true
+  semantics: primary_job_availability
+  note: "Use block_reason for temporary or external constraints instead of inventing new availability states."
+
 availability_states:
   - CALLABLE
   - CONNECTED
@@ -20,6 +27,7 @@ availability_states:
 
 capabilities:
   get-fable:
+    availability: CALLABLE
     surface: skill
     role: lifecycle_router
     writes: false
@@ -40,6 +48,7 @@ capabilities:
       - eval
 
   zzzops:
+    availability: CALLABLE
     surface: skill_pack
     role: durable_goal_and_backlog_control
     writes: conditional
@@ -49,6 +58,7 @@ capabilities:
       - one_off_untracked_work
 
   riqor:
+    availability: CALLABLE
     surface: skill_pack
     role: agency_orchestration_and_specialists
     writes: conditional
@@ -59,6 +69,7 @@ capabilities:
       - engineering-code-reviewer
 
   taskplane:
+    availability: CALLABLE
     surface: skill_pack
     role: governed_product_design_build_engineering
     writes: harness_governed
@@ -67,6 +78,7 @@ capabilities:
       - trivial_local_fix_without_governance_need
 
   gstack-workflows:
+    availability: CALLABLE
     surface: skill_pack
     role: modular_engineering_workflows
     writes: conditional
@@ -80,6 +92,7 @@ capabilities:
       - document-generate
 
   superpowers:
+    availability: CALLABLE
     canonical_plugin_id: "plugins~Plugin_60aea7460bd4819199fd97a9553a5e12"
     surface: skill_pack
     role: engineering_process_discipline
@@ -92,6 +105,7 @@ capabilities:
       - verification-before-completion
 
   skillquiver:
+    availability: CALLABLE
     surface: skill_pack
     role: prompt_and_engineering_methods
     writes: conditional
@@ -103,6 +117,7 @@ capabilities:
       - verify-work
 
   matt-skills-curated:
+    availability: CALLABLE
     surface: skill_pack
     role: engineering_and_agent_instruction_specialists
     writes: conditional
@@ -115,6 +130,7 @@ capabilities:
       - tdd
 
   armorcodex:
+    availability: CONNECTED
     surface: connected_plugin
     role: agent_governance
     writes: policy_only
@@ -125,11 +141,13 @@ capabilities:
     warning: does_not_replace_repo_or_host_gates
 
   github:
+    availability: CONNECTED
     surface: connected_plugin
     role: repository_source_of_truth
     writes: true
 
   codex-engineering-guardrails:
+    availability: CALLABLE
     surface: skill_pack
     role: code_work_and_code_verification
     writes:
@@ -137,6 +155,8 @@ capabilities:
       code-verification: false
 
   codex-process-jobs:
+    availability: INSTALLED_BUT_NOT_CALLABLE_HERE
+    block_reason: direct_process_runner_not_exposed_in_current_chatgpt_host
     surface: skill
     role: finite_long_running_local_processes
     writes: process_side_effects
@@ -146,27 +166,32 @@ capabilities:
       - generic_background_coding_agent
 
   fallow:
+    availability: BLOCKED
+    block_reason: local_execution_device_offline
     surface: skill
     role: typescript_javascript_graph_analysis
     writes: normally_false
     needs_local_cli_for_execution: true
 
   coderabbit:
+    availability: BLOCKED
+    block_reason: review_rate_limited_for_new_review_attempt
     canonical_plugin_id: "plugins~Plugin_4a6d3426bf5081918d5d976ff7e5aef5"
     surface: github_app_and_skill
     role: independent_code_review
     writes: optional_configured_autofix
     command_handle: resolve_per_repository
-    temporary_states:
-      - RATE_LIMITED
-      - AVAILABLE
+    runtime_constraints:
+      - review_rate_limited
 
   sourcery:
+    availability: CONNECTED
     surface: github_app
     role: independent_code_review_and_pr_guidance
     writes: conditional
 
   gitar:
+    availability: CONNECTED
     surface: github_app
     role: independent_code_review
     writes: optional_auto_apply
@@ -175,20 +200,23 @@ capabilities:
       - "gitar display:verbose"
 
   cubic:
+    availability: CONNECTED
     surface: github_app
     role: independent_code_review
     writes: via_current_app_surface
     comment_trigger: unresolved
 
   qodo:
+    availability: BLOCKED
+    block_reason: billing_blocked_trial_ended
     surface: github_app
     role: independent_code_review
     writes: conditional
-    availability_may_be:
-      - AVAILABLE
-      - BILLING_BLOCKED
+    runtime_constraints:
+      - billing_blocked
 
   mergify:
+    availability: CONNECTED
     surface: github_app
     role: merge_queue_and_pr_automation
     writes: landing_queue_state
@@ -196,6 +224,7 @@ capabilities:
     landing_rule: obey_active_exact_head_authority
 
   ecc-tools:
+    availability: CONNECTED
     surface: github_app
     role: ecc_bundle_generation_and_deduplication
     writes: unresolved
@@ -203,6 +232,7 @@ capabilities:
     invocation_contract: unresolved
 
   pr-readiness-check:
+    availability: CALLABLE
     surface: connected_plugin
     role: supplied_evidence_readiness_analyzer
     writes: false
@@ -214,12 +244,15 @@ capabilities:
       - merge
 
   pr-completion:
+    availability: INSTALLED_BUT_NOT_CALLABLE_HERE
+    block_reason: local_pr_completion_helper_surface_not_exposed_in_current_chatgpt_host
     surface: skill_pack
     role: pr_lifecycle_and_exact_head_landing
     writes: true
     landing_confirmation: per_pr_exact_head
 
   ai-task-brief-builder:
+    availability: CALLABLE
     surface: connected_plugin
     role: supplied_material_evidence_extraction
     writes: false
@@ -228,45 +261,69 @@ capabilities:
       - invent_requirements
 
   context7:
+    availability: CALLABLE
     surface: connected_plugin
     role: current_library_sdk_cli_docs
     writes: false
 
   parallel-search:
+    availability: CALLABLE
     surface: connected_plugin
     role: broad_current_web_research
     writes: false
 
   openai-developers:
+    availability: CALLABLE
     surface: installed_plugin_and_skills
     role: openai_developer_contracts
     writes: conditional
 
   gitbook:
+    availability: CALLABLE
     surface: connected_plugin_and_skills
     role: gitbook_documentation_workflows
     writes: true
     source_rule: prefer_git_when_git_sync_is_canonical
 
   plugin-autopilot:
+    availability: CALLABLE
     surface: skill
     role: agentic_workflow_to_plugin_product
     writes: conditional
 
   skill-submission-pack-writer:
+    availability: CALLABLE
     surface: skill
     role: skills_only_evidence_bound_submission_material
     writes: artifact_only
 
   universal-plugin-installer:
+    availability: CALLABLE
     surface: skill
     role: selected_local_candidate_plugin_adaptation
     writes: local_when_authorized
 
   thoughtfulbits-skills:
+    availability: CALLABLE
     surface: skill_pack
     role: product_ux_board_and_post_lenses
     writes: usually_advisory
+
+  impeccable:
+    availability: CALLABLE
+    surface: skill
+    role: frontend_design_ux_accessibility_and_ui_hardening
+    writes: conditional
+    verified_skill: impeccable
+
+  testifly:
+    availability: BLOCKED
+    block_reason: tool_internal_failure_during_availability_probe
+    surface: connected_plugin
+    role: browser_e2e_test_management_and_runtime_validation
+    writes: conditional
+    first_call_requirement: getPresentationGuidance
+    refresh_required_before_use: true
 
 unresolved_names:
   Codex Dev Workflows:

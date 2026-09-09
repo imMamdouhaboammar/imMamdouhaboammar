@@ -242,6 +242,10 @@ A name must be classified as one of:
 - `UNAVAILABLE`
 - `BLOCKED`
 
+Use only the canonical availability vocabulary above. Put temporary details such as rate limiting, billing, auth, or an offline execution device in `block_reason`, not in a new state.
+
+The registry snapshot must be refreshed before mutations or external actions.
+
 At the 2026-09-09 refresh, these user-referenced names could not be resolved by exact canonical Plugin/Skill name:
 
 - Codex Dev Workflows
