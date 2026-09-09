@@ -155,6 +155,36 @@ capabilities:
     role: independent_code_review
     writes: optional_configured_autofix
     command_handle: resolve_per_repository
+    temporary_states:
+      - RATE_LIMITED
+      - AVAILABLE
+
+  sourcery:
+    surface: github_app
+    role: independent_code_review_and_pr_guidance
+    writes: conditional
+
+  gitar:
+    surface: github_app
+    role: independent_code_review
+    writes: optional_auto_apply
+    observed_controls:
+      - "gitar auto-apply:on"
+      - "gitar display:verbose"
+
+  cubic:
+    surface: github_app
+    role: independent_code_review
+    writes: via_current_app_surface
+    comment_trigger: unresolved
+
+  qodo:
+    surface: github_app
+    role: independent_code_review
+    writes: conditional
+    availability_may_be:
+      - AVAILABLE
+      - BILLING_BLOCKED
 
   pr-readiness-check:
     surface: connected_plugin
