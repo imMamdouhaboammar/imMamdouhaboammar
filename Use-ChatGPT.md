@@ -732,6 +732,62 @@ do not invent a Cubic comment trigger
 use the current app UI or documented integration surface when an explicit Cubic action is needed
 ```
 
+### Mergify
+
+Mergify is verified as an active Pull Request automation / merge-queue actor on this repository.
+
+Observed queue controls include:
+
+```text
+@mergifyio queue
+Request queue enrollment through the Mergify integration
+
+Queue this pull request
+Repository-rendered checkbox control that represents the same queue action when available
+```
+
+Treat Mergify as a landing/queue surface, not an implementation or review tool.
+
+Operational rule:
+
+```text
+current head verified
+-> repository-required checks/reviews satisfied
+-> active landing authority allows queue enrollment
+-> request Mergify queue action
+-> observe actual queue/enrollment state
+-> verify the merged state after landing
+```
+
+Do not treat the presence of the Mergify checkbox as authorization to queue.
+
+Do not treat queue submission as merge completion.
+
+If `@PR Completion` owns the landing workflow, its exact-head confirmation contract still applies before requesting Mergify queue enrollment.
+
+### ecc-tools
+
+`ecc-tools` is verified as an active GitHub App on this repository.
+
+Observed behavior during this refresh:
+
+```text
+ECC bundle files already tracked
+-> app skips generation of another bundle PR
+```
+
+No canonical user-facing trigger, write contract, or broader responsibility was established.
+
+Therefore classify it as:
+
+```text
+OBSERVED_APP
+known behavior: ECC bundle generation/deduplication
+unknown: explicit invocation syntax and full mutation contract
+```
+
+Do not invent an `@ecc-tools` command or route unrelated work to it.
+
 ### Reviewer rate limits and unavailable states
 
 Reviewer services may be installed but temporarily rate-limited, billing-blocked, or otherwise unavailable.
