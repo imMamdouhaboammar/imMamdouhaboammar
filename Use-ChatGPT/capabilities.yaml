@@ -80,6 +80,7 @@ capabilities:
       - document-generate
 
   superpowers:
+    canonical_plugin_id: "plugins~Plugin_60aea7460bd4819199fd97a9553a5e12"
     surface: skill_pack
     role: engineering_process_discipline
     writes: through_active_executor
@@ -151,6 +152,7 @@ capabilities:
     needs_local_cli_for_execution: true
 
   coderabbit:
+    canonical_plugin_id: "plugins~Plugin_4a6d3426bf5081918d5d976ff7e5aef5"
     surface: github_app_and_skill
     role: independent_code_review
     writes: optional_configured_autofix
