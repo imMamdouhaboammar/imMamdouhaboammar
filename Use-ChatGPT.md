@@ -682,6 +682,81 @@ Do not invent a Qodo command when the current bot state or repository documentat
 If Qodo becomes available later, refresh its current documented invocation behavior before depending on it.
 ```
 
+### Gitar
+
+Gitar is verified as an active reviewer on this repository.
+
+The current bot response exposed these request-scoped controls:
+
+```text
+gitar auto-apply:on
+Allow Gitar to apply fixes for that request when the repository/app configuration permits it
+
+gitar display:verbose
+Expand review output for that request
+```
+
+Treat these as repository-observed controls, not universal assumptions for every installation.
+
+Operational rule:
+
+```text
+review result
+-> verify current head
+-> inspect any proposed mutation
+-> enable auto-apply only when mutation ownership is intentionally delegated
+-> any bot commit invalidates prior verification
+```
+
+Do not enable Gitar auto-apply while another auto-fixing bot owns the same PR surface.
+
+### Cubic
+
+Cubic is verified as an active reviewer on this repository.
+
+Observed behavior includes:
+
+- inline PR findings with severity/confidence
+- a PR-level unresolved-issues summary
+- web UI actions for fixing findings or requesting another review
+
+No canonical PR comment command was established during this refresh.
+
+Therefore:
+
+```text
+consume Cubic findings as review evidence
+verify each finding against current code
+fix only real in-scope issues
+do not invent a Cubic comment trigger
+use the current app UI or documented integration surface when an explicit Cubic action is needed
+```
+
+### Reviewer rate limits and unavailable states
+
+Reviewer services may be installed but temporarily rate-limited, billing-blocked, or otherwise unavailable.
+
+Examples observed in this repository include:
+
+- CodeRabbit fair-usage review limits
+- Qodo trial/credit unavailability
+
+Rules:
+
+```text
+RATE_LIMITED != PASS
+
+BILLING_BLOCKED != PASS
+
+NO NEW REVIEW BECAUSE THE SERVICE DID NOT RUN != ZERO FINDINGS
+
+Do not repeatedly spam manual review triggers while a reviewer reports a rate limit.
+
+Use already-valid current-head evidence and other distinct reviewers when appropriate.
+
+If the blocked reviewer is a required repository gate, the PR remains blocked until that gate can actually run or repository policy changes.
+```
+
 ### Other installed GitHub Apps
 
 Previous repository workflows may also expose apps such as:
