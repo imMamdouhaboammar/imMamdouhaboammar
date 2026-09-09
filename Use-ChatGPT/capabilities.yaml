@@ -343,6 +343,27 @@ capabilities:
     role: product_ux_board_and_post_lenses
     writes: usually_advisory
 
+  create-state:
+    availability: CONNECTED
+    canonical_plugin_id: "plugin_asdk_app_69cd66d6b11081919d55522e4f136fec"
+    surface: connected_plugin
+    role: persistent_project_context_and_session_handoffs
+    writes: explicit_persistent_capture_only
+    read_capabilities:
+      - search
+      - fetch
+      - query_project_knowledge
+    write_capabilities:
+      - capture_conversation_context
+      - capture_code
+      - create_session_handoff
+    use_when:
+      - user_requests_persistence
+      - cross_session_project_context_materially_helps
+    do_not_use_for:
+      - replacing_live_repository_state
+      - silently_persisting_unrequested_context
+
   impeccable:
     availability: CALLABLE
     surface: skill
