@@ -127,6 +127,10 @@ families:
         nominal_specialist: codex-process-jobs
         availability_policy: use_only_when_direct_process_job_surface_is_callable
         fallback_rule: run_foreground_only_when_the_user_requires_same_turn_execution_and_host_allows_it
+        required_rules:
+          - explicit_execution_evidence_gap_when_no_runner_executes
+        forbidden_claims:
+          - suite_executed_when_no_runner_executed
         forbidden_roles:
           - generic_background_coding_agent
           - persistent_server_manager
@@ -141,7 +145,7 @@ families:
           - sourcery
           - gitar
           - cubic
-          - codex-engineering-guardrails
+          - codex-engineering-guardrails-code-verification
         required_rules:
           - review_is_not_executable_proof
           - blocked_nominal_reviewer_is_not_invoked
@@ -151,7 +155,7 @@ families:
       expected:
         nominal_reviewer: fallow
         availability_policy: preserve_specialist_gap_when_blocked
-        fallback_capability: codex-engineering-guardrails
+        fallback_capability: codex-engineering-guardrails-code-verification
         required_rules:
           - graph_grounded_structural_review_when_fallow_available
           - do_not_claim_graph_grounded_evidence_when_fallow_blocked
