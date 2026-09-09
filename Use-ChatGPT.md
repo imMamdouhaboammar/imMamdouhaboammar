@@ -786,10 +786,11 @@ ECC bundle files already tracked
 
 No canonical user-facing trigger, write contract, or broader responsibility was established.
 
-Therefore classify it as:
+Therefore classify the current snapshot as:
 
 ```text
-OBSERVED_APP
+availability: CONNECTED
+observed_status: OBSERVED_APP
 known behavior: ECC bundle generation/deduplication
 unknown: explicit invocation syntax and full mutation contract
 ```
@@ -808,9 +809,13 @@ Examples observed in this repository include:
 Rules:
 
 ```text
-RATE_LIMITED != PASS
+availability: BLOCKED
+block_reason: review_rate_limited
+!= PASS
 
-BILLING_BLOCKED != PASS
+availability: BLOCKED
+block_reason: billing_blocked
+!= PASS
 
 NO NEW REVIEW BECAUSE THE SERVICE DID NOT RUN != ZERO FINDINGS
 
@@ -1154,7 +1159,7 @@ availability
 One canonical state from the vocabulary above
 
 block_reason
-Optional reason a normally usable capability is currently BLOCKED
+Optional reason why this capability is constrained by the current snapshot, including BLOCKED and INSTALLED_BUT_NOT_CALLABLE_HERE states
 
 refresh_required_before_action
 Re-check live availability before relying on the snapshot for a mutation or external action
