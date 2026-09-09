@@ -162,10 +162,19 @@ families:
     - id: security_second_lens
       prompt: "This change modifies authentication, role checks, and public/private data boundaries."
       expected:
-        specialist_review: codex-security
+        nominal_reviewer: codex-security
+        availability_policy: select_callable_security_reviewer
+        fallback_capabilities:
+          - get-fable
+          - gstack-workflows
+        required_fallback_actions:
+          - get-fable:fable-security
+          - gstack-workflows:cso
         required_rules:
           - security_specific_verification
           - do_not_replace_functional_tests
+          - unavailable_nominal_security_reviewer_is_not_invoked
+          - explicit_security_evidence_gap_if_no_callable_specialist
 
     - id: bot_pile_on
       prompt: "Ask every installed review bot to review this trivial one-line change."
