@@ -4,6 +4,12 @@ Use this directory when you need the smallest correct plugin stack without loadi
 
 The full copy-ready prompt library remains in [../Use-ChatGPT.md](../Use-ChatGPT.md).
 
+Machine-readable capability metadata: [capabilities.yaml](capabilities.yaml)
+
+Routing-regression corpus: [routing-evals.yaml](routing-evals.yaml)
+
+The eval corpus defines expected behavior and failure vetoes. It must not be described as an executed model benchmark until an actual baseline/candidate run exists.
+
 ## Routing rule
 
 ```text
