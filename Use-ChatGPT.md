@@ -16,6 +16,18 @@ right source of truth
 
 A plugin should have a job inside the workflow. If two plugins perform the same job, choose one unless a second independent perspective is materially useful.
 
+Capability truth refresh: **2026-09-09**
+
+This handbook distinguishes five different things that agents often incorrectly collapse into one concept:
+
+- ChatGPT plugins and Skills that provide capabilities inside the current session
+- connected source plugins that expose live account or repository state
+- GitHub Apps and bots that act inside Issues, Pull Requests, checks, or workflows
+- repository-native CI, branch rules, and required checks that remain authoritative regardless of which AI tool is active
+- external authorities such as current primary documentation, standards, and vendor contracts that define correct behavior but do not prove the local implementation
+
+Never treat an installed name as proof that its callable surface is available in the current host.
+
 ---
 
 # 0. Operating Contract
@@ -157,31 +169,38 @@ Use research plugins to remove uncertainty, not as decoration.
 
 ```text
 @Superpowers
-Disciplined engineering process, planning, TDD, debugging, verification, review discipline
+Engineering process discipline: planning, systematic debugging, TDD, worktree isolation, review handling, and verification-before-completion
 
 @get-fable
-Long-running engineering workflow discipline and stateful continuation when available
+Repository lifecycle routing across discovery, research, planning, TDD, execution, verification, review, release, recovery, and durable handoff when available
 
 @Adaptive Codex Orchestrator
-Split and coordinate multi-part engineering work when parallelization or orchestration is justified
+Use only when its actual orchestration mode is explicitly available and parallel work has disjoint ownership
 
 @AI Task Brief Builder
-Convert supplied evidence into goals, scope, tests, risks, and implementation-ready task briefs
+Analyze supplied development materials into evidence-backed goals, scope, tests, risks, and delivery requirements
+It does not inspect repositories, run tests, or implement work by itself
 
 @taskplane
-Structured project/task planning and dependency tracking when available
+Governed product/design/build/engineering workflow with explicit requirements, dependency gates, review evidence, and human gates
+Use when the task benefits from a formal multi-stage delivery contract, not for every small fix
 
 @Create State
-Persist durable project decisions, state, and handoff information
+Persist durable project decisions and continuation state when the workflow actually benefits from cross-session state
 
 @Codex Process Jobs
-Use for process/job-style coding workflows when its callable surface is available and the task matches
+Run ordinary finite local workloads such as long test suites, builds, benchmarks, downloads, evaluations, or repairs when they may exceed roughly 60 seconds
+Do not use it for persistent servers, remote services, interactive jobs, or as a generic background coding agent
 ```
 
-Rule:
+Rules:
 
 ```text
 Planning plugins do not replace execution evidence.
+
+A durable job runner owns process lifecycle, not engineering correctness.
+
+Do not poll a Codex Process Jobs launch in the same turn merely to imitate synchronous execution.
 ```
 
 ## 1.4 Engineering Execution
@@ -234,28 +253,40 @@ Only one plugin should own a write surface at a time unless the writes are clear
 
 ```text
 @CodeRabbit
-Code review and concrete findings after implementation or on an existing diff/PR
+Independent code review after a meaningful diff exists
+Can review local changes through its CLI/plugin surface or Pull Requests through its GitHub integration when configured
 
 @Codex Engineering Guardrails
-Engineering constraints, implementation discipline, and review guardrails
+Two distinct modes:
+- code-work for authorized implementation with strict scope, root-cause discipline, test-backed slices, and fresh verification
+- code-verification for independent read-only review, diagnosis, testing, and evidence-based verdicts
 
 @Fallow Code Analysis
-Focused static/code analysis when available
+Graph-grounded static/code analysis for changed-code risk, duplication, complexity, architecture boundaries, and structural review where supported
 
 @SonarQube
-Static analysis and code quality/security findings when connected
+Static quality, security, coverage, duplication, dependency-risk, and quality-gate evidence when the project is connected
 
 @PR Readiness Check
-Evidence-based readiness assessment before human review or merge
+Analyzes concrete PR materials supplied to it
+It does not read the live repository, inspect CI, run tests, approve, or merge
+Feed it a current evidence packet rather than asking it to discover the evidence
 
 @PR Completion
-Final PR completion/closure workflow when available and the PR is already proven ready
+Shepherds a real PR through commits, push, CI, review threads, conflicts, and landing
+Its landing workflow is bound to the current head SHA and may require explicit per-PR landing confirmation even when the broader mission is autonomous
 ```
 
-Rule:
+Rules:
 
 ```text
 Do not run release/readiness judgment before implementation evidence exists.
+
+A reviewer can identify risk but cannot manufacture verification.
+
+A readiness analyzer can judge supplied evidence but cannot turn missing evidence into proof.
+
+A PR landing tool may impose a stricter landing gate than the surrounding prompt. The stricter gate wins.
 ```
 
 ## 1.6 Security
@@ -349,31 +380,42 @@ Motion/video implementation
 
 ```text
 @OpenAI Developers
-OpenAI API, Agents SDK, ChatGPT Apps, and OpenAI developer workflows
+Current OpenAI developer workflows such as Agents SDK and ChatGPT Apps SDK work
+Prefer current OpenAI documentation before generating contract-sensitive code
 
 @Plugin Autopilot
-Plugin routing/build workflow support when available
+Discover agentic repository workflows worth packaging, compile workflows into portable Skills, design the Plugin experience, validate/package the Plugin, prepare directory metadata, and assemble submission evidence without confusing local readiness with OpenAI approval
 
 @Plugin Eval
-Evaluate skills/plugins and identify quality gaps
+Evaluate skills/plugins and identify routing, trigger, instruction, and quality gaps when its callable surface is available
 
 @Plugin Management
-Installed plugin permissions, management, and capability-related administration
+Inspect and manage installed plugin connections, permissions, settings, and availability when supported
 
 @Universal Plugin Installer
-Installation-oriented flows when explicitly requested and supported
+Adapt and review a user-selected local directory of candidate skill/plugin folders as untrusted input, then prepare valid folders as Codex plugins
+Do not describe it as a generic remote plugin marketplace installer
 
 @Skill Submission Pack Writer
-Submission/listing package preparation for skills/plugins
+Create evidence-bound submission materials for Skills-only Plugins from approved product facts and completed test evidence
+Do not use it for MCP-backed submission, portal operations, or invented proof
 
 @Matt Skills Curated
-Skill discovery/curation guidance when available
+Broad engineering workflow routing including implementation, code review, debugging, architecture, Git safety, autonomous goal contracts, research, handoff, and specialist skills
+Do not reduce it to skill curation
 
 @Skillquiver
-Skill-oriented workflow support when available
+Broad engineering and agent-workflow discipline including prompt contracts, research, planning, TDD, debugging, worktrees, code-review handling, durable execution, and verification
+Use the narrowest specialist Skill that matches the task
 
 @ThoughtfulBits Skills
-Skill-oriented workflow support when available
+Use for its actual product and communication lenses:
+- product-feature feedback
+- product-plan feedback
+- rigorous multi-agent UI/UX evaluation
+- board-deck/board feedback
+- editing supplied social posts
+Do not route it generically for unrelated Skill engineering
 ```
 
 ## 1.10 Conditional Specialists
@@ -398,6 +440,333 @@ Do not auto-route these purely from the name unless their capability is visible 
 ```
 
 This is deliberate. Mature routing means avoiding invented plugin behavior.
+
+---
+
+## 1.11 Execution Surface Taxonomy
+
+Before invoking anything, classify the surface.
+
+```text
+CHATGPT PLUGIN / SKILL
+A capability inside the current ChatGPT or Codex host
+Examples: @Superpowers, @Context7, @Codex Engineering Guardrails
+
+CONNECTED SOURCE
+A live account/repository/data source exposed through a connector
+Examples: @GitHub, @Supabase, @Gmail, @Google Drive
+
+GITHUB APP / BOT
+An actor installed on GitHub that comments, reviews, updates checks, or may modify a PR branch
+Examples: coderabbitai, Cursor Bugbot, autofix.ci, Qlty
+
+REPOSITORY-NATIVE GATE
+A check or policy owned by the repository itself
+Examples: GitHub Actions, branch protection, rulesets, required reviews, merge queue, CODEOWNERS
+
+EXTERNAL AUTHORITY
+Current primary documentation or a third-party service that defines a contract
+Examples: OpenAI developer docs, framework docs, vendor release notes
+```
+
+Rules:
+
+```text
+Do not ask a reviewer to act as a source of truth.
+
+Do not ask a readiness analyzer to discover repository state it cannot access.
+
+Do not ask a GitHub App to replace repository-native CI.
+
+Do not treat a successful bot comment as proof that the underlying code is correct.
+
+Do not let a Plugin name, GitHub App name, and GitHub username become interchangeable concepts.
+```
+
+## 1.12 GitHub Apps / Bots Operating Layer
+
+Use GitHub Apps as bounded actors inside the PR lifecycle.
+
+The application being installed does not mean every repository has enabled every feature.
+
+Always inspect repository history, app configuration, or current official docs before depending on a bot-specific command.
+
+### CodeRabbit
+
+Verified review controls include:
+
+```text
+@coderabbitai review
+Incremental review of new changes
+
+@coderabbitai full review
+Fresh review of the complete Pull Request
+
+@coderabbitai pause
+Pause automatic reviews for the Pull Request
+
+@coderabbitai resume
+Resume reviews after pause
+
+@coderabbitai resolve
+Ask CodeRabbit to resolve its own previous review comments after they are genuinely addressed
+
+@coderabbitai approve
+Ask CodeRabbit to resolve its unresolved threads and attempt approval when the configured workflow supports that behavior
+This is not a substitute for repository-required human approval
+
+@coderabbitai ignore
+PR-description directive that disables automatic review while present
+Do not use casually
+```
+
+Operational rule:
+
+```text
+Meaningful diff
+-> request/reuse CodeRabbit review
+-> independently verify each material finding
+-> classify REAL / ALREADY FIXED / STALE / FALSE POSITIVE / NEEDS DECISION
+-> fix only real in-scope findings
+-> re-run affected verification
+-> reply/resolve with evidence
+```
+
+Do not blindly implement CodeRabbit prose.
+
+### Cursor Bugbot
+
+Verified manual Pull Request triggers include:
+
+```text
+cursor review
+bugbot run
+```
+
+For diagnostics or rule visibility:
+
+```text
+cursor review verbose=true
+bugbot run verbose=true
+```
+
+Bugbot can run automatically on PR updates when enabled.
+
+Its findings are review evidence, not completion evidence.
+
+Do not rely on unsupported thread mentions when the documented top-level PR triggers are available.
+
+### autofix.ci
+
+autofix.ci is workflow-driven.
+
+Do not invent a PR comment command for it.
+
+The intended model is:
+
+```text
+GitHub Actions workflow
+-> run deterministic fixers/formatters
+-> call autofix-ci/action
+-> autofix.ci validates the generated patch
+-> GitHub App commits the patch to the Pull Request branch when necessary
+-> agent refreshes the PR head
+-> agent re-runs or re-observes relevant checks
+```
+
+Use it for deterministic fixers such as formatting or safe mechanical cleanup configured by the repository.
+
+Do not let multiple auto-fixing bots create a correction loop.
+
+Any bot-authored commit invalidates prior current-head verification.
+
+### Qlty
+
+Treat the Qlty GitHub App primarily as a quality/check provider unless the repository proves a configured fix workflow.
+
+It can post code-quality information and checks on Pull Requests and may support generated/validated fixes when configured.
+
+Do not invent a Qlty comment command.
+
+Use the resulting check or finding only for the surface it actually analyzed.
+
+### Sourcery
+
+Sourcery is verified as an active reviewer on this repository.
+
+The current bot response exposes these Pull Request commands:
+
+```text
+@sourcery-ai review
+Trigger a fresh Sourcery review
+
+@sourcery-ai issue
+Create a GitHub Issue from a review comment when used in that review context
+
+@sourcery-ai title
+Generate or regenerate the Pull Request title
+
+@sourcery-ai summary
+Generate or regenerate the Pull Request summary
+
+@sourcery-ai guide
+Generate or regenerate the reviewer's guide
+
+@sourcery-ai resolve
+Resolve Sourcery comments after they are genuinely addressed
+
+@sourcery-ai dismiss
+Dismiss existing Sourcery reviews when deliberately starting over
+```
+
+Treat Sourcery findings like any other reviewer input:
+
+```text
+finding
+-> inspect current code
+-> classify
+-> fix only real in-scope issues
+-> re-verify
+-> reply/resolve with evidence
+```
+
+Do not ask Sourcery and CodeRabbit for duplicate full reviews by default.
+
+Use a second reviewer when it contributes a materially different perspective or when the first review leaves meaningful uncertainty.
+
+### Qodo
+
+Qodo is verified as an installed reviewer on this repository, but availability is state-dependent.
+
+Its bot may explicitly report that reviews are paused because the current workspace has no active trial/credits.
+
+Rules:
+
+```text
+A disabled or billing-blocked reviewer is UNAVAILABLE, not PASSING.
+
+Absence of findings from a reviewer that did not run is not review evidence.
+
+Do not invent a Qodo command when the current bot state or repository documentation has not exposed one.
+
+If Qodo becomes available later, refresh its current documented invocation behavior before depending on it.
+```
+
+### Other installed GitHub Apps
+
+Previous repository workflows may also expose apps such as:
+
+```text
+ChatGPT Codex Connector
+Claude
+Warp Factories
+```
+
+Do not hardcode an invocation syntax for these merely from the app display name.
+
+Before invoking:
+
+```text
+1. inspect existing Issue/PR bot activity in the repository
+2. inspect repository configuration
+3. inspect current official app documentation when needed
+4. identify the exact supported trigger
+5. invoke only if the requested job matches that trigger
+6. verify the app actually responded
+```
+
+If no trustworthy trigger is found, leave the app unused rather than guessing.
+
+### GitHub App reference refresh
+
+Current references used for this handbook refresh:
+
+```text
+CodeRabbit commands:
+https://docs.coderabbit.ai/reference/review-commands
+https://docs.coderabbit.ai/guides/commands
+
+Cursor Bugbot:
+https://cursor.com/docs/bugbot
+
+autofix.ci:
+https://autofix.ci/
+https://autofix.ci/setup
+
+Qlty GitHub App:
+https://docs.qlty.sh/cloud/github-app
+```
+
+Recheck current documentation before relying on a bot command in a high-risk workflow.
+
+## 1.13 Evidence Trust Ladder
+
+Use the strongest evidence available.
+
+```text
+LEVEL A - DIRECT CURRENT STATE
+Live repository state, runtime state, database state, rendered UI, exact current artifact
+
+LEVEL B - EXECUTABLE PROOF
+Focused regression test, integration test, build, typecheck, lint, package validation, current-head CI, deterministic reproduction
+
+LEVEL C - INDEPENDENT REVIEW
+CodeRabbit, Codex verification, Fallow, SonarQube, security review, UI/UX review
+
+LEVEL D - EXTERNAL CONTRACT
+Current primary documentation, release notes, standards, official vendor behavior
+
+LEVEL E - CONTEXT / MEMORY / INFERENCE
+Previous session notes, handoffs, remembered architecture, hypotheses
+```
+
+Rules:
+
+```text
+A stronger level may invalidate a weaker one.
+
+Completion normally needs Level A and/or Level B evidence when execution is possible.
+
+Level C improves confidence but does not replace Level B.
+
+Level D defines external contracts but does not prove the local implementation satisfies them.
+
+Level E is useful for orientation only until reconciled with current state.
+```
+
+## 1.14 Capability Routing Precedence
+
+When several plugins could help, route in this order:
+
+```text
+1. SOURCE
+Who owns current truth?
+
+2. CONTRACT
+Which requirement or external contract defines correct behavior?
+
+3. EXECUTOR
+Who is authorized to mutate the target?
+
+4. VERIFIER
+What directly proves the changed behavior?
+
+5. REVIEWER
+Who provides an independent second perspective?
+
+6. READINESS
+Is the collected evidence sufficient for the next gate?
+
+7. LANDING
+Which tool or repository policy owns the irreversible state transition?
+
+8. HANDOFF
+What state must survive if work remains?
+```
+
+Do not start with a giant @mention list and assign jobs afterward.
+
+Select the stage first, then the smallest useful capability.
 
 ---
 
@@ -491,6 +860,173 @@ No execution occurred
 ```
 
 Never report `COMPLETE` when the only evidence is code inspection.
+
+---
+
+## 3.1 Prompt Contract Standard
+
+For reusable engineering prompts, autonomous Goals, Issue-delivery agents, or long-running repository missions, define an explicit contract before the execution loop.
+
+The compact contract is:
+
+```text
+outcome:
+  [observable finished state]
+
+success_criteria:
+  - [externally checkable condition]
+
+source_of_truth:
+  - [live source that resolves state]
+
+boundaries:
+  - [in scope]
+  - [out of scope]
+
+permissions:
+  - [reads]
+  - [writes]
+  - [push / PR / issue / deployment authority]
+  - [actions that still require confirmation]
+
+write_owner:
+  [single owner for each mutable surface]
+
+tools:
+  source:
+  planner:
+  executor:
+  specialist:
+  verifier:
+  reviewer:
+  readiness:
+  landing:
+  handoff:
+
+evidence:
+  - [proof required before each completion claim]
+
+stop_conditions:
+  - [completed]
+  - [blocked]
+  - [authority required]
+  - [unsafe ambiguity]
+```
+
+Routing guidance:
+
+```text
+@Skillquiver
+Use its prompt-engineering workflow when the reusable prompt itself needs explicit outcome, permissions, tools, evidence, and stop conditions
+
+@Matt Skills Curated
+Use its autonomous goal workflow when converting a long engineering mission into a self-contained agentic execution contract
+
+@AI Task Brief Builder
+Use when supplied Issue/spec/PR materials need to be separated into confirmed requirements, test needs, constraints, and unconfirmed proposals
+Remember that it only analyzes the material supplied to it
+
+@taskplane
+Use when the work genuinely benefits from a governed requirements/design/build/engineering flow with explicit gates
+```
+
+Prompt quality rules:
+
+```text
+Describe the finished state, not merely the activity.
+
+Separate boundaries from permissions.
+
+Name what evidence is required before saying complete.
+
+Name what the agent must NOT infer.
+
+Define the write owner.
+
+Define when parallel reads are safe and when writes must serialize.
+
+Define the landing authority separately from implementation authority.
+
+Do not repeat the same safety rule in ten different sections when one canonical rule can govern them all.
+```
+
+### Copy-ready autonomous prompt skeleton
+
+```text
+MISSION
+[observable finished state]
+
+TARGET
+[repository / PR / Issue / environment]
+
+SOURCE OF TRUTH
+[current connected source]
+
+OPERATING CONTRACT
+- inspect before mutation
+- preserve unrelated work
+- one write owner per mutable surface
+- current state beats memory
+- evidence before claims
+- mutation invalidates stale verification
+
+SCOPE
+IN:
+- ...
+
+OUT:
+- ...
+
+PERMISSIONS
+ALLOWED:
+- ...
+
+CONFIRMATION-REQUIRED:
+- ...
+
+ROLES
+Source:
+Planner:
+Executor:
+Specialist:
+Verifier:
+Reviewer:
+Readiness:
+Landing:
+Handoff:
+
+STATE MACHINE
+RESTORE
+-> INVESTIGATE
+-> CONTRACT
+-> EXECUTE
+-> VERIFY
+-> REVIEW
+-> REPAIR
+-> REVERIFY
+-> READY
+-> LAND
+-> VERIFY LANDED STATE
+-> DOCUMENT
+
+EVIDENCE GATES
+- ...
+
+STOP CONDITIONS
+- COMPLETE
+- BLOCKED
+- AUTHORITY REQUIRED
+- UNSAFE / AMBIGUOUS
+
+FINAL RECEIPT
+- source state
+- changes
+- verification
+- reviews
+- current SHA / artifact
+- limitations
+- next action
+```
 
 ---
 
@@ -724,40 +1260,55 @@ Scope:
 [ALL OPEN PRS / SELECTED PRS]
 
 Plugin Roles:
-- Source and PR actions: @GitHub
-- Process: @Superpowers
+- Live source and PR actions: @GitHub
+- Process discipline: @Superpowers
 - Local verification/fixes: @Remote Desktop Commander
-- Code review: @CodeRabbit
-- Engineering constraints: @Codex Engineering Guardrails
-- Security review: @Codex Security only for security-sensitive changes
-- Readiness verdict: @PR Readiness Check
-- Final close/merge workflow: @PR Completion when available and appropriate
+- Implementation/review guardrails: @Codex Engineering Guardrails
+- Independent review: @CodeRabbit after a meaningful current diff exists
+- Security review: @Codex Security only when the changed trust boundary justifies it
+- Readiness analysis: @PR Readiness Check only after a current evidence packet has been assembled
+- PR shepherding/landing: @PR Completion when the actual PR needs CI/review/conflict/landing ownership
 
 For each PR:
-1. Read title, description, linked issue/spec, changed files, checks, review threads, and branch state
-2. Classify:
-   - valid and likely useful
-   - useful but failing
-   - stale/conflicting
-   - duplicate/superseded
-   - unsafe
-   - no longer valuable
-3. For valid PRs, verify requirements against the actual diff
-4. Reproduce/test locally when risk justifies it
-5. Repair concrete blockers in the correct branch/worktree when authorized
-6. Re-run targeted tests and CI-equivalent checks
-7. Run code review on the final diff
-8. Run security review only when relevant
-9. Ask @PR Readiness Check for a readiness verdict using actual evidence
-10. Merge only if required gates pass and repository policy permits
-11. Close invalid, duplicate, superseded, or unrecoverable PRs only with a concrete reason
-12. Verify post-merge branch/default-branch state
+1. Refresh live title, description, linked Issue/spec, base/head SHA, changed files, checks, review threads, requested reviews, and mergeability
+2. Inspect repository instructions and determine whether the PR is already owned by another active workflow
+3. Classify:
+   - VALID_READY_TO_REPAIR
+   - VALID_ALREADY_READY
+   - STALE_OR_CONFLICTING
+   - DUPLICATE_OR_SUPERSEDED
+   - UNSAFE
+   - NO_LONGER_VALUABLE
+4. For a valid PR, map requirements to the actual current diff
+5. Reproduce or test locally when risk justifies it
+6. Repair only concrete blockers on the existing PR branch/worktree when authorized
+7. Re-run focused tests, nearby regression checks, and CI-equivalent commands
+8. Run CodeRabbit or another independent review only after the meaningful final diff exists
+9. Triage every material review comment against current code before applying it
+10. Re-verify after any source mutation
+11. Build a current readiness packet containing:
+    - PR head SHA
+    - requirement mapping
+    - tests actually executed
+    - current CI/check state
+    - review state
+    - unresolved risks
+    - rollback/recovery where material
+12. Give that packet to @PR Readiness Check if an independent readiness judgment is useful
+13. Use @PR Completion to shepherd the real PR when appropriate
+14. If @PR Completion requires explicit per-PR landing confirmation for the current head SHA, treat that as a hard landing gate
+15. Merge only after the active landing tool and repository policy both permit it
+16. Verify the remote merged state and resulting default-branch health
+17. Close invalid, duplicate, superseded, or unrecoverable PRs only with concrete evidence and appropriate authority
 
 Rules:
-- do not merge based only on green CI
-- do not close a failing PR if a small safe repair makes it valuable
+- green CI alone is not merge readiness
+- a readiness analyzer cannot replace live GitHub inspection
+- a bot review is not a substitute for tests
+- a new push invalidates prior current-head readiness
+- do not close a failing PR when a small safe repair preserves meaningful value
 - do not endlessly repair a PR whose purpose is obsolete or destructive
-- never claim a merge occurred unless @GitHub confirms it
+- never claim a merge occurred until @GitHub confirms the merged state
 ```
 
 ## 5.6 Enterprise / Production Readiness Audit
@@ -1003,7 +1554,7 @@ Workflow:
 ## 6.1 Build or Improve a ChatGPT / Codex Plugin
 
 ```text
-@OpenAI Developers @Plugin Autopilot @Plugin Eval @Superpowers @GitHub @Context7 @Skill Submission Pack Writer
+@OpenAI Developers @Plugin Autopilot @Superpowers @GitHub @Skillquiver @Matt Skills Curated @Plugin Eval @Universal Plugin Installer @Skill Submission Pack Writer
 
 Plugin / repository:
 [REPO]
@@ -1012,48 +1563,106 @@ Goal:
 [TASK]
 
 Plugin Roles:
-- Platform guidance: @OpenAI Developers + @Context7
-- Process: @Superpowers
-- Source/write surface: @GitHub
-- Routing/build support: @Plugin Autopilot when available
-- Evaluation: @Plugin Eval
-- Submission packaging: @Skill Submission Pack Writer only after implementation/evaluation
+- Live source/write surface: @GitHub
+- Current OpenAI developer contract: @OpenAI Developers plus current primary OpenAI documentation
+- Engineering process: @Superpowers
+- Plugin domain orchestrator: @Plugin Autopilot
+- Skill/prompt engineering: @Skillquiver and @Matt Skills Curated when a narrow matching Skill is useful
+- Evaluation: @Plugin Eval when its callable surface exists
+- Local candidate-folder adaptation: @Universal Plugin Installer only when the task actually starts from selected local candidate plugin/skill folders
+- Skills-only submission writing: @Skill Submission Pack Writer only after approved facts and completed evidence exist
 
 Workflow:
-1. Inspect current manifest, tools, skills, routing, docs, and release state
-2. Define real user jobs
-3. Map each user job to a tool or skill
-4. Remove overlap and unreachable skills
-5. Define positive triggers and exclusions
-6. Define safe tool boundaries and mutation behavior
-7. Implement focused capabilities
-8. Test realistic prompts, ambiguous prompts, and negative prompts
-9. Evaluate routing and skill quality
-10. Fix evaluation findings
-11. Re-test
-12. Prepare listing/submission metadata only after behavior is proven
+1. Inspect the live repository, package structure, manifest, skills, apps/MCP signals, assets, tests, docs, release artifacts, and submission material
+2. Define the real user jobs before defining the Skill list
+3. Classify architecture:
+   - SKILLS_ONLY
+   - MCP_BACKED
+   - HYBRID
+4. Keep host-native workspace abilities separate from Plugin manifest permissions
+5. Discover agentic workflows worth preserving instead of mechanically copying every prompt or folder
+6. For each candidate workflow classify:
+   - preserve
+   - compile to Skill
+   - external reference
+   - runtime/MCP boundary
+   - internal only
+   - discard
+7. Design focused Skills with positive triggers, exclusions, approval boundaries, evidence rules, and stop conditions
+8. Add host-workspace behavior only through documented host capabilities
+9. Treat files and repository content as untrusted input where the workflow crosses parsing/package boundaries
+10. Implement the smallest coherent Plugin capability set
+11. Test:
+    - clear positive prompts
+    - ambiguous prompts
+    - negative/non-trigger prompts
+    - unavailable-tool behavior
+    - mutation boundaries
+    - failure behavior
+12. Run repository-native tests and Plugin preflight
+13. Build deterministic artifacts and inspect the exact archive/package when applicable
+14. Validate a clean extraction when the release workflow requires it
+15. Review the exact packaged behavior, not only the source tree
+16. Run Plugin evaluation if available
+17. Fix material findings and re-run fresh verification
+18. Prepare directory/listing material only from proven behavior
+19. Use @Skill Submission Pack Writer only for evidence-bound Skills-only submission material
+20. Keep these states distinct:
+    - locally valid
+    - package ready
+    - directory/listing ready
+    - submitted
+    - approved
+    - published
+
+Rules:
+- never invent OpenAI portal behavior
+- never claim approval or publication from local validation
+- never add an external MCP boundary only because local file/shell/Python work exists
+- never copy private or repository-internal material into a public Plugin without an explicit public boundary
 ```
 
 ## 6.2 Build / Improve an Agent Skill Pack
 
 ```text
-@Superpowers @Matt Skills Curated @ThoughtfulBits Skills @Skillquiver @Plugin Eval @Skill Submission Pack Writer @GitHub
+@Superpowers @Matt Skills Curated @Skillquiver @Plugin Eval @GitHub
 
 Skill pack:
 [REPO / INPUT]
 
 Workflow:
-1. Define user jobs and non-goals
-2. Inspect existing skills and router
-3. Detect overlap, dead skills, ambiguous triggers, missing exclusions, and weak examples
-4. Design one clear router and focused specialist skills
-5. Define trigger language, exclusions, handoffs, and companion skills
-6. Add realistic workflows and failure cases
-7. Test skill invocation with representative prompts
-8. Run @Plugin Eval
-9. Fix routing/instruction findings
-10. Re-run evaluation
-11. Prepare submission package only after quality gates pass
+1. Define user jobs, finished outcomes, non-goals, and mutation boundaries
+2. Inspect existing skills, router behavior, examples, tests, and host assumptions
+3. Detect:
+   - overlap
+   - dead or unreachable Skills
+   - broad descriptions that over-trigger
+   - vague descriptions that under-trigger
+   - conflicting handoffs
+   - missing exclusions
+   - duplicated workflow logic
+   - invented host capabilities
+4. Give every Skill one clear job
+5. Define:
+   - positive trigger language
+   - exclusion language
+   - required inputs
+   - permissions
+   - evidence requirements
+   - handoffs
+   - stop conditions
+6. Use @Skillquiver when a testable prompt contract or engineering workflow is needed
+7. Use @Matt Skills Curated to route to the narrowest engineering specialist rather than treating the whole plugin as one monolithic agent
+8. Add realistic positive, ambiguous, and negative test prompts
+9. Test invocation and non-invocation behavior
+10. Test host-boundary behavior when tools are missing
+11. Run @Plugin Eval when available
+12. Fix routing/instruction findings
+13. Re-run the exact evaluation set after every routing mutation
+14. Prepare submission material only after quality gates pass
+
+Do not route @ThoughtfulBits Skills generically for Skill engineering.
+Use it only when its actual product, board, UI/UX, or post-editing lenses are relevant to the Skill being evaluated.
 ```
 
 ## 6.3 Evaluate a Plugin or Skill
@@ -1215,31 +1824,80 @@ Workflow:
 ## 7.3 Release Readiness
 
 ```text
-@PR Readiness Check @PR Completion @GitHub @CodeRabbit @Superpowers @Testifly
+@GitHub @Superpowers @CodeRabbit @Testifly @PR Readiness Check @PR Completion
 
 Release / PR:
 [INPUT]
 
-Verify:
+Role split:
+- @GitHub gathers live PR, head SHA, review, check, mergeability, and repository-policy evidence
+- @Superpowers enforces verification-before-completion discipline
+- @CodeRabbit contributes independent code-review evidence after a meaningful diff exists
+- @Testifly contributes runtime/browser evidence when the changed user flow requires it
+- @PR Readiness Check judges a supplied current evidence packet only
+- @PR Completion shepherds the actual PR after readiness and owns its own landing rules
+
+Build the evidence packet first:
+
+PR_HEAD_SHA:
+...
+
+REQUESTED_SCOPE:
+...
+
+REQUIREMENT_ALIGNMENT:
+...
+
+TESTS_EXECUTED:
+...
+
+CURRENT_CI:
+...
+
+REVIEW_STATE:
+...
+
+RUNTIME_QA:
+...
+
+SECURITY:
+...
+
+MIGRATION_ROLLOUT:
+...
+
+ROLLBACK_RECOVERY:
+...
+
+KNOWN_LIMITATIONS:
+...
+
+Then verify:
 - requested scope complete
-- acceptance criteria mapped to evidence
+- acceptance criteria mapped to current evidence
 - targeted tests passing
 - regression checks passing
-- CI passing
-- unresolved review blockers handled
-- migrations safe and applied to required environment
+- current-head CI passing
+- unresolved blocking review findings handled
+- migrations safe for the required environment
 - rollback/recovery known where material
 - docs/config changes complete
-- critical user flows smoke-tested
+- critical user flows smoke-tested when relevant
 - security-sensitive changes reviewed
-- no known P0/P1 blocker
+- no known blocking risk
 
-Verdict must be exactly one of:
+Readiness verdict:
 READY
 READY WITH NON-BLOCKING FOLLOW-UPS
 NOT READY
 
-Every verdict requires evidence.
+Landing state is separate:
+READY_AWAITING_LANDING_CONFIRMATION
+LANDING_REQUESTED
+MERGED
+BLOCKED
+
+Never label a submitted merge request as MERGED until live GitHub state proves it.
 ```
 
 ## 7.4 Android QA
@@ -3258,7 +3916,7 @@ Build the repository's next actionable engineering and product backlog from its 
 Use this after the backlog exists and you want an autonomous engineering agency to process Issues one by one through implementation, verification, review, PR, merge, closure, documentation, and queue refresh.
 
 ~~~~text
-@Riqor @get-fable @ZzzOps @Superpowers @GitHub
+@Riqor @get-fable @ZzzOps @Superpowers @GitHub @PR Readiness Check @PR Completion
 
 # AUTONOMOUS ISSUE DELIVERY AGENCY
 
@@ -3285,7 +3943,8 @@ You are simultaneously responsible for:
 - Runtime QA
 - Git discipline
 - Pull Request management
-- Merge readiness
+- Current-head readiness
+- Landing authority and confirmation boundaries
 - Issue closure
 - Delivery documentation
 - Long-session continuity
@@ -3311,7 +3970,9 @@ RESTORE REPOSITORY STATE
 -> RE-VERIFY
 -> OPEN PR
 -> VERIFY PR / CI
--> MERGE
+-> BUILD CURRENT-HEAD READINESS EVIDENCE
+-> READY OR READY_AWAITING_LANDING_CONFIRMATION
+-> LAND THROUGH THE ACTIVE LANDING AUTHORITY
 -> VERIFY MERGED STATE
 -> CLOSE ISSUE
 -> DOCUMENT RECEIPT
@@ -3353,14 +4014,16 @@ For each Issue:
 9. independently review the change
 10. fix material findings
 11. create a complete Pull Request
-12. satisfy required CI, review, branch, and repository policies
-13. merge the Pull Request when authorized and objectively ready
-14. confirm that the merge actually landed
-15. close or confirm closure of the Issue
-16. document delivery evidence
-17. refresh repository state
-18. choose the next Issue
-19. repeat
+12. satisfy required CI, review, branch, and repository policies on the exact current head SHA
+13. determine the active landing authority and its confirmation contract
+14. if the landing surface requires exact-head per-PR confirmation, transition to READY_AWAITING_LANDING_CONFIRMATION and request only that narrow decision
+15. otherwise request or perform landing only when the active landing surface, repository policy, and current authorization all permit it
+16. confirm that the merge actually landed and matches the intended head
+17. close or confirm closure of the Issue
+18. document delivery evidence
+19. refresh repository state
+20. choose the next Issue
+21. repeat
 
 Continue while safe useful actionable work remains.
 
@@ -3446,7 +4109,8 @@ Repository-local evidence comes first.
 
 @AI Task Brief Builder
 
-Use when an Issue has useful evidence but needs a tighter implementation contract.
+Use when supplied Issue/spec materials contain useful evidence but need a tighter implementation contract.
+It analyzes the material supplied to it; it does not inspect the repository on its own.
 
 ## Engineering Guardrails
 
@@ -4004,6 +4668,14 @@ Use only after readiness has been proven:
 
 @PR Completion
 
+If @PR Completion is the active landing surface:
+
+- bind readiness to the exact current head SHA
+- follow its own landing plan
+- preserve its per-PR confirmation gate
+- transition to READY_AWAITING_LANDING_CONFIRMATION rather than routing around that gate
+- never reuse confirmation after the head SHA changes
+
 Never use plugin count as a proxy for quality.
 
 ---
@@ -4494,11 +5166,25 @@ The PR is mergeable only when all applicable conditions are satisfied:
 - repository-specific release policy is satisfied
 - PR targets the correct branch
 
+Collect the evidence from live sources first.
+
 Use:
 
 @PR Readiness Check
 
-when available and appropriate.
+only after a current PR evidence packet exists and an independent text-based readiness judgment is useful.
+
+The packet should include at minimum:
+
+- current PR head SHA
+- requirement/acceptance mapping
+- tests actually executed
+- current CI/check state
+- review state
+- unresolved risks
+- rollout/rollback notes where material
+
+Do not ask @PR Readiness Check to discover live repository or CI state.
 
 Do not use readiness tooling as a replacement for evidence.
 
@@ -4528,7 +5214,27 @@ Admin capability is not permission to ignore engineering policy.
 
 # MERGE POLICY
 
-When the PR satisfies all required gates and the user has authorized this autonomous delivery loop, merge the PR without requesting another conversational confirmation unless repository or host policy requires one.
+Mission-level authorization allows the agency to carry a PR all the way to verified readiness.
+
+Landing authority is evaluated separately.
+
+Respect the strictest applicable landing boundary:
+
+1. repository rules and merge policy
+2. active host/tool landing contract
+3. current user authorization
+
+If @PR Completion is the active landing workflow and it requires explicit per-PR confirmation for the exact current head SHA, that confirmation is mandatory.
+
+Do not treat a broad autonomous-loop instruction as a reusable approval for unknown future PR heads.
+
+In that case transition to:
+
+READY_AWAITING_LANDING_CONFIRMATION
+
+and request only the narrow landing decision required by the active PR Completion workflow.
+
+If another host provides a direct GitHub merge capability and the current user request explicitly authorizes merging without a separate per-PR confirmation, the agent may merge only when repository policy and the active tool contract both permit it.
 
 Respect the repository's configured merge strategy.
 
@@ -4536,11 +5242,13 @@ Do not change repository merge settings merely to complete the Issue.
 
 If the repository requires a merge queue, use the merge queue.
 
-If auto-merge is available and repository policy permits it, auto-merge may be enabled after readiness criteria are satisfied.
+If auto-merge is available and repository policy permits it, enabling it is a landing mutation and must obey the active landing authority rule.
 
-If multiple merge methods are allowed, follow repository history convention.
+If multiple merge methods are allowed, follow explicit repository policy first, then established repository history.
 
 Do not force merge.
+
+Do not use admin bypass merely because admin permission exists.
 
 ---
 
@@ -5077,7 +5785,9 @@ SELECTED
 -> PR OPEN
 -> PR CHECKS GREEN
 -> PR POLICY SATISFIED
--> MERGE READY
+-> READY
+-> READY_AWAITING_LANDING_CONFIRMATION / LANDING AUTHORIZED
+-> LANDING REQUESTED
 -> MERGED
 -> MERGED STATE VERIFIED
 -> ISSUE CLOSED
@@ -5122,24 +5832,43 @@ The state machine is evidence-driven, not strictly forward-only.
 
 ---
 
-# AUTONOMOUS MERGE AUTHORITY
+# LANDING AUTHORITY MODEL
 
-This prompt explicitly authorizes ordinary Pull Request merges for completed Issues when ALL of the following are true:
+This autonomous prompt authorizes routine work required to bring Pull Requests to verified readiness:
 
-- repository rules permit the merge
+- in-scope edits
+- tests
+- commits
+- ordinary pushes
+- PR creation
+- CI diagnosis and justified reruns
+- review replies and thread resolution
+- safe conflict/base updates
+
+The final landing mutation is governed by the active landing surface.
+
+If @PR Completion is used, follow its exact-head landing plan and explicit per-PR confirmation requirement.
+
+A generic prompt cannot pre-authorize an unknown future head SHA when the landing tool requires head-bound confirmation.
+
+If a different GitHub surface is used and its current contract permits direct merge under the user's explicit mission authorization, merge only when:
+
+- repository rules permit it
 - required checks pass
 - required reviews are satisfied
 - no blocking finding remains
 - current PR head is verified
 - merge target is correct
-- merge does not constitute an additional production deployment approval
-- no repository-specific instruction requires another human gate
+- merge does not silently add a separate production-deployment approval
+- no repository-specific instruction requires another gate
 
-This authorization does NOT authorize bypassing protections.
+No landing authority permits:
 
-This authorization does NOT authorize destructive production operations.
-
-This authorization does NOT authorize release publication unless that action is explicitly part of approved repository policy or separately authorized.
+- bypassing protections
+- force-push
+- admin bypass
+- destructive production operations
+- release publication unless separately authorized or already covered by explicit repository policy
 
 ---
 
@@ -5443,7 +6172,13 @@ while safe_actionable_issues_exist:
 
     confirm_merge_readiness_on_current_SHA()
 
-    merge_using_repository_policy()
+    determine_active_landing_authority()
+
+    if landing_requires_exact_head_confirmation:
+        transition_to_READY_AWAITING_LANDING_CONFIRMATION()
+        obtain_exact_head_confirmation_before_landing()
+
+    request_landing_only_when_repository_policy_and_active_tool_allow()
 
     verify_remote_merge_state()
 
@@ -5471,6 +6206,322 @@ Take one valid actionable Issue at a time from current repository truth, underst
 
 Continue this verified Issue-to-merge-to-closure loop until no safe actionable work remains or a genuine external authority boundary prevents further progress.
 ~~~~
+
+---
+
+## 13.7 Existing PR Repair Clinic
+
+Use this when a Pull Request already exists and the task is to understand it, repair only what blocks value, verify it, and either hand it back ready or take it through landing when separately authorized.
+
+```text
+@GitHub @Superpowers @Codex Engineering Guardrails @CodeRabbit @PR Readiness Check @PR Completion
+
+TARGET
+Repository: [REPO]
+PR: [PR]
+
+MISSION
+Repair the existing PR without replacing it with a new implementation unless repository evidence proves the current branch is unusable.
+
+WORKFLOW
+1. Fetch the current PR metadata, base/head SHA, body, commits, changed files, checks, reviews, review threads, linked Issue, and mergeability
+2. Read repository instructions
+3. Compare the PR against the linked requirement
+4. Classify each problem:
+   - BLOCKING DEFECT
+   - REGRESSION
+   - STALE REVIEW
+   - FALSE POSITIVE
+   - OUT OF SCOPE
+   - PRODUCT DECISION
+5. Reproduce branch-caused failures where practical
+6. Patch only blockers and regressions required to satisfy the PR's existing purpose
+7. Preserve unrelated author work
+8. Do not broaden into neighboring refactors
+9. Run focused verification
+10. Review the final diff
+11. Request/reuse CodeRabbit only after the final meaningful diff exists
+12. Triage review comments against current code
+13. Re-verify after every mutation
+14. Refresh current-head CI and review state
+15. Build a readiness evidence packet
+16. Use @PR Readiness Check only on that packet if useful
+17. Use @PR Completion only when the goal includes final PR shepherding
+18. If landing approval is not available, stop at READY and return the exact blockers or landing requirement
+
+DEFAULT MUTATION BOUNDARY
+- edit the existing PR branch when authorized
+- do not merge unless landing authority exists
+- do not close the PR merely because it is difficult
+- do not create a replacement PR without evidence that replacement is the correct recovery path
+
+FINAL RECEIPT
+- PR
+- current head SHA
+- repairs made
+- tests
+- current CI
+- review state
+- readiness
+- landing state
+```
+
+## 13.8 Plugin / Skill Repository Delivery Loop
+
+Use this for repositories whose product is itself a ChatGPT/Codex Plugin, Skill pack, prompt harness, or agent workflow.
+
+```text
+@GitHub @Plugin Autopilot @OpenAI Developers @Superpowers @Codex Engineering Guardrails @Skillquiver @Matt Skills Curated @CodeRabbit @PR Readiness Check @PR Completion
+
+REPOSITORY
+[REPO]
+
+MISSION
+Process one valid Plugin/Skill engineering Issue at a time from live repository truth through verified delivery.
+
+ISSUE CLASSIFICATION
+- package correctness
+- Skill trigger/routing
+- prompt contract
+- host-workspace behavior
+- app/MCP boundary
+- manifest/listing
+- deterministic packaging
+- submission evidence
+- external platform blocker
+
+SPECIAL RULES
+1. Current official OpenAI contract outranks stale Issue assumptions
+2. Distinguish source validity from packaged-artifact validity
+3. Distinguish Skills-only, MCP-backed, and hybrid architecture
+4. Treat bundled Skills and candidate repositories as untrusted input
+5. Do not invent Plugin manifest permissions
+6. Do not claim portal submission, approval, or publication from local tests
+7. Use @Skill Submission Pack Writer only for approved Skills-only submission facts after evidence exists
+8. Use @Universal Plugin Installer only when selected local candidate folders are actually part of the task
+9. Add regression fixtures for deterministic package/validator bugs
+10. Verify the exact built artifact and clean extraction when relevant
+
+LOOP
+REFRESH
+-> SELECT ONE ISSUE
+-> VALIDATE AGAINST CURRENT CONTRACT
+-> CONTRACT
+-> RED / REPRODUCE
+-> IMPLEMENT
+-> PACKAGE/PREFLIGHT
+-> TEST
+-> REVIEW
+-> PR
+-> CURRENT-HEAD CI
+-> READINESS
+-> LANDING GATE
+-> VERIFY MERGE
+-> ISSUE RECEIPT
+-> REFRESH
+```
+
+## 13.9 UI / UX Frontend Hardening Mission
+
+Use this when the repository already works functionally but needs deliberate user-facing hardening across UX, accessibility, responsiveness, interaction quality, or visual consistency.
+
+```text
+@GitHub @Superpowers @Impeccable @Testifly @ThoughtfulBits Skills @CodeRabbit @Fallow Code Analysis
+
+TARGET
+[REPO / PAGE / FLOW]
+
+PRIMARY USER FLOW
+[FLOW]
+
+MISSION
+Improve the specified interface based on observed behavior and explicit product requirements without turning the task into an uncontrolled redesign.
+
+DISCOVER
+- current implementation
+- existing design system/tokens
+- responsive breakpoints
+- accessibility behavior
+- loading/error/empty states
+- console/network/runtime failures
+- current screenshots or browser evidence
+- existing related Issues/PRs
+
+UX EVIDENCE
+Use @ThoughtfulBits Skills test-ui-ux when a rigorous flow-efficiency score is useful:
+- inventory important user actions
+- count unnecessary steps/clicks/fields
+- identify critical failures
+- return evidence-linked improvement priorities
+
+DESIGN / ACCESSIBILITY
+Use @Impeccable for:
+- hierarchy
+- spacing
+- interaction states
+- focus/keyboard behavior
+- responsive composition
+- visual consistency
+- accessibility hardening
+
+RUNTIME
+Use @Testifly when a real browser/E2E flow is necessary.
+
+ENGINEERING
+- implement the smallest coherent UI slice
+- preserve product behavior unless change is required
+- test interactive states
+- verify target viewports
+- verify keyboard/focus
+- verify real content and overflow
+- inspect console and network failures
+- run code review after the diff exists
+
+DO NOT
+- invent user research
+- invent analytics
+- rewrite the whole design system for one local defect
+- replace product copy merely to make a visual layout easier
+- call a static screenshot review equivalent to runtime accessibility proof
+```
+
+## 13.10 Autonomous Prompt / Goal Contract Builder
+
+Use this whenever the job is to create a strong reusable coding-agent prompt, Goal, repository mission, or long-running agency contract.
+
+```text
+@Skillquiver @Matt Skills Curated @AI Task Brief Builder @Superpowers
+
+INPUT
+[RAW USER MISSION / SPEC / ISSUE SET / PRIOR PROMPT]
+
+OUTPUT
+One self-contained execution contract that another capable agent can run without rediscovering the entire intent.
+
+WORKFLOW
+1. Separate supplied facts from proposals and assumptions
+2. Use @AI Task Brief Builder only when supplied materials need evidence extraction
+3. Define the observable finished state
+4. Define success criteria
+5. Define source of truth
+6. Define scope and non-goals
+7. Define permissions separately from boundaries
+8. Define one write owner per mutable surface
+9. Define tool roles by stage
+10. Define evidence required before each success claim
+11. Define mutation-freshness rules
+12. Define human/landing gates
+13. Define blocker and stop states
+14. Define handoff/continuation state
+15. Remove duplicated rules and decorative @mentions
+16. Add only the workflows required by the mission
+17. Stress-test the prompt against:
+    - missing tool
+    - stale context
+    - dirty worktree
+    - false reviewer finding
+    - failing CI
+    - blocked external dependency
+    - changed head SHA
+    - unsafe destructive shortcut
+
+QUALITY BAR
+The prompt is not complete until a fresh agent can answer:
+- what am I trying to finish?
+- where is current truth?
+- what may I mutate?
+- what evidence proves success?
+- when must I stop?
+- who owns landing?
+```
+
+## 13.11 Long Session Restore / Continue / Handoff
+
+Use this for sessions that may span many Issues, PRs, or context windows.
+
+```text
+@GitHub @Remote Desktop Commander @get-fable @Superpowers @Skillquiver @Create State @Codex Process Jobs
+
+MISSION
+Resume from current truth, not from a narrative summary.
+
+RESTORE
+1. Read live default branch and current SHA
+2. Read open PRs and active Issues
+3. Inspect local branch/worktree/dirty state when local access exists
+4. Read durable handoff/state only after live state is known
+5. Reconcile every handoff claim with live evidence
+6. Build:
+   - COMPLETE
+   - ACTIVE
+   - BLOCKED
+   - NOT STARTED
+7. Resume the smallest highest-value unfinished action
+
+LONG JOB RULE
+Use @Codex Process Jobs only for qualifying finite local workloads such as long tests/builds/evaluations.
+Do not turn it into a generic background agent.
+Do not same-turn poll a launch simply to keep the session busy.
+
+HANDOFF
+Persist only durable state:
+- repository
+- default-branch SHA
+- active branch/worktree
+- active Issue
+- active PR
+- last fresh verification
+- blockers
+- exact next safe action
+
+Do not persist stale conclusions that can be rediscovered cheaply from GitHub.
+```
+
+## 13.12 GitHub App Assisted PR Review Loop
+
+Use this when installed GitHub Apps should help with review or deterministic fixing without allowing bot pile-on.
+
+```text
+@GitHub @CodeRabbit @Superpowers
+
+PR
+[PR]
+
+RULE
+One primary independent review path by default.
+Add a second bot only when it contributes a materially different lens.
+
+FLOW
+1. Verify the PR has a meaningful current diff
+2. Check which GitHub Apps are actually active/configured for the repository
+3. Prefer existing automatic review before manually triggering duplicate work
+4. For CodeRabbit:
+   - @coderabbitai review for incremental changes
+   - @coderabbitai full review for a deliberate fresh full pass
+5. For Cursor Bugbot:
+   - cursor review
+   - bugbot run
+   - use verbose=true only for diagnostics/rule visibility
+6. For autofix.ci:
+   - do not comment a fake trigger
+   - inspect the configured GitHub Actions autofix workflow
+   - treat any bot commit as a new head that requires fresh verification
+7. For Qlty:
+   - consume configured checks/findings
+   - do not invent a comment trigger
+8. For ChatGPT Codex Connector, Claude, Warp Factories, or another installed app:
+   - inspect prior repository bot activity or current official docs
+   - invoke only after the exact supported trigger is known
+9. Triage every material finding against current code
+10. Fix real in-scope findings only
+11. Re-run affected verification
+12. Refresh review/check state
+13. Do not merge merely because several bots agree
+
+ANTI-LOOP
+Do not enable several auto-fixing bots on the same surface without clear ownership.
+If a bot authors a commit, refresh the PR before any other bot is allowed to act on the old head.
+```
 
 ---
 
@@ -5526,6 +6577,42 @@ BAD: Route a plugin purely because its name sounds relevant
 BETTER: only route plugins with known capabilities in the current session or documented workflow
 ```
 
+```text
+BAD: Ask @PR Readiness Check to inspect GitHub, discover CI state, or run tests
+
+BETTER: collect a current evidence packet from @GitHub and execution tools, then ask @PR Readiness Check to judge that supplied packet
+```
+
+```text
+BAD: Treat @AI Task Brief Builder as a repository crawler
+
+BETTER: supply the Issue/spec/PR material you want it to analyze
+```
+
+```text
+BAD: Use @Codex Process Jobs as a generic persistent coding worker and poll it immediately
+
+BETTER: use it only for qualifying finite local long-running workloads and respect its lifecycle boundary
+```
+
+```text
+BAD: Comment "autofix" at autofix.ci and assume a fix bot will run
+
+BETTER: inspect the configured autofix.ci GitHub Actions workflow because autofix.ci is workflow-driven
+```
+
+```text
+BAD: Ask CodeRabbit, Cursor Bugbot, Qlty, Claude, and every other bot to review the same trivial diff
+
+BETTER: one primary independent reviewer by default, then add another lens only when it changes confidence
+```
+
+```text
+BAD: Treat broad mission-level merge authorization as permanent approval for every future PR head
+
+BETTER: obey the active landing tool contract; when @PR Completion requires exact-head per-PR confirmation, that gate wins
+```
+
 ---
 
 # 15. Maturity Checklist for Any New Prompt Added to This File
@@ -5534,18 +6621,29 @@ Before adding a new workflow, verify it contains:
 
 ```text
 [ ] Clear user job
+[ ] Observable finished outcome
 [ ] Source of truth
+[ ] Execution-surface classification
 [ ] Minimal plugin stack
 [ ] Explicit plugin roles
+[ ] GitHub App role separated from ChatGPT plugin role
 [ ] Invocation order
 [ ] Write owner
+[ ] Scope and non-goals
+[ ] Permissions separated from boundaries
 [ ] Risk/security trigger
 [ ] Verification method
+[ ] Evidence freshness rule
 [ ] Review gate where relevant
 [ ] Runtime QA where relevant
+[ ] Readiness analyzer receives real evidence rather than discovering it magically
+[ ] Landing authority is explicit
+[ ] Host-specific confirmation gates are preserved
 [ ] Completion criteria
 [ ] Evidence requirements
 [ ] Failure/blocker behavior
+[ ] Handoff state when long-running
+[ ] No guessed bot handle or command
 [ ] No invented plugin capability
 ```
 
