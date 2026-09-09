@@ -141,7 +141,8 @@ Choose by job:
 - `@CodeRabbit`: general diff/PR review
 - `@Fallow Review`: TS/JS graph-grounded structural review
 - `code-verification`: requirement/risk/test assessment
-- `@Codex Security` / security specialist: trust-boundary changes
+- `@Codex Security`: nominal specialist for trust-boundary changes; invoke only when callable
+- `@get-fable fable-security` or `@gstack cso`: callable security fallbacks when Codex Security is unavailable
 - `@taskplane tp-engineering`: governed engineering sign-off only when taskplane is active
 
 ## PR lifecycle
@@ -236,7 +237,9 @@ Use durable state only when it earns its cost:
 - `@Matt handoff`
 - `@Create State` where connected persistence helps
 
-For long local commands use `@Codex Process Jobs` only when the workload is finite.
+For long local commands, `@Codex Process Jobs` is the nominal runner only when its direct process-job surface is callable in the current host.
+
+If that surface is unavailable, use a safe host-native foreground process only when same-turn execution is required and permitted. Otherwise record an explicit execution evidence gap. Never claim a detached process job was launched when it was not.
 
 ## Capability availability
 
