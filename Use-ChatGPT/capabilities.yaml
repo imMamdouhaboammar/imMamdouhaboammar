@@ -38,6 +38,14 @@ capability_aliases:
     capability: get-fable
     action: fable-skill-creator
 
+  get-fable-fable-security:
+    capability: get-fable
+    action: fable-security
+
+  gstack-cso:
+    capability: gstack-workflows
+    action: cso
+
   gitbook-write-docs:
     capability: gitbook
     action: write-docs
