@@ -1307,8 +1307,8 @@ CURRENT PLATFORM CONTRACT
 EVAL
 @get-fable fable-eval for prompt, Skill, router, or policy behavior
 nominal plugin-wide local evaluator: @Plugin Eval
-availability gate: use Plugin Eval only when its local target path and CLI are available
-if Plugin Eval is blocked, do not claim plugin-wide local metrics or benchmark execution
+availability gate: use Plugin Eval only when its canonical availability is CALLABLE and its local target path and CLI are available
+if Plugin Eval is not CALLABLE or its local prerequisites are unavailable, record an explicit plugin-evaluation evidence gap and do not claim plugin-wide local metrics or benchmark execution
 @Skillquiver verification methods
 
 LOCAL CANDIDATE ADAPTATION
