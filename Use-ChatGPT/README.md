@@ -154,14 +154,21 @@ Choose by job:
 -> refresh current head
 -> evidence packet
 -> @PR Readiness Check when useful
--> @PR Completion for PR lifecycle ownership
--> exact-head landing confirmation when required
+-> nominal landing owner: @PR Completion
+-> use PR Completion only when its helper surface is callable
+-> if PR Completion was explicitly selected but is unavailable, record a landing evidence gap and do not substitute another merge surface
+-> otherwise select the active callable landing authority
+-> exact-head landing confirmation when required by the selected authority
 -> verify merged state
 ```
 
 `@PR Readiness Check` judges supplied text. It does not inspect GitHub or run tests.
 
-`@PR Completion` owns its own exact-head landing gate. A broad autonomous prompt does not override it.
+`@PR Completion` owns its own exact-head landing gate when its helper surface is callable. A broad autonomous prompt does not override it.
+
+If PR Completion is explicitly selected but its helper is unavailable, stop at a landing evidence gap. Do not silently fall back to direct GitHub merge or Mergify.
+
+If PR Completion was not explicitly selected, choose the active callable landing authority and preserve repository policy plus any exact-head confirmation it requires.
 
 ## GitHub Apps
 
@@ -197,6 +204,7 @@ Any bot-authored commit invalidates prior current-head verification.
 
 Use:
 
+- Plugin Eval is the nominal local plugin/skill evaluator only when its local target path and CLI are available; otherwise do not claim plugin-wide local metrics or benchmark execution
 - `@Universal Plugin Installer` only for explicitly selected local candidate folders
 - `@Skill Submission Pack Writer` only for Skills-only submission facts supported by completed evidence
 - `@get-fable fable-eval` for baseline/candidate prompt, router, Skill, or policy evaluation
