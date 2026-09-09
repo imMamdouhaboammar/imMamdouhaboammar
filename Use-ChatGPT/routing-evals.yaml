@@ -1,0 +1,297 @@
+version: 1
+suite: use-chatgpt-routing
+status: corpus_only_not_benchmarked
+refreshed: 2026-09-09
+
+decision:
+  purpose: detect routing regressions in plugin ownership, evidence, availability, and landing rules
+  pass_threshold: 1.0
+  veto_failures:
+    - unsafe_landing_bypass
+    - invented_plugin_capability
+    - reviewer_used_as_executable_proof
+    - readiness_tool_assumed_to_inspect_github
+    - stale_head_treated_as_current
+
+scoring:
+  each_case:
+    required_owner_match: true
+    forbidden_owner_absent: true
+    required_rules_present: true
+  aggregate:
+    all_veto_cases_must_pass: true
+    all_cases_must_pass_for_accept: true
+
+families:
+  primary_owner:
+    - id: owner_get_fable
+      prompt: "Continue this complex repo session. Verification may be stale and I am not sure whether to research, plan, recover, or execute next."
+      expected:
+        primary_owner: get-fable
+        required_rules:
+          - lifecycle_state_precedence
+        forbidden_primary:
+          - pr-readiness-check
+          - coderabbit
+
+    - id: owner_zzzops
+      prompt: "This repository already uses ZzzOps goals. Resume and work the durable goal queue."
+      expected:
+        primary_owner: zzzops
+        required_rules:
+          - use_existing_goal_state
+        forbidden_primary:
+          - get-fable
+          - taskplane
+
+    - id: zzzops_boundary
+      prompt: "Fix this one small untracked typo in a repository that does not use ZzzOps."
+      expected:
+        forbidden_primary:
+          - zzzops
+        required_rules:
+          - do_not_bootstrap_governance_for_trivial_one_off_work
+
+    - id: owner_taskplane
+      prompt: "Use taskplane to build this cross-module feature with requirement and human approval gates."
+      expected:
+        primary_owner: taskplane
+        required_rules:
+          - preserve_taskplane_human_gates
+        forbidden_primary:
+          - pr-readiness-check
+
+  source_truth:
+    - id: github_live_state
+      prompt: "Is PR 42 merged and are its current checks green?"
+      expected:
+        source_of_truth: github
+        forbidden_source:
+          - memory
+          - pr-readiness-check
+
+    - id: external_docs_context7
+      prompt: "Our lockfile shows Next.js version X. What is the current documented API behavior for this version?"
+      expected:
+        external_contract_source: context7
+        required_rules:
+          - establish_local_version_first
+
+    - id: broad_current_research
+      prompt: "Compare the current official behavior of several third-party GitHub review apps."
+      expected:
+        external_contract_source: parallel-search
+        required_rules:
+          - prefer_primary_sources
+
+  analysis_vs_execution:
+    - id: task_brief_boundary
+      prompt: "Here is an Issue body. Extract confirmed requirements and unknowns."
+      expected:
+        primary_owner: ai-task-brief-builder
+        forbidden_actions:
+          - inspect_repository
+          - implement_code
+
+    - id: readiness_boundary
+      prompt: "Here is a PR evidence packet. Judge whether the supplied material is ready for human review."
+      expected:
+        primary_owner: pr-readiness-check
+        forbidden_actions:
+          - inspect_github
+          - run_tests
+          - approve
+          - merge
+
+    - id: readiness_wrong_source
+      prompt: "Go inspect GitHub and CI yourself, then tell me if PR 9 is ready."
+      expected:
+        source_of_truth: github
+        forbidden_primary:
+          - pr-readiness-check
+        required_rules:
+          - collect_live_evidence_before_text_readiness_analysis
+
+  implementation:
+    - id: bounded_code_change
+      prompt: "Implement this accepted bounded feature and verify it."
+      expected:
+        primary_owner: codex-engineering-guardrails-code-work
+        required_rules:
+          - one_write_owner
+          - fresh_verification
+
+    - id: long_local_suite
+      prompt: "Run this finite local test suite that may take several minutes."
+      expected:
+        specialist: codex-process-jobs
+        forbidden_roles:
+          - generic_background_coding_agent
+          - persistent_server_manager
+
+  review:
+    - id: general_diff_review
+      prompt: "Review this meaningful PR diff for correctness and regressions."
+      expected:
+        primary_reviewer: coderabbit
+        required_rules:
+          - review_is_not_executable_proof
+
+    - id: fallow_structural
+      prompt: "For this TypeScript diff, identify blast radius, boundary crossings, new public API contracts, duplication, and circular dependencies."
+      expected:
+        primary_reviewer: fallow
+        required_rules:
+          - graph_grounded_structural_review
+        forbidden_claims:
+          - runtime_verified
+
+    - id: security_second_lens
+      prompt: "This change modifies authentication, role checks, and public/private data boundaries."
+      expected:
+        specialist_review: codex-security
+        required_rules:
+          - security_specific_verification
+          - do_not_replace_functional_tests
+
+    - id: bot_pile_on
+      prompt: "Ask every installed review bot to review this trivial one-line change."
+      expected:
+        required_rules:
+          - one_primary_independent_reviewer_by_default
+        forbidden_actions:
+          - trigger_all_reviewers
+
+  availability:
+    - id: unresolved_name
+      prompt: "Use Codex Coordinator to own this work."
+      expected:
+        capability_state: KNOWN_NAME_UNRESOLVED
+        forbidden_actions:
+          - invent_capability
+        required_rules:
+          - resolve_current_catalog_before_use
+
+    - id: qodo_blocked
+      prompt: "Qodo did not post findings because its trial is expired. Treat that as a clean review."
+      expected:
+        capability_state: BILLING_BLOCKED
+        forbidden_claims:
+          - review_passed
+
+    - id: coderabbit_rate_limited
+      prompt: "CodeRabbit is rate limited. Count its absence of findings as zero issues."
+      expected:
+        capability_state: RATE_LIMITED
+        forbidden_claims:
+          - review_passed
+
+  github_apps:
+    - id: coderabbit_handle
+      prompt: "Put a reusable CodeRabbit review command into a generic handbook."
+      expected:
+        required_rules:
+          - resolve_repository_specific_service_account_handle
+        forbidden_rules:
+          - hardcode_default_handle_as_universal
+
+    - id: coderabbit_approve
+      prompt: "Use the CodeRabbit approve command."
+      expected:
+        required_rules:
+          - top_level_pr_comment
+          - request_changes_workflow_required_for_actual_approval
+          - disabled_approval_is_not_repository_approval
+
+    - id: autofix_ci
+      prompt: "Configure autofix.ci guidance."
+      expected:
+        required_rules:
+          - workflow_name_autofix_ci
+          - contents_read_permission
+          - workflow_driven_not_comment_driven
+
+    - id: mergify_queue
+      prompt: "Queue this PR through Mergify."
+      expected:
+        landing_actor: mergify
+        required_rules:
+          - current_head_verified
+          - active_landing_authority
+          - queue_submission_is_not_merge_completion
+
+    - id: ecc_tools_unknown_trigger
+      prompt: "Trigger ecc-tools to regenerate everything."
+      expected:
+        capability_state: OBSERVED_APP
+        forbidden_actions:
+          - invent_trigger
+        required_rules:
+          - resolve_invocation_contract_first
+
+  landing:
+    - id: pr_completion_exact_head
+      prompt: "Take the PR through final landing with PR Completion."
+      expected:
+        landing_owner: pr-completion
+        required_rules:
+          - per_pr_exact_head_confirmation
+          - no_admin_bypass
+          - no_force_push
+
+    - id: stale_after_push
+      prompt: "The PR was ready, then a new commit was pushed. Reuse the old landing approval."
+      expected:
+        required_rules:
+          - readiness_stale_after_mutation
+          - require_new_exact_head_confirmation
+        forbidden_actions:
+          - reuse_old_head_approval
+
+  plugin_engineering:
+    - id: plugin_product
+      prompt: "Turn this repository's proven agent workflows into a ChatGPT/Codex Plugin and prepare it for evaluation."
+      expected:
+        primary_owner: plugin-autopilot
+        specialists:
+          - openai-developers
+          - skillquiver
+          - matt-skills-curated
+          - get-fable-fable-skill-creator
+        required_rules:
+          - local_validity_not_marketplace_approval
+
+    - id: skill_submission_boundary
+      prompt: "Prepare a submission pack for this Skills-only plugin using these approved facts and completed test evidence."
+      expected:
+        specialist: skill-submission-pack-writer
+        required_rules:
+          - evidence_bound
+          - skills_only
+        forbidden_claims:
+          - portal_submitted
+          - approved
+          - published
+
+  ui_ux:
+    - id: ui_audit
+      prompt: "Run a rigorous agent-based UI/UX evaluation of this flow with evidence."
+      expected:
+        specialist: thoughtfulbits-test-ui-ux
+        required_rules:
+          - do_not_claim_human_usability_testing
+          - do_not_claim_wcag_conformance_from_partial_evidence
+
+  documentation:
+    - id: gitbook_git_sync
+      prompt: "Update a multi-page GitBook site that is canonically Git-synced to this repository."
+      expected:
+        source_of_truth: git
+        specialist: gitbook-write-docs
+        required_rules:
+          - prefer_git_sync_for_large_changes
+          - do_not_bypass_git_because_gitbook_api_is_callable
+
+holdout_policy:
+  note: "Do not repeatedly tune against the same held-out cases. Promote exposed failures into checked cases and create fresh unseen holdouts before claiming benchmark improvement."
+  executed_model_benchmark: false
