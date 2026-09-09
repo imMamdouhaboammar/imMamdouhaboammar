@@ -30,6 +30,10 @@ capability_aliases:
     capability: codex-engineering-guardrails
     action: code-work
 
+  codex-engineering-guardrails-code-verification:
+    capability: codex-engineering-guardrails
+    action: code-verification
+
   thoughtfulbits-test-ui-ux:
     capability: thoughtfulbits-skills
     action: test-ui-ux
