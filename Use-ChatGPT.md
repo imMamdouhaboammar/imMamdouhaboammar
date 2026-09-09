@@ -1268,22 +1268,26 @@ collect evidence first
 then @PR Readiness Check if useful
 
 LANDING
-@PR Completion
-exact-head confirmation when its contract requires it
+nominal owner: @PR Completion
+availability gate: use PR Completion only when its landing helper surface is callable
+if PR Completion was explicitly selected and is unavailable, stop with an explicit landing evidence gap; do not substitute direct GitHub merge or Mergify
+if PR Completion was not explicitly selected, choose the active callable landing authority and preserve repository policy plus any exact-head confirmation it requires
 ```
 
 ### Existing PR repair
 
 ```text
 @GitHub
--> @PR Completion gh-review-comment-triage
+-> nominal PR lifecycle owner: @PR Completion when its helper surface is callable
+-> otherwise use GitHub live review-thread state and record that PR Completion did not execute
 -> current-code evidence
 -> bounded repair under @Codex Engineering Guardrails
 -> focused verification
 -> @CodeRabbit / Fallow as appropriate
 -> refresh current head
--> @PR Completion watcher
--> exact-head landing gate
+-> PR Completion watcher only when callable
+-> otherwise use the active callable PR-state watcher without claiming PR Completion execution
+-> exact-head landing gate from the selected landing authority
 ```
 
 ### Plugin / Skill repository
@@ -1301,8 +1305,10 @@ CURRENT PLATFORM CONTRACT
 @OpenAI Developers
 
 EVAL
-@get-fable fable-eval
-@Plugin Eval when callable
+@get-fable fable-eval for prompt, Skill, router, or policy behavior
+nominal plugin-wide local evaluator: @Plugin Eval
+availability gate: use Plugin Eval only when its local target path and CLI are available
+if Plugin Eval is blocked, do not claim plugin-wide local metrics or benchmark execution
 @Skillquiver verification methods
 
 LOCAL CANDIDATE ADAPTATION
@@ -1315,7 +1321,10 @@ SOURCE / PR
 @GitHub
 
 LANDING
-@PR Completion
+nominal owner: @PR Completion
+availability gate: use only when its landing helper surface is callable
+if explicitly selected but unavailable, record a landing evidence gap and do not substitute another merge surface
+otherwise use the active callable landing authority with repository policy and exact-head gates
 ```
 
 ### UI / UX hardening
