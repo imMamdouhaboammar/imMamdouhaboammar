@@ -24,6 +24,13 @@ current state
 
 Do not start with a flat list of `@mentions`.
 
+Nominal owner and selected owner are different fields:
+
+- nominal owner: the best capability for the job in principle
+- selected owner: the nominal owner only when its current availability permits execution, otherwise the smallest safe fallback or an explicit evidence gap
+
+Never invoke a blocked nominal owner merely to satisfy a routing recipe.
+
 ## Choose the primary owner
 
 | Situation | Primary owner |
