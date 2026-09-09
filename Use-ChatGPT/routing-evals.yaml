@@ -168,8 +168,8 @@ families:
           - get-fable
           - gstack-workflows
         required_fallback_actions:
-          - get-fable:fable-security
-          - gstack-workflows:cso
+          - get-fable-fable-security
+          - gstack-cso
         required_rules:
           - security_specific_verification
           - do_not_replace_functional_tests
