@@ -160,6 +160,8 @@ Treat Apps as bounded PR actors.
 - Sourcery: use its verified repository commands when needed
 - Gitar: consume review output; enable auto-apply only with deliberate mutation ownership
 - Cubic: consume verified inline findings; do not invent a comment trigger
+- Mergify: landing/queue actor; queue enrollment still obeys the active exact-head landing authority
+- ecc-tools: observed ECC bundle integration; invocation contract unresolved, so do not invent a trigger
 - Qodo: unavailable means unavailable, not pass
 - rate-limited reviewer: rate-limited means unavailable for that review attempt, not pass
 - unknown app: inspect repo activity/config/docs before invocation
