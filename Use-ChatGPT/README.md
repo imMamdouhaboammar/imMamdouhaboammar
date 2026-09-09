@@ -204,7 +204,7 @@ Any bot-authored commit invalidates prior current-head verification.
 
 Use:
 
-- Plugin Eval is the nominal local plugin/skill evaluator only when its local target path and CLI are available; otherwise do not claim plugin-wide local metrics or benchmark execution
+- Plugin Eval is the nominal local plugin/skill evaluator only when its canonical availability is CALLABLE and its local target path and CLI are available; otherwise record an explicit plugin-evaluation evidence gap and do not claim plugin-wide local metrics or benchmark execution
 - `@Universal Plugin Installer` only for explicitly selected local candidate folders
 - `@Skill Submission Pack Writer` only for Skills-only submission facts supported by completed evidence
 - `@get-fable fable-eval` for baseline/candidate prompt, router, Skill, or policy evaluation
