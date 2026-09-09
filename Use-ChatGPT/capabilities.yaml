@@ -25,6 +25,23 @@ availability_states:
   - UNAVAILABLE
   - BLOCKED
 
+capability_aliases:
+  codex-engineering-guardrails-code-work:
+    capability: codex-engineering-guardrails
+    action: code-work
+
+  thoughtfulbits-test-ui-ux:
+    capability: thoughtfulbits-skills
+    action: test-ui-ux
+
+  get-fable-fable-skill-creator:
+    capability: get-fable
+    action: fable-skill-creator
+
+  gitbook-write-docs:
+    capability: gitbook
+    action: write-docs
+
 capabilities:
   get-fable:
     availability: CALLABLE
