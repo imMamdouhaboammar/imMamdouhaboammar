@@ -158,7 +158,10 @@ Treat Apps as bounded PR actors.
 - autofix.ci: workflow-driven, not comment-driven
 - Qlty: consume configured checks/findings; do not invent commands
 - Sourcery: use its verified repository commands when needed
+- Gitar: consume review output; enable auto-apply only with deliberate mutation ownership
+- Cubic: consume verified inline findings; do not invent a comment trigger
 - Qodo: unavailable means unavailable, not pass
+- rate-limited reviewer: rate-limited means unavailable for that review attempt, not pass
 - unknown app: inspect repo activity/config/docs before invocation
 
 Any bot-authored commit invalidates prior current-head verification.
