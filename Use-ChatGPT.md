@@ -40,6 +40,14 @@ For machine-readable capability metadata, use:
 Use-ChatGPT/capabilities.yaml
 ```
 
+For routing-regression scenarios, use:
+
+```text
+Use-ChatGPT/routing-evals.yaml
+```
+
+The eval file is a corpus of expected routing behavior. It is not evidence that a model benchmark has already been executed.
+
 Use this full file when you need the complete copy-ready workflow library or the exact long-form prompt.
 
 ---
