@@ -258,9 +258,13 @@ families:
     - id: pr_completion_exact_head
       prompt: "Take the PR through final landing with PR Completion."
       expected:
-        landing_owner: pr-completion
+        nominal_landing_owner: pr-completion
+        availability_policy: require_callable_pr_completion_helper
+        explicit_selection_policy: remain_blocked_if_pr_completion_was_explicitly_selected_and_unavailable
+        fallback_rule: when_pr_completion_was_not_explicitly_selected_choose_active_callable_landing_authority_with_same_or_stricter_gates
         required_rules:
           - per_pr_exact_head_confirmation
+          - unavailable_explicit_pr_completion_is_not_silently_substituted
           - no_admin_bypass
           - no_force_push
 
