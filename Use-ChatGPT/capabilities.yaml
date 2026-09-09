@@ -325,6 +325,25 @@ capabilities:
     role: agentic_workflow_to_plugin_product
     writes: conditional
 
+  plugin-eval:
+    availability: BLOCKED
+    block_reason: local_execution_device_offline
+    surface: skill_pack
+    role: local_codex_plugin_and_skill_evaluation
+    writes: conditional_benchmark_artifacts
+    verified_skills:
+      - plugin-eval
+      - evaluate-plugin
+      - evaluate-skill
+      - improve-skill
+      - metric-pack-designer
+    requires:
+      - local_target_path
+      - local_plugin_eval_cli
+    do_not_claim:
+      - benchmark_executed_when_local_cli_unavailable
+      - measured_token_usage_without_measurement_run
+
   skill-submission-pack-writer:
     availability: CALLABLE
     surface: skill
