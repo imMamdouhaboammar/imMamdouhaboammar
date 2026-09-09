@@ -154,6 +154,15 @@ capabilities:
       code-work: true
       code-verification: false
 
+  codex-security:
+    availability: INSTALLED_BUT_NOT_CALLABLE_HERE
+    block_reason: installed_enabled_but_no_direct_callable_surface_exposed_in_current_chatgpt_host
+    canonical_plugin_id: "Plugin_1e648473be9c8191a91ac3947151af55"
+    surface: installed_plugin
+    role: security_scans_analysis_and_investigation
+    writes: unresolved
+    do_not_assume_mutation_authority: true
+
   codex-process-jobs:
     availability: INSTALLED_BUT_NOT_CALLABLE_HERE
     block_reason: direct_process_runner_not_exposed_in_current_chatgpt_host
@@ -228,7 +237,7 @@ capabilities:
     surface: github_app
     role: ecc_bundle_generation_and_deduplication
     writes: unresolved
-    state: OBSERVED_APP
+    observed_status: OBSERVED_APP
     invocation_contract: unresolved
 
   pr-readiness-check:
@@ -327,10 +336,10 @@ capabilities:
 
 unresolved_names:
   Codex Dev Workflows:
-    state: KNOWN_NAME_UNRESOLVED
+    availability: KNOWN_NAME_UNRESOLVED
   Code:
-    state: KNOWN_NAME_UNRESOLVED
+    availability: KNOWN_NAME_UNRESOLVED
   Codex Coordinator:
-    state: KNOWN_NAME_UNRESOLVED
+    availability: KNOWN_NAME_UNRESOLVED
   Codex Advisor:
-    state: KNOWN_NAME_UNRESOLVED
+    availability: KNOWN_NAME_UNRESOLVED
