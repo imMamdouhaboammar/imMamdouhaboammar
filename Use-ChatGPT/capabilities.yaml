@@ -1,0 +1,233 @@
+version: 1
+refreshed: 2026-09-09
+purpose: capability-routing-registry
+
+principles:
+  primary_owner_count: 1
+  one_write_owner_per_surface: true
+  current_state_beats_memory: true
+  mutation_invalidates_verification: true
+  reviewer_is_not_executable_proof: true
+  landing_owner_count: 1
+
+availability_states:
+  - CALLABLE
+  - CONNECTED
+  - INSTALLED_BUT_NOT_CALLABLE_HERE
+  - KNOWN_NAME_UNRESOLVED
+  - UNAVAILABLE
+  - BLOCKED
+
+capabilities:
+  get-fable:
+    surface: skill
+    role: lifecycle_router
+    writes: false
+    use_when:
+      - lifecycle_stage_is_ambiguous
+      - evidence_freshness_or_failure_state_changes_route
+    continuations:
+      - discover
+      - research
+      - plan
+      - tdd
+      - verify
+      - review
+      - security
+      - recover
+      - release
+      - handoff
+      - eval
+
+  zzzops:
+    surface: skill_pack
+    role: durable_goal_and_backlog_control
+    writes: conditional
+    use_when:
+      - repository_intentionally_uses_zzzops
+    do_not_use_for:
+      - one_off_untracked_work
+
+  riqor:
+    surface: skill_pack
+    role: agency_orchestration_and_specialists
+    writes: conditional
+    verified_specialists:
+      - agents-orchestrator
+      - evidence-engineering
+      - engineering-prompt-engineer
+      - engineering-code-reviewer
+
+  taskplane:
+    surface: skill_pack
+    role: governed_product_design_build_engineering
+    writes: harness_governed
+    human_gates: true
+    do_not_use_for:
+      - trivial_local_fix_without_governance_need
+
+  gstack-workflows:
+    surface: skill_pack
+    role: modular_engineering_workflows
+    writes: conditional
+    verified_examples:
+      - autoplan
+      - review
+      - ship
+      - retro
+      - qa
+      - cso
+      - document-generate
+
+  superpowers:
+    surface: skill_pack
+    role: engineering_process_discipline
+    writes: through_active_executor
+    verified_examples:
+      - writing-plans
+      - test-driven-development
+      - systematic-debugging
+      - receiving-code-review
+      - verification-before-completion
+
+  skillquiver:
+    surface: skill_pack
+    role: prompt_and_engineering_methods
+    writes: conditional
+    verified_examples:
+      - engineer-prompts
+      - execute-durably
+      - research-systematically
+      - solve-efficiently
+      - verify-work
+
+  matt-skills-curated:
+    surface: skill_pack
+    role: engineering_and_agent_instruction_specialists
+    writes: conditional
+    verified_examples:
+      - writing-for-agents
+      - skill-conductor
+      - workflow-designer
+      - code-review
+      - handoff
+      - tdd
+
+  armorcodex:
+    surface: connected_plugin
+    role: agent_governance
+    writes: policy_only
+    tools:
+      - policy_read
+      - register_intent_plan
+      - policy_update
+    warning: does_not_replace_repo_or_host_gates
+
+  github:
+    surface: connected_plugin
+    role: repository_source_of_truth
+    writes: true
+
+  codex-engineering-guardrails:
+    surface: skill_pack
+    role: code_work_and_code_verification
+    writes:
+      code-work: true
+      code-verification: false
+
+  codex-process-jobs:
+    surface: skill
+    role: finite_long_running_local_processes
+    writes: process_side_effects
+    forbidden:
+      - persistent_server
+      - remote_service
+      - generic_background_coding_agent
+
+  fallow:
+    surface: skill
+    role: typescript_javascript_graph_analysis
+    writes: normally_false
+    needs_local_cli_for_execution: true
+
+  coderabbit:
+    surface: github_app_and_skill
+    role: independent_code_review
+    writes: optional_configured_autofix
+    command_handle: resolve_per_repository
+
+  pr-readiness-check:
+    surface: connected_plugin
+    role: supplied_evidence_readiness_analyzer
+    writes: false
+    cannot:
+      - inspect_github
+      - run_tests
+      - inspect_ci
+      - approve
+      - merge
+
+  pr-completion:
+    surface: skill_pack
+    role: pr_lifecycle_and_exact_head_landing
+    writes: true
+    landing_confirmation: per_pr_exact_head
+
+  ai-task-brief-builder:
+    surface: connected_plugin
+    role: supplied_material_evidence_extraction
+    writes: false
+    cannot:
+      - inspect_repository
+      - invent_requirements
+
+  context7:
+    surface: connected_plugin
+    role: current_library_sdk_cli_docs
+    writes: false
+
+  parallel-search:
+    surface: connected_plugin
+    role: broad_current_web_research
+    writes: false
+
+  openai-developers:
+    surface: installed_plugin_and_skills
+    role: openai_developer_contracts
+    writes: conditional
+
+  gitbook:
+    surface: connected_plugin_and_skills
+    role: gitbook_documentation_workflows
+    writes: true
+    source_rule: prefer_git_when_git_sync_is_canonical
+
+  plugin-autopilot:
+    surface: skill
+    role: agentic_workflow_to_plugin_product
+    writes: conditional
+
+  skill-submission-pack-writer:
+    surface: skill
+    role: skills_only_evidence_bound_submission_material
+    writes: artifact_only
+
+  universal-plugin-installer:
+    surface: skill
+    role: selected_local_candidate_plugin_adaptation
+    writes: local_when_authorized
+
+  thoughtfulbits-skills:
+    surface: skill_pack
+    role: product_ux_board_and_post_lenses
+    writes: usually_advisory
+
+unresolved_names:
+  Codex Dev Workflows:
+    state: KNOWN_NAME_UNRESOLVED
+  Code:
+    state: KNOWN_NAME_UNRESOLVED
+  Codex Coordinator:
+    state: KNOWN_NAME_UNRESOLVED
+  Codex Advisor:
+    state: KNOWN_NAME_UNRESOLVED
