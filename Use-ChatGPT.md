@@ -28,6 +28,20 @@ This handbook distinguishes five different things that agents often incorrectly 
 
 Never treat an installed name as proof that its callable surface is available in the current host.
 
+For low-context routing, start with the companion map:
+
+```text
+Use-ChatGPT/README.md
+```
+
+For machine-readable capability metadata, use:
+
+```text
+Use-ChatGPT/capabilities.yaml
+```
+
+Use this full file when you need the complete copy-ready workflow library or the exact long-form prompt.
+
 ---
 
 # 0. Operating Contract
@@ -493,29 +507,44 @@ Always inspect repository history, app configuration, or current official docs b
 
 ### CodeRabbit
 
+First resolve the active CodeRabbit service-account handle for the repository.
+
+The common default is `@coderabbitai`, but installations may use another handle.
+
+Use this placeholder in reusable prompts:
+
+```text
+<CODERABBIT_HANDLE>
+```
+
+Resolve it from current repository bot activity, installation configuration, or current CodeRabbit documentation before invoking a command.
+
 Verified review controls include:
 
 ```text
-@coderabbitai review
+<CODERABBIT_HANDLE> review
 Incremental review of new changes
 
-@coderabbitai full review
+<CODERABBIT_HANDLE> full review
 Fresh review of the complete Pull Request
 
-@coderabbitai pause
+<CODERABBIT_HANDLE> pause
 Pause automatic reviews for the Pull Request
 
-@coderabbitai resume
+<CODERABBIT_HANDLE> resume
 Resume reviews after pause
 
-@coderabbitai resolve
-Ask CodeRabbit to resolve its own previous review comments after they are genuinely addressed
+<CODERABBIT_HANDLE> resolve
+Post as a new top-level Pull Request comment after the findings are genuinely addressed
+Ask CodeRabbit to resolve its own previous review comments
 
-@coderabbitai approve
-Ask CodeRabbit to resolve its unresolved threads and attempt approval when the configured workflow supports that behavior
-This is not a substitute for repository-required human approval
+<CODERABBIT_HANDLE> approve
+Post as a new top-level Pull Request comment
+CodeRabbit submits an approval only when reviews.request_changes_workflow is enabled
+Otherwise it resolves its unresolved threads and reports that approval is disabled
+Never treat the disabled-approval response as repository approval
 
-@coderabbitai ignore
+<CODERABBIT_HANDLE> ignore
 PR-description directive that disables automatic review while present
 Do not use casually
 ```
@@ -565,7 +594,8 @@ Do not invent a PR comment command for it.
 The intended model is:
 
 ```text
-GitHub Actions workflow
+GitHub Actions workflow named `autofix.ci`
+Runner permissions: `contents: read`
 -> run deterministic fixers/formatters
 -> call autofix-ci/action
 -> autofix.ci validates the generated patch
@@ -767,6 +797,553 @@ What state must survive if work remains?
 Do not start with a giant @mention list and assign jobs afterward.
 
 Select the stage first, then the smallest useful capability.
+
+---
+
+## 1.15 Installed Engineering Capability Graph
+
+Use this section as the canonical routing map for the installed engineering stack.
+
+The objective is not to invoke everything. The objective is to ensure every available capability has a clear job, an entry condition, a completion boundary, and a safe handoff.
+
+### Core orchestration layer
+
+| Capability | Primary job | Enter when | Evidence / output | Write authority | Typical continuation | Do not substitute for |
+| --- | --- | --- | --- | --- | --- | --- |
+| `@get-fable` | Lifecycle router | The next engineering phase is ambiguous or state changed | Routing decision grounded in phase, evidence freshness, failures, security, unknowns | Read-only orchestration | discover / research / plan / TDD / verify / review / security / recover / release / handoff / eval | Direct implementation when a bounded specialist already owns the task |
+| `@Riqor` | Agency-level orchestration and specialist routing | A non-trivial engineering mission needs coordinated roles | Explicit specialist ownership and evidence-oriented execution path | Depends on chosen specialist | evidence-engineering / prompt engineering / code review / domain specialist | Repository source of truth |
+| `@ZzzOps` | Durable backlog / goal operating loop | A repository uses or is intentionally adopting ZzzOps goals | Durable goal DAG, policy, prioritized execution state, refill/triage decisions | May write ZzzOps goal state when the selected Skill authorizes it | execute goals / suggest work / migrate / policy review | One-off untracked implementation |
+| `@taskplane` | Governed product/design/build/engineering control plane | Work benefits from explicit requirements, dependency graph, DoR/DoD, evidence, and human gates | Governed stage artifacts, sealed evidence, engine-owned gate state | Stage-specific and harness-governed | tp-design / tp-go / tp-build / tp-engineering / tp-product | Lightweight local fixes where its control plane adds no value |
+| `@gstack Workflows` | Modular product/engineering/review/QA/release workflows | A specific gstack workflow matches the job | Workflow-specific plan, review, QA, ship, retro, design, security, or docs output | Depends on selected workflow | ship / review / retro / QA / docs | A monolithic always-on orchestrator |
+| `@Superpowers` | Engineering process discipline | Planning, debugging, TDD, review handling, worktree isolation, or pre-completion verification needs a strict process | Plan, red-green cycle, review discipline, fresh verification | Through the active execution surface | review / finishing branch / verification | Live repository state |
+| `@Skillquiver` | Prompt contracts and durable engineering methods | Prompt quality, durable execution, root cause, research, worktrees, review handling, or verification needs a specialist procedure | Testable contract, durable state, research record, verification evidence | Depends on selected Skill | verify-work / review / finishing | Generic plugin orchestration when a narrower Skill exists |
+| `@Matt Skills Curated` | Broad engineering and agent-instruction specialist library | A precise engineering, agent-writing, skill, workflow, architecture, or handoff Skill exists | Specialist-specific artifact or procedure | Depends on selected Skill | code review / handoff / retro / implementation | “Skill discovery only” |
+| `@ArmorCodex` | Agent governance and intent/policy audit | Tool permissions, production boundaries, destructive operations, or auditability matter | Current policy state, registered intent plan, or policy update | Policy writes only when explicitly justified | execution under the registered boundaries | Repository branch protection or host approvals |
+
+### Source, execution, and evidence layer
+
+| Capability | Primary job | Enter when | Evidence / output | Write authority | Typical continuation | Do not substitute for |
+| --- | --- | --- | --- | --- | --- | --- |
+| `@GitHub` | Remote repository source of truth and authorized repo mutation | Issues, PRs, branches, commits, reviews, CI, merge state, or repository files matter | Live GitHub state | Yes, according to the invoked action and permissions | local execution / review / readiness / landing | Local runtime behavior |
+| `@Codex Engineering Guardrails` | Strict code-work or read-only code-verification contract | Source changes or independent verification require scope/evidence discipline | Bounded implementation or independent verification verdict | code-work may write; code-verification is read-only by default | CodeRabbit / Fallow / tests / PR | Product requirements discovery |
+| `@Codex Process Jobs` | Durable finite local process execution | A local test/build/eval/benchmark/download may exceed a normal interactive command window | Process lifecycle state and durable output | Process-side effects only | parse result / verify / repair | Persistent servers, remote services, or generic background coding |
+| `@Fallow Code Analysis` | Graph-grounded TS/JS changed-code and architecture intelligence | Blast radius, changed-code risk, duplication, complexity, circular dependencies, architecture boundaries, or structural review matter | Deterministic graph signals and review brief | Read-only unless a supported explicit fix mode is chosen | human/model judgment / targeted repair / CI audit | Runtime correctness or arbitrary language support |
+| `@CodeRabbit` | Independent AI review of a meaningful diff | A real local diff or PR exists and independent review adds confidence | Severity-ranked review issues, PR review threads, summaries | Reviewer surface; optional configured autofix is a separate mutation path | triage findings / reverify | Tests, CI, or repository truth |
+| `@PR Readiness Check` | Text-only readiness judgment over supplied materials | A current evidence packet already exists | ready / not_ready with missing evidence | None | PR Completion / human review | GitHub inspection, tests, CI, merge |
+| `@PR Completion` | Shepherd a real PR through CI/reviews/conflicts to an exact-head landing decision | The PR exists and the mission includes final PR lifecycle ownership | Current PR watcher state, readiness state, exact-head landing plan | Yes for routine preparation; landing mutation follows its explicit per-PR gate | merged / ready-without-approval / blocked | Broad pre-authorization for unknown future heads |
+| `@Codex Security` | Security-focused engineering review | Auth, authorization, secrets, public/private boundaries, unsafe input, dependencies, or security configuration changed | Security findings and remediation evidence | Normally review-oriented unless a fix workflow is separately authorized | repair / verify / PR review | General correctness review |
+| `@AI Task Brief Builder` | Evidence extraction from supplied development materials | Issue/spec/PR text needs confirmed goals, tests, constraints, and gaps separated | Evidence-backed brief or explicit insufficient-evidence result | None | plan / implementation contract | Repository crawling or requirement invention |
+
+### Research and external contract layer
+
+| Capability | Primary job | Enter when | Evidence / output | Write authority | Typical continuation | Do not substitute for |
+| --- | --- | --- | --- | --- | --- | --- |
+| `@Context7` | Current library/framework/SDK/API/CLI documentation | Version-sensitive external contract behavior matters | Version-matched documentation excerpts and examples | None | implementation / research record | General web search or local code truth |
+| `@Parallel Search` | Broad current web research and primary-source discovery | Current external facts span multiple sources or no specialized docs connector exists | Search results with source excerpts | None | targeted fetch / synthesis | Private connected source truth |
+| `@OpenAI Developers` | Current OpenAI developer workflow guidance | Agents SDK, ChatGPT Apps SDK, OpenAI API behavior, submission, or OpenAI-backed app development matters | Docs-aligned developer guidance and specialized workflows | Depends on the developer workflow; API-key setup is a separate secure surface | implementation / eval / submission | Generic third-party AI docs |
+| `@GitBook` | GitBook site/page/integration documentation workflows | Documentation lives in or must be published through GitBook | Page/site/change-request artifacts | Yes through GitBook change-request or site workflows | review / publish change request | GitHub source when Git Sync is canonical |
+| `@Skill Submission Pack Writer` | Evidence-bound Skills-only submission material | Approved product facts and completed test evidence exist for a Skills-only Plugin | Submission/listing pack | Writes submission artifacts only | portal submission by the authorized surface | MCP-backed submission or proof generation |
+| `@Universal Plugin Installer` | Adapt/review selected local plugin/Skill candidate folders | The user explicitly selected local candidate folders for installation/adaptation | Validated/adapted local Plugin folders | Local file writes when authorized | validation / packaging | Generic remote marketplace installation |
+| `@Plugin Autopilot` | Discover and package agentic workflows into Plugin/Skill products | The repository itself is becoming or improving a ChatGPT/Codex Plugin | Workflow discovery, Skill compilation, Plugin UX, packaging, directory metadata | Repository/package writes when authorized | eval / submission packaging | OpenAI approval or publication |
+| `@Skillquiver` + `@get-fable fable-eval` + `@Matt skill-conductor` | Prompt/Skill evaluation | Agent-control behavior or routing changes need measurable regression evidence | Baseline/candidate eval, trigger tests, holdout/regression verdict | Normally evaluation artifacts only | accept / revise / rollback | Ordinary application tests |
+
+### Product, UX, review, and retrospective layer
+
+| Capability | Primary job | Enter when | Evidence / output | Write authority | Typical continuation | Do not substitute for |
+| --- | --- | --- | --- | --- | --- | --- |
+| `@ThoughtfulBits Skills` | Product-plan, feature, board, post-editing, and rigorous UI/UX evaluation lenses | One of its actual product/UX/communication lenses matches the task | Product critique, UI/UX method scores, board feedback, or post edits | Usually advisory/read-only unless the selected Skill says otherwise | design / implementation / decision | Generic engineering orchestration |
+| `@gstack review` | Second-opinion pre-landing review | The change is stable and needs defects that CI may miss surfaced | Review findings | Read-only | repair / ship | Primary implementation |
+| `@gstack retro` | Delivery retrospective | A meaningful delivery cycle completed | Evidence-backed lessons and workflow improvements | Documentation/state only as authorized | handbook/process improvement | Mid-task debugging |
+| `@ZzzOps review-agentic-engineering` | Evidence-based practice review | Completed agentic engineering work should improve future operating practice | One or two concrete practice improvements | Read-only | handbook/process updates | Automatic scorecard or repository mutation |
+| `@taskplane tp-northstar` | Strategic direction check | A plan/PR/idea needs an explicit alignment lens | One advisory strategic note | None | human judgment | Delivery gate |
+| `@taskplane tp-engineering` | Governed read-only engineering sign-off | Completed work needs requirement, graph, architecture, security, or blast-radius validation | Engineering dashboard and sign-off gate | Read-only toward reviewed code | human sign-off | Implementation/fix |
+
+## 1.16 Primary Owner and Overlap Rules
+
+Many installed Plugins are intentionally capable of similar activities.
+
+Overlap is not a reason to invoke all of them.
+
+Use this decision rule:
+
+```text
+ONE PRIMARY OWNER
++ ZERO OR MORE SPECIALIST INPUTS
++ ONE INDEPENDENT VERIFICATION PATH
++ ONE LANDING OWNER
+```
+
+### Orchestrator overlap
+
+```text
+@get-fable
+Best when lifecycle state and evidence precedence determine the next engineering phase
+
+@Riqor agents-orchestrator
+Best when a senior agency-style specialist roster must be coordinated
+
+@ZzzOps execute-zzzops
+Best when work already lives as durable ZzzOps goals
+
+@taskplane
+Best when the repository uses or intentionally adopts its governed requirements/design/build/evidence harness
+
+@gstack
+Best when one named modular gstack workflow matches the requested job
+
+@Superpowers
+Best as process discipline inside the selected mission, not as the repository source
+```
+
+Do not make all six co-directors of one Issue.
+
+Choose one agency/lifecycle owner and treat the others as specialist methods only when they add a distinct capability.
+
+### Review overlap
+
+Default review stack:
+
+```text
+SELF REVIEW
+-> ONE PRIMARY INDEPENDENT REVIEWER
+-> SPECIALIZED SECOND REVIEW ONLY IF RISK JUSTIFIES IT
+```
+
+Examples:
+
+```text
+CodeRabbit
+General independent AI diff/PR review
+
+Fallow Review
+Structural graph-grounded review for TS/JS blast radius, boundaries, dependencies, and public API coordination
+
+Codex Engineering Guardrails code-verification
+Independent requirement/risk verification and test assessment
+
+Codex Security / Fable Security / gstack cso
+Security-specific review when trust boundaries changed
+
+taskplane tp-engineering
+Governed engineering sign-off when the taskplane harness is actually active
+```
+
+Do not count several reviewers agreeing as executable proof.
+
+### Planning overlap
+
+```text
+AI Task Brief Builder
+Extract confirmed facts from supplied material only
+
+Skillquiver engineer-prompts
+Engineer a reusable prompt contract
+
+Matt to-spec / writing-for-agents
+Formalize technical or agent-facing instructions
+
+get-fable fable-plan
+Turn discovered engineering evidence into bounded work cards
+
+taskplane Product/Design
+Governed WHAT/HOW contracts with formal gates
+
+gstack spec / autoplan
+Create or review a modular executable plan
+```
+
+Select based on the artifact you actually need.
+
+### Verification overlap
+
+```text
+Repository-native tests / CI
+Primary executable proof
+
+get-fable fable-verify
+Fresh falsification across tests/build/typecheck/runtime checks
+
+Skillquiver verification-before-completion / verify-work
+Completion-claim verification
+
+Codex Engineering Guardrails code-verification
+Independent read-only assessment
+
+Fallow
+Deterministic structural/static evidence
+
+CodeRabbit
+Independent review evidence
+```
+
+Never replace executable proof with reviewer count.
+
+## 1.17 Capability Availability States
+
+Every named capability must be one of:
+
+```text
+CALLABLE
+A current tool or Skill contract is visible and usable
+
+CONNECTED
+A live connector is available for the current account
+
+INSTALLED_BUT_NOT_CALLABLE_HERE
+The product/plugin is known or installed, but this host does not expose the required callable surface
+
+KNOWN_NAME_UNRESOLVED
+The user or prior workflow references the name, but no current canonical capability contract can be resolved
+
+UNAVAILABLE
+The integration explicitly reports that it cannot run
+
+BLOCKED
+The capability exists, but permission, billing, auth, policy, or repository state prevents execution
+```
+
+Never silently promote one state into another.
+
+### Currently unresolved names
+
+At this handbook refresh, these names were referenced by the user but could not be resolved to a canonical installed Skill or Plugin contract by exact name:
+
+```text
+Codex Dev Workflows
+Code
+Codex Coordinator
+Codex Advisor
+```
+
+Policy:
+
+```text
+Do not delete the names from user-authored prompts if they matter to the user's vocabulary.
+
+Do not assign them fabricated responsibilities.
+
+Before using them:
+1. search the current Plugin directory
+2. inspect the current Skill catalog
+3. inspect existing repository/app activity
+4. resolve the canonical capability if possible
+5. otherwise classify as KNOWN_NAME_UNRESOLVED and continue with the verified stack
+```
+
+This prevents an attractive Plugin name from becoming an invented tool contract.
+
+## 1.18 Agentic Mission Recipes
+
+These recipes are defaults for the user's recurring engineering missions.
+
+### Repository audit -> justified backlog
+
+```text
+PRIMARY OWNER
+@Riqor or @get-fable
+
+SOURCE
+@GitHub
+
+DISCOVERY
+@get-fable fable-discover
+@Riqor explorer
+@Fallow for TS/JS structural evidence where useful
+
+EXTERNAL CONTRACTS
+@Context7
+@Parallel Search only when current external facts matter
+
+BACKLOG / GOVERNANCE
+@ZzzOps suggest/migrate when the repository intentionally uses ZzzOps
+@Matt to-tickets when an approved spec must become dependency-linked tickets
+@taskplane Product/Design only when governed product/design gates are intentionally active
+
+REVIEW
+independent second pass before creating large volumes of Issues
+
+WRITE OWNER
+@GitHub for tracker mutations
+```
+
+Do not invent Issues merely to hit a target count.
+
+### One Issue -> implementation -> PR
+
+```text
+PRIMARY OWNER
+@get-fable OR @Riqor OR the repository's existing ZzzOps/taskplane control plane
+
+SOURCE
+@GitHub + local workspace when available
+
+CONTRACT
+@AI Task Brief Builder only if supplied Issue materials need evidence extraction
+@Skillquiver engineer-prompts only if the Issue needs a reusable agent contract
+
+IMPLEMENTATION DISCIPLINE
+@Codex Engineering Guardrails code-work
+@Superpowers / Skillquiver TDD where behavior changes
+@Riqor evidence-engineering
+
+STATIC / STRUCTURAL
+@Fallow when TS/JS graph evidence is material
+
+VERIFY
+repository tests / build / typecheck / runtime
+@get-fable fable-verify or Skillquiver verification-before-completion as the process layer
+
+REVIEW
+one primary reviewer: @CodeRabbit or independent code-verification
+add Fallow/security only for a distinct lens
+
+PR
+@GitHub
+
+READINESS
+collect evidence first
+then @PR Readiness Check if useful
+
+LANDING
+@PR Completion
+exact-head confirmation when its contract requires it
+```
+
+### Existing PR repair
+
+```text
+@GitHub
+-> @PR Completion gh-review-comment-triage
+-> current-code evidence
+-> bounded repair under @Codex Engineering Guardrails
+-> focused verification
+-> @CodeRabbit / Fallow as appropriate
+-> refresh current head
+-> @PR Completion watcher
+-> exact-head landing gate
+```
+
+### Plugin / Skill repository
+
+```text
+PRIMARY
+@Plugin Autopilot
+
+PROMPT / SKILL AUTHORING
+@Skillquiver engineer-prompts
+@Matt writing-for-agents / skill-conductor
+@get-fable fable-skill-creator
+
+CURRENT PLATFORM CONTRACT
+@OpenAI Developers
+
+EVAL
+@get-fable fable-eval
+@Plugin Eval when callable
+@Skillquiver verification methods
+
+LOCAL CANDIDATE ADAPTATION
+@Universal Plugin Installer only for explicitly selected local candidate folders
+
+SUBMISSION MATERIAL
+@Skill Submission Pack Writer only for Skills-only evidence-bound submission packs
+
+SOURCE / PR
+@GitHub
+
+LANDING
+@PR Completion
+```
+
+### UI / UX hardening
+
+```text
+SOURCE
+@GitHub + runtime browser evidence
+
+PRODUCT / FLOW CRITIQUE
+@ThoughtfulBits test-ui-ux when its rigorous five-method evaluation is justified
+
+DESIGN REVIEW
+@Impeccable or relevant Riqor design specialist
+
+IMPLEMENTATION
+@Codex Engineering Guardrails
+one write owner
+
+RUNTIME
+@Testifly or available browser automation
+
+STATIC
+@Fallow for TS/JS architectural/style drift where relevant
+
+REVIEW
+@CodeRabbit or code-verification
+
+VERIFY
+viewport + keyboard + focus + loading/error/empty + console/network + accessibility evidence
+```
+
+Do not call a screenshot-only pass full usability or accessibility proof.
+
+### Long session / many Issues
+
+```text
+ORCHESTRATION
+@get-fable OR @Riqor OR @ZzzOps when its durable goal queue is actually active
+
+DURABLE STATE
+@get-fable handoff
+@Skillquiver execute-durably
+@Matt handoff
+@Create State when cross-session persistence materially helps
+
+LONG LOCAL COMMANDS
+@Codex Process Jobs for finite local processes only
+
+CI / ASYNC STATUS
+bounded polling through the appropriate watcher/loop
+never unbounded busy polling
+
+SOURCE REFRESH
+@GitHub after every push/merge/state transition
+```
+
+### Security-sensitive change
+
+```text
+POLICY
+@ArmorCodex read current policy and register intent when governance matters
+
+SOURCE
+@GitHub / local workspace
+
+IMPLEMENTATION
+@Codex Engineering Guardrails code-work
+
+SECURITY REVIEW
+@Codex Security
+@get-fable fable-security
+@gstack cso
+choose the smallest useful security stack
+
+STRUCTURAL
+@Fallow when supported and graph evidence helps
+
+VERIFY
+authn/authz/ownership/input/public-private boundaries/secrets/logging regression tests
+
+PR
+@CodeRabbit general review only after security-specific evidence exists
+
+LANDING
+repository protection + active landing contract
+```
+
+### Current docs / external API uncertainty
+
+```text
+1. establish local installed version first
+2. @Context7 for version-matched library/SDK docs
+3. @Parallel Search for broader current source discovery only when needed
+4. @OpenAI Developers for OpenAI-specific developer contracts
+5. record exact source/date when the decision is load-bearing
+6. reconcile external docs with local types/tests/runtime
+```
+
+### Documentation publication
+
+```text
+SOURCE OF TRUTH
+Git repository first when Git Sync is canonical
+
+AUTHORING
+@GitBook write-docs for GitBook-aware Markdown conventions
+
+CONNECTED GITBOOK
+Use GitBook MCP change requests when Git Sync is unavailable or a small targeted CR is proportionate
+
+REVIEW
+GitHub PR or GitBook change request according to the actual source-of-truth path
+
+RULE
+Do not bypass Git just because the GitBook API is callable
+```
+
+## 1.19 Plugin Selection Algorithm
+
+For every serious mission:
+
+```text
+A. classify the current lifecycle stage
+B. identify one primary owner
+C. bind one source of truth
+D. select one write owner per mutable surface
+E. add only specialists with a distinct evidence contribution
+F. select executable verification
+G. select independent review
+H. select readiness analyzer only after evidence exists
+I. select one landing owner
+J. preserve host/policy/human gates
+```
+
+A suggested machine-readable routing packet:
+
+```yaml
+mission:
+  outcome: ...
+  current_stage: ...
+
+source_of_truth:
+  primary: ...
+  secondary: ...
+
+ownership:
+  orchestrator: ...
+  write_owner: ...
+  landing_owner: ...
+
+specialists:
+  - capability: ...
+    reason: ...
+    entry_trigger: ...
+    expected_output: ...
+    continuation: ...
+
+verification:
+  executable:
+    - ...
+  structural:
+    - ...
+  runtime:
+    - ...
+
+review:
+  primary: ...
+  optional_second_lens: ...
+
+availability:
+  - capability: ...
+    state: CALLABLE | CONNECTED | INSTALLED_BUT_NOT_CALLABLE_HERE | KNOWN_NAME_UNRESOLVED | UNAVAILABLE | BLOCKED
+    evidence: ...
+
+landing:
+  current_head_required: true
+  confirmation_rule: ...
+```
+
+Reject routing plans where:
+
+```text
+- several plugins claim the same primary ownership
+- no live source of truth is named
+- a reviewer is treated as executable proof
+- readiness is asked to discover its own evidence
+- a GitHub App is assumed available because it is installed
+- a long-job runner is treated as a coding agent
+- landing authority is inherited from stale context
+- unresolved plugin names are assigned invented behavior
+```
 
 ---
 
@@ -5820,9 +6397,11 @@ PR CHECKS GREEN
 -> new commit
 -> PR CHECKS PENDING
 
-MERGE READY
--> base changed
+READY / READY_AWAITING_LANDING_CONFIRMATION
+-> base changed or head changed
+-> READINESS STALE
 -> REVERIFY / UPDATE
+-> require a new exact-head landing confirmation when the landing surface requires one
 
 MERGED
 -> post-merge regression
@@ -6496,8 +7075,8 @@ FLOW
 2. Check which GitHub Apps are actually active/configured for the repository
 3. Prefer existing automatic review before manually triggering duplicate work
 4. For CodeRabbit:
-   - @coderabbitai review for incremental changes
-   - @coderabbitai full review for a deliberate fresh full pass
+   - <CODERABBIT_HANDLE> review for incremental changes
+   - <CODERABBIT_HANDLE> full review for a deliberate fresh full pass
 5. For Cursor Bugbot:
    - cursor review
    - bugbot run
