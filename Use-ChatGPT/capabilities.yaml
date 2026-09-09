@@ -186,6 +186,20 @@ capabilities:
       - AVAILABLE
       - BILLING_BLOCKED
 
+  mergify:
+    surface: github_app
+    role: merge_queue_and_pr_automation
+    writes: landing_queue_state
+    observed_trigger: "@mergifyio queue"
+    landing_rule: obey_active_exact_head_authority
+
+  ecc-tools:
+    surface: github_app
+    role: ecc_bundle_generation_and_deduplication
+    writes: unresolved
+    state: OBSERVED_APP
+    invocation_contract: unresolved
+
   pr-readiness-check:
     surface: connected_plugin
     role: supplied_evidence_readiness_analyzer
