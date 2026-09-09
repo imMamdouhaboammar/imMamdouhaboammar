@@ -1362,7 +1362,11 @@ DURABLE STATE
 @Create State when cross-session persistence materially helps
 
 LONG LOCAL COMMANDS
-@Codex Process Jobs for finite local processes only
+nominal runner: @Codex Process Jobs for finite local processes only
+availability gate: invoke it only when its direct process-job surface is callable in the current host
+fallback: if the user requires same-turn execution and a safe host-native foreground process is available, use that foreground path
+otherwise record an explicit execution evidence gap
+never pretend a detached job was launched
 
 CI / ASYNC STATUS
 bounded polling through the appropriate watcher/loop
@@ -1385,10 +1389,11 @@ IMPLEMENTATION
 @Codex Engineering Guardrails code-work
 
 SECURITY REVIEW
-@Codex Security
-@get-fable fable-security
-@gstack cso
-choose the smallest useful security stack
+nominal specialist: @Codex Security
+availability gate: invoke it only when callable in the current host
+callable fallbacks: @get-fable fable-security OR @gstack cso
+choose one smallest security specialist that can actually run
+if no suitable security specialist is callable, record the security-review evidence gap instead of claiming a review
 
 STRUCTURAL
 @Fallow when supported and graph evidence helps
