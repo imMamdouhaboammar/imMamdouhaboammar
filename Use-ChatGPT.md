@@ -16,6 +16,17 @@ right source of truth
 
 A plugin should have a job inside the workflow. If two plugins perform the same job, choose one unless a second independent perspective is materially useful.
 
+Capability truth refresh: **2026-09-09**
+
+This handbook distinguishes four different things that agents often incorrectly collapse into one concept:
+
+- ChatGPT plugins and Skills that provide capabilities inside the current session
+- connected source plugins that expose live account or repository state
+- GitHub Apps and bots that act inside Issues, Pull Requests, checks, or workflows
+- repository-native CI, branch rules, and required checks that remain authoritative regardless of which AI tool is active
+
+Never treat an installed name as proof that its callable surface is available in the current host.
+
 ---
 
 # 0. Operating Contract
@@ -157,31 +168,38 @@ Use research plugins to remove uncertainty, not as decoration.
 
 ```text
 @Superpowers
-Disciplined engineering process, planning, TDD, debugging, verification, review discipline
+Engineering process discipline: planning, systematic debugging, TDD, worktree isolation, review handling, and verification-before-completion
 
 @get-fable
-Long-running engineering workflow discipline and stateful continuation when available
+Repository lifecycle routing across discovery, research, planning, TDD, execution, verification, review, release, recovery, and durable handoff when available
 
 @Adaptive Codex Orchestrator
-Split and coordinate multi-part engineering work when parallelization or orchestration is justified
+Use only when its actual orchestration mode is explicitly available and parallel work has disjoint ownership
 
 @AI Task Brief Builder
-Convert supplied evidence into goals, scope, tests, risks, and implementation-ready task briefs
+Analyze supplied development materials into evidence-backed goals, scope, tests, risks, and delivery requirements
+It does not inspect repositories, run tests, or implement work by itself
 
 @taskplane
-Structured project/task planning and dependency tracking when available
+Governed product/design/build/engineering workflow with explicit requirements, dependency gates, review evidence, and human gates
+Use when the task benefits from a formal multi-stage delivery contract, not for every small fix
 
 @Create State
-Persist durable project decisions, state, and handoff information
+Persist durable project decisions and continuation state when the workflow actually benefits from cross-session state
 
 @Codex Process Jobs
-Use for process/job-style coding workflows when its callable surface is available and the task matches
+Run ordinary finite local workloads such as long test suites, builds, benchmarks, downloads, evaluations, or repairs when they may exceed roughly 60 seconds
+Do not use it for persistent servers, remote services, interactive jobs, or as a generic background coding agent
 ```
 
-Rule:
+Rules:
 
 ```text
 Planning plugins do not replace execution evidence.
+
+A durable job runner owns process lifecycle, not engineering correctness.
+
+Do not poll a Codex Process Jobs launch in the same turn merely to imitate synchronous execution.
 ```
 
 ## 1.4 Engineering Execution
@@ -234,28 +252,40 @@ Only one plugin should own a write surface at a time unless the writes are clear
 
 ```text
 @CodeRabbit
-Code review and concrete findings after implementation or on an existing diff/PR
+Independent code review after a meaningful diff exists
+Can review local changes through its CLI/plugin surface or Pull Requests through its GitHub integration when configured
 
 @Codex Engineering Guardrails
-Engineering constraints, implementation discipline, and review guardrails
+Two distinct modes:
+- code-work for authorized implementation with strict scope, root-cause discipline, test-backed slices, and fresh verification
+- code-verification for independent read-only review, diagnosis, testing, and evidence-based verdicts
 
 @Fallow Code Analysis
-Focused static/code analysis when available
+Graph-grounded static/code analysis for changed-code risk, duplication, complexity, architecture boundaries, and structural review where supported
 
 @SonarQube
-Static analysis and code quality/security findings when connected
+Static quality, security, coverage, duplication, dependency-risk, and quality-gate evidence when the project is connected
 
 @PR Readiness Check
-Evidence-based readiness assessment before human review or merge
+Analyzes concrete PR materials supplied to it
+It does not read the live repository, inspect CI, run tests, approve, or merge
+Feed it a current evidence packet rather than asking it to discover the evidence
 
 @PR Completion
-Final PR completion/closure workflow when available and the PR is already proven ready
+Shepherds a real PR through commits, push, CI, review threads, conflicts, and landing
+Its landing workflow is bound to the current head SHA and may require explicit per-PR landing confirmation even when the broader mission is autonomous
 ```
 
-Rule:
+Rules:
 
 ```text
 Do not run release/readiness judgment before implementation evidence exists.
+
+A reviewer can identify risk but cannot manufacture verification.
+
+A readiness analyzer can judge supplied evidence but cannot turn missing evidence into proof.
+
+A PR landing tool may impose a stricter landing gate than the surrounding prompt. The stricter gate wins.
 ```
 
 ## 1.6 Security
@@ -349,31 +379,42 @@ Motion/video implementation
 
 ```text
 @OpenAI Developers
-OpenAI API, Agents SDK, ChatGPT Apps, and OpenAI developer workflows
+Current OpenAI developer workflows such as Agents SDK and ChatGPT Apps SDK work
+Prefer current OpenAI documentation before generating contract-sensitive code
 
 @Plugin Autopilot
-Plugin routing/build workflow support when available
+Discover agentic repository workflows worth packaging, compile workflows into portable Skills, design the Plugin experience, validate/package the Plugin, prepare directory metadata, and assemble submission evidence without confusing local readiness with OpenAI approval
 
 @Plugin Eval
-Evaluate skills/plugins and identify quality gaps
+Evaluate skills/plugins and identify routing, trigger, instruction, and quality gaps when its callable surface is available
 
 @Plugin Management
-Installed plugin permissions, management, and capability-related administration
+Inspect and manage installed plugin connections, permissions, settings, and availability when supported
 
 @Universal Plugin Installer
-Installation-oriented flows when explicitly requested and supported
+Adapt and review a user-selected local directory of candidate skill/plugin folders as untrusted input, then prepare valid folders as Codex plugins
+Do not describe it as a generic remote plugin marketplace installer
 
 @Skill Submission Pack Writer
-Submission/listing package preparation for skills/plugins
+Create evidence-bound submission materials for Skills-only Plugins from approved product facts and completed test evidence
+Do not use it for MCP-backed submission, portal operations, or invented proof
 
 @Matt Skills Curated
-Skill discovery/curation guidance when available
+Broad engineering workflow routing including implementation, code review, debugging, architecture, Git safety, autonomous goal contracts, research, handoff, and specialist skills
+Do not reduce it to skill curation
 
 @Skillquiver
-Skill-oriented workflow support when available
+Broad engineering and agent-workflow discipline including prompt contracts, research, planning, TDD, debugging, worktrees, code-review handling, durable execution, and verification
+Use the narrowest specialist Skill that matches the task
 
 @ThoughtfulBits Skills
-Skill-oriented workflow support when available
+Use for its actual product and communication lenses:
+- product-feature feedback
+- product-plan feedback
+- rigorous multi-agent UI/UX evaluation
+- board-deck/board feedback
+- editing supplied social posts
+Do not route it generically for unrelated Skill engineering
 ```
 
 ## 1.10 Conditional Specialists
@@ -398,6 +439,271 @@ Do not auto-route these purely from the name unless their capability is visible 
 ```
 
 This is deliberate. Mature routing means avoiding invented plugin behavior.
+
+---
+
+## 1.11 Execution Surface Taxonomy
+
+Before invoking anything, classify the surface.
+
+```text
+CHATGPT PLUGIN / SKILL
+A capability inside the current ChatGPT or Codex host
+Examples: @Superpowers, @Context7, @Codex Engineering Guardrails
+
+CONNECTED SOURCE
+A live account/repository/data source exposed through a connector
+Examples: @GitHub, @Supabase, @Gmail, @Google Drive
+
+GITHUB APP / BOT
+An actor installed on GitHub that comments, reviews, updates checks, or may modify a PR branch
+Examples: coderabbitai, Cursor Bugbot, autofix.ci, Qlty
+
+REPOSITORY-NATIVE GATE
+A check or policy owned by the repository itself
+Examples: GitHub Actions, branch protection, rulesets, required reviews, merge queue, CODEOWNERS
+
+EXTERNAL AUTHORITY
+Current primary documentation or a third-party service that defines a contract
+Examples: OpenAI developer docs, framework docs, vendor release notes
+```
+
+Rules:
+
+```text
+Do not ask a reviewer to act as a source of truth.
+
+Do not ask a readiness analyzer to discover repository state it cannot access.
+
+Do not ask a GitHub App to replace repository-native CI.
+
+Do not treat a successful bot comment as proof that the underlying code is correct.
+
+Do not let a Plugin name, GitHub App name, and GitHub username become interchangeable concepts.
+```
+
+## 1.12 GitHub Apps / Bots Operating Layer
+
+Use GitHub Apps as bounded actors inside the PR lifecycle.
+
+The application being installed does not mean every repository has enabled every feature.
+
+Always inspect repository history, app configuration, or current official docs before depending on a bot-specific command.
+
+### CodeRabbit
+
+Verified review controls include:
+
+```text
+@coderabbitai review
+Incremental review of new changes
+
+@coderabbitai full review
+Fresh review of the complete Pull Request
+
+@coderabbitai pause
+Pause automatic reviews for the Pull Request
+
+@coderabbitai resume
+Resume reviews after pause
+
+@coderabbitai resolve
+Ask CodeRabbit to resolve its own previous review comments after they are genuinely addressed
+
+@coderabbitai approve
+Ask CodeRabbit to resolve its unresolved threads and attempt approval when the configured workflow supports that behavior
+This is not a substitute for repository-required human approval
+
+@coderabbitai ignore
+PR-description directive that disables automatic review while present
+Do not use casually
+```
+
+Operational rule:
+
+```text
+Meaningful diff
+-> request/reuse CodeRabbit review
+-> independently verify each material finding
+-> classify REAL / ALREADY FIXED / STALE / FALSE POSITIVE / NEEDS DECISION
+-> fix only real in-scope findings
+-> re-run affected verification
+-> reply/resolve with evidence
+```
+
+Do not blindly implement CodeRabbit prose.
+
+### Cursor Bugbot
+
+Verified manual Pull Request triggers include:
+
+```text
+cursor review
+bugbot run
+```
+
+For diagnostics or rule visibility:
+
+```text
+cursor review verbose=true
+bugbot run verbose=true
+```
+
+Bugbot can run automatically on PR updates when enabled.
+
+Its findings are review evidence, not completion evidence.
+
+Do not rely on unsupported thread mentions when the documented top-level PR triggers are available.
+
+### autofix.ci
+
+autofix.ci is workflow-driven.
+
+Do not invent a PR comment command for it.
+
+The intended model is:
+
+```text
+GitHub Actions workflow
+-> run deterministic fixers/formatters
+-> call autofix-ci/action
+-> autofix.ci validates the generated patch
+-> GitHub App commits the patch to the Pull Request branch when necessary
+-> agent refreshes the PR head
+-> agent re-runs or re-observes relevant checks
+```
+
+Use it for deterministic fixers such as formatting or safe mechanical cleanup configured by the repository.
+
+Do not let multiple auto-fixing bots create a correction loop.
+
+Any bot-authored commit invalidates prior current-head verification.
+
+### Qlty
+
+Treat the Qlty GitHub App primarily as a quality/check provider unless the repository proves a configured fix workflow.
+
+It can post code-quality information and checks on Pull Requests and may support generated/validated fixes when configured.
+
+Do not invent a Qlty comment command.
+
+Use the resulting check or finding only for the surface it actually analyzed.
+
+### Other installed GitHub Apps
+
+Previous repository workflows may also expose apps such as:
+
+```text
+ChatGPT Codex Connector
+Claude
+Warp Factories
+```
+
+Do not hardcode an invocation syntax for these merely from the app display name.
+
+Before invoking:
+
+```text
+1. inspect existing Issue/PR bot activity in the repository
+2. inspect repository configuration
+3. inspect current official app documentation when needed
+4. identify the exact supported trigger
+5. invoke only if the requested job matches that trigger
+6. verify the app actually responded
+```
+
+If no trustworthy trigger is found, leave the app unused rather than guessing.
+
+### GitHub App reference refresh
+
+Current references used for this handbook refresh:
+
+```text
+CodeRabbit commands:
+https://docs.coderabbit.ai/reference/review-commands
+https://docs.coderabbit.ai/guides/commands
+
+Cursor Bugbot:
+https://cursor.com/docs/bugbot
+
+autofix.ci:
+https://autofix.ci/
+https://autofix.ci/setup
+
+Qlty GitHub App:
+https://docs.qlty.sh/cloud/github-app
+```
+
+Recheck current documentation before relying on a bot command in a high-risk workflow.
+
+## 1.13 Evidence Trust Ladder
+
+Use the strongest evidence available.
+
+```text
+LEVEL A - DIRECT CURRENT STATE
+Live repository state, runtime state, database state, rendered UI, exact current artifact
+
+LEVEL B - EXECUTABLE PROOF
+Focused regression test, integration test, build, typecheck, lint, package validation, current-head CI, deterministic reproduction
+
+LEVEL C - INDEPENDENT REVIEW
+CodeRabbit, Codex verification, Fallow, SonarQube, security review, UI/UX review
+
+LEVEL D - EXTERNAL CONTRACT
+Current primary documentation, release notes, standards, official vendor behavior
+
+LEVEL E - CONTEXT / MEMORY / INFERENCE
+Previous session notes, handoffs, remembered architecture, hypotheses
+```
+
+Rules:
+
+```text
+A stronger level may invalidate a weaker one.
+
+Completion normally needs Level A and/or Level B evidence when execution is possible.
+
+Level C improves confidence but does not replace Level B.
+
+Level D defines external contracts but does not prove the local implementation satisfies them.
+
+Level E is useful for orientation only until reconciled with current state.
+```
+
+## 1.14 Capability Routing Precedence
+
+When several plugins could help, route in this order:
+
+```text
+1. SOURCE
+Who owns current truth?
+
+2. CONTRACT
+Which requirement or external contract defines correct behavior?
+
+3. EXECUTOR
+Who is authorized to mutate the target?
+
+4. VERIFIER
+What directly proves the changed behavior?
+
+5. REVIEWER
+Who provides an independent second perspective?
+
+6. READINESS
+Is the collected evidence sufficient for the next gate?
+
+7. LANDING
+Which tool or repository policy owns the irreversible state transition?
+
+8. HANDOFF
+What state must survive if work remains?
+```
+
+Do not start with a giant @mention list and assign jobs afterward.
+
+Select the stage first, then the smallest useful capability.
 
 ---
 
@@ -491,6 +797,173 @@ No execution occurred
 ```
 
 Never report `COMPLETE` when the only evidence is code inspection.
+
+---
+
+## 3.1 Prompt Contract Standard
+
+For reusable engineering prompts, autonomous Goals, Issue-delivery agents, or long-running repository missions, define an explicit contract before the execution loop.
+
+The compact contract is:
+
+```text
+outcome:
+  [observable finished state]
+
+success_criteria:
+  - [externally checkable condition]
+
+source_of_truth:
+  - [live source that resolves state]
+
+boundaries:
+  - [in scope]
+  - [out of scope]
+
+permissions:
+  - [reads]
+  - [writes]
+  - [push / PR / issue / deployment authority]
+  - [actions that still require confirmation]
+
+write_owner:
+  [single owner for each mutable surface]
+
+tools:
+  source:
+  planner:
+  executor:
+  specialist:
+  verifier:
+  reviewer:
+  readiness:
+  landing:
+  handoff:
+
+evidence:
+  - [proof required before each completion claim]
+
+stop_conditions:
+  - [completed]
+  - [blocked]
+  - [authority required]
+  - [unsafe ambiguity]
+```
+
+Routing guidance:
+
+```text
+@Skillquiver
+Use its prompt-engineering workflow when the reusable prompt itself needs explicit outcome, permissions, tools, evidence, and stop conditions
+
+@Matt Skills Curated
+Use its autonomous goal workflow when converting a long engineering mission into a self-contained agentic execution contract
+
+@AI Task Brief Builder
+Use when supplied Issue/spec/PR materials need to be separated into confirmed requirements, test needs, constraints, and unconfirmed proposals
+Remember that it only analyzes the material supplied to it
+
+@taskplane
+Use when the work genuinely benefits from a governed requirements/design/build/engineering flow with explicit gates
+```
+
+Prompt quality rules:
+
+```text
+Describe the finished state, not merely the activity.
+
+Separate boundaries from permissions.
+
+Name what evidence is required before saying complete.
+
+Name what the agent must NOT infer.
+
+Define the write owner.
+
+Define when parallel reads are safe and when writes must serialize.
+
+Define the landing authority separately from implementation authority.
+
+Do not repeat the same safety rule in ten different sections when one canonical rule can govern them all.
+```
+
+### Copy-ready autonomous prompt skeleton
+
+```text
+MISSION
+[observable finished state]
+
+TARGET
+[repository / PR / Issue / environment]
+
+SOURCE OF TRUTH
+[current connected source]
+
+OPERATING CONTRACT
+- inspect before mutation
+- preserve unrelated work
+- one write owner per mutable surface
+- current state beats memory
+- evidence before claims
+- mutation invalidates stale verification
+
+SCOPE
+IN:
+- ...
+
+OUT:
+- ...
+
+PERMISSIONS
+ALLOWED:
+- ...
+
+CONFIRMATION-REQUIRED:
+- ...
+
+ROLES
+Source:
+Planner:
+Executor:
+Specialist:
+Verifier:
+Reviewer:
+Readiness:
+Landing:
+Handoff:
+
+STATE MACHINE
+RESTORE
+-> INVESTIGATE
+-> CONTRACT
+-> EXECUTE
+-> VERIFY
+-> REVIEW
+-> REPAIR
+-> REVERIFY
+-> READY
+-> LAND
+-> VERIFY LANDED STATE
+-> DOCUMENT
+
+EVIDENCE GATES
+- ...
+
+STOP CONDITIONS
+- COMPLETE
+- BLOCKED
+- AUTHORITY REQUIRED
+- UNSAFE / AMBIGUOUS
+
+FINAL RECEIPT
+- source state
+- changes
+- verification
+- reviews
+- current SHA / artifact
+- limitations
+- next action
+```
 
 ---
 
