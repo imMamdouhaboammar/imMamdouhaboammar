@@ -18,12 +18,13 @@ A plugin should have a job inside the workflow. If two plugins perform the same 
 
 Capability truth refresh: **2026-09-09**
 
-This handbook distinguishes four different things that agents often incorrectly collapse into one concept:
+This handbook distinguishes five different things that agents often incorrectly collapse into one concept:
 
 - ChatGPT plugins and Skills that provide capabilities inside the current session
 - connected source plugins that expose live account or repository state
 - GitHub Apps and bots that act inside Issues, Pull Requests, checks, or workflows
 - repository-native CI, branch rules, and required checks that remain authoritative regardless of which AI tool is active
+- external authorities such as current primary documentation, standards, and vendor contracts that define correct behavior but do not prove the local implementation
 
 Never treat an installed name as proof that its callable surface is available in the current host.
 
@@ -588,6 +589,68 @@ It can post code-quality information and checks on Pull Requests and may support
 Do not invent a Qlty comment command.
 
 Use the resulting check or finding only for the surface it actually analyzed.
+
+### Sourcery
+
+Sourcery is verified as an active reviewer on this repository.
+
+The current bot response exposes these Pull Request commands:
+
+```text
+@sourcery-ai review
+Trigger a fresh Sourcery review
+
+@sourcery-ai issue
+Create a GitHub Issue from a review comment when used in that review context
+
+@sourcery-ai title
+Generate or regenerate the Pull Request title
+
+@sourcery-ai summary
+Generate or regenerate the Pull Request summary
+
+@sourcery-ai guide
+Generate or regenerate the reviewer's guide
+
+@sourcery-ai resolve
+Resolve Sourcery comments after they are genuinely addressed
+
+@sourcery-ai dismiss
+Dismiss existing Sourcery reviews when deliberately starting over
+```
+
+Treat Sourcery findings like any other reviewer input:
+
+```text
+finding
+-> inspect current code
+-> classify
+-> fix only real in-scope issues
+-> re-verify
+-> reply/resolve with evidence
+```
+
+Do not ask Sourcery and CodeRabbit for duplicate full reviews by default.
+
+Use a second reviewer when it contributes a materially different perspective or when the first review leaves meaningful uncertainty.
+
+### Qodo
+
+Qodo is verified as an installed reviewer on this repository, but availability is state-dependent.
+
+Its bot may explicitly report that reviews are paused because the current workspace has no active trial/credits.
+
+Rules:
+
+```text
+A disabled or billing-blocked reviewer is UNAVAILABLE, not PASSING.
+
+Absence of findings from a reviewer that did not run is not review evidence.
+
+Do not invent a Qodo command when the current bot state or repository documentation has not exposed one.
+
+If Qodo becomes available later, refresh its current documented invocation behavior before depending on it.
+```
 
 ### Other installed GitHub Apps
 
@@ -3853,7 +3916,7 @@ Build the repository's next actionable engineering and product backlog from its 
 Use this after the backlog exists and you want an autonomous engineering agency to process Issues one by one through implementation, verification, review, PR, merge, closure, documentation, and queue refresh.
 
 ~~~~text
-@Riqor @get-fable @ZzzOps @Superpowers @GitHub
+@Riqor @get-fable @ZzzOps @Superpowers @GitHub @PR Readiness Check @PR Completion
 
 # AUTONOMOUS ISSUE DELIVERY AGENCY
 
@@ -3880,7 +3943,8 @@ You are simultaneously responsible for:
 - Runtime QA
 - Git discipline
 - Pull Request management
-- Merge readiness
+- Current-head readiness
+- Landing authority and confirmation boundaries
 - Issue closure
 - Delivery documentation
 - Long-session continuity
@@ -3906,7 +3970,9 @@ RESTORE REPOSITORY STATE
 -> RE-VERIFY
 -> OPEN PR
 -> VERIFY PR / CI
--> MERGE
+-> BUILD CURRENT-HEAD READINESS EVIDENCE
+-> READY OR READY_AWAITING_LANDING_CONFIRMATION
+-> LAND THROUGH THE ACTIVE LANDING AUTHORITY
 -> VERIFY MERGED STATE
 -> CLOSE ISSUE
 -> DOCUMENT RECEIPT
@@ -3948,14 +4014,16 @@ For each Issue:
 9. independently review the change
 10. fix material findings
 11. create a complete Pull Request
-12. satisfy required CI, review, branch, and repository policies
-13. merge the Pull Request when authorized and objectively ready
-14. confirm that the merge actually landed
-15. close or confirm closure of the Issue
-16. document delivery evidence
-17. refresh repository state
-18. choose the next Issue
-19. repeat
+12. satisfy required CI, review, branch, and repository policies on the exact current head SHA
+13. determine the active landing authority and its confirmation contract
+14. if the landing surface requires exact-head per-PR confirmation, transition to READY_AWAITING_LANDING_CONFIRMATION and request only that narrow decision
+15. otherwise request or perform landing only when the active landing surface, repository policy, and current authorization all permit it
+16. confirm that the merge actually landed and matches the intended head
+17. close or confirm closure of the Issue
+18. document delivery evidence
+19. refresh repository state
+20. choose the next Issue
+21. repeat
 
 Continue while safe useful actionable work remains.
 
@@ -4599,6 +4667,14 @@ Do not run readiness review before implementation evidence exists.
 Use only after readiness has been proven:
 
 @PR Completion
+
+If @PR Completion is the active landing surface:
+
+- bind readiness to the exact current head SHA
+- follow its own landing plan
+- preserve its per-PR confirmation gate
+- transition to READY_AWAITING_LANDING_CONFIRMATION rather than routing around that gate
+- never reuse confirmation after the head SHA changes
 
 Never use plugin count as a proxy for quality.
 
@@ -5709,7 +5785,9 @@ SELECTED
 -> PR OPEN
 -> PR CHECKS GREEN
 -> PR POLICY SATISFIED
--> MERGE READY
+-> READY
+-> READY_AWAITING_LANDING_CONFIRMATION / LANDING AUTHORIZED
+-> LANDING REQUESTED
 -> MERGED
 -> MERGED STATE VERIFIED
 -> ISSUE CLOSED
@@ -6094,7 +6172,13 @@ while safe_actionable_issues_exist:
 
     confirm_merge_readiness_on_current_SHA()
 
-    merge_using_repository_policy()
+    determine_active_landing_authority()
+
+    if landing_requires_exact_head_confirmation:
+        transition_to_READY_AWAITING_LANDING_CONFIRMATION()
+        obtain_exact_head_confirmation_before_landing()
+
+    request_landing_only_when_repository_policy_and_active_tool_allow()
 
     verify_remote_merge_state()
 
