@@ -460,10 +460,10 @@ Brand voice mirroring and content style extraction. Analyzes existing copy and r
 <div align="center">
   <table>
     <tr>
-      <td align="center" width="25%"><strong>4,568</strong><br /><sub>Commit contributions</sub></td>
-      <td align="center" width="25%"><strong>75 days</strong><br /><sub>Current streak</sub></td>
-      <td align="center" width="25%"><strong>75 days</strong><br /><sub>Longest streak</sub></td>
-      <td align="center" width="25%"><strong>8,512</strong><br /><sub>Contributions this year</sub></td>
+      <td align="center" width="25%"><strong>4,602</strong><br /><sub>Commit contributions</sub></td>
+      <td align="center" width="25%"><strong>76 days</strong><br /><sub>Current streak</sub></td>
+      <td align="center" width="25%"><strong>76 days</strong><br /><sub>Longest streak</sub></td>
+      <td align="center" width="25%"><strong>8,564</strong><br /><sub>Contributions this year</sub></td>
     </tr>
   </table>
 </div>
@@ -488,19 +488,19 @@ I keep a tab on what agent-assisted building costs, because the bill is part of 
   <p><sub>I keep a tab on what agent-assisted building costs, because the bill is part of the engineering decision.</sub></p>
   <table>
     <tr>
-      <td width="25%" align="center"><strong>12,438,144</strong><br /><sub>Lines added</sub></td>
-      <td width="25%" align="center"><strong>2,077,990</strong><br /><sub>Lines deleted</sub></td>
-      <td width="25%" align="center"><strong>14,516,134</strong><br /><sub>Lines changed</sub></td>
-      <td width="25%" align="center"><strong>464,516,288</strong><br /><sub>Estimated tokens</sub></td>
+      <td width="25%" align="center"><strong>12,445,151</strong><br /><sub>Lines added</sub></td>
+      <td width="25%" align="center"><strong>2,078,559</strong><br /><sub>Lines deleted</sub></td>
+      <td width="25%" align="center"><strong>14,523,710</strong><br /><sub>Lines changed</sub></td>
+      <td width="25%" align="center"><strong>464,758,720</strong><br /><sub>Estimated tokens</sub></td>
     </tr>
   </table>
   <table>
     <tr>
-      <td width="50%" align="center"><strong>GPT-5.6 Sol / Ultra</strong><br />$5,225.81<br /><sub>$5.00/M input · $30.00/M output</sub></td>
-      <td width="50%" align="center"><strong>Claude Fable 5</strong><br />$9,290.33<br /><sub>$10.00/M input · $50.00/M output</sub></td>
+      <td width="50%" align="center"><strong>GPT-5.6 Sol / Ultra</strong><br />$5,228.54<br /><sub>$5.00/M input · $30.00/M output</sub></td>
+      <td width="50%" align="center"><strong>Claude Fable 5</strong><br />$9,295.17<br /><sub>$10.00/M input · $50.00/M output</sub></td>
     </tr>
   </table>
-  <p align="center"><strong>Estimate model:</strong> 6,042 commits scanned · 281 merges excluded · 348,387,216 input + 116,129,072 output tokens · 8 tokens per changed line · 4x session factor · estimate, not an invoice</p>
+  <p align="center"><strong>Estimate model:</strong> 6,077 commits scanned · 283 merges excluded · 348,569,040 input + 116,189,680 output tokens · 8 tokens per changed line · 4x session factor · estimate, not an invoice</p>
 </details>
 <!-- pushonomics:end -->
 
