@@ -60,7 +60,7 @@ I'm learning enough engineering to become much better at Product: what should be
 
 <br>
 
-I co-founded and author [PrePilot](https://app.prepilot-system-agency.space/), a marketing workflow product for agencies, freelancers, and marketing teams that already work inside ChatGPT or Claude
+I co-founded [PrePilot](https://app.prepilot-system-agency.space/) and continue to author its product and workflow direction: a marketing workflow product for agencies, freelancers, and marketing teams that already work inside ChatGPT or Claude
 
 PrePilot gives those tools **526 structured agency workflows** across strategy, paid media, SEO / AEO / GEO, content, ad copy, UGC scripts, landing pages, proposals, decks, reporting, and more
 
