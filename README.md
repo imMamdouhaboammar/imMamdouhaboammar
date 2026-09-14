@@ -2,51 +2,49 @@
 
 # Mamdouh Aboammar
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=26&pause=1400&color=A371F7&center=true&vCenter=true&width=820&height=56&lines=vibe+coder;conversion+copywriter+who+ships+code;agentic+tooling+for+marketing+work;%2F%2F+the+manual+version+cost+me+a+week" alt="vibe coder, conversion copywriter who ships code, agentic tooling for marketing work">
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=26&pause=1400&color=A371F7&center=true&vCenter=true&width=900&height=56&lines=product+architecture%2C+one+repo+at+a+time;business+%C3%97+product+%C3%97+AI+%C3%97+engineering;learning+software+by+building+in+public;%2F%2F+build+less.+understand+more." alt="Product architecture in training, business product AI and engineering, learning software by building in public">
 
 <br>
 
-<a href="https://mamdouhaboammar.com/"><img src="https://img.shields.io/badge/Site-mamdouhaboammar.com-161B22?style=for-the-badge&logo=safari&logoColor=E6EDF3&labelColor=0D1117" alt="Mamdouh Aboammar website"></a>
-<a href="https://immamdouhaboammar.github.io/imMamdouhaboammar/"><img src="https://img.shields.io/badge/Portfolio_Engine-Live_Pages-4F46E5?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=0D1117" alt="Live Portfolio Engine"></a>
-<a href="REPOSITORIES.md"><img src="https://img.shields.io/badge/Catalog-142_Repos-059669?style=for-the-badge&logo=markdown&logoColor=white&labelColor=0D1117" alt="Complete 142 Repositories Catalog"></a>
+<a href="https://mamdouhaboammar.com/"><img src="https://img.shields.io/badge/Website-mamdouhaboammar.com-161B22?style=for-the-badge&logo=safari&logoColor=E6EDF3&labelColor=0D1117" alt="Mamdouh Aboammar website"></a>
 <a href="https://www.linkedin.com/in/mamdouh-aboammar/"><img src="https://img.shields.io/badge/LinkedIn-Mamdouh_Aboammar-0A66C2?style=for-the-badge&labelColor=0D1117" alt="Mamdouh Aboammar on LinkedIn"></a>
-<a href="https://x.com/Bo_ammarrr"><img src="https://img.shields.io/badge/X-Bo__ammarrr-161B22?style=for-the-badge&logo=x&logoColor=E6EDF3&labelColor=0D1117" alt="Mamdouh Aboammar on X"></a>
-<a href="https://github.com/imMamdouhaboammar?tab=followers"><img src="https://img.shields.io/github/followers/imMamdouhaboammar?style=for-the-badge&label=Follow&labelColor=0D1117&color=161B22" alt="Follow imMamdouhaboammar"></a>
+<a href="REPOSITORIES.md"><img src="https://img.shields.io/badge/Repository_Catalog-142_builds-059669?style=for-the-badge&logo=markdown&logoColor=white&labelColor=0D1117" alt="Complete repository catalog"></a>
+<a href="https://immamdouhaboammar.github.io/imMamdouhaboammar/"><img src="https://img.shields.io/badge/Portfolio-Live_Pages-4F46E5?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=0D1117" alt="Live portfolio"></a>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/%3Cvibe%3Ecoder%3C%2Fvibe%3E-0D1117?style=for-the-badge" alt="vibe coder written as an html tag">
-<img src="https://img.shields.io/badge/----no--slop-0D1117?style=for-the-badge" alt="no slop flag">
+<img src="https://img.shields.io/badge/Product_Architect-in_training-A371F7?style=for-the-badge&labelColor=0D1117" alt="Product Architect in training">
+<img src="https://img.shields.io/badge/build-in_public-161B22?style=for-the-badge&labelColor=0D1117" alt="Build in public">
+<img src="https://img.shields.io/badge/no_slop-161B22?style=for-the-badge&labelColor=0D1117" alt="No slop">
 <img src="https://img.shields.io/badge/LGTM-Looks_Good_To_Marketing-161B22?style=for-the-badge&labelColor=0D1117" alt="LGTM means Looks Good To Marketing">
-<img src="https://img.shields.io/badge/README.me-0D1117?style=for-the-badge" alt="README dot me">
 
 <br><br>
 
-**Mamdouh Aboammar is a vibe coder and conversion copywriter who builds agentic tooling for marketing work.**
+**Marketing and business background. Learning Product Architecture by building, documenting, testing, and maintaining real software in public.**
 
-<sub>Agent governance, frontend quality gates, PR-only coding workflows, and Arabic conversion copy systems.<br>
-Every repository here started as a manual process that wasted enough of my week to be worth automating.</sub>
+<sub>I work where product decisions, technical research, AI-assisted workflows, documentation, and engineering handoffs meet.</sub>
 
 <br><br>
 
-**I don't want to become a software engineer**<br>
-I want to become exceptionally good at deciding what technology should be built, why it should exist, how it should work, and whether it is actually succeeding
+<img src="https://img.shields.io/badge/OPEN_TO-Freelance-A371F7?style=flat-square&labelColor=0D1117" alt="Open to freelance">
+<img src="https://img.shields.io/badge/OPEN_TO-Full--time-3FB950?style=flat-square&labelColor=0D1117" alt="Open to full-time">
+<img src="https://img.shields.io/badge/OPEN_TO-Part--time-58A6FF?style=flat-square&labelColor=0D1117" alt="Open to part-time">
 
 <br>
 
-<details>
-<summary>Career path</summary>
+<img src="https://img.shields.io/badge/OPPORTUNITIES-Egypt-161B22?style=flat-square&labelColor=0D1117" alt="Open to opportunities in Egypt">
+<img src="https://img.shields.io/badge/OPPORTUNITIES-Saudi_Arabia-161B22?style=flat-square&labelColor=0D1117" alt="Open to opportunities in Saudi Arabia">
+<img src="https://img.shields.io/badge/OPPORTUNITIES-UAE-161B22?style=flat-square&labelColor=0D1117" alt="Open to opportunities in the UAE">
+<img src="https://img.shields.io/badge/OPPORTUNITIES-GCC-161B22?style=flat-square&labelColor=0D1117" alt="Open to opportunities across the GCC">
 
-<br>
+<br><br>
 
-Founder of PrePilot — conversion infrastructure for Arabic-speaking markets. Digital Director with a background in performance marketing, Meta and Google campaign architecture, and direct-response systems for the MENA region. Earlier work included large-scale event marketing at the Hajj Conference and Exhibition. Now building open-source agentic tooling that makes the manual version of every workflow unnecessary.
-
-</details>
+**I'm not training to become a Software Engineer.**<br>
+I'm learning enough engineering to become much better at Product: what should be built, why it should exist, how it should behave, what it costs to maintain, and how to work with the people responsible for making it real.
 
 </div>
 
 <br>
-
 <div align="center">
 
 ## So... what would I actually do on your team?
@@ -58,140 +56,65 @@ Founder of PrePilot — conversion infrastructure for Arabic-speaking markets. D
 </tr>
 </table>
 
-<sub>English is the main version. Arabic follows below.</sub>
+<sub>English first. Arabic version right below it.</sub>
 
 </div>
 
 <a id="english-version"></a>
 
 <details dir="ltr">
-<summary dir="ltr"><strong>🇬🇧 What would I actually do on your team?</strong></summary>
+<summary dir="ltr"><strong>🇬🇧 How I can help your team</strong></summary>
 
 <br>
 
-One thing first, before someone sees all these repositories and accidentally hires me as a backend engineer
+The useful part of my profile is not "a marketing person with a lot of repos" and it is not "a junior engineer with a different title"
 
-**I'm not a Software Engineer**
+My useful position is the space between a business question and a clean engineering handoff
 
-And I'm not trying to pretend I am one
+I come from marketing, business, strategy, and growth. I'm learning Product Architecture by getting close enough to code, Git, tests, docs, maintenance, and AI-assisted development to understand constraints before they become expensive confusion
 
-My background is in marketing, business, strategy, and growth. What I'm learning now is how to become a good **Product Architect**, and I'm still early in that path
+### Where I can own work
 
-For me, that means understanding the things I used to see from the other side of the meeting:
+**Product research and PRDs**<br>
+Turn an early idea into a clearer problem, user need, assumptions, constraints, edge cases, trade-offs, success criteria, and acceptance criteria. Sometimes the right answer is still: **we should not build this**
 
-`Code` · `Git` · `PRs` · `Testing` · `Maintenance` · `Tech Product` · `PRDs` · `Technical Writing` · `AI-assisted work` · and, probably most importantly, **how to think before asking someone else to build**
+**Docs and technical writing**<br>
+Keep READMEs, onboarding, decision notes, architecture context, and product documentation close to the thing that actually exists, not the version everyone remembers from three months ago
 
-Most of the repositories on this profile are practical attempts to understand those things by building, breaking, documenting, reviewing, and trying again
+**Issue discovery and bounded PRs**<br>
+Reproduce problems, gather evidence, narrow scope, write useful issues, and take small changes as far as a reviewable PR when they are inside my technical range. Engineering keeps the final judgment
 
-Not because I want to replace Software Engineers
+**AI-assisted workflows and agentic tooling**<br>
+Look at repeated work, decide what AI can prepare safely, define where human review belongs, and turn recurring research, checks, or procedures into reusable skills, workflows, or small internal tools
 
-Quite the opposite
+**Evaluation, cost, and context discipline**<br>
+Inspect repeated prompts, unnecessary context growth, oversized models doing simple work, weak verification, and duplicated generation. Then test alternatives and measure before claiming savings or quality gains
 
-I want to stop being the person who walks into engineering and says:
+### What does the team get?
 
-> I have a very small feature idea
+Less time spent asking "what exactly are we trying to do here?"<br>
+Research that stays available instead of being repeated<br>
+Docs that stay closer to reality<br>
+Feature requests that arrive with actual thinking behind them<br>
+Small changes that are easier to review<br>
+AI usage that can be inspected, discussed, and improved
 
-...followed by an app, a dashboard, some AI, three integrations, and "it should be easy" 😅
+I care about reducing the amount of ambiguity that reaches the people who should be spending their time on the genuinely hard engineering problems
 
-### So what could I actually own?
+### What would a normal day look like?
 
-**Documentation**<br>
-Keeping docs current, cleaning stale material, documenting decisions, improving onboarding, and checking whether the README still describes the product that actually exists
+A vague issue becomes a reproducible issue with evidence. An early feature becomes research plus a brief or PRD. Stale docs get fixed. A small technical change becomes a bounded PR. A process that keeps repeating becomes a candidate for a reusable workflow
 
-**Issue discovery and triage**<br>
-Reviewing a product or repository, reproducing problems where possible, gathering evidence, narrowing the scope, and turning findings into issues with useful context and acceptance criteria
-
-**Small, bounded pull requests**<br>
-When a change is narrow enough for me to understand and verify, I can take it as far as a focused PR for an engineer to review. They can change it, reject it, or tell me I misunderstood the problem. That is part of the process
-
-**Research before implementation**<br>
-Investigating a feature, library, API, competitor approach, technical decision, or AI workflow and turning the result into something reusable: a document, decision memo, checklist, or recommendation
-
-**PRDs and feature briefs**<br>
-Helping turn "what if we built..." into a clear problem, user need, assumptions, constraints, edge cases, success criteria, and acceptance criteria before implementation starts
-
-Sometimes the best result of that work is: **we should not build this**
-
-That is good Product work too
-
-**Practical AI adoption**<br>
-I'm less interested in putting a chatbot on every screen so a company can call itself AI-powered
-
-I'm much more interested in the work itself: what repeats, what takes time, what AI can draft, where human review belongs, and what should never be delegated to AI in the first place
-
-**Agentic skills and reusable workflows**<br>
-If the team repeats the same research, review, checklist, or setup every week, I will probably ask why we keep starting from zero and whether that knowledge should become a skill, checklist, workflow, or small internal tool
-
-**AI usage and token discipline**<br>
-I can look for unnecessary context growth, repeated prompts, oversized models doing simple work, and work being generated again and again, then test alternatives and measure before and after
-
-I will not promise to cut the bill by 73% before I have even seen the bill
-
-**The space between Business, Product, and Engineering**<br>
-This is probably where my original background helps most. I can understand the commercial question and customer context, then help turn them into something the technical team can actually discuss
-
-### What does the team get from that?
-
-Ideally, your engineer stops opening tickets and spending the first two hours asking:
-
-**What exactly are we trying to do here?**
-
-Research gets captured instead of repeated
-
-Documentation stays reasonably close to reality
-
-Feature requests arrive with some thinking already done
-
-Small changes arrive closer to something reviewable
-
-And AI becomes part of an understandable working process instead of everyone keeping 87 mysterious prompts in Apple Notes
-
-In other words, I'm interested in reducing the amount of mess that reaches the people who should be spending their time on the genuinely hard problems
-
-### What would a normal day with me look like?
-
-Maybe I start with a vague issue, reproduce it, investigate it, and rewrite it into something more useful
-
-Then there is an early feature idea, so I research it and turn it into a brief or PRD
-
-Then I notice the docs no longer match the product, so I fix them
-
-Then there is a small issue within my current technical range, so I prepare a PR and leave it for engineering review
-
-Somewhere in the middle, I notice we have repeated the same process four times this week and ask: **should this become a workflow instead?**
-
-For me, a productive day does not necessarily mean writing a lot of code
-
-It means leaving behind something another person can inspect and use:
+A productive day does not have to end with a lot of code. It should end with something another person can inspect and use
 
 `PR` · `Issue` · `Doc` · `Research note` · `Decision` · `Test evidence` · `Skill` · `Checklist`
 
-Anything other than: "I'm pretty sure we discussed this in a meeting two months ago"
+### Where I fit best
 
-### And after a year?
+I'm most useful when a team needs someone who can move between commercial context, Product thinking, AI workflows, technical research, documentation, and engineering constraints without pretending those disciplines are the same thing
 
-I'm not going to tell you the company will become 10X faster or that AI will solve everything
-
-What I would actually want to see after a year is simpler:
-
-Docs people can trust<br>
-A cleaner backlog<br>
-Better-written issues<br>
-Features entering development with clearer reasoning<br>
-Old research that people can actually find<br>
-Repeated work captured in reusable workflows<br>
-AI usage that can be inspected and measured<br>
-And Software Engineers spending more of their time on problems that genuinely require Software Engineers
-
-If we reach that point, I'm probably becoming the kind of Product Architect I'm trying to learn how to be
-
-### Have a job offer?
-
-If you need a Software Engineer, I'm probably not the person you're looking for
-
-But if there is a gap somewhere between **Business × Product × AI × Engineering**, and you need someone who enjoys research, documentation, PRDs, issues, workflows, and figuring out how AI can actually fit into the way people work, while continuing to learn the technical side in public rather than pretending to already know everything
-
-Then we probably have something worth talking about
+**Available for:** Freelance · Full-time · Part-time<br>
+**Open to opportunities across:** Egypt · Saudi Arabia · UAE · GCC
 
 **Email:** [mamdouhfces1997@gmail.com](mailto:mamdouhfces1997@gmail.com)<br>
 **WhatsApp:** [Message me directly](https://wa.me/201092677269)<br>
@@ -211,131 +134,50 @@ Then we probably have something worth talking about
 <a id="arabic-version"></a>
 
 <details dir="rtl">
-<summary dir="rtl"><strong>🇪🇬 لو أنا في شركتك، هبقى بساعد فريقك إزاي؟</strong></summary>
+<summary dir="rtl"><strong>🇪🇬 إزاي أقدر أفيد فريقك</strong></summary>
 
 <br>
 
 <div dir="rtl" align="right">
 
-خليني أبدأ بأهم نقطة قبل ما حد يشوف عدد الـ<span dir="ltr">repos</span> ويقرر يعينني <span dir="ltr">Software Engineer</span> بالغلط
+أنا مش داخل أقدم نفسي كـ<span dir="ltr">Software Engineer</span>، ومش دي الخطة أصلا
 
-**أنا مش <span dir="ltr">Software Engineer</span>**
+أنا جاي من <span dir="ltr">Marketing</span> و<span dir="ltr">Business</span> و<span dir="ltr">Strategy</span>، وبتعلم <span dir="ltr">Product Architecture</span> عن طريق إني أقرب من الشغل التقني فعليا: <span dir="ltr">Code</span> و<span dir="ltr">Git</span> و<span dir="ltr">Tests</span> و<span dir="ltr">Docs</span> و<span dir="ltr">Maintenance</span> وشغل الـ<span dir="ltr">AI</span>
 
-ومش بحاول أقدم نفسي كواحد
+الهدف إن الفكرة التجارية توصل للفريق التقني وهي أوضح، وإن القيود والمخاطر والأسئلة المهمة تظهر بدري بدل ما نكتشفها بعد ما الشغل يبدأ
 
-أنا جاي أساسا من <span dir="ltr">Marketing</span> و<span dir="ltr">Business</span> و<span dir="ltr">Strategy</span>، واللي بتعلمه دلوقتي هو إزاي أبقى **<span dir="ltr">Product Architect</span>** كويس، ولسه في أول الطريق
+### ممكن أكون مسؤول عن إيه؟
 
-بالنسبالي ده معناه إني محتاج أفهم الحاجات اللي كنت زمان بشوفها من الناحية التانية من الـ<span dir="ltr">meeting</span>:
+**<span dir="ltr">Product Research</span> و<span dir="ltr">PRDs</span>**<br>
+أحول الفكرة الأولية إلى مشكلة أوضح، احتياج حقيقي، افتراضات، قيود، <span dir="ltr">edge cases</span>، بدائل، ومعايير نجاح وقبول. وساعات أفضل قرار يبقى إننا ما نبنيش الفكرة أصلا
 
-<div dir="ltr" align="right"><code>Code</code> · <code>Git</code> · <code>PRs</code> · <code>Testing</code> · <code>Maintenance</code> · <code>Tech Product</code> · <code>PRDs</code> · <code>Technical Writing</code> · <code>AI-assisted work</code></div>
+**الـ<span dir="ltr">Docs</span> والكتابة التقنية**<br>
+أحدث الـ<span dir="ltr">README</span> والـ<span dir="ltr">onboarding</span> وملاحظات القرارات والتوثيق بحيث يفضل قريب من المنتج الموجود فعلا
 
-**وخصوصا إزاي نفكر قبل ما نطلب من حد يبني**
+**اكتشاف الـ<span dir="ltr">Issues</span> والـ<span dir="ltr">PRs</span> الصغيرة**<br>
+أعمل <span dir="ltr">reproduction</span> للمشكلة، أجمع دليل، أحدد الـ<span dir="ltr">scope</span>، وأكتب <span dir="ltr">Issue</span> مفهومة. ولو التغيير محدود وفي حدود اللي أقدر أتحقق منه، أوصله لـ<span dir="ltr">PR</span> صغيرة للمراجعة والقرار النهائي يفضل عند الفريق التقني
 
-كل المشاريع اللي عندي تقريبا هي محاولات عملية أفهم بيها الحاجات دي بدل ما أفضل أقرأ عنها من بعيد
+**شغل الـ<span dir="ltr">AI</span> والـ<span dir="ltr">Agentic Workflows</span>**<br>
+أشوف إيه بيتكرر، إيه الـ<span dir="ltr">AI</span> يقدر يجهزه بأمان، فين لازم مراجعة بشرية، وإيه ممكن يتحول لـ<span dir="ltr">Skill</span> أو <span dir="ltr">Workflow</span> أو أداة داخلية صغيرة بدل ما نبدأ من الصفر كل مرة
 
-مش عشان آخد مكان الـ<span dir="ltr">Software Engineers</span>
+**القياس والتكلفة والـ<span dir="ltr">Context</span>**<br>
+أراجع الـ<span dir="ltr">prompts</span> المتكررة، الـ<span dir="ltr">context</span> اللي بيكبر من غير داعي، استخدام موديلات أكبر من المطلوب، وضعف التحقق. وبعدها نجرب ونقيس قبل ما نقول إننا وفرنا أو حسنّا الجودة
 
-بالعكس
+### الفريق هيستفيد بإيه؟
 
-عشان لما أشتغل معاهم ما أبقاش الشخص اللي داخل يقول:
+وقت أقل في سؤال: هو المطلوب إيه بالظبط؟<br>
+بحث بيتوثق بدل ما يتعاد<br>
+<span dir="ltr">Docs</span> أقرب للواقع<br>
+<span dir="ltr">Features</span> داخلة التنفيذ وهي متفكر فيها أكتر<br>
+تغييرات صغيرة أسهل في المراجعة<br>
+واستخدام <span dir="ltr">AI</span> مفهوم وقابل للقياس والتحسين
 
-> عندي <span dir="ltr">feature</span> بسيطة جدا... هي بس محتاجة <span dir="ltr">app</span> و<span dir="ltr">dashboard</span> و<span dir="ltr">AI</span> وحاجتين صغيرين كده 😅
+أنا مهتم بالمساحة اللي بين <span dir="ltr">Business</span> و<span dir="ltr">Product</span> و<span dir="ltr">AI</span> و<span dir="ltr">Engineering</span>، وبإني أقلل الغموض قبل ما يوصل للناس اللي وقتها المفروض يروح للمشاكل التقنية الصعبة
 
-### طيب ممكن أكون مسؤول عن إيه؟
+### متاح لإيه وفين؟
 
-**الـ<span dir="ltr">Docs</span>**<br>
-أحدثها، أنضف القديم، أوثق القرارات، وأتأكد إن الـ<span dir="ltr">README</span> والـ<span dir="ltr">technical docs</span> لسه بيتكلموا عن الـ<span dir="ltr">product</span> الموجود فعلا، مش نسخة منه كانت موجودة من شهور
-
-**<span dir="ltr">Issue discovery</span> و<span dir="ltr">triage</span>**<br>
-أراجع الـ<span dir="ltr">product</span> أو الـ<span dir="ltr">repo</span>، أحاول أعمل <span dir="ltr">reproduction</span> للمشكلة، أجمع <span dir="ltr">context</span> و<span dir="ltr">evidence</span>، وأحول الملاحظة لـ<span dir="ltr">Issue</span> واضحة فيها <span dir="ltr">scope</span> و<span dir="ltr">acceptance criteria</span> بدل <span dir="ltr">ticket</span> من نوع `login broken pls fix`
-
-**<span dir="ltr">Small</span>, <span dir="ltr">bounded PRs</span>**<br>
-لو التغيير محدود، فاهمه، وقادر أختبره، أقدر أوصله لـ<span dir="ltr">PR</span> صغيرة قابلة للمراجعة. الـ<span dir="ltr">Engineer</span> يراجعها، يعدلها، يرفضها، أو يقولي إن فهمي كان غلط. ده جزء طبيعي من الشغل
-
-**<span dir="ltr">Research</span> قبل التنفيذ**<br>
-<span dir="ltr">Feature</span> جديدة، <span dir="ltr">library</span>، <span dir="ltr">API</span>، <span dir="ltr">competitor approach</span>، <span dir="ltr">technical decision</span> أو <span dir="ltr">AI workflow.</span> أعمل <span dir="ltr">deep research</span>، أقارن البدائل والـ<span dir="ltr">trade-offs</span>، وأحول النتيجة لـ<span dir="ltr">Doc</span> أو <span dir="ltr">decision memo</span> يقدر الفريق يرجع له بدل ما البحث يضيع بعد الـ<span dir="ltr">meeting</span>
-
-**<span dir="ltr">PRDs</span> و<span dir="ltr">Feature Briefs</span>**<br>
-أساعد نحول جملة من نوع "طب ما نعمل حاجة تعمل كذا؟" إلى <span dir="ltr">problem</span> واضح، <span dir="ltr">user need</span>، <span dir="ltr">assumptions</span>، <span dir="ltr">constraints</span>، <span dir="ltr">edge cases</span>، <span dir="ltr">success criteria</span> و<span dir="ltr">acceptance criteria</span> قبل ما الفكرة تدخل <span dir="ltr">development</span>
-
-وساعات أفضل نتيجة للـ<span dir="ltr">PRD</span> تبقى: **ما نبنيهاش أصلا**
-
-وده بالنسبة لي قرار <span dir="ltr">Product</span> محترم جدا
-
-**<span dir="ltr">AI</span> داخل الشغل اليومي**<br>
-مش قصدي نحط <span dir="ltr">chatbot</span> في كل صفحة ونكتب <span dir="ltr">AI-powered</span>
-
-قصدي نبص على الشغل نفسه: إيه بيتكرر؟ إيه بياخد وقت؟ إيه ممكن <span dir="ltr">AI</span> يعمل منه <span dir="ltr">first draft</span>؟ فين لازم <span dir="ltr">Human review</span>؟ وإيه الأفضل إن <span dir="ltr">AI</span> مايقربلوش من الأساس؟
-
-**<span dir="ltr">Agentic Skills</span> و<span dir="ltr">Reusable Workflows</span>**<br>
-لو الفريق بيعمل نفس البحث أو نفس <span dir="ltr">review</span> أو نفس الخطوات كل أسبوع، أحب أحول المعرفة دي لـ<span dir="ltr">Skill</span> أو <span dir="ltr">checklist</span> أو <span dir="ltr">workflow</span> بدل ما نبدأ من الصفر كل مرة
-
-**<span dir="ltr">AI usage</span> و<span dir="ltr">token discipline</span>**<br>
-أراجع فين الـ<span dir="ltr">context</span> بيكبر من غير داعي، فين <span dir="ltr">prompts</span> بتتكرر، فين <span dir="ltr">model</span> أكبر من المطلوب، وبعدها نجرب بدائل ونقيس قبل وبعد
-
-مش هقولك هقلل فاتورتك 73% قبل ما أشوف الفاتورة أصلا
-
-**المنطقة بين <span dir="ltr">Business</span> و<span dir="ltr">Product</span> و<span dir="ltr">Engineering</span>**<br>
-دي غالبا أكتر مساحة أقدر أضيف فيها من أول يوم. أفهم السؤال التجاري والـ<span dir="ltr">customer context</span>، وأساعد أحوله لحاجة الفريق التقني يقدر يناقشها بوضوح
-
-### وده هيفيد الفريق في إيه؟
-
-نفسي الـ<span dir="ltr">Engineer</span> لما يفتح <span dir="ltr">Issue</span> ما يبدأش أول ساعتين بسؤال:
-
-**هو المطلوب إيه بالظبط؟**
-
-ونفسي الـ<span dir="ltr">research</span> اللي اتعمل النهارده مايتعملش تاني الشهر الجاي عشان محدش وثقه
-
-والـ<span dir="ltr">feature</span> قبل ما تدخل <span dir="ltr">development</span> يبقى فيه إجابة منطقية لسؤال: **ليه بنبنيها؟**
-
-والـ<span dir="ltr">AI</span> يبقى جزء معروف من طريقة الشغل، له حدود ومراجعة وقياس، مش كل واحد عنده 87 <span dir="ltr">prompt</span> في <span dir="ltr">Notes</span> ومحدش عارف الشخص التاني بيعمل إيه
-
-أنا باختصار مهتم أقلل كمية الـ<span dir="ltr">mess</span> اللي بتوصل للناس اللي المفروض تركز في المشاكل الصعبة فعلا
-
-### شكل يوم الفريق معايا ممكن يبقى عامل إزاي؟
-
-ممكن أبدأ بـ<span dir="ltr">Issue</span> غامضة، أفهمها وأعمل <span dir="ltr">reproduction</span> وأرجعها مكتوبة بشكل أحسن
-
-بعدها <span dir="ltr">feature</span> لسه فكرة، أعمل <span dir="ltr">research</span> وأحولها لـ<span dir="ltr">brief</span> أو <span dir="ltr">PRD</span>
-
-بعدها ألاقي <span dir="ltr">Docs</span> اتغير الـ<span dir="ltr">product</span> من تحتها، فأحدثها
-
-بعدها <span dir="ltr">Issue</span> صغيرة في حدود اللي أقدر عليه، أوصلها لـ<span dir="ltr">PR</span> وأسيب القرار النهائي للـ<span dir="ltr">reviewer</span>
-
-وفي النص ألاحظ إننا كررنا نفس الخطوات أربع مرات، فأسأل: **هل دي ممكن تبقى <span dir="ltr">workflow</span> بدل ما تفضل عادة يدوية؟**
-
-اليوم الكويس بالنسبالي مش اليوم اللي كتبت فيه <span dir="ltr">Code</span> كتير
-
-هو اليوم اللي آخره فيه حاجة حد تاني يقدر يمسكها:
-
-<div dir="ltr" align="right"><code>PR</code> · <code>Issue</code> · <code>Doc</code> · <code>Research note</code> · <code>Decision</code> · <code>Test evidence</code> · <code>Skill</code> · <code>Checklist</code></div>
-
-أي حاجة غير: "أنا فاكر إننا اتكلمنا في الموضوع ده في <span dir="ltr">meeting</span> من شهرين"
-
-### وبعد سنة؟
-
-مش هقولك إن الشركة هتبقى 10<span dir="ltr">X</span> أسرع أو إن الـ<span dir="ltr">AI</span> هيحل كل حاجة
-
-بعد سنة أحب أشوف حاجات أبسط وأوضح:
-
-الـ<span dir="ltr">Docs</span> الناس بتثق فيها<br>
-الـ<span dir="ltr">backlog</span> أنضف<br>
-الـ<span dir="ltr">Issues</span> أوضح<br>
-الـ<span dir="ltr">features</span> داخلة <span dir="ltr">development</span> وهي متفكر فيها أحسن<br>
-الـ<span dir="ltr">research</span> القديم سهل نرجع له<br>
-الشغل المتكرر بقى له <span dir="ltr">reusable workflows</span><br>
-استخدام الـ<span dir="ltr">AI</span> بقى <span dir="ltr">measurable</span> ومفهوم<br>
-ووقت الـ<span dir="ltr">Software Engineers</span> بيتصرف أكتر على الحاجات اللي محتاجة <span dir="ltr">Software Engineers</span> فعلا
-
-لو وصلنا لكده، فغالبا أنا ماشي في الاتجاه الصح
-
-### عندك <span dir="ltr">Job Offer</span>؟
-
-لو بتدور على <span dir="ltr">Software Engineer</span>، غالبا أنا مش الشخص المناسب
-
-لكن لو عندك مساحة بين **<span dir="ltr">Business</span> × <span dir="ltr">Product</span> × <span dir="ltr">AI</span> × <span dir="ltr">Engineering</span>**، ومحتاج حد يحب الـ<span dir="ltr">research</span> والـ<span dir="ltr">Docs</span> والـ<span dir="ltr">PRDs</span> والـ<span dir="ltr">Issues</span> والـ<span dir="ltr">workflows</span> زيادة شوية عن الطبيعي، ويتعلم الـ<span dir="ltr">technical side</span> وهو شغال بدل ما يمثل إنه عارف كل حاجة
-
-ساعتها غالبا عندنا كلام نتكلم فيه
+**نوع الشغل:** <span dir="ltr">Freelance · Full-time · Part-time</span><br>
+**الأسواق:** مصر · السعودية · الإمارات · دول الخليج
 
 **الإيميل:** <a dir="ltr" href="mailto:mamdouhfces1997@gmail.com">mamdouhfces1997@gmail.com</a><br>
 **واتساب:** <a href="https://wa.me/201092677269">راسلني مباشرة</a><br>
@@ -353,18 +195,16 @@ Then we probably have something worth talking about
 </details>
 
 <br>
-
-<br>
-
 <div align="center">
 
-<img src="https://img.shields.io/badge/Real_friction-A371F7?style=flat-square&labelColor=0D1117" alt="Real friction">
-<img src="https://img.shields.io/badge/Reusable_systems-58A6FF?style=flat-square&labelColor=0D1117" alt="Reusable systems">
-<img src="https://img.shields.io/badge/Public_proof-3FB950?style=flat-square&labelColor=0D1117" alt="Public proof">
+<img src="https://img.shields.io/badge/ACTIVE_FOCUS-current_work-DCA820?style=for-the-badge&labelColor=0D1117" alt="Active focus">
+<img src="https://img.shields.io/badge/13-repositories-161B22?style=for-the-badge&labelColor=0D1117" alt="13 active repositories">
 
 <br><br>
 
-## Public systems
+## Active focus
+
+<sub>These are the repositories getting most of my attention right now. Selected, not exhaustive.</sub>
 
 </div>
 
@@ -372,62 +212,41 @@ Then we probably have something worth talking about
 <tr>
 <td width="50%" valign="top">
 
-#### [Agent Kernel](https://github.com/imMamdouhaboammar/agent-kernel)
+#### [Get Fable](https://github.com/imMamdouhaboammar/get-fable)
 
-Memory, trust boundaries, and failure lessons for Claude Code, Codex, Cursor, and Gemini CLI. Keeps an agent inside the rules you set.
+A coding-agent harness built around research, planning, TDD, verification, review, red-teaming, recovery, and persistent context.
 
-<img src="https://img.shields.io/badge/agent_memory-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/governance-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/JS-0D1117?style=flat-square&logo=javascript&logoColor=F7DF1E" alt="">
+<img src="https://img.shields.io/badge/ACTIVE-0D1117?style=flat-square" alt="ACTIVE"> <img src="https://img.shields.io/badge/planning-0D1117?style=flat-square" alt="planning"> <img src="https://img.shields.io/badge/TDD-0D1117?style=flat-square" alt="TDD"> <img src="https://img.shields.io/badge/verification-0D1117?style=flat-square" alt="verification">
 
 </td>
 <td width="50%" valign="top">
 
-#### [Unslop Preflight](https://github.com/imMamdouhaboammar/unslop-preflight)
+#### [Agent Kernel](https://github.com/imMamdouhaboammar/agent-kernel)
 
-23 design gates that run before an agent writes UI code. Generic layouts get blocked at the plan stage, well before review.
+Memory, governance, trust boundaries, and failure lessons for coding agents across multiple hosts.
 
-<img src="https://img.shields.io/badge/frontend_QA-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/design_gates-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/JS-0D1117?style=flat-square&logo=javascript&logoColor=F7DF1E" alt="">
+<img src="https://img.shields.io/badge/ACTIVE-0D1117?style=flat-square" alt="ACTIVE"> <img src="https://img.shields.io/badge/agent_memory-0D1117?style=flat-square" alt="agent_memory"> <img src="https://img.shields.io/badge/governance-0D1117?style=flat-square" alt="governance"> <img src="https://img.shields.io/badge/trust_boundaries-0D1117?style=flat-square" alt="trust_boundaries">
 
 </td>
 </tr>
 
 <tr>
+<td width="50%" valign="top">
+
+#### [Riqor](https://github.com/imMamdouhaboammar/riqor)
+
+Evidence gates and session continuity for AI coding agents. No evidence, no ship.
+
+<img src="https://img.shields.io/badge/ACTIVE-0D1117?style=flat-square" alt="ACTIVE"> <img src="https://img.shields.io/badge/evidence_gates-0D1117?style=flat-square" alt="evidence_gates"> <img src="https://img.shields.io/badge/session_continuity-0D1117?style=flat-square" alt="session_continuity"> <img src="https://img.shields.io/badge/verification-0D1117?style=flat-square" alt="verification">
+
+</td>
 <td width="50%" valign="top">
 
 #### [Delegate Team](https://github.com/imMamdouhaboammar/delegate-team)
 
-One CLI that routes bounded coding work across local agents, with a curated integration catalog and a full shipping chain.
+A CLI for routing bounded coding work across local agents with explicit task ownership and a reviewable shipping chain.
 
-<img src="https://img.shields.io/badge/multi--agent-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/task_routing-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Python-0D1117?style=flat-square&logo=python&logoColor=3776AB" alt="">
-
-</td>
-<td width="50%" valign="top">
-
-#### [PatchPilot](https://github.com/imMamdouhaboammar/PatchPilot)
-
-Turns ChatGPT Web into a PR-only GitHub agent. It inspects a repo, implements one focused change, opens a reviewable PR, and stops there.
-
-<img src="https://img.shields.io/badge/PR_only-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/review_ready-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Python-0D1117?style=flat-square&logo=python&logoColor=3776AB" alt="">
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-#### [Conversion Copywriting Engine](https://github.com/imMamdouhaboammar/conversion-copywriting-engine)
-
-Research, drafting, and copy-audit pipeline tuned for MENA markets and Arabic conversion work.
-
-<img src="https://img.shields.io/badge/conversion_copy-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/MENA-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/copy_audit-0D1117?style=flat-square" alt="">
-
-</td>
-<td width="50%" valign="top">
-
-#### [Riftbook](https://github.com/imMamdouhaboammar/Riftbook)
-
-Field notes, prompts, and routes for building vibe-coded apps with less guesswork and more reusable parts.
-
-<img src="https://img.shields.io/badge/field_guide-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/playbooks-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/workflows-0D1117?style=flat-square" alt="">
+<img src="https://img.shields.io/badge/ACTIVE-0D1117?style=flat-square" alt="ACTIVE"> <img src="https://img.shields.io/badge/multi-agent-0D1117?style=flat-square" alt="multi-agent"> <img src="https://img.shields.io/badge/task_routing-0D1117?style=flat-square" alt="task_routing"> <img src="https://img.shields.io/badge/CLI-0D1117?style=flat-square" alt="CLI">
 
 </td>
 </tr>
@@ -437,9 +256,136 @@ Field notes, prompts, and routes for building vibe-coded apps with less guesswor
 
 #### [Dokion](https://github.com/imMamdouhaboammar/dokion)
 
-Runs a hardening playbook you own, validating each step and keeping a rollback path open.
+A repository-owned hardening playbook that turns security and quality work into explicit, verifiable steps with rollback paths.
 
-<img src="https://img.shields.io/badge/hardening-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/evidence-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/rollback-0D1117?style=flat-square" alt="">
+<img src="https://img.shields.io/badge/ACTIVE-0D1117?style=flat-square" alt="ACTIVE"> <img src="https://img.shields.io/badge/hardening-0D1117?style=flat-square" alt="hardening"> <img src="https://img.shields.io/badge/evidence-0D1117?style=flat-square" alt="evidence"> <img src="https://img.shields.io/badge/rollback-0D1117?style=flat-square" alt="rollback">
+
+</td>
+<td width="50%" valign="top">
+
+#### [Unslop Preflight](https://github.com/imMamdouhaboammar/unslop-preflight)
+
+Frontend quality gates that challenge generic UI decisions before an agent starts writing the implementation.
+
+<img src="https://img.shields.io/badge/ACTIVE-0D1117?style=flat-square" alt="ACTIVE"> <img src="https://img.shields.io/badge/frontend_QA-0D1117?style=flat-square" alt="frontend_QA"> <img src="https://img.shields.io/badge/design_gates-0D1117?style=flat-square" alt="design_gates"> <img src="https://img.shields.io/badge/preflight-0D1117?style=flat-square" alt="preflight">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [Rafiq Bot](https://github.com/imMamdouhaboammar/Rafiq-Bot)
+
+An open-source multimodal AI companion for Egyptian Arabic with persona synthesis, stateful behavior, tools, and multi-agent orchestration.
+
+<img src="https://img.shields.io/badge/ACTIVE-0D1117?style=flat-square" alt="ACTIVE"> <img src="https://img.shields.io/badge/Egyptian_Arabic-0D1117?style=flat-square" alt="Egyptian_Arabic"> <img src="https://img.shields.io/badge/multimodal_AI-0D1117?style=flat-square" alt="multimodal_AI"> <img src="https://img.shields.io/badge/persona_engine-0D1117?style=flat-square" alt="persona_engine">
+
+</td>
+<td width="50%" valign="top">
+
+#### [PyMC Marketing MCP](https://github.com/imMamdouhaboammar/pymc-marketing-mcp)
+
+Decision-safe Bayesian marketing science for agents: MMM, diagnostics, CLV, experimentation, budget allocation, provenance, and decision gates.
+
+<img src="https://img.shields.io/badge/ACTIVE-0D1117?style=flat-square" alt="ACTIVE"> <img src="https://img.shields.io/badge/Bayesian_MMM-0D1117?style=flat-square" alt="Bayesian_MMM"> <img src="https://img.shields.io/badge/MCP-0D1117?style=flat-square" alt="MCP"> <img src="https://img.shields.io/badge/decision_gates-0D1117?style=flat-square" alt="decision_gates">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [WhatsApp AI Supervisor](https://github.com/imMamdouhaboammar/whatsapp-ai-supervisor)
+
+A model-agnostic AI supervisor and deterministic permission engine for WhatsApp Cloud API.
+
+<img src="https://img.shields.io/badge/ACTIVE-0D1117?style=flat-square" alt="ACTIVE"> <img src="https://img.shields.io/badge/WhatsApp_API-0D1117?style=flat-square" alt="WhatsApp_API"> <img src="https://img.shields.io/badge/permission_engine-0D1117?style=flat-square" alt="permission_engine"> <img src="https://img.shields.io/badge/model_agnostic-0D1117?style=flat-square" alt="model_agnostic">
+
+</td>
+<td width="50%" valign="top">
+
+#### [Omni Skill](https://github.com/imMamdouhaboammar/omni-skill)
+
+A cross-host skill compiler for ChatGPT, Codex, Claude Code, and Antigravity, built to make one skill definition portable across runtimes.
+
+<img src="https://img.shields.io/badge/ACTIVE-0D1117?style=flat-square" alt="ACTIVE"> <img src="https://img.shields.io/badge/cross_host-0D1117?style=flat-square" alt="cross_host"> <img src="https://img.shields.io/badge/skill_compiler-0D1117?style=flat-square" alt="skill_compiler"> <img src="https://img.shields.io/badge/portable-0D1117?style=flat-square" alt="portable">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [Marketing Council Pack](https://github.com/imMamdouhaboammar/marketing-council-pack)
+
+A cross-agent marketing strategy pack with specialist skills, challenge gates, and evidence-aware decision workflows.
+
+<img src="https://img.shields.io/badge/ACTIVE-0D1117?style=flat-square" alt="ACTIVE"> <img src="https://img.shields.io/badge/strategy-0D1117?style=flat-square" alt="strategy"> <img src="https://img.shields.io/badge/agent_skills-0D1117?style=flat-square" alt="agent_skills"> <img src="https://img.shields.io/badge/evidence_gates-0D1117?style=flat-square" alt="evidence_gates">
+
+</td>
+<td width="50%" valign="top">
+
+#### [Designly](https://github.com/imMamdouhaboammar/designly)
+
+A commercial art-direction plugin with 21 focused skills, bounded specialist agents, AI image and video direction, and independent visual QA.
+
+<img src="https://img.shields.io/badge/ACTIVE-0D1117?style=flat-square" alt="ACTIVE"> <img src="https://img.shields.io/badge/art_direction-0D1117?style=flat-square" alt="art_direction"> <img src="https://img.shields.io/badge/AI_video-0D1117?style=flat-square" alt="AI_video"> <img src="https://img.shields.io/badge/visual_QA-0D1117?style=flat-square" alt="visual_QA">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [LinkedIn Animated Infographics](https://github.com/imMamdouhaboammar/linkedin-animated-infographics)
+
+A cross-host visual storytelling workflow for animated 1080×1350 infographics with motion craft, RTL support, and visual QA.
+
+<img src="https://img.shields.io/badge/ACTIVE-0D1117?style=flat-square" alt="ACTIVE"> <img src="https://img.shields.io/badge/visual_storytelling-0D1117?style=flat-square" alt="visual_storytelling"> <img src="https://img.shields.io/badge/motion-0D1117?style=flat-square" alt="motion"> <img src="https://img.shields.io/badge/RTL-0D1117?style=flat-square" alt="RTL">
+
+</td>
+<td width="50%" valign="top"></td>
+</tr>
+</table>
+
+<br>
+
+<details>
+<summary><strong>More public systems</strong> · the rest of the work is still here</summary>
+
+<br>
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+#### [PatchPilot](https://github.com/imMamdouhaboammar/PatchPilot)
+
+Turns ChatGPT Web into a PR-only GitHub agent. It inspects a repo, implements one focused change, opens a reviewable PR, and stops there.
+
+<img src="https://img.shields.io/badge/PR_only-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/review_ready-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Python-0D1117?style=flat-square&logo=python&logoColor=3776AB" alt="">
+
+</td>
+<td width="50%" valign="top">
+
+#### [Conversion Copywriting Engine](https://github.com/imMamdouhaboammar/conversion-copywriting-engine)
+
+Research, drafting, and copy-audit pipeline tuned for MENA markets and Arabic conversion work.
+
+<img src="https://img.shields.io/badge/conversion_copy-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/MENA-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/copy_audit-0D1117?style=flat-square" alt="">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+#### [Riftbook](https://github.com/imMamdouhaboammar/Riftbook)
+
+Field notes, prompts, and routes for building vibe-coded apps with less guesswork and more reusable parts.
+
+<img src="https://img.shields.io/badge/field_guide-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/playbooks-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/workflows-0D1117?style=flat-square" alt="">
 
 </td>
 <td width="50%" valign="top">
@@ -465,18 +411,6 @@ Autonomous execution & work modeling engine for AI agents. Converts fuzzy ideas 
 </td>
 <td width="50%" valign="top">
 
-#### [Riqor](https://github.com/imMamdouhaboammar/riqor)
-
-Evidence gates and session continuity for AI coding agents. No evidence, no ship.
-
-<img src="https://img.shields.io/badge/evidence_gates-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/session_continuity-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/TypeScript-0D1117?style=flat-square&logo=typescript&logoColor=3178C6" alt="">
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
 #### [Antigravity Superpowers](https://github.com/imMamdouhaboammar/antigravity-superpowers)
 
 100+ Autonomous Skills & Specialized Division agents for Google Antigravity and Gemini CLI, covering engineering, design, security, and marketing.
@@ -484,27 +418,9 @@ Evidence gates and session continuity for AI coding agents. No evidence, no ship
 <img src="https://img.shields.io/badge/Antigravity-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Gemini_CLI-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/100+_skills-0D1117?style=flat-square" alt="">
 
 </td>
-<td width="50%" valign="top">
-
-#### [Omni Skill](https://github.com/imMamdouhaboammar/omni-skill)
-
-Universal Cross-Host Agent Skill Compiler for ChatGPT, Codex, Claude Code, and Antigravity. Write a skill once, deploy it everywhere.
-
-<img src="https://img.shields.io/badge/cross_host-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/skill_compiler-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/universal-0D1117?style=flat-square" alt="">
-
-</td>
 </tr>
 
 <tr>
-<td width="50%" valign="top">
-
-#### [Get Fable](https://github.com/imMamdouhaboammar/get-fable)
-
-Make the model you already use work more like a frontier model — better planning, persistent context, skills, hooks, failure handling, and verification.
-
-<img src="https://img.shields.io/badge/planning-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/persistent_context-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/verification-0D1117?style=flat-square" alt="">
-
-</td>
 <td width="50%" valign="top">
 
 #### [NowGuard](https://github.com/imMamdouhaboammar/nowguard-temporal-freshness)
@@ -514,9 +430,6 @@ Temporal freshness guard for LLM agents, coding clients, MCP servers, and API mi
 <img src="https://img.shields.io/badge/temporal_freshness-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/LLM_agents-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/MCP-0D1117?style=flat-square" alt="">
 
 </td>
-</tr>
-
-<tr>
 <td width="50%" valign="top">
 
 #### [Loop Engineering Skill](https://github.com/imMamdouhaboammar/loop-engineering-skill)
@@ -524,15 +437,6 @@ Temporal freshness guard for LLM agents, coding clients, MCP servers, and API mi
 AI Agent skill for Multi-Agent Swarm Orchestration with budget caps, minimal fixes, and continuous Dev-QA gates.
 
 <img src="https://img.shields.io/badge/swarm_orchestration-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/budget_caps-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Dev_QA-0D1117?style=flat-square" alt="">
-
-</td>
-<td width="50%" valign="top">
-
-#### [WhatsApp AI Supervisor](https://github.com/imMamdouhaboammar/whatsapp-ai-supervisor)
-
-Model-agnostic AI supervisor and deterministic permission engine for WhatsApp Cloud API.
-
-<img src="https://img.shields.io/badge/WhatsApp_API-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/permission_engine-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/model_agnostic-0D1117?style=flat-square" alt="">
 
 </td>
 </tr>
@@ -549,18 +453,6 @@ Self-hosting ChatGPT/Codex Plugin autopilot for validation, deterministic packag
 </td>
 <td width="50%" valign="top">
 
-#### [Marketing Council Pack](https://github.com/imMamdouhaboammar/marketing-council-pack)
-
-Cross-agent marketing strategy pack with 29 Agent Skills, 24 specialist agents, neural marketing graph, and evidence challenge gates.
-
-<img src="https://img.shields.io/badge/strategy-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/29_skills-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/24_agents-0D1117?style=flat-square" alt="">
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
 #### [Marketing Skills](https://github.com/imMamdouhaboammar/marketing-skills)
 
 49+ AI agent skills & 51 CLI execution tools for technical marketers, founders, and AI coding agents.
@@ -568,6 +460,9 @@ Cross-agent marketing strategy pack with 29 Agent Skills, 24 specialist agents, 
 <img src="https://img.shields.io/badge/49+_skills-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/51_CLI_tools-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/founders-0D1117?style=flat-square" alt="">
 
 </td>
+</tr>
+
+<tr>
 <td width="50%" valign="top">
 
 #### [CopyScore](https://github.com/imMamdouhaboammar/CopyScore)
@@ -577,9 +472,6 @@ Copy quality scoring engine. Rates persuasiveness, clarity, and conversion poten
 <img src="https://img.shields.io/badge/copy_scoring-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/quality_gate-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/evaluation-0D1117?style=flat-square" alt="">
 
 </td>
-</tr>
-
-<tr>
 <td width="50%" valign="top">
 
 #### [Copycorn Content Writer](https://github.com/imMamdouhaboammar/copycorn-content-writer)
@@ -589,6 +481,9 @@ Elite conversion copywriting & direct-response agent skill for Arab markets with
 <img src="https://img.shields.io/badge/Arabic_markets-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/direct_response-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/anti_cliche-0D1117?style=flat-square" alt="">
 
 </td>
+</tr>
+
+<tr>
 <td width="50%" valign="top">
 
 #### [Direct Response Funnel Auditor](https://github.com/imMamdouhaboammar/direct-response-funnel-auditor)
@@ -598,9 +493,6 @@ Senior CRO & funnel auditor skill for landing pages, bundle offers, and A/B spli
 <img src="https://img.shields.io/badge/CRO-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/funnel_audit-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/A/B_testing-0D1117?style=flat-square" alt="">
 
 </td>
-</tr>
-
-<tr>
 <td width="50%" valign="top">
 
 #### [Viral Content Engine](https://github.com/imMamdouhaboammar/viral-content-engine)
@@ -610,6 +502,9 @@ Reverse-engineered viral post generation for LinkedIn & Facebook with psychologi
 <img src="https://img.shields.io/badge/LinkedIn-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Facebook-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/viral_hooks-0D1117?style=flat-square" alt="">
 
 </td>
+</tr>
+
+<tr>
 <td width="50%" valign="top">
 
 #### [PrePilot Partner Card Funnel Strategist](https://github.com/imMamdouhaboammar/prepilot-partner-card-funnel-strategist)
@@ -619,9 +514,6 @@ End-to-end tripwire & sample-to-paid funnel architecture skill for digital produ
 <img src="https://img.shields.io/badge/tripwire-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Meta_CAPI-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/funnel_architecture-0D1117?style=flat-square" alt="">
 
 </td>
-</tr>
-
-<tr>
 <td width="50%" valign="top">
 
 #### [LinkedIn Editorial Content System](https://github.com/imMamdouhaboammar/linkedin-editorial-content-system)
@@ -629,15 +521,6 @@ End-to-end tripwire & sample-to-paid funnel architecture skill for digital produ
 Multi-format LinkedIn editorial system with visual layout prompts, hooks bank, and bilingual copywriting engines.
 
 <img src="https://img.shields.io/badge/LinkedIn-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/bilingual-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/editorial-0D1117?style=flat-square" alt="">
-
-</td>
-<td width="50%" valign="top">
-
-#### [LinkedIn Animated Infographics](https://github.com/imMamdouhaboammar/linkedin-animated-infographics)
-
-Claude Skill & CLI pipeline for deterministic, looping GIF infographics for LinkedIn. RTL & Arabic supported.
-
-<img src="https://img.shields.io/badge/GIF_infographics-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/RTL-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/Arabic-0D1117?style=flat-square" alt="">
 
 </td>
 </tr>
@@ -654,18 +537,6 @@ Influencer video scriptwriting skill in Gulf & Egyptian dialects for crisis mana
 </td>
 <td width="50%" valign="top">
 
-#### [Designly](https://github.com/imMamdouhaboammar/designly)
-
-Commercial Art Direction & Design Neural Mesh with 21 skills, dramaturgy-first AI video directing, and model-physics image direction.
-
-<img src="https://img.shields.io/badge/art_direction-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/AI_video-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/21_skills-0D1117?style=flat-square" alt="">
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
 #### [Patter Design System](https://github.com/imMamdouhaboammar/patter-design-system)
 
 Design system and pattern library for consistent, scalable UI across agent-generated interfaces and marketing surfaces.
@@ -673,6 +544,9 @@ Design system and pattern library for consistent, scalable UI across agent-gener
 <img src="https://img.shields.io/badge/design_system-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/pattern_library-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/UI-0D1117?style=flat-square" alt="">
 
 </td>
+</tr>
+
+<tr>
 <td width="50%" valign="top">
 
 #### [Mimera](https://github.com/imMamdouhaboammar/Mimera)
@@ -682,13 +556,44 @@ Brand voice mirroring and content style extraction. Analyzes existing copy and r
 <img src="https://img.shields.io/badge/brand_voice-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/style_extraction-0D1117?style=flat-square" alt=""> <img src="https://img.shields.io/badge/voice_mirroring-0D1117?style=flat-square" alt="">
 
 </td>
+<td width="50%" valign="top"></td>
 </tr>
 </table>
 
 <div align="center">
-<sub><a href="https://github.com/imMamdouhaboammar?tab=repositories">All repositories →</a></sub>
 
-<br><br>
+<br>
+
+[Complete repository catalog](REPOSITORIES.md) · [Browse all repositories](https://github.com/imMamdouhaboammar?tab=repositories)
+
+</div>
+
+</details>
+
+<br>
+
+<div align="center">
+
+## Where I came from
+
+</div>
+
+I came into software from the commercial side: performance marketing, conversion, campaign strategy, and digital leadership across MENA
+
+After years of asking technical teams to build things, I started building and maintaining my own tools so I could understand the other side of those decisions. That is the context behind this profile: not a sudden career costume change, but a deliberate move toward Product Architecture
+
+<details>
+<summary><strong>Career path</strong></summary>
+
+<br>
+
+Founder of PrePilot around Arabic conversion work. Digital Director with a background in performance marketing, Meta and Google campaign architecture, and direct-response work across MENA. Earlier work included large-scale event marketing at the Hajj Conference and Exhibition. Today I use public software projects to learn the technical constraints behind Product decisions while continuing to work from the commercial context I already know
+
+</details>
+
+<br>
+
+<div align="center">
 
 ## How I work
 
@@ -696,10 +601,10 @@ Brand voice mirroring and content style extraction. Analyzes existing copy and r
 
 <table>
 <tr>
-<td width="25%" align="center" valign="top"><br><b>Problem before product</b><br><br><sub>The starting point is repeated friction, never a tool category.</sub><br><br></td>
+<td width="25%" align="center" valign="top"><br><b>Problem before build</b><br><br><sub>The starting point is repeated friction, never a tool category.</sub><br><br></td>
 <td width="25%" align="center" valign="top"><br><b>Context before automation</b><br><br><sub>The system knows the audience, the repo, the rules, and the evidence before it acts.</sub><br><br></td>
 <td width="25%" align="center" valign="top"><br><b>Proof before claims</b><br><br><sub>A test, a report, a PR, or a measured result carries the conclusion.</sub><br><br></td>
-<td width="25%" align="center" valign="top"><br><b>Judgment stays close</b><br><br><sub>Agents prepare, inspect, and verify. People own the consequential calls.</sub><br><br></td>
+<td width="25%" align="center" valign="top"><br><b>Human judgment stays close</b><br><br><sub>Agents prepare, inspect, and verify. People own the consequential calls.</sub><br><br></td>
 </tr>
 </table>
 
@@ -753,13 +658,15 @@ Brand voice mirroring and content style extraction. Analyzes existing copy and r
 
 <br><br>
 
-## Current focus
+## What I'm studying
 
-<img src="https://img.shields.io/badge/local_agent_workflows-0D1117?style=flat-square" alt="">
-<img src="https://img.shields.io/badge/repository_quality-0D1117?style=flat-square" alt="">
-<img src="https://img.shields.io/badge/marketing_skills-0D1117?style=flat-square" alt="">
-<img src="https://img.shields.io/badge/Arabic_conversion_copy-0D1117?style=flat-square" alt="">
-<img src="https://img.shields.io/badge/developer_docs-0D1117?style=flat-square" alt="">
+<img src="https://img.shields.io/badge/Product_Architecture-0D1117?style=flat-square" alt="Product Architecture">
+<img src="https://img.shields.io/badge/Technical_Writing-0D1117?style=flat-square" alt="Technical Writing">
+<img src="https://img.shields.io/badge/Git_%2B_PRs-0D1117?style=flat-square" alt="Git and PRs">
+<img src="https://img.shields.io/badge/Agent_Workflows-0D1117?style=flat-square" alt="Agent Workflows">
+<img src="https://img.shields.io/badge/AI_Evaluation-0D1117?style=flat-square" alt="AI Evaluation">
+<img src="https://img.shields.io/badge/AI_Search-0D1117?style=flat-square" alt="AI Search">
+<img src="https://img.shields.io/badge/MENA_Conversion-0D1117?style=flat-square" alt="MENA Conversion">
 
 </div>
 
@@ -787,34 +694,29 @@ Brand voice mirroring and content style extraction. Analyzes existing copy and r
 <br>
 
 <details>
-<summary><b>Pushonomics: Every line has a token tab</b></summary>
+<summary><b>Pushonomics · what agent-assisted building costs me</b></summary>
 
 <br>
 
-I keep a tab on what agent-assisted building costs, because the bill is part of the engineering decision.
+I keep a tab on what agent-assisted building costs, because the bill is part of the engineering decision
 
 <!-- pushonomics:start -->
-<details open>
-  <summary><strong>Pushonomics: Every line has a token tab</strong></summary>
-  <br />
-  <p align="center"><img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/profile/model-badges.svg" width="410" alt="GPT-5.6 Sol and Claude Fable 5" /></p>
-  <p><sub>I keep a tab on what agent-assisted building costs, because the bill is part of the engineering decision.</sub></p>
-  <table>
-    <tr>
-      <td width="25%" align="center"><strong>12,445,151</strong><br /><sub>Lines added</sub></td>
-      <td width="25%" align="center"><strong>2,078,559</strong><br /><sub>Lines deleted</sub></td>
-      <td width="25%" align="center"><strong>14,523,710</strong><br /><sub>Lines changed</sub></td>
-      <td width="25%" align="center"><strong>464,758,720</strong><br /><sub>Estimated tokens</sub></td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td width="50%" align="center"><strong>GPT-5.6 Sol / Ultra</strong><br />$5,228.54<br /><sub>$5.00/M input · $30.00/M output</sub></td>
-      <td width="50%" align="center"><strong>Claude Fable 5</strong><br />$9,295.17<br /><sub>$10.00/M input · $50.00/M output</sub></td>
-    </tr>
-  </table>
-  <p align="center"><strong>Estimate model:</strong> 6,077 commits scanned · 283 merges excluded · 348,569,040 input + 116,189,680 output tokens · 8 tokens per changed line · 4x session factor · estimate, not an invoice</p>
-</details>
+<p align="center"><img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/assets/profile/model-badges.svg" width="410" alt="GPT-5.6 Sol and Claude Fable 5" /></p>
+<table>
+<tr>
+<td width="25%" align="center"><strong>12,445,151</strong><br /><sub>Lines added</sub></td>
+<td width="25%" align="center"><strong>2,078,559</strong><br /><sub>Lines deleted</sub></td>
+<td width="25%" align="center"><strong>14,523,710</strong><br /><sub>Lines changed</sub></td>
+<td width="25%" align="center"><strong>464,758,720</strong><br /><sub>Estimated tokens</sub></td>
+</tr>
+</table>
+<table>
+<tr>
+<td width="50%" align="center"><strong>GPT-5.6 Sol / Ultra</strong><br />$5,228.54<br /><sub>$5.00/M input · $30.00/M output</sub></td>
+<td width="50%" align="center"><strong>Claude Fable 5</strong><br />$9,295.17<br /><sub>$10.00/M input · $50.00/M output</sub></td>
+</tr>
+</table>
+<p align="center"><strong>Estimate model:</strong> 6,077 commits scanned · 283 merges excluded · 348,569,040 input + 116,189,680 output tokens · 8 tokens per changed line · 4x session factor · estimate, not an invoice</p>
 <!-- pushonomics:end -->
 
 </details>
@@ -827,12 +729,19 @@ I keep a tab on what agent-assisted building costs, because the bill is part of 
 
 <br><br>
 
-<sub>
-Open to conversations about agent tooling, conversion systems, and MENA market work.<br>
-<a href="https://mamdouhaboammar.com/">Site</a> ·
+<strong>If you're working somewhere between Product, AI, Business, and Engineering, we probably have something to talk about</strong>
+
+<br>
+
+<sub>Open to Freelance · Full-time · Part-time opportunities across Egypt · Saudi Arabia · UAE · GCC</sub>
+
+<br><br>
+
+<a href="mailto:mamdouhfces1997@gmail.com">Email</a> ·
+<a href="https://wa.me/201092677269">WhatsApp</a> ·
+<a href="https://mamdouhaboammar.com/">Website</a> ·
 <a href="https://www.linkedin.com/in/mamdouh-aboammar/">LinkedIn</a> ·
 <a href="https://x.com/Bo_ammarrr">X</a> ·
 <a href="https://www.instagram.com/boammarrr/">Instagram</a>
-</sub>
 
 </div>
