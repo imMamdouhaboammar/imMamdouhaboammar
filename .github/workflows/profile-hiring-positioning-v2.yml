@@ -54,14 +54,15 @@ jobs:
           PY
           git diff --check
 
-      - name: Commit README-only result
+      - name: Commit and verify final branch diff
         shell: bash
         run: |
           rm -f profile_rewrite.py .github/workflows/profile-hiring-positioning-v2.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          test "$(git diff --cached --name-only)" = "README.md"
           git diff --cached --check
           git commit -m "docs(profile): sharpen hiring positioning and active work"
           git push origin HEAD:profile/hiring-positioning-v2
+          git fetch origin main
+          test "$(git diff --name-only origin/main...HEAD)" = "README.md"
