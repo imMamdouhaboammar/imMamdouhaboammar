@@ -6,13 +6,13 @@
 
 <br>
 
-<a href="https://wa.me/201092677269" title="WhatsApp"><img src="https://cdn.simpleicons.org/whatsapp/25D366" width="30" height="30" alt="WhatsApp"></a>&nbsp;&nbsp;
-<a href="https://mamdouhaboammar.com/" title="Website"><img src="https://cdn.simpleicons.org/safari/006CFF" width="30" height="30" alt="Website"></a>&nbsp;&nbsp;
-<a href="https://www.instagram.com/boammarrr/" title="Instagram"><img src="https://cdn.simpleicons.org/instagram/E4405F" width="30" height="30" alt="Instagram"></a>&nbsp;&nbsp;
-<a href="mailto:mamdouhfces1997@gmail.com" title="Email"><img src="https://cdn.simpleicons.org/gmail/EA4335" width="30" height="30" alt="Email"></a>&nbsp;&nbsp;
-<a href="https://x.com/Bo_ammarrr" title="X"><img src="https://cdn.simpleicons.org/x/6E7781" width="30" height="30" alt="X"></a>&nbsp;&nbsp;
-<a href="https://www.facebook.com/mamdouhboammar" title="Facebook"><img src="https://cdn.simpleicons.org/facebook/0866FF" width="30" height="30" alt="Facebook"></a>&nbsp;&nbsp;
-<a href="https://www.linkedin.com/in/mamdouh-aboammar/" title="LinkedIn"><img src="https://cdn.simpleicons.org/linkedin/0A66C2" width="30" height="30" alt="LinkedIn"></a>
+<a href="https://wa.me/201092677269" title="WhatsApp"><img src="assets/profile/social/whatsapp.svg" width="30" height="30" alt="WhatsApp"></a>&nbsp;&nbsp;
+<a href="https://mamdouhaboammar.com/" title="Website"><img src="assets/profile/social/safari.svg" width="30" height="30" alt="Website"></a>&nbsp;&nbsp;
+<a href="https://www.instagram.com/boammarrr/" title="Instagram"><img src="assets/profile/social/instagram.svg" width="30" height="30" alt="Instagram"></a>&nbsp;&nbsp;
+<a href="mailto:mamdouhfces1997@gmail.com" title="Email"><img src="assets/profile/social/gmail.svg" width="30" height="30" alt="Email"></a>&nbsp;&nbsp;
+<a href="https://x.com/Bo_ammarrr" title="X"><img src="assets/profile/social/x.svg" width="30" height="30" alt="X"></a>&nbsp;&nbsp;
+<a href="https://www.facebook.com/mamdouhboammar" title="Facebook"><img src="assets/profile/social/facebook.svg" width="30" height="30" alt="Facebook"></a>&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/mamdouh-aboammar/" title="LinkedIn"><img src="assets/profile/social/linkedin.svg" width="30" height="30" alt="LinkedIn"></a>
 
 <br><br>
 
