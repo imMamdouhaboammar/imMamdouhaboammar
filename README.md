@@ -43,7 +43,324 @@ Founder of PrePilot — conversion infrastructure for Arabic-speaking markets. D
 
 </details>
 
+</div>
+
 <br>
+
+<div align="center">
+
+## So... what would I actually do on your team?
+
+<table>
+<tr>
+<td align="center" width="180"><a href="#arabic-version"><strong>🇪🇬 العربية</strong></a></td>
+<td align="center" width="180"><a href="#english-version"><strong>🇬🇧 English</strong></a></td>
+</tr>
+</table>
+
+<sub>Two versions, same idea. Pick the one that reads better for you.</sub>
+
+</div>
+
+<a id="arabic-version"></a>
+
+## 🇪🇬 لو أنا في شركتك، هبقى بساعد فريقك إزاي؟
+
+خليني أبدأ بأهم نقطة قبل ما حد يشوف عدد الـrepos ويقرر يعينني Software Engineer بالغلط
+
+**أنا مش Software Engineer**
+
+ومش بحاول أقدم نفسي كواحد
+
+أنا جاي أساسا من Marketing وBusiness وStrategy، واللي بتعلمه دلوقتي هو إزاي أبقى **Product Architect** كويس، ولسه في أول الطريق
+
+بالنسبالي ده معناه إني محتاج أفهم الحاجات اللي كنت زمان بشوفها من الناحية التانية من الـmeeting:
+
+`Code` · `Git` · `PRs` · `Testing` · `Maintenance` · `Tech Product` · `PRDs` · `Technical Writing` · `AI-assisted work` · وخصوصا **إزاي نفكر قبل ما نطلب من حد يبني**
+
+كل المشاريع اللي عندي تقريبا هي محاولات عملية أفهم بيها الحاجات دي بدل ما أفضل أقرأ عنها من بعيد
+
+مش عشان آخد مكان الـSoftware Engineers
+
+بالعكس
+
+عشان لما أشتغل معاهم ما أبقاش الشخص اللي داخل يقول:
+
+> عندي feature بسيطة جدا... هي بس محتاجة app وdashboard وAI وحاجتين صغيرين كده 😅
+
+### طيب ممكن أكون مسؤول عن إيه؟
+
+**الـDocs**<br>
+أحدثها، أنضف القديم، أوثق القرارات، وأتأكد إن الـREADME والـtechnical docs لسه بيتكلموا عن الـproduct الموجود فعلا، مش نسخة منه كانت موجودة من شهور
+
+**Issue discovery وtriage**<br>
+أراجع الـproduct أو الـrepo، أحاول أعمل reproduction للمشكلة، أجمع context وevidence، وأحول الملاحظة لـIssue واضحة فيها scope وacceptance criteria بدل ticket من نوع `login broken pls fix`
+
+**Small, bounded PRs**<br>
+لو التغيير محدود، فاهمه، وقادر أختبره، أقدر أوصله لـPR صغيرة قابلة للمراجعة. الـEngineer يراجعها، يعدلها، يرفضها، أو يقولي إن فهمي كان غلط. ده جزء طبيعي من الشغل
+
+**Research قبل التنفيذ**<br>
+Feature جديدة، library، API، competitor approach، technical decision أو AI workflow. أعمل deep research، أقارن البدائل والـtrade-offs، وأحول النتيجة لـDoc أو decision memo يقدر الفريق يرجع له بدل ما البحث يضيع بعد الـmeeting
+
+**PRDs وFeature Briefs**<br>
+أساعد نحول جملة من نوع "طب ما نعمل حاجة تعمل كذا؟" إلى problem واضح، user need، assumptions، constraints، edge cases، success criteria وacceptance criteria قبل ما الفكرة تدخل development
+
+وساعات أفضل نتيجة للـPRD تبقى: **ما نبنيهاش أصلا**
+
+وده بالنسبة لي قرار Product محترم جدا
+
+**AI داخل الشغل اليومي**<br>
+مش قصدي نحط chatbot في كل صفحة ونكتب AI-powered
+
+قصدي نبص على الشغل نفسه: إيه بيتكرر؟ إيه بياخد وقت؟ إيه ممكن AI يعمل منه first draft؟ فين لازم Human review؟ وإيه الأفضل إن AI مايقربلوش من الأساس؟
+
+**Agentic Skills وReusable Workflows**<br>
+لو الفريق بيعمل نفس البحث أو نفس review أو نفس الخطوات كل أسبوع، أحب أحول المعرفة دي لـSkill أو checklist أو workflow بدل ما نبدأ من الصفر كل مرة
+
+**AI usage وtoken discipline**<br>
+أراجع فين الـcontext بيكبر من غير داعي، فين prompts بتتكرر، فين model أكبر من المطلوب، وبعدها نجرب بدائل ونقيس قبل وبعد
+
+مش هقولك هقلل فاتورتك 73% قبل ما أشوف الفاتورة أصلا
+
+**المنطقة بين Business وProduct وEngineering**<br>
+دي غالبا أكتر مساحة أقدر أضيف فيها من أول يوم. أفهم السؤال التجاري والـcustomer context، وأساعد أحوله لحاجة الفريق التقني يقدر يناقشها بوضوح
+
+### وده هيفيد الفريق في إيه؟
+
+نفسي الـEngineer لما يفتح Issue ما يبدأش أول ساعتين بسؤال:
+
+**هو المطلوب إيه بالظبط؟**
+
+ونفسي الـresearch اللي اتعمل النهارده مايتعملش تاني الشهر الجاي عشان محدش وثقه
+
+والـfeature قبل ما تدخل development يبقى فيه إجابة منطقية لسؤال: **ليه بنبنيها؟**
+
+والـAI يبقى جزء معروف من طريقة الشغل، له حدود ومراجعة وقياس، مش كل واحد عنده 87 prompt في Notes ومحدش عارف الشخص التاني بيعمل إيه
+
+أنا باختصار مهتم أقلل كمية الـmess اللي بتوصل للناس اللي المفروض تركز في المشاكل الصعبة فعلا
+
+### شكل يوم الفريق معايا ممكن يبقى عامل إزاي؟
+
+ممكن أبدأ بـIssue غامضة، أفهمها وأعمل reproduction وأرجعها مكتوبة بشكل أحسن
+
+بعدها feature لسه فكرة، أعمل research وأحولها لـbrief أو PRD
+
+بعدها ألاقي Docs اتغير الـproduct من تحتها، فأحدثها
+
+بعدها Issue صغيرة في حدود اللي أقدر عليه، أوصلها لـPR وأسيب القرار النهائي للـreviewer
+
+وفي النص ألاحظ إننا كررنا نفس الخطوات أربع مرات، فأسأل: **هل دي ممكن تبقى workflow بدل ما تفضل عادة يدوية؟**
+
+اليوم الكويس بالنسبالي مش اليوم اللي كتبت فيه Code كتير
+
+هو اليوم اللي آخره فيه حاجة حد تاني يقدر يمسكها:
+
+`PR` · `Issue` · `Doc` · `Research note` · `Decision` · `Test evidence` · `Skill` · `Checklist`
+
+أي حاجة غير: "أنا فاكر إننا اتكلمنا في الموضوع ده في meeting من شهرين"
+
+### وبعد سنة؟
+
+مش هقولك إن الشركة هتبقى 10X أسرع أو إن الـAI هيحل كل حاجة
+
+بعد سنة أحب أشوف حاجات أبسط وأوضح:
+
+الـDocs الناس بتثق فيها<br>
+الـbacklog أنضف<br>
+الـIssues أوضح<br>
+الـfeatures داخلة development وهي متفكر فيها أحسن<br>
+الـresearch القديم سهل نرجع له<br>
+الشغل المتكرر بقى له reusable workflows<br>
+استخدام الـAI بقى measurable ومفهوم<br>
+ووقت الـSoftware Engineers بيتصرف أكتر على الحاجات اللي محتاجة Software Engineers فعلا
+
+لو وصلنا لكده، فغالبا أنا ماشي في الاتجاه الصح
+
+### حاجات لسه بتعلمها، بس عندي شغل تقدر تفتحه وتحكم بنفسك
+
+مش هكتب `Expert in 27 technologies`
+
+الـrepos موجودة، اتفرج عليها واحكم
+
+- **AEO / GEO / AI Search**: [PrePilot for Marketing](https://github.com/imMamdouhaboammar/prepilot-for-marketing)
+- **Technical Writing / Specs / PRDs**: [Riftbook](https://github.com/imMamdouhaboammar/Riftbook) · [Get Fable](https://github.com/imMamdouhaboammar/get-fable)
+- **Git / Issues / PR workflows**: [PatchPilot](https://github.com/imMamdouhaboammar/PatchPilot) · [mergefy](https://github.com/imMamdouhaboammar/mergefy) · [patchyard](https://github.com/imMamdouhaboammar/patchyard)
+- **AI Agent Workflows**: [Agentic Workflow](https://github.com/imMamdouhaboammar/agentic-workflow) · [Get Fable](https://github.com/imMamdouhaboammar/get-fable)
+- **Agent Governance & Verification**: [Agent Kernel](https://github.com/imMamdouhaboammar/agent-kernel) · [Riqor](https://github.com/imMamdouhaboammar/riqor)
+- **Agent Skills**: [Agent Skill Observatory](https://github.com/imMamdouhaboammar/agent-skill-observatory) · [Omni Skill](https://github.com/imMamdouhaboammar/omni-skill)
+- **Arabic & MENA Marketing Systems**: [Conversion Copywriting Engine](https://github.com/imMamdouhaboammar/conversion-copywriting-engine) · [PrePilot for Marketing](https://github.com/imMamdouhaboammar/prepilot-for-marketing)
+- **AI-assisted Quality Gates**: [Unslop Preflight](https://github.com/imMamdouhaboammar/unslop-preflight) · [Say No to Slop](https://github.com/imMamdouhaboammar/say-no-to-slop)
+
+### عندك Job Offer؟
+
+لو بتدور على Software Engineer، غالبا أنا مش الشخص المناسب
+
+لكن لو عندك مساحة بين **Business × Product × AI × Engineering**، ومحتاج حد يحب الـresearch والـDocs والـPRDs والـIssues والـworkflows زيادة شوية عن الطبيعي، ويتعلم الـtechnical side وهو شغال بدل ما يمثل إنه عارف كل حاجة
+
+ساعتها غالبا عندنا كلام نتكلم فيه
+
+**[LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/) · [Website](https://mamdouhaboammar.com/)**
+
+<div align="center">
+
+[English ↓](#english-version)
+
+</div>
+
+<a id="english-version"></a>
+
+## 🇬🇧 What would I actually do on your team?
+
+One thing first, before someone sees all these repositories and accidentally hires me as a backend engineer
+
+**I'm not a Software Engineer**
+
+And I'm not trying to pretend I am one
+
+My background is in marketing, business, strategy, and growth. What I'm learning now is how to become a good **Product Architect**, and I'm still early in that path
+
+For me, that means understanding the things I used to see from the other side of the meeting:
+
+`Code` · `Git` · `PRs` · `Testing` · `Maintenance` · `Tech Product` · `PRDs` · `Technical Writing` · `AI-assisted work` · and, probably most importantly, **how to think before asking someone else to build**
+
+Most of the repositories on this profile are practical attempts to understand those things by building, breaking, documenting, reviewing, and trying again
+
+Not because I want to replace Software Engineers
+
+Quite the opposite
+
+I want to stop being the person who walks into engineering and says:
+
+> I have a very small feature idea
+
+...followed by an app, a dashboard, some AI, three integrations, and "it should be easy" 😅
+
+### So what could I actually own?
+
+**Documentation**<br>
+Keeping docs current, cleaning stale material, documenting decisions, improving onboarding, and checking whether the README still describes the product that actually exists
+
+**Issue discovery and triage**<br>
+Reviewing a product or repository, reproducing problems where possible, gathering evidence, narrowing the scope, and turning findings into issues with useful context and acceptance criteria
+
+**Small, bounded pull requests**<br>
+When a change is narrow enough for me to understand and verify, I can take it as far as a focused PR for an engineer to review. They can change it, reject it, or tell me I misunderstood the problem. That is part of the process
+
+**Research before implementation**<br>
+Investigating a feature, library, API, competitor approach, technical decision, or AI workflow and turning the result into something reusable: a document, decision memo, checklist, or recommendation
+
+**PRDs and feature briefs**<br>
+Helping turn "what if we built..." into a clear problem, user need, assumptions, constraints, edge cases, success criteria, and acceptance criteria before implementation starts
+
+Sometimes the best result of that work is: **we should not build this**
+
+That is good Product work too
+
+**Practical AI adoption**<br>
+I'm less interested in putting a chatbot on every screen so a company can call itself AI-powered
+
+I'm much more interested in the work itself: what repeats, what takes time, what AI can draft, where human review belongs, and what should never be delegated to AI in the first place
+
+**Agentic skills and reusable workflows**<br>
+If the team repeats the same research, review, checklist, or setup every week, I will probably ask why we keep starting from zero and whether that knowledge should become a skill, checklist, workflow, or small internal tool
+
+**AI usage and token discipline**<br>
+I can look for unnecessary context growth, repeated prompts, oversized models doing simple work, and work being generated again and again, then test alternatives and measure before and after
+
+I will not promise to cut the bill by 73% before I have even seen the bill
+
+**The space between Business, Product, and Engineering**<br>
+This is probably where my original background helps most. I can understand the commercial question and customer context, then help turn them into something the technical team can actually discuss
+
+### What does the team get from that?
+
+Ideally, your engineer stops opening tickets and spending the first two hours asking:
+
+**What exactly are we trying to do here?**
+
+Research gets captured instead of repeated
+
+Documentation stays reasonably close to reality
+
+Feature requests arrive with some thinking already done
+
+Small changes arrive closer to something reviewable
+
+And AI becomes part of an understandable working process instead of everyone keeping 87 mysterious prompts in Apple Notes
+
+In other words, I'm interested in reducing the amount of mess that reaches the people who should be spending their time on the genuinely hard problems
+
+### What would a normal day with me look like?
+
+Maybe I start with a vague issue, reproduce it, investigate it, and rewrite it into something more useful
+
+Then there is an early feature idea, so I research it and turn it into a brief or PRD
+
+Then I notice the docs no longer match the product, so I fix them
+
+Then there is a small issue within my current technical range, so I prepare a PR and leave it for engineering review
+
+Somewhere in the middle, I notice we have repeated the same process four times this week and ask: **should this become a workflow instead?**
+
+For me, a productive day does not necessarily mean writing a lot of code
+
+It means leaving behind something another person can inspect and use:
+
+`PR` · `Issue` · `Doc` · `Research note` · `Decision` · `Test evidence` · `Skill` · `Checklist`
+
+Anything other than: "I'm pretty sure we discussed this in a meeting two months ago"
+
+### And after a year?
+
+I'm not going to tell you the company will become 10X faster or that AI will solve everything
+
+What I would actually want to see after a year is simpler:
+
+Docs people can trust<br>
+A cleaner backlog<br>
+Better-written issues<br>
+Features entering development with clearer reasoning<br>
+Old research that people can actually find<br>
+Repeated work captured in reusable workflows<br>
+AI usage that can be inspected and measured<br>
+And Software Engineers spending more of their time on problems that genuinely require Software Engineers
+
+If we reach that point, I'm probably becoming the kind of Product Architect I'm trying to learn how to be
+
+### Things I'm still learning, but can already show work for
+
+I'm not going to list 27 technologies and put `Expert` next to all of them
+
+The repositories are public. You can inspect the work and decide for yourself
+
+- **AEO / GEO / AI Search**: [PrePilot for Marketing](https://github.com/imMamdouhaboammar/prepilot-for-marketing)
+- **Technical Writing / Specs / PRDs**: [Riftbook](https://github.com/imMamdouhaboammar/Riftbook) · [Get Fable](https://github.com/imMamdouhaboammar/get-fable)
+- **Git / Issues / PR workflows**: [PatchPilot](https://github.com/imMamdouhaboammar/PatchPilot) · [mergefy](https://github.com/imMamdouhaboammar/mergefy) · [patchyard](https://github.com/imMamdouhaboammar/patchyard)
+- **AI Agent Workflows**: [Agentic Workflow](https://github.com/imMamdouhaboammar/agentic-workflow) · [Get Fable](https://github.com/imMamdouhaboammar/get-fable)
+- **Agent Governance & Verification**: [Agent Kernel](https://github.com/imMamdouhaboammar/agent-kernel) · [Riqor](https://github.com/imMamdouhaboammar/riqor)
+- **Agent Skills**: [Agent Skill Observatory](https://github.com/imMamdouhaboammar/agent-skill-observatory) · [Omni Skill](https://github.com/imMamdouhaboammar/omni-skill)
+- **Arabic & MENA Marketing Systems**: [Conversion Copywriting Engine](https://github.com/imMamdouhaboammar/conversion-copywriting-engine) · [PrePilot for Marketing](https://github.com/imMamdouhaboammar/prepilot-for-marketing)
+- **AI-assisted Quality Gates**: [Unslop Preflight](https://github.com/imMamdouhaboammar/unslop-preflight) · [Say No to Slop](https://github.com/imMamdouhaboammar/say-no-to-slop)
+
+### Have a job offer?
+
+If you need a Software Engineer, I'm probably not the person you're looking for
+
+But if there is a gap somewhere between **Business × Product × AI × Engineering**, and you need someone who enjoys research, documentation, PRDs, issues, workflows, and figuring out how AI can actually fit into the way people work, while continuing to learn the technical side in public rather than pretending to already know everything
+
+Then we probably have something worth talking about
+
+**[LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/) · [Website](https://mamdouhaboammar.com/)**
+
+<div align="center">
+
+[↑ العربية](#arabic-version)
+
+</div>
+
+<br>
+
+<div align="center">
 
 <img src="https://img.shields.io/badge/Real_friction-A371F7?style=flat-square&labelColor=0D1117" alt="Real friction">
 <img src="https://img.shields.io/badge/Reusable_systems-58A6FF?style=flat-square&labelColor=0D1117" alt="Reusable systems">
