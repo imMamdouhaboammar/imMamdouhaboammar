@@ -29,14 +29,8 @@ jobs:
           path = Path('README.md')
           text = path.read_text()
 
-          old_rows = '''<tr>
-<td align="center" width="180"><a href="#arabic-version"><strong>🇪🇬 العربية</strong></a></td>
-<td align="center" width="180"><a href="#english-version"><strong>🇬🇧 English</strong></a></td>
-</tr>'''
-          new_rows = '''<tr>
-<td align="center" width="180"><a href="#english-version"><strong>🇬🇧 English</strong></a></td>
-<td align="center" width="180"><a href="#arabic-version"><strong>🇪🇬 العربية</strong></a></td>
-</tr>'''
+          old_rows = '<tr>\n<td align="center" width="180"><a href="#arabic-version"><strong>🇪🇬 العربية</strong></a></td>\n<td align="center" width="180"><a href="#english-version"><strong>🇬🇧 English</strong></a></td>\n</tr>'
+          new_rows = '<tr>\n<td align="center" width="180"><a href="#english-version"><strong>🇬🇧 English</strong></a></td>\n<td align="center" width="180"><a href="#arabic-version"><strong>🇪🇬 العربية</strong></a></td>\n</tr>'
 
           if text.count(old_rows) != 1:
               raise SystemExit(f'switcher row count: {text.count(old_rows)}')
@@ -70,7 +64,6 @@ jobs:
           ar_block = ar_block.replace('[English ↓](#english-version)', '[↑ English](#english-version)', 1)
           en_block = en_block.replace('[↑ العربية](#arabic-version)', '[العربية ↓](#arabic-version)', 1)
 
-          # Keep exactly one separator between the two language blocks.
           en_block = en_block.rstrip() + '\n\n<br>\n\n'
           ar_block = ar_block.strip() + '\n\n'
 
