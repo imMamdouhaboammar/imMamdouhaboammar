@@ -39,9 +39,7 @@ jobs:
           if text.count(en_old) != 1:
               raise SystemExit(f'English target count: {text.count(en_old)}')
 
-          text = text.replace(ar_old, ar_new, 1)
-          text = text.replace(en_old, en_new, 1)
-          p.write_text(text)
+          p.write_text(text.replace(ar_old, ar_new, 1).replace(en_old, en_new, 1))
           PY
 
       - name: Verify and commit README-only result
@@ -52,11 +50,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           test "$(git diff --cached --name-only | tr -d '\r')" = "README.md"
-          grep -F '<details dir="rtl">' README.md
-          grep -F '<summary dir="rtl">' README.md
-          grep -F '<details dir="ltr">' README.md
-          grep -F '<summary dir="ltr">' README.md
-          ! grep -F '<details open>' README.md
+          python - <<'PY'
+          from pathlib import Path
+          text = Path('README.md').read_text()
+          assert '<a id="arabic-version"></a>\n\n<details dir="rtl">\n<summary dir="rtl">' in text
+          assert '<a id="english-version"></a>\n\n<details dir="ltr">\n<summary dir="ltr">' in text
+          assert '<a id="arabic-version"></a>\n\n<details open>' not in text
+          PY
           git diff --cached --check
-          git commit -m "docs(profile): fix bilingual block direction"
+          git commit -m "docs(profile): collapse blocks and fix bidi direction"
           git push origin HEAD:profile/bidi-collapsed-blocks
