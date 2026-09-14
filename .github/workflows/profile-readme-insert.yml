@@ -29,7 +29,11 @@ jobs:
 
           p = Path('README.md')
           text = p.read_text()
-          block = Path('/tmp/profile-block.md').read_text()
+          raw_block = Path('/tmp/profile-block.md').read_text()
+          block = '\n'.join(
+              (line.rstrip() + '<br>') if line.endswith('  ') else line
+              for line in raw_block.splitlines()
+          )
 
           if 'id="arabic-version"' in text:
               raise SystemExit('Profile block already present')
