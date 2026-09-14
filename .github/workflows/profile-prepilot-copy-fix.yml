@@ -1,0 +1,38 @@
+name: Polish PrePilot author wording
+
+on:
+  push:
+    branches:
+      - profile/social-icons-prepilot-author
+    paths:
+      - .github/workflows/profile-prepilot-copy-fix.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: profile/social-icons-prepilot-author
+          fetch-depth: 0
+      - shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('README.md')
+          text = p.read_text()
+          old = 'I co-founded and author [PrePilot](https://app.prepilot-system-agency.space/), a marketing workflow product for agencies, freelancers, and marketing teams that already work inside ChatGPT or Claude'
+          new = 'I co-founded [PrePilot](https://app.prepilot-system-agency.space/) and continue to author its product and workflow direction: a marketing workflow product for agencies, freelancers, and marketing teams that already work inside ChatGPT or Claude'
+          assert text.count(old) == 1
+          p.write_text(text.replace(old, new, 1))
+          PY
+          rm -f .github/workflows/profile-prepilot-copy-fix.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "docs(profile): polish PrePilot author wording"
+          git push origin HEAD:profile/social-icons-prepilot-author
