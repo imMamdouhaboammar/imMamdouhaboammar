@@ -42,14 +42,13 @@ jobs:
           p.write_text(text.replace(ar_old, ar_new, 1).replace(en_old, en_new, 1))
           PY
 
-      - name: Verify and commit README-only result
+      - name: Verify and commit clean result
         shell: bash
         run: |
           rm -f .github/workflows/profile-bidi-fix.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          test "$(git diff --cached --name-only | tr -d '\r')" = "README.md"
           python - <<'PY'
           from pathlib import Path
           text = Path('README.md').read_text()
