@@ -1,0 +1,62 @@
+name: Fix profile bilingual direction
+
+on:
+  push:
+    branches:
+      - profile/bidi-collapsed-blocks
+    paths:
+      - .github/workflows/profile-bidi-fix.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: profile/bidi-collapsed-blocks
+          fetch-depth: 0
+
+      - name: Apply collapsed bidi-safe blocks
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('README.md')
+          text = p.read_text()
+
+          ar_old = '<a id="arabic-version"></a>\n\n<details open>\n<summary><strong>🇪🇬 لو أنا في شركتك، هبقى بساعد فريقك إزاي؟</strong></summary>'
+          ar_new = '<a id="arabic-version"></a>\n\n<details dir="rtl">\n<summary dir="rtl"><strong>🇪🇬 لو أنا في شركتك، هبقى بساعد فريقك إزاي؟</strong></summary>'
+          en_old = '<a id="english-version"></a>\n\n<details>\n<summary><strong>🇬🇧 What would I actually do on your team?</strong></summary>'
+          en_new = '<a id="english-version"></a>\n\n<details dir="ltr">\n<summary dir="ltr"><strong>🇬🇧 What would I actually do on your team?</strong></summary>'
+
+          if text.count(ar_old) != 1:
+              raise SystemExit(f'Arabic target count: {text.count(ar_old)}')
+          if text.count(en_old) != 1:
+              raise SystemExit(f'English target count: {text.count(en_old)}')
+
+          text = text.replace(ar_old, ar_new, 1)
+          text = text.replace(en_old, en_new, 1)
+          p.write_text(text)
+          PY
+
+      - name: Verify and commit README-only result
+        shell: bash
+        run: |
+          rm -f .github/workflows/profile-bidi-fix.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          test "$(git diff --cached --name-only | tr -d '\r')" = "README.md"
+          grep -F '<details dir="rtl">' README.md
+          grep -F '<summary dir="rtl">' README.md
+          grep -F '<details dir="ltr">' README.md
+          grep -F '<summary dir="ltr">' README.md
+          ! grep -F '<details open>' README.md
+          git diff --cached --check
+          git commit -m "docs(profile): fix bilingual block direction"
+          git push origin HEAD:profile/bidi-collapsed-blocks
