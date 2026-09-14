@@ -1,0 +1,62 @@
+name: Apply bilingual profile section
+
+on:
+  push:
+    branches:
+      - profile/how-i-help-team
+    paths:
+      - .github/workflows/profile-readme-insert.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: profile/how-i-help-team
+          fetch-depth: 0
+
+      - name: Insert bilingual section
+        shell: bash
+        run: |
+          cat .profile-tmp/part*.b64 | tr -d '\n' | base64 --decode > /tmp/profile-block.md
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('README.md')
+          text = p.read_text()
+          block = Path('/tmp/profile-block.md').read_text()
+
+          if 'id="arabic-version"' in text:
+              raise SystemExit('Profile block already present')
+
+          needle = '\n<br>\n\n<img src="https://img.shields.io/badge/Real_friction'
+          count = text.count(needle)
+          if count != 1:
+              raise SystemExit(f'Expected exactly one insertion point, found {count}')
+
+          replacement = (
+              '\n</div>\n\n<br>\n\n'
+              + block
+              + '\n\n<br>\n\n<div align="center">\n\n'
+              + '<img src="https://img.shields.io/badge/Real_friction'
+          )
+
+          p.write_text(text.replace(needle, replacement, 1))
+          PY
+
+      - name: Commit clean README-only result
+        shell: bash
+        run: |
+          rm -rf .profile-tmp
+          rm -f .github/workflows/profile-readme-insert.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "docs(profile): add bilingual team contribution section"
+          git push origin HEAD:profile/how-i-help-team
