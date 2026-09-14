@@ -44,11 +44,9 @@ jobs:
           if '<div dir="rtl" align="right">' in arabic:
               raise SystemExit('Arabic content is already wrapped in explicit RTL container')
 
-          # Keep English technical fragments isolated from the surrounding Arabic bidi flow.
           latin_run = re.compile(r"[A-Za-z][A-Za-z0-9+./_'’-]*(?:[ \t]+[A-Za-z0-9][A-Za-z0-9+./_'’-]*)*")
 
           def isolate_line(line: str) -> str:
-              # Leave Markdown links untouched so destinations/labels remain parser-safe.
               if '](' in line or 'http://' in line or 'https://' in line:
                   return line
 
@@ -69,7 +67,6 @@ jobs:
 
           arabic = '\n'.join(isolate_line(line) for line in arabic.split('\n'))
 
-          # All-English code-chip rows need an explicit LTR island while remaining right-aligned.
           arabic = arabic.replace(
               '`Code` · `Git` · `PRs` · `Testing` · `Maintenance` · `Tech Product` · `PRDs` · `Technical Writing` · `AI-assisted work` · وخصوصا **إزاي نفكر قبل ما نطلب من حد يبني**',
               '<div dir="ltr" align="right"><code>Code</code> · <code>Git</code> · <code>PRs</code> · <code>Testing</code> · <code>Maintenance</code> · <code>Tech Product</code> · <code>PRDs</code> · <code>Technical Writing</code> · <code>AI-assisted work</code></div>\n\n**وخصوصا إزاي نفكر قبل ما نطلب من حد يبني**'
@@ -80,10 +77,12 @@ jobs:
           )
 
           old_ar_contact = '**[LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/) · [Website](https://mamdouhaboammar.com/)**'
-          new_ar_contact = '''**الإيميل:** <a dir="ltr" href="mailto:mamdouhfces1997@gmail.com">mamdouhfces1997@gmail.com</a><br>
-**واتساب:** <a href="https://wa.me/201092677269">راسلني مباشرة</a><br>
-**لينكدإن:** <a dir="ltr" href="https://www.linkedin.com/in/mamdouh-aboammar/">Mamdouh Aboammar</a><br>
-**الموقع:** <a dir="ltr" href="https://mamdouhaboammar.com/">mamdouhaboammar.com</a>'''
+          new_ar_contact = '\n'.join([
+              '**الإيميل:** <a dir="ltr" href="mailto:mamdouhfces1997@gmail.com">mamdouhfces1997@gmail.com</a><br>',
+              '**واتساب:** <a href="https://wa.me/201092677269">راسلني مباشرة</a><br>',
+              '**لينكدإن:** <a dir="ltr" href="https://www.linkedin.com/in/mamdouh-aboammar/">Mamdouh Aboammar</a><br>',
+              '**الموقع:** <a dir="ltr" href="https://mamdouhaboammar.com/">mamdouhaboammar.com</a>',
+          ])
           if arabic.count(old_ar_contact) != 1:
               raise SystemExit(f'Arabic contact marker count: {arabic.count(old_ar_contact)}')
           arabic = arabic.replace(old_ar_contact, new_ar_contact, 1)
@@ -92,12 +91,12 @@ jobs:
           text = before + start + arabic + end + after
 
           old_en_contact = '**[LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/) · [Website](https://mamdouhaboammar.com/)**'
-          new_en_contact = '''**Email:** [mamdouhfces1997@gmail.com](mailto:mamdouhfces1997@gmail.com)<br>
-**WhatsApp:** [Message me directly](https://wa.me/201092677269)<br>
-**LinkedIn:** [Mamdouh Aboammar](https://www.linkedin.com/in/mamdouh-aboammar/)<br>
-**Website:** [mamdouhaboammar.com](https://mamdouhaboammar.com/)'''
-
-          # The Arabic occurrence is already replaced, so exactly one English occurrence should remain.
+          new_en_contact = '\n'.join([
+              '**Email:** [mamdouhfces1997@gmail.com](mailto:mamdouhfces1997@gmail.com)<br>',
+              '**WhatsApp:** [Message me directly](https://wa.me/201092677269)<br>',
+              '**LinkedIn:** [Mamdouh Aboammar](https://www.linkedin.com/in/mamdouh-aboammar/)<br>',
+              '**Website:** [mamdouhaboammar.com](https://mamdouhaboammar.com/)',
+          ])
           if text.count(old_en_contact) != 1:
               raise SystemExit(f'English contact marker count: {text.count(old_en_contact)}')
           text = text.replace(old_en_contact, new_en_contact, 1)
