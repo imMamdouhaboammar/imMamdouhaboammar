@@ -1,0 +1,38 @@
+name: Expand profile working stack
+
+on:
+  push:
+    branches:
+      - profile/expand-working-stack
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: profile/expand-working-stack
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Update README
+        run: python .github/scripts/update-working-stack.py
+      - name: Verify
+        run: |
+          grep -q '## Working with & learning' README.md
+          grep -q 'TESTING & QUALITY' README.md
+          grep -q 'MARKETING & MEASUREMENT' README.md
+          git diff --check
+      - name: Commit final README-only diff
+        run: |
+          git config user.name 'Mamdouh Aboammar'
+          git config user.email '58908124+imMamdouhaboammar@users.noreply.github.com'
+          rm .github/scripts/update-working-stack.py
+          rm .github/workflows/profile-expand-working-stack.yml
+          git add -A
+          git commit -m 'docs(profile): expand working stack and learning map'
+          git push origin profile/expand-working-stack
