@@ -64,7 +64,10 @@ Founder of PrePilot — conversion infrastructure for Arabic-speaking markets. D
 
 <a id="arabic-version"></a>
 
-## 🇪🇬 لو أنا في شركتك، هبقى بساعد فريقك إزاي؟
+<details open>
+<summary><strong>🇪🇬 لو أنا في شركتك، هبقى بساعد فريقك إزاي؟</strong></summary>
+
+<br>
 
 خليني أبدأ بأهم نقطة قبل ما حد يشوف عدد الـrepos ويقرر يعينني Software Engineer بالغلط
 
@@ -207,9 +210,16 @@ Feature جديدة، library، API، competitor approach، technical decision أ
 
 </div>
 
+</details>
+
+<br>
+
 <a id="english-version"></a>
 
-## 🇬🇧 What would I actually do on your team?
+<details>
+<summary><strong>🇬🇧 What would I actually do on your team?</strong></summary>
+
+<br>
 
 One thing first, before someone sees all these repositories and accidentally hires me as a backend engineer
 
@@ -357,6 +367,8 @@ Then we probably have something worth talking about
 [↑ العربية](#arabic-version)
 
 </div>
+
+</details>
 
 <br>
 
