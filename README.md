@@ -183,21 +183,6 @@ Founder of PrePilot — conversion infrastructure for Arabic-speaking markets. D
 
 لو وصلنا لكده، فغالبا أنا ماشي في الاتجاه الصح
 
-### حاجات لسه بتعلمها، بس عندي شغل تقدر تفتحه وتحكم بنفسك
-
-مش هكتب `Expert in 27 technologies`
-
-الـ<span dir="ltr">repos</span> موجودة، اتفرج عليها واحكم
-
-- **AEO / GEO / AI Search**: [PrePilot for Marketing](https://github.com/imMamdouhaboammar/prepilot-for-marketing)
-- **Technical Writing / Specs / PRDs**: [Riftbook](https://github.com/imMamdouhaboammar/Riftbook) · [Get Fable](https://github.com/imMamdouhaboammar/get-fable)
-- **Git / Issues / PR workflows**: [PatchPilot](https://github.com/imMamdouhaboammar/PatchPilot) · [mergefy](https://github.com/imMamdouhaboammar/mergefy) · [patchyard](https://github.com/imMamdouhaboammar/patchyard)
-- **AI Agent Workflows**: [Agentic Workflow](https://github.com/imMamdouhaboammar/agentic-workflow) · [Get Fable](https://github.com/imMamdouhaboammar/get-fable)
-- **Agent Governance & Verification**: [Agent Kernel](https://github.com/imMamdouhaboammar/agent-kernel) · [Riqor](https://github.com/imMamdouhaboammar/riqor)
-- **Agent Skills**: [Agent Skill Observatory](https://github.com/imMamdouhaboammar/agent-skill-observatory) · [Omni Skill](https://github.com/imMamdouhaboammar/omni-skill)
-- **Arabic & MENA Marketing Systems**: [Conversion Copywriting Engine](https://github.com/imMamdouhaboammar/conversion-copywriting-engine) · [PrePilot for Marketing](https://github.com/imMamdouhaboammar/prepilot-for-marketing)
-- **AI-assisted Quality Gates**: [Unslop Preflight](https://github.com/imMamdouhaboammar/unslop-preflight) · [Say No to Slop](https://github.com/imMamdouhaboammar/say-no-to-slop)
-
 ### عندك <span dir="ltr">Job Offer</span>؟
 
 لو بتدور على <span dir="ltr">Software Engineer</span>، غالبا أنا مش الشخص المناسب
@@ -345,21 +330,6 @@ AI usage that can be inspected and measured<br>
 And Software Engineers spending more of their time on problems that genuinely require Software Engineers
 
 If we reach that point, I'm probably becoming the kind of Product Architect I'm trying to learn how to be
-
-### Things I'm still learning, but can already show work for
-
-I'm not going to list 27 technologies and put `Expert` next to all of them
-
-The repositories are public. You can inspect the work and decide for yourself
-
-- **AEO / GEO / AI Search**: [PrePilot for Marketing](https://github.com/imMamdouhaboammar/prepilot-for-marketing)
-- **Technical Writing / Specs / PRDs**: [Riftbook](https://github.com/imMamdouhaboammar/Riftbook) · [Get Fable](https://github.com/imMamdouhaboammar/get-fable)
-- **Git / Issues / PR workflows**: [PatchPilot](https://github.com/imMamdouhaboammar/PatchPilot) · [mergefy](https://github.com/imMamdouhaboammar/mergefy) · [patchyard](https://github.com/imMamdouhaboammar/patchyard)
-- **AI Agent Workflows**: [Agentic Workflow](https://github.com/imMamdouhaboammar/agentic-workflow) · [Get Fable](https://github.com/imMamdouhaboammar/get-fable)
-- **Agent Governance & Verification**: [Agent Kernel](https://github.com/imMamdouhaboammar/agent-kernel) · [Riqor](https://github.com/imMamdouhaboammar/riqor)
-- **Agent Skills**: [Agent Skill Observatory](https://github.com/imMamdouhaboammar/agent-skill-observatory) · [Omni Skill](https://github.com/imMamdouhaboammar/omni-skill)
-- **Arabic & MENA Marketing Systems**: [Conversion Copywriting Engine](https://github.com/imMamdouhaboammar/conversion-copywriting-engine) · [PrePilot for Marketing](https://github.com/imMamdouhaboammar/prepilot-for-marketing)
-- **AI-assisted Quality Gates**: [Unslop Preflight](https://github.com/imMamdouhaboammar/unslop-preflight) · [Say No to Slop](https://github.com/imMamdouhaboammar/say-no-to-slop)
 
 ### Have a job offer?
 
