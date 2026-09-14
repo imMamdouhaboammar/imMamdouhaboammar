@@ -64,8 +64,8 @@ Founder of PrePilot — conversion infrastructure for Arabic-speaking markets. D
 
 <a id="arabic-version"></a>
 
-<details open>
-<summary><strong>🇪🇬 لو أنا في شركتك، هبقى بساعد فريقك إزاي؟</strong></summary>
+<details dir="rtl">
+<summary dir="rtl"><strong>🇪🇬 لو أنا في شركتك، هبقى بساعد فريقك إزاي؟</strong></summary>
 
 <br>
 
@@ -216,8 +216,8 @@ Feature جديدة، library، API، competitor approach، technical decision أ
 
 <a id="english-version"></a>
 
-<details>
-<summary><strong>🇬🇧 What would I actually do on your team?</strong></summary>
+<details dir="ltr">
+<summary dir="ltr"><strong>🇬🇧 What would I actually do on your team?</strong></summary>
 
 <br>
 
