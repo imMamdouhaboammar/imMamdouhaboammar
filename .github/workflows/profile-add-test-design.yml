@@ -1,0 +1,46 @@
+name: Add profile test design scope
+
+on:
+  push:
+    branches:
+      - profile/add-test-design-scope
+    paths:
+      - .github/workflows/profile-add-test-design.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: profile/add-test-design-scope
+          fetch-depth: 0
+
+      - name: Apply copy update
+        run: python profile_add_testing.py
+
+      - name: Verify and commit README-only result
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          text = Path('README.md').read_text()
+          assert text.count('**Test design, user journeys, and acceptance scenarios**<br>') == 1
+          assert text.count('**تصميم الـ<span dir="ltr">Tests</span> ومسارات المستخدم وسيناريوهات القبول**<br>') == 1
+          assert 'user stories, user journeys, acceptance scenarios, test suites, and test cases' in text
+          assert '<span dir="ltr">user stories</span>' in text
+          assert '<span dir="ltr">test suites</span>' in text
+          assert '<span dir="ltr">regressions</span>' in text
+          assert '—' not in text
+          PY
+          rm -f profile_add_testing.py .github/workflows/profile-add-test-design.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "docs(profile): add test design and user scenario scope"
+          git push origin HEAD:profile/add-test-design-scope
