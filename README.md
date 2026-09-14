@@ -69,113 +69,117 @@ Founder of PrePilot — conversion infrastructure for Arabic-speaking markets. D
 
 <br>
 
-خليني أبدأ بأهم نقطة قبل ما حد يشوف عدد الـrepos ويقرر يعينني Software Engineer بالغلط
+<div dir="rtl" align="right">
 
-**أنا مش Software Engineer**
+خليني أبدأ بأهم نقطة قبل ما حد يشوف عدد الـ<span dir="ltr">repos</span> ويقرر يعينني <span dir="ltr">Software Engineer</span> بالغلط
+
+**أنا مش <span dir="ltr">Software Engineer</span>**
 
 ومش بحاول أقدم نفسي كواحد
 
-أنا جاي أساسا من Marketing وBusiness وStrategy، واللي بتعلمه دلوقتي هو إزاي أبقى **Product Architect** كويس، ولسه في أول الطريق
+أنا جاي أساسا من <span dir="ltr">Marketing</span> و<span dir="ltr">Business</span> و<span dir="ltr">Strategy</span>، واللي بتعلمه دلوقتي هو إزاي أبقى **<span dir="ltr">Product Architect</span>** كويس، ولسه في أول الطريق
 
-بالنسبالي ده معناه إني محتاج أفهم الحاجات اللي كنت زمان بشوفها من الناحية التانية من الـmeeting:
+بالنسبالي ده معناه إني محتاج أفهم الحاجات اللي كنت زمان بشوفها من الناحية التانية من الـ<span dir="ltr">meeting</span>:
 
-`Code` · `Git` · `PRs` · `Testing` · `Maintenance` · `Tech Product` · `PRDs` · `Technical Writing` · `AI-assisted work` · وخصوصا **إزاي نفكر قبل ما نطلب من حد يبني**
+<div dir="ltr" align="right"><code>Code</code> · <code>Git</code> · <code>PRs</code> · <code>Testing</code> · <code>Maintenance</code> · <code>Tech Product</code> · <code>PRDs</code> · <code>Technical Writing</code> · <code>AI-assisted work</code></div>
+
+**وخصوصا إزاي نفكر قبل ما نطلب من حد يبني**
 
 كل المشاريع اللي عندي تقريبا هي محاولات عملية أفهم بيها الحاجات دي بدل ما أفضل أقرأ عنها من بعيد
 
-مش عشان آخد مكان الـSoftware Engineers
+مش عشان آخد مكان الـ<span dir="ltr">Software Engineers</span>
 
 بالعكس
 
 عشان لما أشتغل معاهم ما أبقاش الشخص اللي داخل يقول:
 
-> عندي feature بسيطة جدا... هي بس محتاجة app وdashboard وAI وحاجتين صغيرين كده 😅
+> عندي <span dir="ltr">feature</span> بسيطة جدا... هي بس محتاجة <span dir="ltr">app</span> و<span dir="ltr">dashboard</span> و<span dir="ltr">AI</span> وحاجتين صغيرين كده 😅
 
 ### طيب ممكن أكون مسؤول عن إيه؟
 
-**الـDocs**<br>
-أحدثها، أنضف القديم، أوثق القرارات، وأتأكد إن الـREADME والـtechnical docs لسه بيتكلموا عن الـproduct الموجود فعلا، مش نسخة منه كانت موجودة من شهور
+**الـ<span dir="ltr">Docs</span>**<br>
+أحدثها، أنضف القديم، أوثق القرارات، وأتأكد إن الـ<span dir="ltr">README</span> والـ<span dir="ltr">technical docs</span> لسه بيتكلموا عن الـ<span dir="ltr">product</span> الموجود فعلا، مش نسخة منه كانت موجودة من شهور
 
-**Issue discovery وtriage**<br>
-أراجع الـproduct أو الـrepo، أحاول أعمل reproduction للمشكلة، أجمع context وevidence، وأحول الملاحظة لـIssue واضحة فيها scope وacceptance criteria بدل ticket من نوع `login broken pls fix`
+**<span dir="ltr">Issue discovery</span> و<span dir="ltr">triage</span>**<br>
+أراجع الـ<span dir="ltr">product</span> أو الـ<span dir="ltr">repo</span>، أحاول أعمل <span dir="ltr">reproduction</span> للمشكلة، أجمع <span dir="ltr">context</span> و<span dir="ltr">evidence</span>، وأحول الملاحظة لـ<span dir="ltr">Issue</span> واضحة فيها <span dir="ltr">scope</span> و<span dir="ltr">acceptance criteria</span> بدل <span dir="ltr">ticket</span> من نوع `login broken pls fix`
 
-**Small, bounded PRs**<br>
-لو التغيير محدود، فاهمه، وقادر أختبره، أقدر أوصله لـPR صغيرة قابلة للمراجعة. الـEngineer يراجعها، يعدلها، يرفضها، أو يقولي إن فهمي كان غلط. ده جزء طبيعي من الشغل
+**<span dir="ltr">Small</span>, <span dir="ltr">bounded PRs</span>**<br>
+لو التغيير محدود، فاهمه، وقادر أختبره، أقدر أوصله لـ<span dir="ltr">PR</span> صغيرة قابلة للمراجعة. الـ<span dir="ltr">Engineer</span> يراجعها، يعدلها، يرفضها، أو يقولي إن فهمي كان غلط. ده جزء طبيعي من الشغل
 
-**Research قبل التنفيذ**<br>
-Feature جديدة، library، API، competitor approach، technical decision أو AI workflow. أعمل deep research، أقارن البدائل والـtrade-offs، وأحول النتيجة لـDoc أو decision memo يقدر الفريق يرجع له بدل ما البحث يضيع بعد الـmeeting
+**<span dir="ltr">Research</span> قبل التنفيذ**<br>
+<span dir="ltr">Feature</span> جديدة، <span dir="ltr">library</span>، <span dir="ltr">API</span>، <span dir="ltr">competitor approach</span>، <span dir="ltr">technical decision</span> أو <span dir="ltr">AI workflow.</span> أعمل <span dir="ltr">deep research</span>، أقارن البدائل والـ<span dir="ltr">trade-offs</span>، وأحول النتيجة لـ<span dir="ltr">Doc</span> أو <span dir="ltr">decision memo</span> يقدر الفريق يرجع له بدل ما البحث يضيع بعد الـ<span dir="ltr">meeting</span>
 
-**PRDs وFeature Briefs**<br>
-أساعد نحول جملة من نوع "طب ما نعمل حاجة تعمل كذا؟" إلى problem واضح، user need، assumptions، constraints، edge cases، success criteria وacceptance criteria قبل ما الفكرة تدخل development
+**<span dir="ltr">PRDs</span> و<span dir="ltr">Feature Briefs</span>**<br>
+أساعد نحول جملة من نوع "طب ما نعمل حاجة تعمل كذا؟" إلى <span dir="ltr">problem</span> واضح، <span dir="ltr">user need</span>، <span dir="ltr">assumptions</span>، <span dir="ltr">constraints</span>، <span dir="ltr">edge cases</span>، <span dir="ltr">success criteria</span> و<span dir="ltr">acceptance criteria</span> قبل ما الفكرة تدخل <span dir="ltr">development</span>
 
-وساعات أفضل نتيجة للـPRD تبقى: **ما نبنيهاش أصلا**
+وساعات أفضل نتيجة للـ<span dir="ltr">PRD</span> تبقى: **ما نبنيهاش أصلا**
 
-وده بالنسبة لي قرار Product محترم جدا
+وده بالنسبة لي قرار <span dir="ltr">Product</span> محترم جدا
 
-**AI داخل الشغل اليومي**<br>
-مش قصدي نحط chatbot في كل صفحة ونكتب AI-powered
+**<span dir="ltr">AI</span> داخل الشغل اليومي**<br>
+مش قصدي نحط <span dir="ltr">chatbot</span> في كل صفحة ونكتب <span dir="ltr">AI-powered</span>
 
-قصدي نبص على الشغل نفسه: إيه بيتكرر؟ إيه بياخد وقت؟ إيه ممكن AI يعمل منه first draft؟ فين لازم Human review؟ وإيه الأفضل إن AI مايقربلوش من الأساس؟
+قصدي نبص على الشغل نفسه: إيه بيتكرر؟ إيه بياخد وقت؟ إيه ممكن <span dir="ltr">AI</span> يعمل منه <span dir="ltr">first draft</span>؟ فين لازم <span dir="ltr">Human review</span>؟ وإيه الأفضل إن <span dir="ltr">AI</span> مايقربلوش من الأساس؟
 
-**Agentic Skills وReusable Workflows**<br>
-لو الفريق بيعمل نفس البحث أو نفس review أو نفس الخطوات كل أسبوع، أحب أحول المعرفة دي لـSkill أو checklist أو workflow بدل ما نبدأ من الصفر كل مرة
+**<span dir="ltr">Agentic Skills</span> و<span dir="ltr">Reusable Workflows</span>**<br>
+لو الفريق بيعمل نفس البحث أو نفس <span dir="ltr">review</span> أو نفس الخطوات كل أسبوع، أحب أحول المعرفة دي لـ<span dir="ltr">Skill</span> أو <span dir="ltr">checklist</span> أو <span dir="ltr">workflow</span> بدل ما نبدأ من الصفر كل مرة
 
-**AI usage وtoken discipline**<br>
-أراجع فين الـcontext بيكبر من غير داعي، فين prompts بتتكرر، فين model أكبر من المطلوب، وبعدها نجرب بدائل ونقيس قبل وبعد
+**<span dir="ltr">AI usage</span> و<span dir="ltr">token discipline</span>**<br>
+أراجع فين الـ<span dir="ltr">context</span> بيكبر من غير داعي، فين <span dir="ltr">prompts</span> بتتكرر، فين <span dir="ltr">model</span> أكبر من المطلوب، وبعدها نجرب بدائل ونقيس قبل وبعد
 
 مش هقولك هقلل فاتورتك 73% قبل ما أشوف الفاتورة أصلا
 
-**المنطقة بين Business وProduct وEngineering**<br>
-دي غالبا أكتر مساحة أقدر أضيف فيها من أول يوم. أفهم السؤال التجاري والـcustomer context، وأساعد أحوله لحاجة الفريق التقني يقدر يناقشها بوضوح
+**المنطقة بين <span dir="ltr">Business</span> و<span dir="ltr">Product</span> و<span dir="ltr">Engineering</span>**<br>
+دي غالبا أكتر مساحة أقدر أضيف فيها من أول يوم. أفهم السؤال التجاري والـ<span dir="ltr">customer context</span>، وأساعد أحوله لحاجة الفريق التقني يقدر يناقشها بوضوح
 
 ### وده هيفيد الفريق في إيه؟
 
-نفسي الـEngineer لما يفتح Issue ما يبدأش أول ساعتين بسؤال:
+نفسي الـ<span dir="ltr">Engineer</span> لما يفتح <span dir="ltr">Issue</span> ما يبدأش أول ساعتين بسؤال:
 
 **هو المطلوب إيه بالظبط؟**
 
-ونفسي الـresearch اللي اتعمل النهارده مايتعملش تاني الشهر الجاي عشان محدش وثقه
+ونفسي الـ<span dir="ltr">research</span> اللي اتعمل النهارده مايتعملش تاني الشهر الجاي عشان محدش وثقه
 
-والـfeature قبل ما تدخل development يبقى فيه إجابة منطقية لسؤال: **ليه بنبنيها؟**
+والـ<span dir="ltr">feature</span> قبل ما تدخل <span dir="ltr">development</span> يبقى فيه إجابة منطقية لسؤال: **ليه بنبنيها؟**
 
-والـAI يبقى جزء معروف من طريقة الشغل، له حدود ومراجعة وقياس، مش كل واحد عنده 87 prompt في Notes ومحدش عارف الشخص التاني بيعمل إيه
+والـ<span dir="ltr">AI</span> يبقى جزء معروف من طريقة الشغل، له حدود ومراجعة وقياس، مش كل واحد عنده 87 <span dir="ltr">prompt</span> في <span dir="ltr">Notes</span> ومحدش عارف الشخص التاني بيعمل إيه
 
-أنا باختصار مهتم أقلل كمية الـmess اللي بتوصل للناس اللي المفروض تركز في المشاكل الصعبة فعلا
+أنا باختصار مهتم أقلل كمية الـ<span dir="ltr">mess</span> اللي بتوصل للناس اللي المفروض تركز في المشاكل الصعبة فعلا
 
 ### شكل يوم الفريق معايا ممكن يبقى عامل إزاي؟
 
-ممكن أبدأ بـIssue غامضة، أفهمها وأعمل reproduction وأرجعها مكتوبة بشكل أحسن
+ممكن أبدأ بـ<span dir="ltr">Issue</span> غامضة، أفهمها وأعمل <span dir="ltr">reproduction</span> وأرجعها مكتوبة بشكل أحسن
 
-بعدها feature لسه فكرة، أعمل research وأحولها لـbrief أو PRD
+بعدها <span dir="ltr">feature</span> لسه فكرة، أعمل <span dir="ltr">research</span> وأحولها لـ<span dir="ltr">brief</span> أو <span dir="ltr">PRD</span>
 
-بعدها ألاقي Docs اتغير الـproduct من تحتها، فأحدثها
+بعدها ألاقي <span dir="ltr">Docs</span> اتغير الـ<span dir="ltr">product</span> من تحتها، فأحدثها
 
-بعدها Issue صغيرة في حدود اللي أقدر عليه، أوصلها لـPR وأسيب القرار النهائي للـreviewer
+بعدها <span dir="ltr">Issue</span> صغيرة في حدود اللي أقدر عليه، أوصلها لـ<span dir="ltr">PR</span> وأسيب القرار النهائي للـ<span dir="ltr">reviewer</span>
 
-وفي النص ألاحظ إننا كررنا نفس الخطوات أربع مرات، فأسأل: **هل دي ممكن تبقى workflow بدل ما تفضل عادة يدوية؟**
+وفي النص ألاحظ إننا كررنا نفس الخطوات أربع مرات، فأسأل: **هل دي ممكن تبقى <span dir="ltr">workflow</span> بدل ما تفضل عادة يدوية؟**
 
-اليوم الكويس بالنسبالي مش اليوم اللي كتبت فيه Code كتير
+اليوم الكويس بالنسبالي مش اليوم اللي كتبت فيه <span dir="ltr">Code</span> كتير
 
 هو اليوم اللي آخره فيه حاجة حد تاني يقدر يمسكها:
 
-`PR` · `Issue` · `Doc` · `Research note` · `Decision` · `Test evidence` · `Skill` · `Checklist`
+<div dir="ltr" align="right"><code>PR</code> · <code>Issue</code> · <code>Doc</code> · <code>Research note</code> · <code>Decision</code> · <code>Test evidence</code> · <code>Skill</code> · <code>Checklist</code></div>
 
-أي حاجة غير: "أنا فاكر إننا اتكلمنا في الموضوع ده في meeting من شهرين"
+أي حاجة غير: "أنا فاكر إننا اتكلمنا في الموضوع ده في <span dir="ltr">meeting</span> من شهرين"
 
 ### وبعد سنة؟
 
-مش هقولك إن الشركة هتبقى 10X أسرع أو إن الـAI هيحل كل حاجة
+مش هقولك إن الشركة هتبقى 10<span dir="ltr">X</span> أسرع أو إن الـ<span dir="ltr">AI</span> هيحل كل حاجة
 
 بعد سنة أحب أشوف حاجات أبسط وأوضح:
 
-الـDocs الناس بتثق فيها<br>
-الـbacklog أنضف<br>
-الـIssues أوضح<br>
-الـfeatures داخلة development وهي متفكر فيها أحسن<br>
-الـresearch القديم سهل نرجع له<br>
-الشغل المتكرر بقى له reusable workflows<br>
-استخدام الـAI بقى measurable ومفهوم<br>
-ووقت الـSoftware Engineers بيتصرف أكتر على الحاجات اللي محتاجة Software Engineers فعلا
+الـ<span dir="ltr">Docs</span> الناس بتثق فيها<br>
+الـ<span dir="ltr">backlog</span> أنضف<br>
+الـ<span dir="ltr">Issues</span> أوضح<br>
+الـ<span dir="ltr">features</span> داخلة <span dir="ltr">development</span> وهي متفكر فيها أحسن<br>
+الـ<span dir="ltr">research</span> القديم سهل نرجع له<br>
+الشغل المتكرر بقى له <span dir="ltr">reusable workflows</span><br>
+استخدام الـ<span dir="ltr">AI</span> بقى <span dir="ltr">measurable</span> ومفهوم<br>
+ووقت الـ<span dir="ltr">Software Engineers</span> بيتصرف أكتر على الحاجات اللي محتاجة <span dir="ltr">Software Engineers</span> فعلا
 
 لو وصلنا لكده، فغالبا أنا ماشي في الاتجاه الصح
 
@@ -183,7 +187,7 @@ Feature جديدة، library، API، competitor approach، technical decision أ
 
 مش هكتب `Expert in 27 technologies`
 
-الـrepos موجودة، اتفرج عليها واحكم
+الـ<span dir="ltr">repos</span> موجودة، اتفرج عليها واحكم
 
 - **AEO / GEO / AI Search**: [PrePilot for Marketing](https://github.com/imMamdouhaboammar/prepilot-for-marketing)
 - **Technical Writing / Specs / PRDs**: [Riftbook](https://github.com/imMamdouhaboammar/Riftbook) · [Get Fable](https://github.com/imMamdouhaboammar/get-fable)
@@ -194,19 +198,24 @@ Feature جديدة، library، API، competitor approach، technical decision أ
 - **Arabic & MENA Marketing Systems**: [Conversion Copywriting Engine](https://github.com/imMamdouhaboammar/conversion-copywriting-engine) · [PrePilot for Marketing](https://github.com/imMamdouhaboammar/prepilot-for-marketing)
 - **AI-assisted Quality Gates**: [Unslop Preflight](https://github.com/imMamdouhaboammar/unslop-preflight) · [Say No to Slop](https://github.com/imMamdouhaboammar/say-no-to-slop)
 
-### عندك Job Offer؟
+### عندك <span dir="ltr">Job Offer</span>؟
 
-لو بتدور على Software Engineer، غالبا أنا مش الشخص المناسب
+لو بتدور على <span dir="ltr">Software Engineer</span>، غالبا أنا مش الشخص المناسب
 
-لكن لو عندك مساحة بين **Business × Product × AI × Engineering**، ومحتاج حد يحب الـresearch والـDocs والـPRDs والـIssues والـworkflows زيادة شوية عن الطبيعي، ويتعلم الـtechnical side وهو شغال بدل ما يمثل إنه عارف كل حاجة
+لكن لو عندك مساحة بين **<span dir="ltr">Business</span> × <span dir="ltr">Product</span> × <span dir="ltr">AI</span> × <span dir="ltr">Engineering</span>**، ومحتاج حد يحب الـ<span dir="ltr">research</span> والـ<span dir="ltr">Docs</span> والـ<span dir="ltr">PRDs</span> والـ<span dir="ltr">Issues</span> والـ<span dir="ltr">workflows</span> زيادة شوية عن الطبيعي، ويتعلم الـ<span dir="ltr">technical side</span> وهو شغال بدل ما يمثل إنه عارف كل حاجة
 
 ساعتها غالبا عندنا كلام نتكلم فيه
 
-**[LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/) · [Website](https://mamdouhaboammar.com/)**
+**الإيميل:** <a dir="ltr" href="mailto:mamdouhfces1997@gmail.com">mamdouhfces1997@gmail.com</a><br>
+**واتساب:** <a href="https://wa.me/201092677269">راسلني مباشرة</a><br>
+**لينكدإن:** <a dir="ltr" href="https://www.linkedin.com/in/mamdouh-aboammar/">Mamdouh Aboammar</a><br>
+**الموقع:** <a dir="ltr" href="https://mamdouhaboammar.com/">mamdouhaboammar.com</a>
 
 <div align="center">
 
 [English ↓](#english-version)
+
+</div>
 
 </div>
 
@@ -360,7 +369,10 @@ But if there is a gap somewhere between **Business × Product × AI × Engineeri
 
 Then we probably have something worth talking about
 
-**[LinkedIn](https://www.linkedin.com/in/mamdouh-aboammar/) · [Website](https://mamdouhaboammar.com/)**
+**Email:** [mamdouhfces1997@gmail.com](mailto:mamdouhfces1997@gmail.com)<br>
+**WhatsApp:** [Message me directly](https://wa.me/201092677269)<br>
+**LinkedIn:** [Mamdouh Aboammar](https://www.linkedin.com/in/mamdouh-aboammar/)<br>
+**Website:** [mamdouhaboammar.com](https://mamdouhaboammar.com/)
 
 <div align="center">
 
