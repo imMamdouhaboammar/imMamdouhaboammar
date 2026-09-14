@@ -1,0 +1,73 @@
+name: Vendor profile social icons
+
+on:
+  push:
+    branches:
+      - fix/vendor-social-icons
+    paths:
+      - .github/workflows/profile-vendor-social-icons.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix-icons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/vendor-social-icons
+
+      - name: Vendor icons and patch README
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/profile/social
+
+          curl -fsSL https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/whatsapp.svg -o assets/profile/social/whatsapp.svg
+          curl -fsSL https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/safari.svg -o assets/profile/social/safari.svg
+          curl -fsSL https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/instagram.svg -o assets/profile/social/instagram.svg
+          curl -fsSL https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gmail.svg -o assets/profile/social/gmail.svg
+          curl -fsSL https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/x.svg -o assets/profile/social/x.svg
+          curl -fsSL https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/facebook.svg -o assets/profile/social/facebook.svg
+
+          sed -i 's/<svg /<svg fill="#25D366" /' assets/profile/social/whatsapp.svg
+          sed -i 's/<svg /<svg fill="#006CFF" /' assets/profile/social/safari.svg
+          sed -i 's/<svg /<svg fill="#E4405F" /' assets/profile/social/instagram.svg
+          sed -i 's/<svg /<svg fill="#EA4335" /' assets/profile/social/gmail.svg
+          sed -i 's/<svg /<svg fill="#6E7781" /' assets/profile/social/x.svg
+          sed -i 's/<svg /<svg fill="#0866FF" /' assets/profile/social/facebook.svg
+
+          cat > assets/profile/social/linkedin.svg <<'EOF'
+          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#0A66C2"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM6.894 20.452H3.777V9h3.117v11.452z"/></svg>
+          EOF
+
+          sed -i 's#https://cdn.simpleicons.org/whatsapp/25D366#assets/profile/social/whatsapp.svg#g' README.md
+          sed -i 's#https://cdn.simpleicons.org/safari/006CFF#assets/profile/social/safari.svg#g' README.md
+          sed -i 's#https://cdn.simpleicons.org/instagram/E4405F#assets/profile/social/instagram.svg#g' README.md
+          sed -i 's#https://cdn.simpleicons.org/gmail/EA4335#assets/profile/social/gmail.svg#g' README.md
+          sed -i 's#https://cdn.simpleicons.org/x/6E7781#assets/profile/social/x.svg#g' README.md
+          sed -i 's#https://cdn.simpleicons.org/facebook/0866FF#assets/profile/social/facebook.svg#g' README.md
+          sed -i 's#https://cdn.simpleicons.org/linkedin/0A66C2#assets/profile/social/linkedin.svg#g' README.md
+
+          test -s assets/profile/social/whatsapp.svg
+          test -s assets/profile/social/safari.svg
+          test -s assets/profile/social/instagram.svg
+          test -s assets/profile/social/gmail.svg
+          test -s assets/profile/social/x.svg
+          test -s assets/profile/social/facebook.svg
+          test -s assets/profile/social/linkedin.svg
+          ! grep -q 'cdn.simpleicons.org' README.md
+
+      - name: Commit final README and vendored icons
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Mamdouh Aboammar"
+          git config user.email "58908124+imMamdouhaboammar@users.noreply.github.com"
+          git add README.md assets/profile/social
+          git diff --cached --check
+          git commit -m "fix(profile): vendor social icons"
+          git rm .github/workflows/profile-vendor-social-icons.yml
+          git commit -m "chore(profile): remove temporary icon workflow"
+          git push origin HEAD:fix/vendor-social-icons
