@@ -84,6 +84,9 @@ Keep READMEs, onboarding, decision notes, architecture context, and product docu
 **Issue discovery and bounded PRs**<br>
 Reproduce problems, gather evidence, narrow scope, write useful issues, and take small changes as far as a reviewable PR when they are inside my technical range. Engineering keeps the final judgment
 
+**Test design, user journeys, and acceptance scenarios**<br>
+Translate product intent into user stories, user journeys, acceptance scenarios, test suites, and test cases that cover expected behavior, edge cases, regressions, and failure paths. The goal is to give the team a clearer definition of what should be proven before we call something done
+
 **AI-assisted workflows and agentic tooling**<br>
 Look at repeated work, decide what AI can prepare safely, define where human review belongs, and turn recurring research, checks, or procedures into reusable skills, workflows, or small internal tools
 
@@ -156,6 +159,9 @@ I'm most useful when a team needs someone who can move between commercial contex
 
 **اكتشاف الـ<span dir="ltr">Issues</span> والـ<span dir="ltr">PRs</span> الصغيرة**<br>
 أعمل <span dir="ltr">reproduction</span> للمشكلة، أجمع دليل، أحدد الـ<span dir="ltr">scope</span>، وأكتب <span dir="ltr">Issue</span> مفهومة. ولو التغيير محدود وفي حدود اللي أقدر أتحقق منه، أوصله لـ<span dir="ltr">PR</span> صغيرة للمراجعة والقرار النهائي يفضل عند الفريق التقني
+
+**تصميم الـ<span dir="ltr">Tests</span> ومسارات المستخدم وسيناريوهات القبول**<br>
+أحول المطلوب من المنتج إلى <span dir="ltr">user stories</span> و<span dir="ltr">user journeys</span> و<span dir="ltr">acceptance scenarios</span> و<span dir="ltr">test suites</span> و<span dir="ltr">test cases</span> تغطي السلوك المتوقع والـ<span dir="ltr">edge cases</span> والـ<span dir="ltr">regressions</span> وحالات الفشل، بحيث يبقى عند الفريق تعريف أوضح لإيه اللي لازم يثبت قبل ما نقول إن الحاجة خلصت
 
 **شغل الـ<span dir="ltr">AI</span> والـ<span dir="ltr">Agentic Workflows</span>**<br>
 أشوف إيه بيتكرر، إيه الـ<span dir="ltr">AI</span> يقدر يجهزه بأمان، فين لازم مراجعة بشرية، وإيه ممكن يتحول لـ<span dir="ltr">Skill</span> أو <span dir="ltr">Workflow</span> أو أداة داخلية صغيرة بدل ما نبدأ من الصفر كل مرة
