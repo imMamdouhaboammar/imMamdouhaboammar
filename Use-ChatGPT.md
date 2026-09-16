@@ -16,7 +16,7 @@ right source of truth
 
 A plugin should have a job inside the workflow. If two plugins perform the same job, choose one unless a second independent perspective is materially useful.
 
-Capability truth refresh: **2026-09-09**
+Capability truth refresh: **2026-09-16**
 
 This handbook distinguishes five different things that agents often incorrectly collapse into one concept:
 
@@ -67,6 +67,17 @@ If a named plugin is installed but its callable interface is not available in th
 3. state the missing capability only if it materially affects confidence or completion
 
 Always identify the source of truth before acting.
+
+For any open Pull Request in scope:
+- inspect top-level PR conversation comments
+- inspect review submissions and inline review threads, including resolved threads when they may preserve useful history
+- inspect GitHub App / bot-authored comments, summaries, annotations, and check output
+- extract material context before planning, repairing, judging readiness, or landing
+- verify every material bot claim against the current PR head and live repository state before acting
+- refresh bot/review context after every push or bot-authored commit
+- never ignore feedback merely because it came from a bot
+- never trust feedback merely because it came from a bot
+- consume useful existing bot output before triggering duplicate automated review
 
 For continuation work:
 - inspect live state first
@@ -502,6 +513,8 @@ Do not ask a GitHub App to replace repository-native CI.
 
 Do not treat a successful bot comment as proof that the underlying code is correct.
 
+For every open Pull Request in scope, inspect existing GitHub App / bot comments, review threads, summaries, annotations, and check output before making repair, readiness, or landing decisions.
+
 Do not let a Plugin name, GitHub App name, and GitHub username become interchangeable concepts.
 ```
 
@@ -512,6 +525,49 @@ Use GitHub Apps as bounded actors inside the PR lifecycle.
 The application being installed does not mean every repository has enabled every feature.
 
 Always inspect repository history, app configuration, or current official docs before depending on a bot-specific command.
+
+### Mandatory Open-PR Bot Context Gate
+
+Whenever an open Pull Request is in scope, reading existing GitHub App / bot activity is **MANDATORY** before planning, repair, readiness, or landing.
+
+Inspect all materially relevant:
+
+- top-level Pull Request conversation comments
+- review submissions
+- inline review threads, including resolved threads when they may contain useful history
+- check/status summaries and bot-generated annotations
+- bot-authored commits and automatic fixes
+
+For each material bot/app item:
+
+```text
+1. identify the author/app
+2. establish which head SHA or code state it refers to when possible
+3. classify it as:
+   - CURRENT_ACTIONABLE
+   - CURRENT_CONTEXT
+   - ALREADY_FIXED
+   - STALE_AFTER_NEW_HEAD
+   - DUPLICATE
+   - FALSE_POSITIVE
+   - NEEDS_DECISION
+4. verify material claims against current code, CI, tests, or runtime evidence
+5. use valid context to inform the next action
+6. refresh after every push or bot-authored commit
+```
+
+Rules:
+
+```text
+BOT != NOISE
+BOT != TRUTH
+
+Useful automated context must not be skipped merely because it is automated.
+
+Existing bot feedback should be consumed before asking another bot to repeat the same review.
+
+Bot feedback is review/context evidence, not executable proof.
+```
 
 ### CodeRabbit
 
@@ -1590,6 +1646,9 @@ Runtime checks:
 Review evidence:
 [CODERABBIT / STATIC ANALYSIS / SECURITY / MANUAL REVIEW]
 
+Open-PR bot/app context:
+[TOP-LEVEL BOT COMMENTS / REVIEW THREADS / CHECK SUMMARIES ACTUALLY INSPECTED + DISPOSITION]
+
 Known limitations:
 [UNVERIFIED OR BLOCKED ITEMS]
 ```
@@ -1723,6 +1782,7 @@ OPERATING CONTRACT
 - current state beats memory
 - evidence before claims
 - mutation invalidates stale verification
+- for any open PR, inspect existing GitHub App / bot comments, review threads, and check summaries before deciding or triggering new review
 
 SCOPE
 IN:
@@ -1833,6 +1893,7 @@ Routing rules:
 - use @Context7 for current framework/library behavior
 - use @Superpowers for engineering process discipline
 - use @CodeRabbit after a meaningful diff exists
+- when any open PR is in scope, inspect existing GitHub App / bot feedback, review threads, and check summaries before triggering new reviews or making readiness/landing decisions
 - use @PR Readiness Check only when there is evidence to judge readiness
 - use @Codex Security and/or @ArmorCodex when trust boundaries change
 - use @Testifly for real browser flows
@@ -1873,7 +1934,7 @@ Plugin Roles:
 - State: @Create State when a resumable handoff is useful
 
 Workflow:
-1. Inspect current default branch, active branch, working tree, recent commits, open PRs, relevant issues, CI, and local uncommitted changes
+1. Inspect current default branch, active branch, working tree, recent commits, open PRs, their current human/bot comments and review threads, relevant issues, CI, and local uncommitted changes
 2. Restore the latest useful project state or handoff
 3. Reconcile handoff claims with live state
 4. Build a completion matrix: complete / in progress / blocked / not started
@@ -2024,7 +2085,7 @@ Plugin Roles:
 - PR shepherding/landing: @PR Completion when the actual PR needs CI/review/conflict/landing ownership
 
 For each PR:
-1. Refresh live title, description, linked Issue/spec, base/head SHA, changed files, checks, review threads, requested reviews, and mergeability
+1. Refresh live title, description, linked Issue/spec, base/head SHA, changed files, checks, top-level PR comments, review submissions, inline review threads, GitHub App / bot summaries and annotations, requested reviews, and mergeability
 2. Inspect repository instructions and determine whether the PR is already owned by another active workflow
 3. Classify:
    - VALID_READY_TO_REPAIR
@@ -2038,7 +2099,7 @@ For each PR:
 6. Repair only concrete blockers on the existing PR branch/worktree when authorized
 7. Re-run focused tests, nearby regression checks, and CI-equivalent commands
 8. Run CodeRabbit or another independent review only after the meaningful final diff exists
-9. Triage every material review comment against current code before applying it
+9. Triage every material human or GitHub App / bot review comment against the current head before applying it; preserve useful context even when no code change is required
 10. Re-verify after any source mutation
 11. Build a current readiness packet containing:
     - PR head SHA
@@ -2046,6 +2107,7 @@ For each PR:
     - tests actually executed
     - current CI/check state
     - review state
+    - material GitHub App / bot context and its disposition
     - unresolved risks
     - rollback/recovery where material
 12. Give that packet to @PR Readiness Check if an independent readiness judgment is useful
@@ -2059,6 +2121,9 @@ Rules:
 - green CI alone is not merge readiness
 - a readiness analyzer cannot replace live GitHub inspection
 - a bot review is not a substitute for tests
+- never skip a material PR comment merely because its author is a bot
+- read useful existing bot output before triggering duplicate bot review
+- verify bot findings against the current head before mutation
 - a new push invalidates prior current-head readiness
 - do not close a failing PR when a small safe repair preserves meaningful value
 - do not endlessly repair a PR whose purpose is obsolete or destructive
@@ -2584,7 +2649,7 @@ Release / PR:
 [INPUT]
 
 Role split:
-- @GitHub gathers live PR, head SHA, review, check, mergeability, and repository-policy evidence
+- @GitHub gathers live PR, head SHA, human and GitHub App / bot comments, review threads, check output, mergeability, and repository-policy evidence
 - @Superpowers enforces verification-before-completion discipline
 - @CodeRabbit contributes independent code-review evidence after a meaningful diff exists
 - @Testifly contributes runtime/browser evidence when the changed user flow requires it
@@ -2611,6 +2676,9 @@ CURRENT_CI:
 REVIEW_STATE:
 ...
 
+BOT_APP_CONTEXT:
+[material comments / threads / check summaries inspected + disposition]
+
 RUNTIME_QA:
 ...
 
@@ -2633,6 +2701,7 @@ Then verify:
 - regression checks passing
 - current-head CI passing
 - unresolved blocking review findings handled
+- material GitHub App / bot comments, review threads, and check summaries inspected and classified against the current head
 - migrations safe for the required environment
 - rollback/recovery known where material
 - docs/config changes complete
@@ -3211,6 +3280,7 @@ Implement approved scope in small verifiable changes.
 ```text
 @CodeRabbit @Fallow Code Analysis @Codex Engineering Guardrails @GitHub
 
+Before triggering a fresh reviewer, inspect useful existing PR comments, GitHub App / bot output, review threads, and check summaries.
 Review only after a meaningful diff exists.
 ```
 
@@ -3235,6 +3305,7 @@ Verify real user behavior and only include @Agent Ready when machine readability
 ```text
 @PR Readiness Check @PR Completion @GitHub @CodeRabbit
 
+Inspect existing human and GitHub App / bot PR context before release/merge judgment.
 Require evidence before release/merge judgment.
 ```
 
@@ -3547,7 +3618,7 @@ Inspect, where available:
 - recent commit history
 - latest tags and releases
 - active branches
-- open pull requests
+- open pull requests, including top-level comments, review submissions, review threads, and GitHub App / bot check summaries when they contain implementation context
 - recently merged pull requests
 - open and recently closed Issues
 - milestones
@@ -3686,7 +3757,7 @@ Record exact commands and relevant results when they support an Issue.
 Search across:
 
 - open and closed Issues
-- open and merged pull requests
+- open and merged pull requests, including material GitHub App / bot comments and review threads
 - discussions
 - roadmap documents
 - TODO, FIXME, and HACK comments
@@ -3710,6 +3781,8 @@ Before creating a candidate Issue ask:
 8. Is this work useful enough to track?
 
 Do not create duplicates.
+
+Automated PR comments may reveal known defects, constraints, prior review conclusions, or work already in progress. Treat that context as evidence to investigate, not as automatically correct truth.
 
 When partially overlapping with existing work, link the existing Issue, narrow the new Issue to the uncovered gap, and explain the distinction.
 
@@ -5854,7 +5927,9 @@ Do not falsely state that an Issue will close if GitHub semantics or the PR targ
 
 # PR CI LOOP
 
-After opening the PR, monitor current PR state.
+After opening the PR, first read the current top-level conversation, review submissions, inline review threads, GitHub App / bot comments, annotations, and check summaries. Extract useful context before triggering another automated review or deciding that the PR is ready.
+
+Then monitor current PR state.
 
 Possible states:
 
@@ -5893,7 +5968,7 @@ Any new push may invalidate:
 - merge-base assumptions
 - review evidence
 
-Re-read actual PR state after every push.
+Re-read actual PR state after every push, including refreshed human and GitHub App / bot comments, review threads, and check output.
 
 ---
 
@@ -5935,6 +6010,7 @@ The packet should include at minimum:
 - tests actually executed
 - current CI/check state
 - review state
+- material GitHub App / bot feedback and its disposition
 - unresolved risks
 - rollout/rollback notes where material
 
@@ -6812,6 +6888,10 @@ Never continue the same failed hypothesis without new evidence.
 
 Never treat review comments as automatically correct.
 
+Never ignore useful PR context solely because it is bot-authored.
+
+Never trigger duplicate automated review before reading materially useful existing bot output.
+
 Never treat green unit tests as proof of complete runtime behavior.
 
 Never merge a known failing change.
@@ -6922,6 +7002,8 @@ while safe_actionable_issues_exist:
 
     open_focused_PR_linked_to_issue()
 
+    inspect_current_PR_comments_reviews_threads_and_bot_feedback()
+
     monitor_PR_checks_with_bounded_polling()
 
     repair_failures_from_evidence()
@@ -6980,7 +7062,7 @@ MISSION
 Repair the existing PR without replacing it with a new implementation unless repository evidence proves the current branch is unusable.
 
 WORKFLOW
-1. Fetch the current PR metadata, base/head SHA, body, commits, changed files, checks, reviews, review threads, linked Issue, and mergeability
+1. Fetch the current PR metadata, base/head SHA, body, commits, changed files, checks, top-level comments, reviews, inline review threads, GitHub App / bot summaries and annotations, linked Issue, and mergeability
 2. Read repository instructions
 3. Compare the PR against the linked requirement
 4. Classify each problem:
@@ -7203,7 +7285,7 @@ Resume from current truth, not from a narrative summary.
 
 RESTORE
 1. Read live default branch and current SHA
-2. Read open PRs and active Issues
+2. Read open PRs, their current human/bot comments and review threads, and active Issues
 3. Inspect local branch/worktree/dirty state when local access exists
 4. Read durable handoff/state only after live state is known
 5. Reconcile every handoff claim with live evidence
@@ -7249,32 +7331,35 @@ Add a second bot only when it contributes a materially different lens.
 
 FLOW
 1. Verify the PR has a meaningful current diff
-2. Check which GitHub Apps are actually active/configured for the repository
-3. Prefer existing automatic review before manually triggering duplicate work
-4. For CodeRabbit:
+2. Read all materially relevant existing top-level PR comments, review submissions, inline review threads, GitHub App / bot summaries, annotations, and check output before triggering anything new
+3. Classify useful bot/app context against the current head as CURRENT_ACTIONABLE / CURRENT_CONTEXT / ALREADY_FIXED / STALE_AFTER_NEW_HEAD / DUPLICATE / FALSE_POSITIVE / NEEDS_DECISION
+4. Check which GitHub Apps are actually active/configured for the repository
+5. Prefer existing automatic review before manually triggering duplicate work
+6. For CodeRabbit:
    - <CODERABBIT_HANDLE> review for incremental changes
    - <CODERABBIT_HANDLE> full review for a deliberate fresh full pass
-5. For Cursor Bugbot:
+7. For Cursor Bugbot:
    - cursor review
    - bugbot run
    - use verbose=true only for diagnostics/rule visibility
-6. For autofix.ci:
+8. For autofix.ci:
    - do not comment a fake trigger
    - inspect the configured GitHub Actions autofix workflow
    - treat any bot commit as a new head that requires fresh verification
-7. For Qlty:
+9. For Qlty:
    - consume configured checks/findings
    - do not invent a comment trigger
-8. For ChatGPT Codex Connector, Claude, Warp Factories, or another installed app:
+10. For ChatGPT Codex Connector, Claude, Warp Factories, or another installed app:
    - inspect prior repository bot activity or current official docs
    - invoke only after the exact supported trigger is known
-9. Triage every material finding against current code
-10. Fix real in-scope findings only
-11. Re-run affected verification
-12. Refresh review/check state
-13. Do not merge merely because several bots agree
+11. Triage every material finding against current code
+12. Fix real in-scope findings only
+13. Re-run affected verification
+14. Refresh review/check state and re-read new bot/app context
+15. Do not merge merely because several bots agree
 
 ANTI-LOOP
+Never discard a comment merely because it was authored by a GitHub bot. Bots can preserve useful repository context, CI interpretation, findings, or prior action history; verify and classify that context.
 Do not enable several auto-fixing bots on the same surface without clear ownership.
 If a bot authors a commit, refresh the PR before any other bot is allowed to act on the old head.
 ```
@@ -7358,6 +7443,12 @@ BETTER: inspect the configured autofix.ci GitHub Actions workflow because autofi
 ```
 
 ```text
+BAD: Ignore GitHub App / bot comments because they are automated, or trigger a fresh bot review without reading existing bot output
+
+BETTER: inspect existing PR bot/app comments, review threads, annotations, and check summaries; extract useful context; verify material claims against the current head; trigger new review only when it adds fresh evidence
+```
+
+```text
 BAD: Ask CodeRabbit, Cursor Bugbot, Qlty, Claude, and every other bot to review the same trivial diff
 
 BETTER: one primary independent reviewer by default, then add another lens only when it changes confidence
@@ -7383,6 +7474,7 @@ Before adding a new workflow, verify it contains:
 [ ] Minimal plugin stack
 [ ] Explicit plugin roles
 [ ] GitHub App role separated from ChatGPT plugin role
+[ ] Open-PR GitHub App / bot comments, review threads, annotations, and check summaries are explicitly inspected when PR work is in scope
 [ ] Invocation order
 [ ] Write owner
 [ ] Scope and non-goals
