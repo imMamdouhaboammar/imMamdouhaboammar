@@ -1,0 +1,216 @@
+name: Patch Use-ChatGPT PR bot context
+
+on:
+  push:
+    paths:
+      - .github/workflows/patch-use-chatgpt-bot-context.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply handbook updates
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('Use-ChatGPT.md')
+          text = path.read_text()
+
+          def replace_once(old: str, new: str):
+              global text
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'Expected exactly one match, found {count}: {old[:120]!r}')
+              text = text.replace(old, new, 1)
+
+          replace_once(
+              'Capability truth refresh: **2026-09-09**',
+              'Capability truth refresh: **2026-09-16**',
+          )
+
+          replace_once(
+              'Always identify the source of truth before acting.\n\nFor continuation work:',
+              '''Always identify the source of truth before acting.\n\nFor any open Pull Request in scope:\n- inspect top-level PR conversation comments\n- inspect review submissions and inline review threads, including resolved threads when they may preserve useful history\n- inspect GitHub App / bot-authored comments, summaries, annotations, and check output\n- extract material context before planning, repairing, judging readiness, or landing\n- verify every material bot claim against the current PR head and live repository state before acting\n- refresh bot/review context after every push or bot-authored commit\n- never ignore feedback merely because it came from a bot\n- never trust feedback merely because it came from a bot\n- consume useful existing bot output before triggering duplicate automated review\n\nFor continuation work:''',
+          )
+
+          replace_once(
+              'Do not treat a successful bot comment as proof that the underlying code is correct.\n\nDo not let a Plugin name, GitHub App name, and GitHub username become interchangeable concepts.',
+              '''Do not treat a successful bot comment as proof that the underlying code is correct.\n\nFor every open Pull Request in scope, inspect existing GitHub App / bot comments, review threads, summaries, annotations, and check output before making repair, readiness, or landing decisions.\n\nDo not let a Plugin name, GitHub App name, and GitHub username become interchangeable concepts.''',
+          )
+
+          replace_once(
+              'Always inspect repository history, app configuration, or current official docs before depending on a bot-specific command.\n\n### CodeRabbit',
+              '''Always inspect repository history, app configuration, or current official docs before depending on a bot-specific command.\n\n### Mandatory Open-PR Bot Context Gate\n\nWhenever an open Pull Request is in scope, reading existing GitHub App / bot activity is **MANDATORY** before planning, repair, readiness, or landing.\n\nInspect all materially relevant:\n\n- top-level Pull Request conversation comments\n- review submissions\n- inline review threads, including resolved threads when they may contain useful history\n- check/status summaries and bot-generated annotations\n- bot-authored commits and automatic fixes\n\nFor each material bot/app item:\n\n```text\n1. identify the author/app\n2. establish which head SHA or code state it refers to when possible\n3. classify it as:\n   - CURRENT_ACTIONABLE\n   - CURRENT_CONTEXT\n   - ALREADY_FIXED\n   - STALE_AFTER_NEW_HEAD\n   - DUPLICATE\n   - FALSE_POSITIVE\n   - NEEDS_DECISION\n4. verify material claims against current code, CI, tests, or runtime evidence\n5. use valid context to inform the next action\n6. refresh after every push or bot-authored commit\n```\n\nRules:\n\n```text\nBOT != NOISE\nBOT != TRUTH\n\nUseful automated context must not be skipped merely because it is automated.\n\nExisting bot feedback should be consumed before asking another bot to repeat the same review.\n\nBot feedback is review/context evidence, not executable proof.\n```\n\n### CodeRabbit''',
+          )
+
+          replace_once(
+              'Review evidence:\n[CODERABBIT / STATIC ANALYSIS / SECURITY / MANUAL REVIEW]\n\nKnown limitations:',
+              '''Review evidence:\n[CODERABBIT / STATIC ANALYSIS / SECURITY / MANUAL REVIEW]\n\nOpen-PR bot/app context:\n[TOP-LEVEL BOT COMMENTS / REVIEW THREADS / CHECK SUMMARIES ACTUALLY INSPECTED + DISPOSITION]\n\nKnown limitations:''',
+          )
+
+          replace_once(
+              '- mutation invalidates stale verification\n\nSCOPE',
+              '''- mutation invalidates stale verification\n- for any open PR, inspect existing GitHub App / bot comments, review threads, and check summaries before deciding or triggering new review\n\nSCOPE''',
+          )
+
+          replace_once(
+              '- use @CodeRabbit after a meaningful diff exists\n- use @PR Readiness Check only when there is evidence to judge readiness',
+              '''- use @CodeRabbit after a meaningful diff exists\n- when any open PR is in scope, inspect existing GitHub App / bot feedback, review threads, and check summaries before triggering new reviews or making readiness/landing decisions\n- use @PR Readiness Check only when there is evidence to judge readiness''',
+          )
+
+          replace_once(
+              '1. Inspect current default branch, active branch, working tree, recent commits, open PRs, relevant issues, CI, and local uncommitted changes',
+              '1. Inspect current default branch, active branch, working tree, recent commits, open PRs, their current human/bot comments and review threads, relevant issues, CI, and local uncommitted changes',
+          )
+
+          replace_once(
+              '1. Refresh live title, description, linked Issue/spec, base/head SHA, changed files, checks, review threads, requested reviews, and mergeability',
+              '1. Refresh live title, description, linked Issue/spec, base/head SHA, changed files, checks, top-level PR comments, review submissions, inline review threads, GitHub App / bot summaries and annotations, requested reviews, and mergeability',
+          )
+
+          replace_once(
+              '9. Triage every material review comment against current code before applying it\n10. Re-verify after any source mutation',
+              '''9. Triage every material human or GitHub App / bot review comment against the current head before applying it; preserve useful context even when no code change is required\n10. Re-verify after any source mutation''',
+          )
+
+          replace_once(
+              '    - review state\n    - unresolved risks',
+              '''    - review state\n    - material GitHub App / bot context and its disposition\n    - unresolved risks''',
+          )
+
+          replace_once(
+              '- a bot review is not a substitute for tests\n- a new push invalidates prior current-head readiness',
+              '''- a bot review is not a substitute for tests\n- never skip a material PR comment merely because its author is a bot\n- read useful existing bot output before triggering duplicate bot review\n- verify bot findings against the current head before mutation\n- a new push invalidates prior current-head readiness''',
+          )
+
+          replace_once(
+              '- @GitHub gathers live PR, head SHA, review, check, mergeability, and repository-policy evidence',
+              '- @GitHub gathers live PR, head SHA, human and GitHub App / bot comments, review threads, check output, mergeability, and repository-policy evidence',
+          )
+
+          replace_once(
+              'REVIEW_STATE:\n...\n\nRUNTIME_QA:',
+              '''REVIEW_STATE:\n...\n\nBOT_APP_CONTEXT:\n[material comments / threads / check summaries inspected + disposition]\n\nRUNTIME_QA:''',
+          )
+
+          replace_once(
+              '- unresolved blocking review findings handled\n- migrations safe for the required environment',
+              '''- unresolved blocking review findings handled\n- material GitHub App / bot comments, review threads, and check summaries inspected and classified against the current head\n- migrations safe for the required environment''',
+          )
+
+          replace_once(
+              'Review only after a meaningful diff exists.\n```\n\n## Security Stage',
+              '''Before triggering a fresh reviewer, inspect useful existing PR comments, GitHub App / bot output, review threads, and check summaries.\nReview only after a meaningful diff exists.\n```\n\n## Security Stage''',
+          )
+
+          replace_once(
+              'Require evidence before release/merge judgment.\n```\n\n## Handoff / Long Session State',
+              '''Inspect existing human and GitHub App / bot PR context before release/merge judgment.\nRequire evidence before release/merge judgment.\n```\n\n## Handoff / Long Session State''',
+          )
+
+          replace_once(
+              '- open pull requests\n- recently merged pull requests',
+              '''- open pull requests, including top-level comments, review submissions, review threads, and GitHub App / bot check summaries when they contain implementation context\n- recently merged pull requests''',
+          )
+
+          replace_once(
+              '- open and merged pull requests\n- discussions',
+              '''- open and merged pull requests, including material GitHub App / bot comments and review threads\n- discussions''',
+          )
+
+          replace_once(
+              'Do not create duplicates.\n\nWhen partially overlapping with existing work,',
+              '''Do not create duplicates.\n\nAutomated PR comments may reveal known defects, constraints, prior review conclusions, or work already in progress. Treat that context as evidence to investigate, not as automatically correct truth.\n\nWhen partially overlapping with existing work,''',
+          )
+
+          replace_once(
+              'After opening the PR, monitor current PR state.\n\nPossible states:',
+              '''After opening the PR, first read the current top-level conversation, review submissions, inline review threads, GitHub App / bot comments, annotations, and check summaries. Extract useful context before triggering another automated review or deciding that the PR is ready.\n\nThen monitor current PR state.\n\nPossible states:''',
+          )
+
+          replace_once(
+              'Re-read actual PR state after every push.\n\n---\n\n# PR READINESS GATE',
+              '''Re-read actual PR state after every push, including refreshed human and GitHub App / bot comments, review threads, and check output.\n\n---\n\n# PR READINESS GATE''',
+          )
+
+          replace_once(
+              '- review state\n- unresolved risks\n- rollout/rollback notes where material',
+              '''- review state\n- material GitHub App / bot feedback and its disposition\n- unresolved risks\n- rollout/rollback notes where material''',
+          )
+
+          replace_once(
+              'Never treat review comments as automatically correct.\n\nNever treat green unit tests as proof of complete runtime behavior.',
+              '''Never treat review comments as automatically correct.\n\nNever ignore useful PR context solely because it is bot-authored.\n\nNever trigger duplicate automated review before reading materially useful existing bot output.\n\nNever treat green unit tests as proof of complete runtime behavior.''',
+          )
+
+          replace_once(
+              '    open_focused_PR_linked_to_issue()\n\n    monitor_PR_checks_with_bounded_polling()',
+              '''    open_focused_PR_linked_to_issue()\n\n    inspect_current_PR_comments_reviews_threads_and_bot_feedback()\n\n    monitor_PR_checks_with_bounded_polling()''',
+          )
+
+          replace_once(
+              '1. Fetch the current PR metadata, base/head SHA, body, commits, changed files, checks, reviews, review threads, linked Issue, and mergeability',
+              '1. Fetch the current PR metadata, base/head SHA, body, commits, changed files, checks, top-level comments, reviews, inline review threads, GitHub App / bot summaries and annotations, linked Issue, and mergeability',
+          )
+
+          replace_once(
+              '2. Read open PRs and active Issues',
+              '2. Read open PRs, their current human/bot comments and review threads, and active Issues',
+          )
+
+          replace_once(
+              '''FLOW\n1. Verify the PR has a meaningful current diff\n2. Check which GitHub Apps are actually active/configured for the repository\n3. Prefer existing automatic review before manually triggering duplicate work''',
+              '''FLOW\n1. Verify the PR has a meaningful current diff\n2. Read all materially relevant existing top-level PR comments, review submissions, inline review threads, GitHub App / bot summaries, annotations, and check output before triggering anything new\n3. Classify useful bot/app context against the current head as CURRENT_ACTIONABLE / CURRENT_CONTEXT / ALREADY_FIXED / STALE_AFTER_NEW_HEAD / DUPLICATE / FALSE_POSITIVE / NEEDS_DECISION\n4. Check which GitHub Apps are actually active/configured for the repository\n5. Prefer existing automatic review before manually triggering duplicate work''',
+          )
+
+          replace_once(
+              '''4. For CodeRabbit:\n   - <CODERABBIT_HANDLE> review for incremental changes\n   - <CODERABBIT_HANDLE> full review for a deliberate fresh full pass\n5. For Cursor Bugbot:\n   - cursor review\n   - bugbot run\n   - use verbose=true only for diagnostics/rule visibility\n6. For autofix.ci:''',
+              '''6. For CodeRabbit:\n   - <CODERABBIT_HANDLE> review for incremental changes\n   - <CODERABBIT_HANDLE> full review for a deliberate fresh full pass\n7. For Cursor Bugbot:\n   - cursor review\n   - bugbot run\n   - use verbose=true only for diagnostics/rule visibility\n8. For autofix.ci:''',
+          )
+
+          replace_once(
+              '''7. For Qlty:\n   - consume configured checks/findings\n   - do not invent a comment trigger\n8. For ChatGPT Codex Connector, Claude, Warp Factories, or another installed app:\n   - inspect prior repository bot activity or current official docs\n   - invoke only after the exact supported trigger is known\n9. Triage every material finding against current code\n10. Fix real in-scope findings only\n11. Re-run affected verification\n12. Refresh review/check state\n13. Do not merge merely because several bots agree''',
+              '''9. For Qlty:\n   - consume configured checks/findings\n   - do not invent a comment trigger\n10. For ChatGPT Codex Connector, Claude, Warp Factories, or another installed app:\n   - inspect prior repository bot activity or current official docs\n   - invoke only after the exact supported trigger is known\n11. Triage every material finding against current code\n12. Fix real in-scope findings only\n13. Re-run affected verification\n14. Refresh review/check state and re-read new bot/app context\n15. Do not merge merely because several bots agree''',
+          )
+
+          replace_once(
+              '''ANTI-LOOP\nDo not enable several auto-fixing bots on the same surface without clear ownership.''',
+              '''ANTI-LOOP\nNever discard a comment merely because it was authored by a GitHub bot. Bots can preserve useful repository context, CI interpretation, findings, or prior action history; verify and classify that context.\nDo not enable several auto-fixing bots on the same surface without clear ownership.''',
+          )
+
+          replace_once(
+              '''```text\nBAD: Ask CodeRabbit, Cursor Bugbot, Qlty, Claude, and every other bot to review the same trivial diff\n\nBETTER: one primary independent reviewer by default, then add another lens only when it changes confidence\n```''',
+              '''```text\nBAD: Ignore GitHub App / bot comments because they are automated, or trigger a fresh bot review without reading existing bot output\n\nBETTER: inspect existing PR bot/app comments, review threads, annotations, and check summaries; extract useful context; verify material claims against the current head; trigger new review only when it adds fresh evidence\n```\n\n```text\nBAD: Ask CodeRabbit, Cursor Bugbot, Qlty, Claude, and every other bot to review the same trivial diff\n\nBETTER: one primary independent reviewer by default, then add another lens only when it changes confidence\n```''',
+          )
+
+          replace_once(
+              '[ ] GitHub App role separated from ChatGPT plugin role\n[ ] Invocation order',
+              '''[ ] GitHub App role separated from ChatGPT plugin role\n[ ] Open-PR GitHub App / bot comments, review threads, annotations, and check summaries are explicitly inspected when PR work is in scope\n[ ] Invocation order''',
+          )
+
+          path.write_text(text)
+          PY
+
+          rm -f .github/workflows/patch-use-chatgpt-bot-context.yml
+
+          git diff --check
+          git diff -- Use-ChatGPT.md
+
+      - name: Commit handbook update and remove one-time workflow
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Use-ChatGPT.md .github/workflows/patch-use-chatgpt-bot-context.yml
+          git commit -m "docs: require GitHub bot context in PR workflows"
+          git push
