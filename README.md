@@ -1,4 +1,4 @@
-![Uploading 998630e3-6b03-458f-a255-003cc4fcf38a.png…]()
+<p align="center"><img src="https://raw.githubusercontent.com/imMamdouhaboammar/imMamdouhaboammar/main/998630e3-6b03-458f-a255-003cc4fcf38a.png" alt="Mamdouh Aboammar pixel art banner" width="100%"></p>
 <div align="center">
 
 # Mamdouh Aboammar
