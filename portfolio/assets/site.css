@@ -171,7 +171,9 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--r-sm);
 }
 
-/* Text for screen readers only, such as the note that a link opens a new tab. */
+/* Text for screen readers only, such as the note that a link opens a new tab.
+   Matches the definition in assets/portfolio/styles.css. The two stay separate
+   copies because this page deliberately loads no stylesheet but its own. */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -180,6 +182,7 @@ a { color: inherit; text-decoration: none; }
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
