@@ -23,8 +23,6 @@ export const LINKS = {
   prepilotOrg: 'https://prepilot-system-agency.space/',
   whatsapp: 'https://wa.me/201092677269',
   email: 'mamdouhfces1997@gmail.com',
-  catalog: '../REPOSITORIES.md',
-  engine: '../index.html',
 };
 
 export const STATS = [

@@ -345,7 +345,7 @@ function builds(t) {
         </article>`).join('\n        ')}
       </div>
       <p class="section-foot">
-        <a class="btn btn-ghost" href="${LINKS.catalog}">${esc(t.sections.builds.cta)}${icon('arrow', 'i i-arrow')}</a>
+        <a class="btn btn-ghost" href="${t.depth}REPOSITORIES.md">${esc(t.sections.builds.cta)}${icon('arrow', 'i i-arrow')}</a>
       </p>
     </section>`;
 }
