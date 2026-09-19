@@ -52,7 +52,11 @@
     });
 
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') setMenu(false);
+      if (event.key !== 'Escape') return;
+      if (menuToggle.getAttribute('aria-expanded') !== 'true') return;
+      /* Closing hides whatever inside the drawer had focus, so hand it back. */
+      setMenu(false);
+      menuToggle.focus();
     });
 
     document.addEventListener('click', function (event) {
