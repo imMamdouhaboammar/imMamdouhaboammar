@@ -184,7 +184,7 @@ function head(t) {
   <meta name="twitter:description" content="${esc(t.description)}">
   <meta name="twitter:image" content="${ABS}/${SITE.banner}">
 
-  <link rel="icon" href="${d}${SITE.avatar}" type="image/png">
+  <link rel="icon" href="${d}${SITE.avatar}">
   <link rel="apple-touch-icon" href="${d}${SITE.avatar}">
   <link rel="help" href="${d}llms.txt" type="text/plain" title="LLM context pack">
   <link rel="sitemap" type="application/xml" href="${d}sitemap.xml">
@@ -195,6 +195,28 @@ function head(t) {
   <link rel="stylesheet" href="${t.code === 'ar' ? '../assets/site.css' : 'assets/site.css'}">
 
   ${structuredData(t)}
+  <noscript><style>
+    /* The narrow-viewport nav is a drawer that only script can open, so with
+       script off it lays out inline instead and the menu button goes away. */
+    @media (max-width: 1220px) {
+      .topbar { flex-wrap: wrap; border-radius: var(--r-lg); }
+      .nav {
+        position: static;
+        order: 3;
+        flex-basis: 100%;
+        margin-inline: 0;
+        padding: 8px 0 2px;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: none;
+        border: 0;
+        box-shadow: none;
+      }
+      .nav-list { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+      .menu-btn { display: none; }
+    }
+  </style></noscript>
   <script>
     /* Applied before first paint so the chosen theme never flashes. */
     (function () {
@@ -303,7 +325,7 @@ function stats(t) {
         <strong class="stat-value">${esc(s.value)}</strong>
         <span class="stat-label">${esc(s[t.code])}</span>
       </div>`).join('\n      ')}
-      <p class="stats-note">${esc(t.statsNote)}</p>
+      <p class="stats-note">${esc(t.statsNote.replace('{date}', SITE.updated))}</p>
     </section>`;
 }
 
@@ -443,7 +465,7 @@ function contact(t) {
           </div>
         </div>
 
-        <button class="btn btn-ghost btn-sm" id="copy-email" type="button" data-email="${LINKS.email}" data-copied="${esc(t.copied)}">
+        <button class="btn btn-ghost btn-sm" id="copy-email" type="button" data-email="${LINKS.email}" data-copied="${esc(t.copied)}" data-failed="${esc(t.copyFailed)}">
           ${icon('copy')}<span>${esc(t.copyEmail)}</span>
         </button>
       </div>

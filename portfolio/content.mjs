@@ -277,7 +277,7 @@ export const LOCALES = {
       { icon: 'pin', label: 'Egypt · KSA · UAE · GCC', href: null },
     ],
     statsTitle: 'Public build record',
-    statsNote: 'Counts refreshed automatically from the GitHub profile.',
+    statsNote: 'Snapshot of the GitHub profile, committed on {date}.',
     sections: {
       work: { kicker: 'What I own', title: 'Six places I can take real responsibility', lede: 'The useful part of this profile sits between commercial context and engineering constraints. These are the pieces of work I can carry end to end.' },
       builds: { kicker: 'Builds', title: 'Systems getting my attention right now', lede: 'Selected, not exhaustive. Each one is a public repository you can read, clone and challenge.', cta: 'View the full catalogue of 142 repositories' },
@@ -317,6 +317,7 @@ export const LOCALES = {
     newTab: 'opens in a new tab',
     copyEmail: 'Copy email',
     copied: 'Copied',
+    copyFailed: 'Copy blocked, select it above',
     footerNote: 'Built as a static page. No tracking, no frameworks, no build-time surprises.',
     footerLinks: 'Elsewhere',
     lastUpdated: 'Last updated',
@@ -366,7 +367,7 @@ LOCALES.ar = {
     { icon: 'pin', label: 'مصر · السعودية · الإمارات · الخليج', href: null },
   ],
   statsTitle: 'سجل الشغل العام',
-  statsNote: 'الأرقام بتتحدث أوتوماتيك من بروفايل GitHub.',
+  statsNote: 'لقطة من بروفايل GitHub، متسجلة بتاريخ {date}.',
   sections: {
     work: { kicker: 'مسؤولياتي', title: 'ست مساحات أقدر أتحمل مسؤوليتها كاملة', lede: 'الجزء المفيد في البروفايل ده موجود بين السياق التجاري والقيود الهندسية. دي المهام اللي أقدر أمشي فيها من أول الفكرة لحد التسليم.' },
     builds: { kicker: 'الشغل', title: 'الأنظمة اللي واخدة وقتي دلوقتي', lede: 'اختيار من الشغل، مش الكل. كل واحد منهم مستودع عام تقدر تقراه وتنسخه وتناقشه.', cta: 'افتح الكتالوج الكامل لـ 142 مستودع' },
@@ -406,6 +407,7 @@ LOCALES.ar = {
   newTab: 'بيفتح في تاب جديد',
   copyEmail: 'انسخ الإيميل',
   copied: 'اتنسخ',
+  copyFailed: 'النسخ مرفوض، حدده من فوق',
   footerNote: 'الصفحة دي Static بالكامل. من غير تتبع، ومن غير Frameworks، ومن غير مفاجآت وقت البناء.',
   footerLinks: 'حسابات تانية',
   lastUpdated: 'آخر تحديث',

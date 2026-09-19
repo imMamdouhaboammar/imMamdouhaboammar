@@ -106,8 +106,9 @@
       var flight = bit.animate([
         { transform: 'translate(-50%, -50%) rotate(0deg)', opacity: 1 },
         {
-          transform: 'translate(' + (Math.cos(angle) * distance - 50) + '%, ' +
-            (Math.sin(angle) * distance + 120 - 50) + '%) rotate(' + (Math.random() * 540 - 270) + 'deg)',
+          transform: 'translate(calc(-50% + ' + Math.cos(angle) * distance + 'px), ' +
+            'calc(-50% + ' + (Math.sin(angle) * distance + 120) + 'px)) rotate(' +
+            (Math.random() * 540 - 270) + 'deg)',
           opacity: 0,
         },
       ], { duration: 900 + Math.random() * 500, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' });
@@ -120,17 +121,31 @@
 
   var copyBtn = document.getElementById('copy-email');
 
-  if (copyBtn && navigator.clipboard) {
+  if (copyBtn) {
     var copyLabel = copyBtn.querySelector('span');
     var original = copyLabel ? copyLabel.textContent : '';
 
-    copyBtn.addEventListener('click', function () {
-      navigator.clipboard.writeText(copyBtn.dataset.email || '').then(function () {
-        if (!copyLabel) return;
-        copyLabel.textContent = copyBtn.dataset.copied || original;
-        burst(copyBtn);
-        window.setTimeout(function () { copyLabel.textContent = original; }, 2000);
+    /* No clipboard API (older browser, or a page served over plain HTTP): the
+       button could never work, so it goes away and the address stays readable
+       in the contact card above it. */
+    if (!navigator.clipboard) {
+      copyBtn.hidden = true;
+    } else {
+      var restore = function () {
+        if (copyLabel) copyLabel.textContent = original;
+      };
+
+      copyBtn.addEventListener('click', function () {
+        navigator.clipboard.writeText(copyBtn.dataset.email || '').then(function () {
+          if (copyLabel) copyLabel.textContent = copyBtn.dataset.copied || original;
+          burst(copyBtn);
+          window.setTimeout(restore, 2000);
+        }, function () {
+          /* Permission denied or a blocked write: say so instead of looking idle. */
+          if (copyLabel) copyLabel.textContent = copyBtn.dataset.failed || original;
+          window.setTimeout(restore, 2600);
+        });
       });
-    });
+    }
   }
 })();

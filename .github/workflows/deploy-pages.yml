@@ -35,6 +35,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify the committed portfolio HTML matches its source
+        run: |
+          node portfolio/build.mjs
+          git diff --exit-code -- portfolio/index.html portfolio/ar/index.html \
+            || { echo "::error::portfolio HTML is stale. Run 'node portfolio/build.mjs' and commit the result."; exit 1; }
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

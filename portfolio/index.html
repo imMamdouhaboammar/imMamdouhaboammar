@@ -40,7 +40,7 @@
   <meta name="twitter:description" content="Mamdouh Aboammar works between business questions and clean engineering handoffs: product research, PRDs, technical docs, bounded PRs, test design, and AI-assisted workflows. 142 public and private builds. Available for freelance, full-time and part-time work across Egypt, Saudi Arabia, the UAE and the GCC.">
   <meta name="twitter:image" content="https://immamdouhaboammar.github.io/imMamdouhaboammar/998630e3-6b03-458f-a255-003cc4fcf38a.png">
 
-  <link rel="icon" href="../assets/portfolio/avatar.png" type="image/png">
+  <link rel="icon" href="../assets/portfolio/avatar.png">
   <link rel="apple-touch-icon" href="../assets/portfolio/avatar.png">
   <link rel="help" href="../llms.txt" type="text/plain" title="LLM context pack">
   <link rel="sitemap" type="application/xml" href="../sitemap.xml">
@@ -422,6 +422,28 @@
     }
   ]
 }</script>
+  <noscript><style>
+    /* The narrow-viewport nav is a drawer that only script can open, so with
+       script off it lays out inline instead and the menu button goes away. */
+    @media (max-width: 1220px) {
+      .topbar { flex-wrap: wrap; border-radius: var(--r-lg); }
+      .nav {
+        position: static;
+        order: 3;
+        flex-basis: 100%;
+        margin-inline: 0;
+        padding: 8px 0 2px;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: none;
+        border: 0;
+        box-shadow: none;
+      }
+      .nav-list { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+      .menu-btn { display: none; }
+    }
+  </style></noscript>
   <script>
     /* Applied before first paint so the chosen theme never flashes. */
     (function () {
@@ -530,7 +552,7 @@
         <strong class="stat-value">81</strong>
         <span class="stat-label">Day contribution streak</span>
       </div>
-      <p class="stats-note">Counts refreshed automatically from the GitHub profile.</p>
+      <p class="stats-note">Snapshot of the GitHub profile, committed on 2026-09-19.</p>
     </section>
     <section class="marquee" aria-label="Things I produce">
       <ul class="marquee-track"><li data-accent="1">Product research</li><li data-accent="2">PRDs</li><li data-accent="3">Technical docs</li><li data-accent="4">Bounded PRs</li><li data-accent="5">Test design</li><li data-accent="6">Agent workflows</li><li data-accent="1">Evidence gates</li><li data-accent="2">Arabic conversion</li><li data-accent="3">AI evaluation</li><li data-accent="4">Build in public</li></ul>
@@ -915,7 +937,7 @@
           </div>
         </div>
 
-        <button class="btn btn-ghost btn-sm" id="copy-email" type="button" data-email="mamdouhfces1997@gmail.com" data-copied="Copied">
+        <button class="btn btn-ghost btn-sm" id="copy-email" type="button" data-email="mamdouhfces1997@gmail.com" data-copied="Copied" data-failed="Copy blocked, select it above">
           <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copy email</span>
         </button>
       </div>
