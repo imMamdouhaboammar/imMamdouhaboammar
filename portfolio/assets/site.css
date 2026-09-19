@@ -171,6 +171,19 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--r-sm);
 }
 
+/* Text for screen readers only, such as the note that a link opens a new tab. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .skip-link {
   position: absolute;
   inset-block-start: -100px;

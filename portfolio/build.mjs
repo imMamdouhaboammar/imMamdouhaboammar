@@ -49,12 +49,16 @@ const spark = (cls) => `<svg class="spark ${cls}" viewBox="0 0 24 24" fill="curr
 const squiggle = () => `<svg class="squiggle" viewBox="0 0 240 12" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M2 8c14-8 28 8 42 0s28-8 42 0 28 8 42 0 28-8 42 0 28 8 42 0"/></svg>`;
 
 const spinBadge = (t) => `<div class="spin-badge" aria-hidden="true">
-            <svg viewBox="0 0 120 120">
+            <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">
               <defs><path id="ring-${t.code}" d="M60 60m-42 0a42 42 0 1 1 84 0a42 42 0 1 1-84 0"/></defs>
               <text><textPath href="#ring-${t.code}" startOffset="0">${esc(t.badgeRing)}</textPath></text>
             </svg>
             <span class="spin-badge-core">${icon('arrow', 'i i-arrow')}</span>
           </div>`;
+
+/* Links that leave the page: hardened rel, plus a note only assistive tech reads. */
+const EXT = ' target="_blank" rel="noopener noreferrer"';
+const srNewTab = (t) => `<span class="sr-only"> (${esc(t.newTab)})</span>`;
 
 const jsonld = (obj) => `<script type="application/ld+json">${JSON.stringify(obj, null, 2).replace(/</g, '\\u003c')}</script>`;
 
@@ -251,7 +255,7 @@ function hero(t) {
   const pills = t.contactPills.map((p) => {
     const inner = `${icon(p.icon)}<span>${esc(p.label)}</span>`;
     return p.href
-      ? `<a class="pill pill-dark" href="${esc(p.href)}"${p.href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>${inner}</a>`
+      ? `<a class="pill pill-dark" href="${esc(p.href)}"${p.href.startsWith('http') ? EXT : ''}>${inner}${p.href.startsWith('http') ? srNewTab(t) : ''}</a>`
       : `<span class="pill pill-dark">${inner}</span>`;
   }).join('\n          ');
 
@@ -284,9 +288,9 @@ function hero(t) {
             ${esc(t.hero.availability)}
           </figcaption>
         </figure>
-        <a class="card card-link" href="${LINKS.prepilot}" target="_blank" rel="noopener" data-accent="4">
+        <a class="card card-link" href="${LINKS.prepilot}"${EXT} data-accent="4">
           <span class="card-link-label">${esc(t.background.prepilotTitle)}</span>
-          <strong class="card-link-value">PrePilot</strong>
+          <strong class="card-link-value">PrePilot${srNewTab(t)}</strong>
           <span class="card-link-go" aria-hidden="true">${icon('arrow', 'i i-arrow')}</span>
         </a>
       </aside>
@@ -331,8 +335,8 @@ function builds(t) {
       ${sectionHead(t.sections.builds, 'builds')}
       <div class="grid grid-3">
         ${PROJECTS.map((p, i) => `<article class="card card-project" data-accent="${(i % 6) + 1}">
-          <a class="project-link" href="${p.url}" target="_blank" rel="noopener">
-            <h3 class="card-title">${esc(p.name)}<span class="project-go" aria-hidden="true">${icon('arrow', 'i i-arrow')}</span></h3>
+          <a class="project-link" href="${p.url}"${EXT}>
+            <h3 class="card-title">${esc(p.name)}${srNewTab(t)}<span class="project-go" aria-hidden="true">${icon('arrow', 'i i-arrow')}</span></h3>
           </a>
           <p class="card-body">${esc(p[t.code])}</p>
           <ul class="tag-row">
@@ -391,7 +395,7 @@ function background(t) {
         <div class="card card-prepilot">
           <h3 class="card-title">${esc(b.prepilotTitle)}</h3>
           <p class="card-body">${esc(b.prepilotBody)}</p>
-          <a class="btn btn-primary btn-sm" href="${LINKS.prepilot}" target="_blank" rel="noopener">${esc(b.prepilotCta)}${icon('arrow', 'i i-arrow')}</a>
+          <a class="btn btn-primary btn-sm" href="${LINKS.prepilot}"${EXT}>${esc(b.prepilotCta)}${srNewTab(t)}${icon('arrow', 'i i-arrow')}</a>
         </div>
       </div>
     </section>`;
@@ -419,11 +423,11 @@ function contact(t) {
         <p class="section-lede">${esc(t.sections.contact.lede)}</p>
 
         <div class="contact-grid">
-          ${t.contactCards.map((c, i) => `<a class="contact-card" data-accent="${i + 1}" href="${esc(c.href)}"${c.href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>
+          ${t.contactCards.map((c, i) => `<a class="contact-card" data-accent="${i + 1}" href="${esc(c.href)}"${c.href.startsWith('http') ? EXT : ''}>
             <span class="contact-icon" aria-hidden="true">${icon(c.icon)}</span>
             <span class="contact-meta">
               <small>${esc(c.label)}</small>
-              <strong dir="${c.label === 'الإيميل' || c.label === 'Email' ? 'ltr' : 'auto'}">${esc(c.value)}</strong>
+              <strong dir="${c.label === 'الإيميل' || c.label === 'Email' ? 'ltr' : 'auto'}">${esc(c.value)}${c.href.startsWith('http') ? srNewTab(t) : ''}</strong>
             </span>
           </a>`).join('\n          ')}
         </div>
@@ -451,7 +455,7 @@ function footer(t) {
     <div class="footer-inner">
       <p class="footer-note">${esc(t.footerNote)}</p>
       <nav class="footer-links" aria-label="${esc(t.footerLinks)}">
-        ${SOCIALS.map((s) => `<a href="${s.href}" target="_blank" rel="noopener me">${esc(s.label)}</a>`).join('\n        ')}
+        ${SOCIALS.map((s) => `<a href="${s.href}" target="_blank" rel="noopener noreferrer me">${esc(s.label)}${srNewTab(t)}</a>`).join('\n        ')}
       </nav>
       <p class="footer-meta">
         <span>${esc(t.lastUpdated)}: <time datetime="${SITE.updated}">${SITE.updated}</time></span>
