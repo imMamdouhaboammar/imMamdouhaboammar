@@ -7,7 +7,12 @@ on:
     paths:
       - 'index.html'
       - 'assets/**'
+      - 'portfolio/**'
       - 'REPOSITORIES.md'
+      - 'llms.txt'
+      - 'llms-full.txt'
+      - 'sitemap.xml'
+      - 'robots.txt'
       - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 

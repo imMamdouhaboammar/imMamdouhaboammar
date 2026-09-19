@@ -1,0 +1,422 @@
+// Bilingual content model for the portfolio page.
+// Every string here is sourced from the profile README, PRODUCT.md and llms.txt.
+// Both locales share one shape so the EN and AR pages stay structurally identical.
+
+export const SITE = {
+  origin: 'https://immamdouhaboammar.github.io',
+  base: '/imMamdouhaboammar',
+  enPath: '/portfolio/',
+  arPath: '/portfolio/ar/',
+  avatar: 'assets/portfolio/avatar.png',
+  banner: '998630e3-6b03-458f-a255-003cc4fcf38a.png',
+  updated: '2026-09-19',
+};
+
+export const LINKS = {
+  github: 'https://github.com/imMamdouhaboammar',
+  linkedin: 'https://www.linkedin.com/in/mamdouh-aboammar/',
+  x: 'https://x.com/Bo_ammarrr',
+  instagram: 'https://www.instagram.com/boammarrr/',
+  facebook: 'https://www.facebook.com/mamdouhboammar',
+  website: 'https://mamdouhaboammar.com/',
+  prepilot: 'https://app.prepilot-system-agency.space/',
+  prepilotOrg: 'https://prepilot-system-agency.space/',
+  whatsapp: 'https://wa.me/201092677269',
+  email: 'mamdouhfces1997@gmail.com',
+  catalog: '../REPOSITORIES.md',
+  engine: '../index.html',
+};
+
+export const STATS = [
+  { value: '142', en: 'Public and private repositories', ar: 'مستودع عام وخاص' },
+  { value: '4,869', en: 'Commit contributions', ar: 'مساهمة Commit' },
+  { value: '8,947', en: 'Contributions this year', ar: 'مساهمة خلال السنة' },
+  { value: '81', en: 'Day contribution streak', ar: 'يوم شغل متواصل' },
+];
+
+export const PROJECTS = [
+  {
+    name: 'Get Fable', slug: 'get-fable',
+    url: 'https://github.com/imMamdouhaboammar/get-fable',
+    en: 'A coding-agent harness built around research, planning, TDD, verification, review, red-teaming, recovery, and persistent context.',
+    ar: 'بيئة تشغيل لوكلاء الكود مبنية حول البحث والتخطيط وTDD والتحقق والمراجعة واختبار الاختراق والتعافي والسياق المستمر.',
+    tags: ['planning', 'TDD', 'verification'],
+  },
+  {
+    name: 'Agent Kernel', slug: 'agent-kernel',
+    url: 'https://github.com/imMamdouhaboammar/agent-kernel',
+    en: 'Memory, governance, trust boundaries, and failure lessons for coding agents across multiple hosts.',
+    ar: 'ذاكرة وحوكمة وحدود ثقة ودروس أعطال لوكلاء الكود عبر أكثر من بيئة تشغيل.',
+    tags: ['agent memory', 'governance', 'trust boundaries'],
+  },
+  {
+    name: 'Riqor', slug: 'riqor',
+    url: 'https://github.com/imMamdouhaboammar/riqor',
+    en: 'Evidence gates and session continuity for AI coding agents. No evidence, no ship.',
+    ar: 'بوابات إثبات واستمرارية جلسة لوكلاء الكود. الشغل يعدي لما يبقى معاه دليل.',
+    tags: ['evidence gates', 'session continuity'],
+  },
+  {
+    name: 'Delegate Team', slug: 'delegate-team',
+    url: 'https://github.com/imMamdouhaboammar/delegate-team',
+    en: 'A CLI for routing bounded coding work across local agents with explicit task ownership and a reviewable shipping chain.',
+    ar: 'أداة CLI لتوزيع مهام كود محدودة النطاق على وكلاء محليين، مع ملكية واضحة لكل مهمة وسلسلة تسليم قابلة للمراجعة.',
+    tags: ['multi-agent', 'task routing', 'CLI'],
+  },
+  {
+    name: 'Dokion', slug: 'dokion',
+    url: 'https://github.com/imMamdouhaboammar/dokion',
+    en: 'A repository-owned hardening playbook that turns security and quality work into explicit, verifiable steps with rollback paths.',
+    ar: 'دليل تأمين يعيش داخل المستودع، يحول شغل الأمان والجودة إلى خطوات واضحة قابلة للتحقق ومعاها مسار تراجع.',
+    tags: ['hardening', 'evidence', 'rollback'],
+  },
+  {
+    name: 'Unslop Preflight', slug: 'unslop-preflight',
+    url: 'https://github.com/imMamdouhaboammar/unslop-preflight',
+    en: 'Frontend quality gates that challenge generic UI decisions before an agent starts writing the implementation.',
+    ar: 'بوابات جودة للواجهات تراجع قرارات التصميم المتكررة قبل ما الوكيل يبدأ يكتب التنفيذ.',
+    tags: ['frontend QA', 'design gates', 'preflight'],
+  },
+  {
+    name: 'Rafiq Bot', slug: 'rafiq-bot',
+    url: 'https://github.com/imMamdouhaboammar/Rafiq-Bot',
+    en: 'An open-source multimodal AI companion for Egyptian Arabic with persona synthesis, stateful behavior, tools, and multi-agent orchestration.',
+    ar: 'رفيق ذكاء اصطناعي مفتوح المصدر بالعربي المصري، فيه بناء شخصية وسلوك يحتفظ بالحالة وأدوات وتنسيق بين أكتر من وكيل.',
+    tags: ['Egyptian Arabic', 'multimodal', 'persona engine'],
+  },
+  {
+    name: 'PyMC Marketing MCP', slug: 'pymc-marketing-mcp',
+    url: 'https://github.com/imMamdouhaboammar/pymc-marketing-mcp',
+    en: 'Decision-safe Bayesian marketing science for agents: MMM, diagnostics, CLV, experimentation, budget allocation, provenance, and decision gates.',
+    ar: 'علم تسويق بايزي للوكلاء: MMM وتشخيص للنماذج وCLV وتجارب وتوزيع ميزانية ومصدر بيانات وبوابات قرار.',
+    tags: ['Bayesian MMM', 'MCP', 'decision gates'],
+  },
+  {
+    name: 'WhatsApp AI Supervisor', slug: 'whatsapp-ai-supervisor',
+    url: 'https://github.com/imMamdouhaboammar/whatsapp-ai-supervisor',
+    en: 'A model-agnostic AI supervisor and deterministic permission engine for WhatsApp Cloud API.',
+    ar: 'مشرف ذكاء اصطناعي يشتغل مع أي موديل، ومحرك صلاحيات محدد السلوك لـ WhatsApp Cloud API.',
+    tags: ['WhatsApp API', 'permission engine', 'model agnostic'],
+  },
+  {
+    name: 'Omni Skill', slug: 'omni-skill',
+    url: 'https://github.com/imMamdouhaboammar/omni-skill',
+    en: 'A cross-host skill compiler for ChatGPT, Codex, Claude Code, and Antigravity, built to make one skill definition portable across runtimes.',
+    ar: 'مترجم Skills يشتغل عبر ChatGPT وCodex وClaude Code وAntigravity، عشان تعريف واحد للـ Skill ينتقل بين بيئات التشغيل.',
+    tags: ['cross host', 'skill compiler', 'portable'],
+  },
+  {
+    name: 'Marketing Council Pack', slug: 'marketing-council-pack',
+    url: 'https://github.com/imMamdouhaboammar/marketing-council-pack',
+    en: 'A cross-agent marketing strategy pack with specialist skills, challenge gates, and evidence-aware decision workflows.',
+    ar: 'باقة استراتيجية تسويقية تشتغل عبر أكتر من وكيل، فيها Skills متخصصة وبوابات مراجعة ومسارات قرار قائمة على الدليل.',
+    tags: ['strategy', 'agent skills', 'evidence gates'],
+  },
+  {
+    name: 'Designly', slug: 'designly',
+    url: 'https://github.com/imMamdouhaboammar/designly',
+    en: 'A commercial art-direction plugin with 21 focused skills, bounded specialist agents, AI image and video direction, and independent visual QA.',
+    ar: 'إضافة إدارة فنية تجارية فيها 21 Skill محددة، ووكلاء متخصصين بنطاق واضح، وتوجيه صور وفيديو بالذكاء الاصطناعي، ومراجعة بصرية مستقلة.',
+    tags: ['art direction', 'AI video', 'visual QA'],
+  },
+  {
+    name: 'LinkedIn Animated Infographics', slug: 'linkedin-animated-infographics',
+    url: 'https://github.com/imMamdouhaboammar/linkedin-animated-infographics',
+    en: 'A cross-host visual storytelling workflow for animated 1080x1350 infographics with motion craft, RTL support, and visual QA.',
+    ar: 'مسار عمل للسرد البصري ينتج إنفوجرافيك متحرك بمقاس 1080×1350، مع صنعة حركة ودعم RTL ومراجعة بصرية.',
+    tags: ['visual storytelling', 'motion', 'RTL'],
+  },
+  {
+    name: 'PatchPilot', slug: 'patchpilot',
+    url: 'https://github.com/imMamdouhaboammar/PatchPilot',
+    en: 'Turns ChatGPT Web into a PR-only GitHub agent. It inspects a repo, implements one focused change, opens a reviewable PR, and stops there.',
+    ar: 'يحول ChatGPT Web لوكيل GitHub شغله ينتهي عند الـ PR: يفحص المستودع، ينفذ تغيير واحد محدد، يفتح PR للمراجعة، ويقف.',
+    tags: ['PR only', 'review ready', 'Python'],
+  },
+  {
+    name: 'Conversion Copywriting Engine', slug: 'conversion-copywriting-engine',
+    url: 'https://github.com/imMamdouhaboammar/conversion-copywriting-engine',
+    en: 'Research, drafting, and copy-audit pipeline tuned for MENA markets and Arabic conversion work.',
+    ar: 'مسار بحث وكتابة ومراجعة كوبي، معاير على أسواق الشرق الأوسط وشمال أفريقيا وشغل التحويل بالعربي.',
+    tags: ['conversion copy', 'MENA', 'copy audit'],
+  },
+  {
+    name: 'Stop-Slop', slug: 'stop-slop',
+    url: 'https://github.com/imMamdouhaboammar/stop-slop',
+    en: 'Linter and pattern analyzer that removes predictable AI writing tropes from product and software copy.',
+    ar: 'أداة فحص وتحليل أنماط، بتشيل التراكيب المتوقعة من كتابة الذكاء الاصطناعي في نصوص المنتج والسوفتوير.',
+    tags: ['linting', 'copy quality', 'anti-slop'],
+  },
+];
+
+export const CAPABILITIES = [
+  {
+    icon: 'research',
+    en: { title: 'Product research and PRDs', body: 'Turn an early idea into a clearer problem, user need, assumptions, constraints, edge cases, trade-offs, success criteria, and acceptance criteria. Sometimes the right answer is still: we should not build this.' },
+    ar: { title: 'Product Research و PRDs', body: 'أحول الفكرة الأولية إلى مشكلة أوضح، احتياج حقيقي، افتراضات، قيود، edge cases، بدائل، ومعايير نجاح وقبول. وساعات أفضل قرار يبقى إننا ما نبنيش الفكرة أصلا.' },
+  },
+  {
+    icon: 'docs',
+    en: { title: 'Docs and technical writing', body: 'Keep READMEs, onboarding, decision notes, architecture context, and product documentation close to the thing that actually exists, not the version everyone remembers from three months ago.' },
+    ar: { title: 'الـ Docs والكتابة التقنية', body: 'أحدث الـ README والـ onboarding وملاحظات القرارات وسياق المعمارية والتوثيق، بحيث يفضل قريب من المنتج الموجود فعلا.' },
+  },
+  {
+    icon: 'issues',
+    en: { title: 'Issue discovery and bounded PRs', body: 'Reproduce problems, gather evidence, narrow scope, write useful issues, and take small changes as far as a reviewable PR when they are inside my technical range. Engineering keeps the final judgment.' },
+    ar: { title: 'اكتشاف الـ Issues والـ PRs الصغيرة', body: 'أعمل reproduction للمشكلة، أجمع دليل، أحدد الـ scope، وأكتب Issue مفهومة. ولو التغيير محدود وفي حدود اللي أقدر أتحقق منه، أوصله لـ PR صغيرة للمراجعة، والقرار النهائي يفضل عند الفريق التقني.' },
+  },
+  {
+    icon: 'tests',
+    en: { title: 'Test design and acceptance scenarios', body: 'Translate product intent into user stories, user journeys, acceptance scenarios, test suites, and test cases that cover expected behavior, edge cases, regressions, and failure paths.' },
+    ar: { title: 'تصميم الـ Tests وسيناريوهات القبول', body: 'أحول المطلوب من المنتج إلى user stories و user journeys و acceptance scenarios و test suites و test cases تغطي السلوك المتوقع والـ edge cases والـ regressions وحالات الفشل.' },
+  },
+  {
+    icon: 'agents',
+    en: { title: 'AI-assisted workflows and agentic tooling', body: 'Look at repeated work, decide what AI can prepare safely, define where human review belongs, and turn recurring research, checks, or procedures into reusable skills, workflows, or small internal tools.' },
+    ar: { title: 'شغل الـ AI والـ Agentic Workflows', body: 'أشوف إيه بيتكرر، إيه الـ AI يقدر يجهزه بأمان، فين لازم مراجعة بشرية، وإيه ممكن يتحول لـ Skill أو Workflow أو أداة داخلية صغيرة بدل ما نبدأ من الصفر كل مرة.' },
+  },
+  {
+    icon: 'cost',
+    en: { title: 'Evaluation, cost, and context discipline', body: 'Inspect repeated prompts, unnecessary context growth, oversized models doing simple work, weak verification, and duplicated generation. Then test alternatives and measure before claiming savings or quality gains.' },
+    ar: { title: 'القياس والتكلفة وانضباط الـ Context', body: 'أراجع الـ prompts المتكررة، والـ context اللي بيكبر من غير داعي، واستخدام موديلات أكبر من المطلوب، وضعف التحقق. وبعدها نجرب ونقيس قبل ما نقول إننا وفرنا أو حسنّا الجودة.' },
+  },
+];
+
+export const PRINCIPLES = [
+  {
+    num: '01',
+    en: { title: 'Problem before build', body: 'The starting point is repeated friction, never a tool category.' },
+    ar: { title: 'المشكلة قبل البناء', body: 'نقطة البداية دايما احتكاك بيتكرر، مش نوع أداة.' },
+  },
+  {
+    num: '02',
+    en: { title: 'Context before automation', body: 'The system knows the audience, the repo, the rules, and the evidence before it acts.' },
+    ar: { title: 'السياق قبل الأتمتة', body: 'النظام يعرف الجمهور والمستودع والقواعد والدليل قبل ما يتحرك.' },
+  },
+  {
+    num: '03',
+    en: { title: 'Proof before claims', body: 'A test, a report, a PR, or a measured result carries the conclusion.' },
+    ar: { title: 'الدليل قبل الادعاء', body: 'الاستنتاج بيتسند على اختبار أو تقرير أو PR أو نتيجة متقاسة.' },
+  },
+  {
+    num: '04',
+    en: { title: 'Human judgment stays close', body: 'Agents prepare, inspect, and verify. People own the consequential calls.' },
+    ar: { title: 'الحكم البشري قريب', body: 'الوكلاء بيجهزوا ويفحصوا ويتحققوا. القرارات اللي ليها تبعات بتفضل مسؤولية بشر.' },
+  },
+];
+
+export const STACK = [
+  {
+    en: 'Agents, models and protocols', ar: 'الوكلاء والموديلات والبروتوكولات',
+    items: ['ChatGPT', 'Claude', 'Claude Code', 'Codex', 'Gemini', 'MCP', 'Agent Skills', 'Cursor', 'GitHub Copilot', 'OpenAI API', 'Anthropic API'],
+  },
+  {
+    en: 'Frontend and product UI', ar: 'الواجهات وواجهة المنتج',
+    items: ['React', 'Next.js', 'Vite', 'Tailwind CSS', 'shadcn/ui', 'Zustand', 'Astro'],
+  },
+  {
+    en: 'Backend and API', ar: 'الباك إند والـ API',
+    items: ['Bun', 'Node.js', 'Python', 'FastAPI', 'TypeScript', 'JavaScript', 'REST APIs', 'Serverless', 'Zod', 'Pydantic'],
+  },
+  {
+    en: 'Data, auth and storage', ar: 'البيانات والصلاحيات والتخزين',
+    items: ['Supabase', 'PostgreSQL', 'Prisma', 'SQL', 'Row Level Security', 'IndexedDB', 'Dexie.js'],
+  },
+  {
+    en: 'Testing and quality', ar: 'الاختبار والجودة',
+    items: ['Vitest', 'Playwright', 'React Testing Library', 'Pytest', 'axe', 'ESLint', 'Type checking', 'TDD'],
+  },
+  {
+    en: 'Automation and delivery', ar: 'الأتمتة والتسليم',
+    items: ['Git', 'GitHub', 'GitHub Actions', 'n8n', 'Docker', 'Vercel', 'CI/CD', 'VS Code'],
+  },
+  {
+    en: 'Marketing and measurement', ar: 'التسويق والقياس',
+    items: ['Agentic Marketing', 'PyMC', 'Meta Ads', 'Google Ads', 'GA4', 'Google Tag Manager', 'Search Console', 'AEO / GEO'],
+  },
+];
+
+export const LOCALES = {
+  en: {
+    code: 'en', dir: 'ltr', htmlLang: 'en', depth: '../',
+    switchTo: { label: 'العربية', href: 'ar/', lang: 'ar' },
+    title: 'Mamdouh Aboammar : Product Architecture, AI Workflows and Conversion Systems',
+    description: 'Mamdouh Aboammar works between business questions and clean engineering handoffs: product research, PRDs, technical docs, bounded PRs, test design, and AI-assisted workflows. 142 public and private builds. Available for freelance, full-time and part-time work across Egypt, Saudi Arabia, the UAE and the GCC.',
+    keywords: 'Mamdouh Aboammar, Product Architecture, AI workflows, agentic tooling, conversion copywriting, PRD writing, technical documentation, MENA product, PrePilot, Egypt, Saudi Arabia, UAE, GCC',
+    ogAlt: 'Mamdouh Aboammar, product architecture and AI workflows',
+    skip: 'Skip to main content',
+    nav: [
+      { id: 'work', label: 'What I own' },
+      { id: 'builds', label: 'Builds' },
+      { id: 'stack', label: 'Stack' },
+      { id: 'method', label: 'Method' },
+      { id: 'background', label: 'Background' },
+      { id: 'contact', label: 'Contact' },
+    ],
+    navCta: 'Hire me',
+    menuOpen: 'Open menu',
+    menuClose: 'Close menu',
+    themeLabel: 'Switch colour theme',
+    hero: {
+      eyebrow: 'Product architecture in training',
+      titleLead: 'I work between a',
+      titleHighlight: 'business question',
+      titleTail: 'and a clean engineering handoff',
+      lede: 'Marketing, business and growth background. I learn Product Architecture by getting close enough to code, Git, tests, docs, maintenance and AI-assisted development to see the constraints before they turn into expensive confusion.',
+      primary: 'Start a conversation',
+      secondary: 'Browse 142 builds',
+      roleLine: 'Founder of PrePilot · Product research, docs, AI workflows',
+      availability: 'Open to freelance, full-time and part-time work',
+      avatarAlt: 'Portrait of Mamdouh Aboammar',
+      stickers: ['no slop', 'build in public', 'PR-only'],
+    },
+    badgeRing: '\u2726 OPEN TO WORK \u2726 FREELANCE & FULL-TIME ',
+    marqueeLabel: 'Things I produce',
+    marquee: ['Product research', 'PRDs', 'Technical docs', 'Bounded PRs', 'Test design', 'Agent workflows', 'Evidence gates', 'Arabic conversion', 'AI evaluation', 'Build in public'],
+    contactPills: [
+      { icon: 'mail', label: 'mamdouhfces1997@gmail.com', href: 'mailto:mamdouhfces1997@gmail.com' },
+      { icon: 'chat', label: 'WhatsApp', href: LINKS.whatsapp },
+      { icon: 'pin', label: 'Egypt · KSA · UAE · GCC', href: null },
+    ],
+    statsTitle: 'Public build record',
+    statsNote: 'Counts refreshed automatically from the GitHub profile.',
+    sections: {
+      work: { kicker: 'What I own', title: 'Six places I can take real responsibility', lede: 'The useful part of this profile sits between commercial context and engineering constraints. These are the pieces of work I can carry end to end.' },
+      builds: { kicker: 'Builds', title: 'Systems getting my attention right now', lede: 'Selected, not exhaustive. Each one is a public repository you can read, clone and challenge.', cta: 'View the full catalogue of 142 repositories' },
+      stack: { kicker: 'Stack', title: 'Working with and learning', lede: 'Some of this I use daily. Some I am learning deeper through current builds.' },
+      method: { kicker: 'Method', title: 'How I work', lede: 'Four rules that decide what gets built and what gets thrown away.' },
+      background: { kicker: 'Background', title: 'Where I came from', lede: 'I came into software from the commercial side: performance marketing, conversion, campaign strategy and digital leadership across MENA.' },
+      faq: { kicker: 'Questions', title: 'Common questions' },
+      contact: { kicker: 'Contact', title: 'Tell me what you are trying to build', lede: 'Send the context and the constraint. I will come back with questions before I come back with a plan.' },
+    },
+    background: {
+      body: [
+        'After years of asking technical teams to build things, I started building and maintaining my own tools so I could understand the other side of those decisions.',
+        'Founder of PrePilot, built around Arabic conversion work. Digital Director with a background in performance marketing, Meta and Google campaign architecture, and direct-response work across MENA. Earlier work included large-scale event marketing at the Hajj Conference and Exhibition.',
+        'Today I use public software projects to learn the technical constraints behind product decisions while continuing to work from the commercial context I already know.',
+      ],
+      quoteTitle: 'A productive day',
+      quote: 'A vague issue becomes a reproducible issue with evidence. An early feature becomes research plus a brief. Stale docs get fixed. A small technical change becomes a bounded PR. A day does not have to end with a lot of code. It should end with something another person can inspect and use.',
+      artefacts: ['PR', 'Issue', 'Doc', 'Research note', 'Decision', 'Test evidence', 'Skill', 'Checklist'],
+      prepilotTitle: 'Author of PrePilot',
+      prepilotBody: 'PrePilot gives ChatGPT and Claude 526 structured agency workflows across strategy, paid media, SEO, AEO, GEO, content, ad copy, UGC scripts, landing pages, proposals, decks and reporting. It handles Arabic, English and mixed-language briefs, and keeps review, editing and approval with the team.',
+      prepilotCta: 'Open PrePilot',
+    },
+    faq: [
+      { q: 'What does Mamdouh Aboammar actually do?', a: 'He works between business questions and engineering handoffs: product research and PRDs, technical documentation, issue discovery and bounded pull requests, test and acceptance design, AI-assisted workflows, and evaluation of AI cost and context discipline.' },
+      { q: 'Is he available for hire?', a: 'Yes. He is open to freelance, full-time and part-time work, across Egypt, Saudi Arabia, the United Arab Emirates and the wider GCC. Email mamdouhfces1997@gmail.com or message him on WhatsApp.' },
+      { q: 'Is he a software engineer?', a: 'No. He comes from marketing, business and growth, and is learning Product Architecture by building, documenting, testing and maintaining real software in public. Engineering keeps the final technical judgment on his work.' },
+      { q: 'What is PrePilot?', a: 'PrePilot is a marketing workflow product for agencies, freelancers and marketing teams that already work inside ChatGPT or Claude. It provides 526 structured agency workflows and supports Arabic, English and mixed-language briefs. Mamdouh co-founded it and authors its product and workflow direction.' },
+      { q: 'Where can the code be reviewed?', a: 'All of it sits on GitHub under github.com/imMamdouhaboammar, with an interactive catalogue of 142 repositories and a full markdown catalogue organised into ten categories.' },
+    ],
+    contactCards: [
+      { icon: 'mail', label: 'Email', value: 'mamdouhfces1997@gmail.com', href: 'mailto:mamdouhfces1997@gmail.com' },
+      { icon: 'chat', label: 'WhatsApp', value: 'Message directly', href: LINKS.whatsapp },
+      { icon: 'link', label: 'LinkedIn', value: 'Mamdouh Aboammar', href: LINKS.linkedin },
+      { icon: 'code', label: 'GitHub', value: 'imMamdouhaboammar', href: LINKS.github },
+    ],
+    availability: { title: 'Available for', types: ['Freelance', 'Full-time', 'Part-time'], marketsTitle: 'Open across', markets: ['Egypt', 'Saudi Arabia', 'UAE', 'GCC'] },
+    copyEmail: 'Copy email',
+    copied: 'Copied',
+    footerNote: 'Built as a static page. No tracking, no frameworks, no build-time surprises.',
+    footerLinks: 'Elsewhere',
+    lastUpdated: 'Last updated',
+    backToTop: 'Back to top',
+  },
+};
+
+LOCALES.ar = {
+  code: 'ar', dir: 'rtl', htmlLang: 'ar', depth: '../../',
+  switchTo: { label: 'English', href: '../', lang: 'en' },
+  title: 'ممدوح أبو عمار : Product Architecture وشغل الـ AI وأنظمة التحويل',
+  description: 'ممدوح أبو عمار بيشتغل في المساحة اللي بين السؤال التجاري والتسليم الهندسي الواضح: Product Research وPRDs وتوثيق تقني وPRs محدودة النطاق وتصميم اختبارات وAgentic Workflows. 142 مستودع عام وخاص. متاح لشغل Freelance وFull-time وPart-time في مصر والسعودية والإمارات ودول الخليج.',
+  keywords: 'ممدوح أبو عمار, Product Architecture, وكلاء الذكاء الاصطناعي, كتابة تحويلية, PRD, توثيق تقني, PrePilot, مصر, السعودية, الإمارات, الخليج',
+  ogAlt: 'ممدوح أبو عمار، Product Architecture وشغل الذكاء الاصطناعي',
+  skip: 'انتقل للمحتوى الأساسي',
+  nav: [
+    { id: 'work', label: 'مسؤولياتي' },
+    { id: 'builds', label: 'الشغل' },
+    { id: 'stack', label: 'الأدوات' },
+    { id: 'method', label: 'طريقة الشغل' },
+    { id: 'background', label: 'الخلفية' },
+    { id: 'contact', label: 'تواصل' },
+  ],
+  navCta: 'كلمني',
+  menuOpen: 'افتح القائمة',
+  menuClose: 'اقفل القائمة',
+  themeLabel: 'تغيير مظهر الألوان',
+  hero: {
+    eyebrow: 'بتعلم Product Architecture بالشغل',
+    titleLead: 'بشتغل في المساحة بين',
+    titleHighlight: 'السؤال التجاري',
+    titleTail: 'والتسليم الهندسي الواضح',
+    lede: 'خلفيتي Marketing وBusiness وGrowth. وبتعلم Product Architecture عن طريق إني أقرب من الكود وGit والاختبارات والتوثيق والصيانة وشغل الـ AI، عشان أشوف القيود بدري قبل ما تتحول لغموض مكلف.',
+    primary: 'ابدأ كلام معايا',
+    secondary: 'اتفرج على 142 مستودع',
+    roleLine: 'مؤسس PrePilot · Product Research وتوثيق وشغل AI',
+    availability: 'متاح لشغل Freelance وFull-time وPart-time',
+    avatarAlt: 'صورة ممدوح أبو عمار',
+    stickers: ['من غير حشو', 'شغل في العلن', 'PR بس'],
+  },
+  badgeRing: '\u2726 متاح للشغل \u2726 فريلانس ودوام كامل ',
+  marqueeLabel: 'اللي بطلعه من الشغل',
+  marquee: ['بحث منتج', 'PRDs', 'توثيق تقني', 'PRs محدودة', 'تصميم اختبارات', 'Agent Workflows', 'بوابات إثبات', 'تحويل بالعربي', 'قياس الـ AI', 'شغل في العلن'],
+  contactPills: [
+    { icon: 'mail', label: 'mamdouhfces1997@gmail.com', href: 'mailto:mamdouhfces1997@gmail.com' },
+    { icon: 'chat', label: 'واتساب', href: LINKS.whatsapp },
+    { icon: 'pin', label: 'مصر · السعودية · الإمارات · الخليج', href: null },
+  ],
+  statsTitle: 'سجل الشغل العام',
+  statsNote: 'الأرقام بتتحدث أوتوماتيك من بروفايل GitHub.',
+  sections: {
+    work: { kicker: 'مسؤولياتي', title: 'ست مساحات أقدر أتحمل مسؤوليتها كاملة', lede: 'الجزء المفيد في البروفايل ده موجود بين السياق التجاري والقيود الهندسية. دي المهام اللي أقدر أمشي فيها من أول الفكرة لحد التسليم.' },
+    builds: { kicker: 'الشغل', title: 'الأنظمة اللي واخدة وقتي دلوقتي', lede: 'اختيار من الشغل، مش الكل. كل واحد منهم مستودع عام تقدر تقراه وتنسخه وتناقشه.', cta: 'افتح الكتالوج الكامل لـ 142 مستودع' },
+    stack: { kicker: 'الأدوات', title: 'بشتغل بيها وبتعلمها', lede: 'جزء منها بستخدمه يوميا، وجزء بتعمق فيه من خلال الشغل الحالي.' },
+    method: { kicker: 'طريقة الشغل', title: 'إزاي بشتغل', lede: 'أربع قواعد بتحدد إيه اللي يتبني وإيه اللي يترمي.' },
+    background: { kicker: 'الخلفية', title: 'جاي منين', lede: 'دخلت السوفتوير من الناحية التجارية: Performance Marketing وتحويل واستراتيجية حملات وقيادة رقمية في أسواق الشرق الأوسط وشمال أفريقيا.' },
+    faq: { kicker: 'أسئلة', title: 'أسئلة بتتكرر' },
+    contact: { kicker: 'تواصل', title: 'قولي بتحاول تبني إيه', lede: 'ابعتلي السياق والقيد. هرجعلك بأسئلة الأول، وبعدها بخطة.' },
+  },
+  background: {
+    body: [
+      'بعد سنين وأنا بطلب من فرق تقنية إنها تبني حاجات، بدأت أبني وأصون أدواتي بنفسي عشان أفهم الناحية التانية من القرارات دي.',
+      'مؤسس PrePilot حوالين شغل التحويل بالعربي. اشتغلت Digital Director بخلفية في Performance Marketing وبناء حملات Meta وGoogle وشغل Direct Response في أسواق المنطقة. وقبلها شغل تسويق فعاليات بحجم كبير في مؤتمر ومعرض الحج.',
+      'دلوقتي بستخدم مشاريع سوفتوير عامة عشان أتعلم القيود التقنية اللي ورا قرارات المنتج، وأنا لسه شغال من السياق التجاري اللي أعرفه.',
+    ],
+    quoteTitle: 'اليوم المفيد',
+    quote: 'الـ Issue الغامضة بتبقى Issue قابلة لإعادة الإنتاج ومعاها دليل. الفكرة الأولية بتبقى بحث وBrief. التوثيق القديم بيتظبط. التغيير التقني الصغير بيبقى PR محدود. اليوم مش لازم ينتهي بكود كتير، لكن لازم ينتهي بحاجة حد تاني يقدر يفحصها ويستخدمها.',
+    artefacts: ['PR', 'Issue', 'Doc', 'Research note', 'Decision', 'Test evidence', 'Skill', 'Checklist'],
+    prepilotTitle: 'مؤلف PrePilot',
+    prepilotBody: 'PrePilot بيدي ChatGPT وClaude عدد 526 Workflow وكالة منظمة في الاستراتيجية والإعلانات المدفوعة وSEO وAEO وGEO والمحتوى ونصوص الإعلانات وسكربتات UGC والصفحات والعروض والديكات والتقارير. بيشتغل مع البريفات العربي والإنجليزي والمختلط، والمراجعة والتعديل والاعتماد بيفضلوا عند الفريق.',
+    prepilotCta: 'افتح PrePilot',
+  },
+  faq: [
+    { q: 'ممدوح أبو عمار بيشتغل إيه بالظبط؟', a: 'بيشتغل في المساحة بين السؤال التجاري والتسليم الهندسي: Product Research وPRDs، وتوثيق تقني، واكتشاف Issues وPRs محدودة النطاق، وتصميم اختبارات وسيناريوهات قبول، وAgentic Workflows، ومراجعة تكلفة الـ AI وانضباط الـ Context.' },
+    { q: 'هو متاح للشغل؟', a: 'أيوه. متاح لشغل Freelance وFull-time وPart-time، في مصر والسعودية والإمارات ودول الخليج. للتواصل على mamdouhfces1997@gmail.com أو واتساب.' },
+    { q: 'هو Software Engineer؟', a: 'لأ. خلفيته Marketing وBusiness وGrowth، وبيتعلم Product Architecture عن طريق البناء والتوثيق والاختبار والصيانة لسوفتوير حقيقي في العلن. والحكم التقني النهائي على شغله بيفضل عند الفريق الهندسي.' },
+    { q: 'إيه هو PrePilot؟', a: 'PrePilot منتج Workflows تسويقية للوكالات والفريلانسرز وفرق التسويق اللي شغالة أصلا جوه ChatGPT أو Claude. بيوفر 526 Workflow وكالة منظمة، وبيدعم البريفات العربي والإنجليزي والمختلط. ممدوح شارك في تأسيسه وبيكتب اتجاه المنتج والـ Workflows.' },
+    { q: 'الكود موجود فين للمراجعة؟', a: 'كله على GitHub تحت github.com/imMamdouhaboammar، ومعاه كتالوج تفاعلي لـ 142 مستودع وكتالوج Markdown كامل مقسم لعشر فئات.' },
+  ],
+  contactCards: [
+    { icon: 'mail', label: 'الإيميل', value: 'mamdouhfces1997@gmail.com', href: 'mailto:mamdouhfces1997@gmail.com' },
+    { icon: 'chat', label: 'واتساب', value: 'راسلني مباشرة', href: LINKS.whatsapp },
+    { icon: 'link', label: 'لينكدإن', value: 'Mamdouh Aboammar', href: LINKS.linkedin },
+    { icon: 'code', label: 'جيت هب', value: 'imMamdouhaboammar', href: LINKS.github },
+  ],
+  availability: { title: 'متاح لـ', types: ['Freelance', 'Full-time', 'Part-time'], marketsTitle: 'الأسواق', markets: ['مصر', 'السعودية', 'الإمارات', 'الخليج'] },
+  copyEmail: 'انسخ الإيميل',
+  copied: 'اتنسخ',
+  footerNote: 'الصفحة دي Static بالكامل. من غير تتبع، ومن غير Frameworks، ومن غير مفاجآت وقت البناء.',
+  footerLinks: 'حسابات تانية',
+  lastUpdated: 'آخر تحديث',
+  backToTop: 'لفوق',
+};
+
+export const SOCIALS = [
+  { key: 'github', label: 'GitHub', href: LINKS.github },
+  { key: 'linkedin', label: 'LinkedIn', href: LINKS.linkedin },
+  { key: 'x', label: 'X', href: LINKS.x },
+  { key: 'instagram', label: 'Instagram', href: LINKS.instagram },
+  { key: 'facebook', label: 'Facebook', href: LINKS.facebook },
+  { key: 'safari', label: 'Website', href: LINKS.website },
+];

@@ -19,6 +19,8 @@
 
 <a href="REPOSITORIES.md"><img src="https://img.shields.io/badge/Repository_Catalog-142_builds-059669?style=for-the-badge&logo=markdown&logoColor=white&labelColor=0D1117" alt="Complete repository catalog"></a>
 <a href="https://immamdouhaboammar.github.io/imMamdouhaboammar/"><img src="https://img.shields.io/badge/Portfolio-Live_Pages-4F46E5?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=0D1117" alt="Live portfolio"></a>
+<a href="https://immamdouhaboammar.github.io/imMamdouhaboammar/portfolio/"><img src="https://img.shields.io/badge/Profile_Page-English-df9367?style=for-the-badge&labelColor=0D1117" alt="Portfolio page in English"></a>
+<a href="https://immamdouhaboammar.github.io/imMamdouhaboammar/portfolio/ar/"><img src="https://img.shields.io/badge/%D8%B5%D9%81%D8%AD%D8%A9_%D8%A7%D9%84%D8%A8%D8%B1%D9%88%D9%81%D8%A7%D9%8A%D9%84-%D8%B9%D8%B1%D8%A8%D9%8A-c6e86c?style=for-the-badge&labelColor=0D1117" alt="Portfolio page in Arabic"></a>
 
 <br><br>
 
