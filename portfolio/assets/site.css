@@ -56,7 +56,7 @@
   --section-gap: clamp(56px, 8vw, 116px);
   --maxw: 1280px;
 
-  --ring: 0 0 0 3px var(--peach), 0 0 0 5px var(--ink);
+  --focus: var(--ink-2);
   --ease: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
@@ -166,10 +166,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 a { color: inherit; text-decoration: none; }
 
 :focus-visible {
-  outline: none;
-  box-shadow: var(--ring);
-  border-radius: var(--r-sm);
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
 }
+
+/* Dark surfaces need the ring inverted to stay visible against them. */
+.pill-dark,
+.card-prepilot,
+.card-prepilot * { --focus: #f2efe9; }
 
 /* Text for screen readers only, such as the note that a link opens a new tab.
    Matches the definition in assets/portfolio/styles.css. The two stay separate
@@ -1275,7 +1279,7 @@ html[lang="ar"] .spin-badge text { font-family: var(--font-sans); font-size: 10.
 
 @media (max-width: 960px) {
   .method-path::before { display: none; }
-  .spin-badge { width: 86px; height: 86px; inset-block-start: -16px; inset-inline-end: -14px; }
+  .spin-badge { width: 86px; height: 86px; inset-block-end: 44px; inset-inline-start: -18px; }
   .spin-badge-core { width: 36px; height: 36px; }
 }
 
