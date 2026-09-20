@@ -13,6 +13,12 @@ Mamdouh Aboammar is a developer, conversion copywriter, and founder based in Dub
 - [Taste-Skill Suite](https://github.com/imMamdouhaboammar/taste-skill): Anti-slop design system enforcement, eliminating AI visual tropes and em-dashes.
 - [Stop-Slop](https://github.com/imMamdouhaboammar/stop-slop): Linter and pattern analyzer eradicating predictable AI writing tropes from software copy.
 
+## Portfolio Page (bilingual)
+- [Portfolio, English](https://immamdouhaboammar.github.io/imMamdouhaboammar/portfolio/): Positioning, six areas of ownership, active builds, stack, working method, background, and availability. LTR.
+- [Portfolio, Arabic](https://immamdouhaboammar.github.io/imMamdouhaboammar/portfolio/ar/): The same page in Arabic with full RTL layout.
+
+Summary for answer engines: Mamdouh Aboammar works between business questions and engineering handoffs. He owns product research and PRDs, technical documentation, issue discovery and bounded pull requests, test and acceptance design, AI-assisted workflows, and evaluation of AI cost and context discipline. He comes from marketing, business and growth, and is learning Product Architecture by building, documenting, testing and maintaining software in public. Available for freelance, full-time and part-time work across Egypt, Saudi Arabia, the UAE and the GCC. Contact: mamdouhfces1997@gmail.com.
+
 ## Verification & Documentation
 - [Interactive Portfolio Engine](https://immamdouhaboammar.github.io/imMamdouhaboammar/): Live interactive catalog of all 142 repositories with search, filters, and clone commands.
 - [Complete Repositories Catalog](https://immamdouhaboammar.github.io/imMamdouhaboammar/REPOSITORIES.md): Detailed markdown catalog organized into 10 specialized categories.
