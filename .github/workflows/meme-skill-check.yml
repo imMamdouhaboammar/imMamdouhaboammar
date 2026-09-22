@@ -8,6 +8,8 @@ on:
       - ".agents/plugins/marketplace.json"
       - "scripts/meme_plugin.py"
       - "tests/test_meme_plugin.py"
+      - "tests/test_meme_plugin_security.py"
+      - "scripts/check_meme_plugin_security.py"
       - ".github/workflows/meme-skill-check.yml"
   push:
     paths:
@@ -46,6 +48,10 @@ jobs:
         run: python -m unittest discover -s tests -p test_meme_plugin.py -v
       - name: Run package preflight
         run: python scripts/meme_plugin.py --check
+      - name: Run security-focused regression tests and offline scan
+        run: |
+          python -m unittest discover -s tests -p test_meme_plugin_security.py -v
+          python scripts/check_meme_plugin_security.py
       - name: Deterministic packaging
         run: |
           python scripts/meme_plugin.py --package /tmp/meme-marketing-a.zip
