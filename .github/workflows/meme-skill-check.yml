@@ -1,13 +1,25 @@
-name: Meme skill checks
+name: Meme skill and plugin checks
 
 on:
   pull_request:
     paths:
       - ".claude/skills/meme-marketing/**"
+      - "plugins/meme-marketing/**"
+      - ".agents/plugins/marketplace.json"
+      - "scripts/meme_plugin.py"
+      - "tests/test_meme_plugin.py"
+      - "tests/test_meme_plugin_security.py"
+      - "scripts/check_meme_plugin_security.py"
       - ".github/workflows/meme-skill-check.yml"
   push:
     paths:
       - ".claude/skills/meme-marketing/**"
+      - "plugins/meme-marketing/**"
+      - ".agents/plugins/marketplace.json"
+      - "scripts/meme_plugin.py"
+      - "tests/test_meme_plugin.py"
+      - "tests/test_meme_plugin_security.py"
+      - "scripts/check_meme_plugin_security.py"
       - ".github/workflows/meme-skill-check.yml"
   workflow_dispatch:
 
@@ -17,20 +29,43 @@ permissions:
 jobs:
   structural-evals:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Run validator tests and corpus checks
+      - name: Install YAML parser for fail-closed frontmatter verification
+        run: python -m pip install "PyYAML==6.0.3"
+      - name: Run original creative specification tests
         run: python .claude/skills/meme-marketing/scripts/test_validate.py
-      - name: Check valid example
-        run: python .claude/skills/meme-marketing/scripts/validate.py .claude/skills/meme-marketing/evals/fixtures/valid.json
-      - name: Require invalid example to fail
-        shell: bash
+      - name: Check original valid and invalid fixtures
         run: |
+          python .claude/skills/meme-marketing/scripts/validate.py .claude/skills/meme-marketing/evals/fixtures/valid.json
           if python .claude/skills/meme-marketing/scripts/validate.py .claude/skills/meme-marketing/evals/fixtures/invalid.json; then
-            echo "Invalid example unexpectedly passed"
+            echo "Invalid meme fixture unexpectedly passed"
             exit 1
           fi
+      - name: Test portable package and source-mirror sync
+        run: python -m unittest discover -s tests -p test_meme_plugin.py -v
+      - name: Run package preflight
+        run: python scripts/meme_plugin.py --check
+      - name: Run security-focused regression tests and offline scan
+        run: |
+          python -m unittest discover -s tests -p test_meme_plugin_security.py -v
+          python scripts/check_meme_plugin_security.py
+      - name: Deterministic packaging
+        run: |
+          python scripts/meme_plugin.py --package /tmp/meme-marketing-a.zip
+          python scripts/meme_plugin.py --package /tmp/meme-marketing-b.zip
+          cmp /tmp/meme-marketing-a.zip /tmp/meme-marketing-b.zip
+          sha256sum /tmp/meme-marketing-a.zip
+          mkdir -p /tmp/meme-marketing-clean
+          unzip -q /tmp/meme-marketing-a.zip -d /tmp/meme-marketing-clean
+          python scripts/meme_plugin.py --validate-extracted /tmp/meme-marketing-clean
+          cp /tmp/meme-marketing-a.zip ./meme-marketing-plugin.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: meme-marketing-codex-chatgpt-plugin
+          path: meme-marketing-plugin.zip
+          if-no-files-found: error
