@@ -1,6 +1,8 @@
 interface:
   display_name: Meme Marketing
   short_description: Create and tune relatable memes
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
   brand_color: "#172A34"
   default_prompt: Create three audience-specific memes with captions and visual directions
 policy:
