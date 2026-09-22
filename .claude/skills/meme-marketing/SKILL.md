@@ -127,6 +127,8 @@ Before you show anything, put each meme through the gates below. Memes fail thes
 
 **3. The receipt gate.** Is there one specific detail that proves lived experience? A number, a phrase, a time, a tool name. If every noun in the meme is generic, add the receipt.
 
+Numbers are the strongest receipt, because a figure is the hardest thing to invent convincingly, so a batch of three should not go out with none in it. A quoted phrase or a timestamp carries a meme fine on its own, and forcing a number into every single one is its own kind of formula.
+
 **4. The remove-the-brand gate.** Cover the logo. Would anyone still share this? If the joke only works because you know it is an ad, it is an ad.
 
 **5. The compression gate.** Delete every word that is not carrying weight, then read it again. Comedy is timing and timing is length. Most first drafts lose 30% of their words and get funnier.
@@ -152,12 +154,12 @@ Deliver each meme in this block. Keep the labels; they are what makes the spec u
 [سطر واحد، أقصر من الكابشن]
 
 الفيجوال:
-الفورمات: [اسم الفورمات أو وصف المشهد بدقة كفاية إن الديزاينر يلاقيه]
+الفورمات: [اسم الفورمات أو وصف المشهد بدقة كفاية إن الديزاينر يلاقيه. لو الفورمات جديد مش من البنك الثابت، قول بقاله قد إيه منتشر عشان الديزاينر يعرف هو بيسابق وقت ولا لأ]
 الوصف: [إيه اللي في الكادر وإيه الحالة على الوش]
 بديل: [فورمات تاني بنفس الحالة لو الأول مش متاح]
 
 التصميم:
-المقاس: [1:1 / 4:5 / 16:9] | النص: [مكانه وعدد سطوره] | اللوجو: [الركن]
+المقاس: [1:1 / 4:5 / 16:9] | النص: [مكانه، عدد سطوره، لوحة الألوان] | اللوجو: [الركن + نسخة فاتحة ولا غامقة]
 
 ليه هيشتغل: [سطر واحد عن آلية التعرف، مش شرح للنكتة]
 ```

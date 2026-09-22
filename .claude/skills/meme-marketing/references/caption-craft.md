@@ -156,7 +156,7 @@ Any of these in a draft means rewrite the line from scratch, not patch it.
 
 **Denial then reveal.** `ده مش X ده Y` · `هذا ليس X بل Y` · `مش مجرد X` · `not just X` · `this is not X, this is Y`. The structure announces that a writer is performing. The meme already carries its contrast in the gap between caption and image; saying it out loud is doing the picture's job badly.
 
-**Explaining the joke.** Any clause that starts with عشان كده، يعني، والنتيجة، ودي المشكلة اللي. If the meme needs the explanation, the meme is broken.
+**Explaining the joke.** A clause whose job is to unpack the joke: عشان كده، والنتيجة، ودي المشكلة اللي، and يعني when it introduces an explanation. Conversational يعني as filler in a character's mouth is ordinary spoken Egyptian and stays, which is why it appears in the connective-tissue list above. If the meme needs the explanation, the meme is broken.
 
 **Punchline restating the caption.** The most common failure. It comes from one mouth writing both lines. See the two mouths rule in SKILL.md.
 
