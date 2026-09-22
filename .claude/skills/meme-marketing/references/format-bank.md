@@ -1,6 +1,6 @@
 # Format Bank
 
-A meme's image has one job: arrive already carrying the emotion, so the text never has to describe it. If your line has to explain how the character feels, you picked the wrong face.
+Pick the visual for the chosen mechanism. A recognizable reaction can carry emotion; a staged screenshot can supply the setup; a text-led panel can itself be the joke. The image and copy should each add something, including when one is deliberately absent.
 
 ## Contents
 1. How to use this bank
@@ -18,7 +18,7 @@ A meme's image has one job: arrive already carrying the emotion, so the text nev
 You arrive here from step 5 with a one-word emotional state. Do this:
 
 1. Find that state below and read the options.
-2. Ask which of them **this specific audience has actually seen**. A format is only funny to people who recognize it. A 45-year-old business owner in Jeddah and a 24-year-old designer in Cairo do not share a meme vocabulary.
+2. Ask which of them **this specific audience has actually seen**. For established templates, check whether this cohort recognizes the format. An original picture or accurate work-interface screenshot can work without prior template familiarity. Avoid assuming everyone of the same age or city shares references.
 3. Pick the one where the swap writes itself. If you cannot immediately hear the line, move on.
 4. Name a second option in the spec, because the first one may not be findable in decent quality.
 
@@ -113,7 +113,7 @@ Give the designer a query, not a wish. Useful shapes:
 
 ## 4. Saudi and Gulf visual sources
 
-A Gulf audience will not get recognition from Egyptian cinema, so the references have to move with the dialect.
+A Gulf audience may or may not recognize a specific Egyptian film reference. Confirm with the intended group and prefer locally relevant examples where there is evidence of familiarity.
 
 ### Category A — Saudi comedy and sketch television
 Long-running sketch and satire shows are the deepest shared reference pool, especially for work situations, bureaucracy and generational friction.
@@ -138,9 +138,9 @@ Tone note: Gulf humour on brand accounts runs drier and more restrained than Egy
 
 When nothing in the bank carries the state, build it. These four techniques cover almost every case.
 
-**AI-generated localization.** Take a known character and render it inside the audience's world. A well-known cartoon mouse, crying, in bed, wearing a hijab, in a bedroom that looks like a real apartment. The recognition comes from the character, the relatability from the setting.
+**Original localized reaction.** Create an original character with a specific emotional expression in an authentic local setting. Do not reproduce a protected cartoon character or recreate a copyrighted film still without appropriate rights. Recognition can come from the household or work situation.
 
-**Photoshop composite.** Put a head, an object or a logo into a known meme composition. A tech CEO's face in the hedge instead of Homer, captioned about organic reach, works on three levels at once: the template is known, the person is the one you are avoiding paying, and the joke is that you avoided paying him.
+**Composite with authorized assets.** Put an original character, a licensed photo or an approved product prop into a scene built for the concept. Do not assume a public figure's likeness, copyrighted character or famous composition is free to modify.
 
 **The screenshot.** A fake chat thread, a calendar invite at 11:47pm, a Slack message, a Google Doc comment, a rejected quote. Extremely strong for workplace memes because it needs no cultural reference at all, only a shared work reality. Keep the UI accurate down to the timestamp; a wrong detail breaks it instantly.
 
@@ -175,3 +175,8 @@ When you suggest something fresh, say how recent it is in the spec, so the desig
 **Recognizable private individuals** used to represent something unflattering, unless they are public figures and the joke is about their public role.
 
 **Real tragedy, active crises, or current political events.** No brand meme is worth that.
+
+
+## 8. Additional formats and rights
+
+The global named-template list is a search vocabulary for analyzing existing meme culture, not a license to regenerate protected characters. Source permission must be resolved before final production. When rights are unknown, hand over the emotional pose and scene in an original-art alternative. Do not claim a trend is fresh based solely on this reference bank; verify against dated material or label freshness unknown. Plausible non-template formats include staged DMs clearly labeled as fiction, late-night notification screenshots with invented participants, original UI mockups, object-labeling photos, visual-only reaction, split-screen expectation/reality, text-only confession and a three-beat escalation. For a regional client, select references by their specific subculture and actual social behavior, not a single national stereotype.

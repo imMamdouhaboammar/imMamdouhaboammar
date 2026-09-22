@@ -73,9 +73,9 @@ Use it for patterns 1, 2, 3 and 6. Skip it for confessions and reverse brags, wh
 
 ## 2. The one-word swap
 
-The single highest-leverage technique in this whole skill.
+A useful technique for a familiar, correctly licensed scene. Keep it optional: the supplied deck also contains pure reactions, original dialogue, literalization and affectionate observations.
 
-Take a line the audience has known by heart since childhood and change exactly one word, so the line arrives inside their working life.
+When the audience genuinely knows a short line and you have the rights to use the source material, consider a one-word swap. An original line, a reaction without words or a staged screenshot may work better.
 
 > Original register: a man at an ecstatic street celebration
 > Swap: "انا فى اليوم اللى اتعلمت فيه الـ Pentool"
@@ -96,10 +96,10 @@ Take a line the audience has known by heart since childhood and change exactly o
 
 ## 3. Language rules that make it sound typed
 
-### Specific numbers are the proof of life
+### Specific details carry recognition
 > 1200 جنيه ووجبة · 16 ساعة · 2700 جنيه · 20 ريل ولوجو وايدنتتي · بعدها بدقيقتين · متأخرة ساعتين
 
-A number is the cheapest possible evidence that the writer was in the room. "مرتب قليل" is a description. "1200 جنيه ووجبة" is a memory. Put at least one hard number, name, or time into most memes.
+A number or timestamp can make a scene concrete when the brief supports it or it is clearly fictional comedy. Do not fabricate a client result, a market figure or a user's lived experience to get a numeric receipt. A named tool, overheard phrase or oddly specific object may do more work than a number.
 
 ### Script follows the audience, not the dictionary
 Write each borrowed word in whichever script the audience actually types it in.
@@ -160,7 +160,7 @@ Any of these in a draft means rewrite the line from scratch, not patch it.
 
 **Punchline restating the caption.** The most common failure. It comes from one mouth writing both lines. See the two mouths rule in SKILL.md.
 
-**Puns and wordplay.** They ask the reader to work, and memes are read at scroll speed. A pun that takes a beat to land has already been scrolled past.
+**Forced puns and wordplay.** Reject wordplay that needs an explanation. Keep a short familiar pun when this specific audience recognizes it immediately.
 
 **Generic nouns everywhere.** الشغل، الحياة، الناس، الأمور، التحديات with no specific object anywhere in the meme.
 
@@ -170,4 +170,11 @@ Any of these in a draft means rewrite the line from scratch, not patch it.
 
 **Corporate vocabulary smuggled into a character's mouth.** A tired employee does not say "نحقق نتائج ملموسة".
 
-**Timeless-sounding wisdom.** If the caption could have been written five years ago or five years from now, it has no receipt in it.
+**Generic wisdom without a scene.** An evergreen household situation can work for years when it has a precise recognizable trigger.
+
+
+## 6. Expanded writing grammar
+
+The source deck favors outside setup plus inside-character response. This remains a strong default for reaction memes, but see references/humor-mechanics.md for labeling, screenshots, original scenes, multi-panel, irony, text-free reaction and affectionate recognition. A colon is optional. Do not manufacture typos or force every post into لما. For a user voice sample, preserve documented rhythm rather than borrowing the deck creator's quirks. If the caption and image intentionally repeat a phrase, check whether the second context changes its meaning; intentional echo is allowed.
+
+Platform affects the amount of text and the reference pool. On X, test whether the copy works beside the image in the timeline. On Instagram, the image often needs to survive without the full caption. On LinkedIn, use occupational familiarity and avoid fabricated anecdotes or fake performance claims. A local reference should be checked with the actual intended cohort, not assumed familiar to every national audience.

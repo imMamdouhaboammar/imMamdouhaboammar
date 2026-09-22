@@ -1,6 +1,6 @@
 # Design Spec
 
-The design of a meme has one purpose: to look like it was made by a person in a hurry, not by a studio. Every polish instinct you have is working against you here.
+Match the visual grammar of the intended platform and community. The supplied deck often uses bold yellow reaction subtitles; an original screenshot, text-led post or a client's established graphic identity may call for a different treatment. Deliberate simplicity should still be readable and accessible.
 
 Fill the design block in the output with real values. A designer reading your spec should not have to make a single decision you could have made for them.
 
@@ -10,7 +10,7 @@ Fill the design block in the output with real values. A designer reading your sp
 
 **Arabic text**
 - Heavy display weight, the boldest cut available. Thin or elegant Arabic type reads as editorial and kills the tone.
-- Fill: bright yellow, around `#FFE500`. This is the default across Egyptian meme culture and it reads on almost any footage.
+- Fill: bright yellow, around `#FFE500`. This reflects a recurring treatment in the supplied deck; check contrast and brand context before using it.
 - Outline: black stroke, thick, roughly 6 to 10% of the cap height. The stroke is what makes the text survive a busy frame.
 - No drop shadow, no gradient, no bevel, no glow.
 
@@ -25,7 +25,7 @@ Pink fill with a white outline reads as lifestyle rather than industry, and clea
 ## Layout
 
 - Text sits in the **bottom 15 to 20%** of the frame, centered or running full width.
-- One line about 70% of the time. Two when the joke needs a condition. Three is a warning sign that the idea is not compressed yet.
+- Prefer the fewest readable words the chosen visual form requires. Text-free visuals, screenshot memes and multi-panel formats have different needs.
 - No background box behind the text by default; the stroke does the separating.
 - Use a black bar behind the text only in stacked two-panel layouts, where it doubles as the panel divider.
 - Never cover a face. The face is the payload.
@@ -57,9 +57,9 @@ Pink fill with a white outline reads as lifestyle rather than industry, and clea
 
 ## Image quality
 
-Counterintuitive but important: **do not upscale or clean the source.** Screenshot-grade compression reads as "someone sent me this", which is exactly the social context you want. A crisp, colour-graded, high-resolution meme reads as an asset produced by an agency, and people forward those far less often.
+Keep deliberate source texture when permission and legibility allow. Export at platform-appropriate dimensions and avoid corrupt, unreadable or deceptively doctored screenshots. Do not make unverified claims that deliberate compression increases sharing.
 
-Keep the source's own grain, letterboxing and compression artifacts. Crop to the ratio and add text. That is the whole treatment.
+Preserve meaningful image context; crop without hiding a crucial speaker or changing what real footage appears to show. Obtain permission for third-party imagery. For generated visuals, make original scenes without protected characters or the likeness of private people.
 
 ---
 
@@ -81,3 +81,8 @@ Before handing the spec over, confirm you have specified:
 - [ ] Logo corner and which version, light or dark
 - [ ] The visual, described precisely enough to be found or built
 - [ ] A fallback visual carrying the same emotional state
+
+
+## Text-free and staged UI exceptions
+
+An intentionally text-free meme needs no bottom caption or stroke. A screenshot meme needs accurate typography, spacing and device status conventions; stage fictional names and label it as a mock if viewers could mistake it for a real private exchange. Provide accessible alt text outside the image. Confirm the platform's safe area and check font rendering for Arabic-English mixed lines before publishing. A logo is optional when it would undermine the joke or conflict with the creator's visual identity.
