@@ -18,6 +18,8 @@ on:
       - ".agents/plugins/marketplace.json"
       - "scripts/meme_plugin.py"
       - "tests/test_meme_plugin.py"
+      - "tests/test_meme_plugin_security.py"
+      - "scripts/check_meme_plugin_security.py"
       - ".github/workflows/meme-skill-check.yml"
   workflow_dispatch:
 
