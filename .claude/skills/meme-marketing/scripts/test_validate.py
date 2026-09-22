@@ -44,6 +44,16 @@ class MemeValidationTests(unittest.TestCase):
         payload["memes"].append(deepcopy(payload["memes"][0]))
         self.assertTrue(any("duplicate moment" in f for f in check(payload)))
 
+    def test_malformed_fields_report_errors_instead_of_crashing(self):
+        payload = deepcopy(self.good)
+        payload["memes"][0]["moment"] = None
+        self.assertTrue(any("moment" in f for f in check(payload)))
+
+    def test_future_trend_verification_date_is_rejected(self):
+        payload = deepcopy(self.good)
+        payload["memes"][0]["visual"]["freshness"] = {"status": "verified_recent", "verified_at": "9999-12-31"}
+        self.assertTrue(any("cannot be in the future" in f for f in check(payload)))
+
     def test_eval_corpus_coverage(self):
         corpus = json.loads((ROOT / "evals/evals.json").read_text(encoding="utf-8"))
         self.assertEqual(corpus["skill_name"], "meme-marketing")

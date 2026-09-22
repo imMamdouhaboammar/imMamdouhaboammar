@@ -69,7 +69,8 @@ def check(data):
                 errors.append(f"{p}.image_text_relation: missing image text")
             if image.strip() and relation in ("none", "text_free"):
                 errors.append(f"{p}.image_text_relation: text-free mode includes text")
-        signature = (meme.get("moment", "").strip().casefold(), meme.get("humor_mechanism"))
+        moment_value = meme.get("moment")
+        signature = (moment_value.strip().casefold() if isinstance(moment_value, str) else "", meme.get("humor_mechanism"))
         if signature in signatures:
             errors.append(f"{p}: duplicate moment and humor mechanism")
         signatures.add(signature)
@@ -90,7 +91,9 @@ def check(data):
             elif fresh.get("status") == "verified_recent":
                 stamp = fresh.get("verified_at")
                 try:
-                    date.fromisoformat(stamp)
+                    checked = date.fromisoformat(stamp)
+                    if checked > date.today():
+                        errors.append(f"{p}.visual.freshness.verified_at: cannot be in the future")
                 except (TypeError, ValueError):
                     errors.append(f"{p}.visual.freshness.verified_at: expected ISO date")
         design = meme.get("design")
