@@ -17,7 +17,8 @@ This repository contains an existing authored Skill and a newly packaged mirror.
 - Confirm the supported plugin listing category, availability regions and any legal/support URL requirements at submission time
 - Run the eight proposed reviewer cases against a fresh installed version and save actual results
 - Conduct image-rights, cultural/dialect, user-privacy and content-policy reviews of the output examples
-- Complete independent Plugin Eval if the plugin-eval CLI is available; repo CI runs its own structural checks but does not impersonate that CLI
+- CI now includes an offline credential-pattern, agent dependency, symlink, SVG and undeclared MCP/hooks security regression suite. This is focused local evidence, not an independent vulnerability scan or an OpenAI safety scan
+- Complete independent Plugin Eval if the plugin-eval CLI is available; repo CI runs its own structural and security-focused checks but does not impersonate that CLI
 - Perform real installation smoke tests in ChatGPT desktop and Codex; CI package validation is not a host install
 - Only then produce the formal submission pack, submit through the portal and record separate approval/publication outcomes
 
