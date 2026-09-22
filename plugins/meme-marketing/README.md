@@ -1,8 +1,8 @@
 # Meme Marketing for ChatGPT and Codex
 
-A Skills-only portable Agent Plugin for recognizable memes, platform-aware captions, original or authorized visual briefs, humor audits, dialect adaptation, content planning and feedback-based Post Tuning.
+A Skills-only portable Agent Plugin for ChatGPT and Codex: recognizable memes, platform-aware captions, original or authorized visual briefs, humor audits, dialect adaptation, content planning and feedback-based Post Tuning.
 
-The source-of-truth creative skill is at .claude/skills/meme-marketing/. The bundled importable Skill at skills/meme-marketing/ is a byte-for-byte mirror of its release files. The root plugin.json is the current portable Agent Plugins manifest. The optional .codex-plugin/plugin.json is a compatibility fallback for older Codex consumers; when extensions.com.openai is present in root plugin.json it is authoritative.
+The source-of-truth creative skill is at .claude/skills/meme-marketing/. The bundled importable Skill at skills/meme-marketing/ is a byte-for-byte mirror of its release files, with ChatGPT/Codex-specific agents/openai.yaml metadata and UI icons kept as package-only additions. The root plugin.json is the current portable Agent Plugins manifest. The optional .codex-plugin/plugin.json is a compatibility fallback for older Codex consumers; when extensions.com.openai is present in root plugin.json it is authoritative.
 
 ## Local installation
 
@@ -12,7 +12,7 @@ From this repository root, use the repo marketplace in .agents/plugins/marketpla
 
 When testing a feature branch, select that branch as the ref instead. In a supported ChatGPT desktop/Work client, open the Plugins Directory, choose the Mamdouh Plugins repo marketplace and install Meme Marketing. Marketplace source availability varies by host. Refresh your marketplace and installed copy after updating source files.
 
-You can also use skills/meme-marketing/ directly in an agent host that imports Agent Skills. Core meme generation needs no login or external MCP server.
+You can also use skills/meme-marketing/ directly in an agent host that imports Agent Skills. Core meme generation needs no login or external MCP server. The package is intentionally Skills-only because the workflow can use host-native tools when available instead of requiring a server.
 
 ## Source sync, tests and portable ZIP
 

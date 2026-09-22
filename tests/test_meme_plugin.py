@@ -43,6 +43,17 @@ class PluginTests(unittest.TestCase):
             (work / "assets/logo-light.svg").unlink()
             self.assertTrue(any("malformed plugin" in p for p in mod.validate(work)))
 
+    def test_skill_ui_assets_are_packaged(self):
+        for name in ("icon-small.svg", "icon-large.svg"):
+            self.assertTrue((mod.PLUGIN / "skills/meme-marketing/assets" / name).is_file())
+
+    def test_missing_skill_ui_asset_fails(self):
+        with tempfile.TemporaryDirectory() as directory:
+            work = Path(directory) / "plugin"
+            shutil.copytree(mod.PLUGIN, work)
+            (work / "skills/meme-marketing/assets/icon-small.svg").unlink()
+            self.assertTrue(any("malformed plugin" in p for p in mod.validate(work)))
+
     def test_undeclared_mcp_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
             work = Path(directory) / "plugin"

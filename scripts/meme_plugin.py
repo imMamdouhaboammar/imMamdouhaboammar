@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / ".claude/skills/meme-marketing"
 PLUGIN = ROOT / "plugins/meme-marketing"
 MIRROR = PLUGIN / "skills/meme-marketing"
-VERSION = "2.1.0"
+VERSION = "2.2.0"
 
 
 def public_sources() -> dict[str, Path]:
@@ -48,7 +48,7 @@ def sync(write: bool) -> list[str]:
     if not MIRROR.is_dir():
         problems.append("plugin mirror directory missing")
     else:
-        allowed_extra = {"agents/openai.yaml"}
+        allowed_extra = {"agents/openai.yaml", "assets/icon-small.svg", "assets/icon-large.svg"}
         actual = {p.relative_to(MIRROR).as_posix() for p in MIRROR.rglob("*") if p.is_file()}
         extras = actual - set(expected) - allowed_extra
         if extras:
@@ -156,7 +156,7 @@ def validate(package: Path, check_marketplace: bool = False) -> list[str]:
             meta = yaml.safe_load(match.group(1))
             if not isinstance(meta, dict) or meta.get("name") != "meme-marketing" or not isinstance(meta.get("description"), str) or not meta["description"] or len(meta["description"]) > 1024:
                 problems.append("SKILL.md discovery metadata invalid")
-            if meta.get("metadata", {}).get("version") != "2.1":
+            if meta.get("metadata", {}).get("version") != "2.2":
                 problems.append("source Skill version drift")
             for ref in ("caption-craft.md", "design-spec.md", "format-bank.md", "deck-patterns.md", "humor-mechanics.md", "post-tuning.md", "output-contract.md", "host-compatibility.md"):
                 if not (skill / "references" / ref).is_file():
@@ -168,6 +168,12 @@ def validate(package: Path, check_marketplace: bool = False) -> list[str]:
         policy = agent.get("policy", {})
         if not ai.get("display_name") or not ai.get("short_description"):
             problems.append("agent OpenAI interface missing")
+        for key in ("icon_small", "icon_large"):
+            _asset(skill, ai.get(key))
+        if not re.fullmatch(r"#[0-9A-Fa-f]{6}", ai.get("brand_color", "")):
+            problems.append("agent brand_color must be a six-digit hex color")
+        if not isinstance(ai.get("default_prompt"), str) or not ai["default_prompt"].strip():
+            problems.append("agent default_prompt missing")
         if set(policy.get("products", [])) != {"CHAT", "CODEX"} or not isinstance(policy.get("allow_implicit_invocation"), bool):
             problems.append("agent policy must explicitly support CHAT and CODEX")
         if "dependencies" in agent:

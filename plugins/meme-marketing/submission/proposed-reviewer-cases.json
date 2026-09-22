@@ -1,6 +1,6 @@
 {
   "status": "PROPOSED_NOT_EXECUTED",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "submission_type": "skills-only",
   "note": "These are reproducible reviewer prompts to execute on a fresh installed copy. Do not report as passed until actual outputs and evidence are recorded.",
   "positive": [
