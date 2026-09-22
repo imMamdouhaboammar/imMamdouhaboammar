@@ -74,7 +74,7 @@ def _yaml(path: Path) -> dict:
 
 
 def _asset(root: Path, rel: str) -> None:
-    if not isinstance(rel, str) or not rel.startswith("./"):
+    if not isinstance(rel, str) or rel != rel.strip() or "\\" in rel or not rel.startswith("./"):
         raise ValueError("Asset path must start ./")
     raw = PurePosixPath(rel[2:])
     if raw.is_absolute() or ".." in raw.parts or not raw.parts:
