@@ -1,0 +1,75 @@
+{
+  "skill_name": "meme-marketing",
+  "evals": [
+    {
+      "id": 0,
+      "name": "egyptian-b2b-saas",
+      "prompt": "عايز 3 ميمز لصفحة PrePilot، ودي منصة بتساعد الماركتير يبني ميديا بلان ويحسب الميزانية والتوقعات قبل ما يطلق الحملة. الجمهور بتاعنا performance marketers وأصحاب وكالات صغيرة في مصر. الميمز هتنزل على لينكد إن وفيسبوك.",
+      "expected_output": "3 meme specs in Egyptian Arabic, each with caption, in-image line, named visual format + fallback, and design specs. Specific moments with receipts, product appears as a character not a pitch, no CTA inside the image.",
+      "files": [],
+      "assertions": [
+        "Delivers exactly 3 meme specs",
+        "Every meme has caption, in-image line, visual and design sections",
+        "Every meme names a fallback visual",
+        "Every meme names a one-word emotional state",
+        "No denial-then-reveal contrast construction anywhere",
+        "In-image line is shorter than its caption in every meme",
+        "No CTA, hashtag or emoji inside any in-image line",
+        "At least 2 of 3 memes carry a concrete numeric receipt",
+        "Audience is defined as one specific person, not a job category",
+        "Each meme is built on a specific recurring moment rather than a general observation",
+        "The in-image line is spoken by the character in the picture, not a restatement of the caption",
+        "Copy reads as spoken dialect rather than Modern Standard Arabic",
+        "The product appears as an element of the situation rather than as a benefit statement or pitch",
+        "At least one idea is offered with more than one visual option for the same caption"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "saudi-logistics-dialect",
+      "prompt": "اكتبلي ميمز لعميل سعودي، شركة شحن وتوصيل B2B في الرياض، جمهورها مدراء العمليات وأصحاب المتاجر الإلكترونية. عايز 3 ميمز باللهجة السعودية ينزلوا على X.",
+      "expected_output": "3 meme specs in Saudi dialect with Gulf-appropriate cultural references and vocabulary, not Egyptian. Full spec per meme.",
+      "files": [],
+      "assertions": [
+        "Delivers exactly 3 meme specs",
+        "Every meme has caption, in-image line, visual and design sections",
+        "Every meme names a fallback visual",
+        "Every meme names a one-word emotional state",
+        "No denial-then-reveal contrast construction anywhere",
+        "In-image line is shorter than its caption in every meme",
+        "No CTA, hashtag or emoji inside any in-image line",
+        "At least 2 of 3 memes carry a concrete numeric receipt",
+        "Audience is defined as one specific person, not a job category",
+        "Each meme is built on a specific recurring moment rather than a general observation",
+        "The in-image line is spoken by the character in the picture, not a restatement of the caption",
+        "Copy reads as spoken dialect rather than Modern Standard Arabic",
+        "Saudi run contains no Egyptian dialect markers in the copy",
+        "Visual references are Gulf-appropriate or global, with no Egyptian cinema references",
+        "Copy uses recognisable Gulf vocabulary such as الحين، كذا، ما فيه، أبي، كيف، الدوام"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "consumer-dental-clinic",
+      "prompt": "عندي كلاينت عيادة أسنان في القاهرة وعايزين يعملوا كونتنت خفيف على انستجرام. الجمهور ناس من 25 لـ 40 سنة. اعملي 3 ميمز.",
+      "expected_output": "3 consumer-facing meme specs in Egyptian Arabic for a non-B2B, non-marketing vertical. Tests whether the skill generalizes beyond the agency-pain domain it was derived from.",
+      "files": [],
+      "assertions": [
+        "Delivers exactly 3 meme specs",
+        "Every meme has caption, in-image line, visual and design sections",
+        "Every meme names a fallback visual",
+        "Every meme names a one-word emotional state",
+        "No denial-then-reveal contrast construction anywhere",
+        "In-image line is shorter than its caption in every meme",
+        "No CTA, hashtag or emoji inside any in-image line",
+        "At least 2 of 3 memes carry a concrete numeric receipt",
+        "Audience is defined as one specific person, not a job category",
+        "Each meme is built on a specific recurring moment rather than a general observation",
+        "The in-image line is spoken by the character in the picture, not a restatement of the caption",
+        "Copy reads as spoken dialect rather than Modern Standard Arabic",
+        "Memes centre the patient's lived experience rather than the clinic's services",
+        "Nothing punches down at patients, their appearance, or their ability to pay"
+      ]
+    }
+  ]
+}
