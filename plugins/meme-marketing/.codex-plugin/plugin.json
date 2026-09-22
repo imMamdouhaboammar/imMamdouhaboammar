@@ -1,6 +1,6 @@
 {
   "name": "meme-marketing",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Create, audit, localize and tune recognizable social memes with platform-aware captions and visual briefs.",
   "author": {
     "name": "Mamdouh Aboammar",
@@ -15,10 +15,11 @@
     "category": "Productivity",
     "capabilities": [
       "Create audience-specific meme concepts and captions",
-      "Audit image-caption humor",
-      "Adapt cultural references to the target audience",
-      "Produce original visual briefs and fallback concepts",
-      "Learn scoped preferences from approved feedback"
+      "Audit image-caption humor and repetition",
+      "Localize meme moments across Egyptian Arabic, Gulf Arabic and English",
+      "Produce original visual briefs with rights-aware fallbacks",
+      "Build platform-specific meme batches and calendars",
+      "Tune a scoped taste profile from approved feedback"
     ],
     "defaultPrompt": [
       "Create three Egyptian Arabic memes about late client revisions, with visual briefs",
