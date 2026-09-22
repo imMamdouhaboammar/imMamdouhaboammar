@@ -1,0 +1,10 @@
+interface:
+  display_name: Meme Marketing
+  short_description: Create and tune relatable memes
+  brand_color: "#172A34"
+  default_prompt: Create three audience-specific memes with captions and visual directions
+policy:
+  products:
+    - CHAT
+    - CODEX
+  allow_implicit_invocation: true

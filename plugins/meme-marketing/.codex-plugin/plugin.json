@@ -1,0 +1,33 @@
+{
+  "name": "meme-marketing",
+  "version": "2.1.0",
+  "description": "Create, audit, localize and tune recognizable social memes with platform-aware captions and visual briefs.",
+  "author": {
+    "name": "Mamdouh Aboammar",
+    "url": "https://github.com/imMamdouhaboammar"
+  },
+  "skills": "./skills",
+  "interface": {
+    "displayName": "Meme Marketing",
+    "shortDescription": "Memes people recognize",
+    "longDescription": "Turn audience-specific moments into meme captions and buildable visual directions. Audit or localize examples in Egyptian Arabic, Gulf Arabic or English, and tune a reusable taste profile from approved feedback. Images, live trends and file persistence require tools available in your ChatGPT or Codex session.",
+    "developerName": "Mamdouh Aboammar",
+    "category": "Productivity",
+    "capabilities": [
+      "Create audience-specific meme concepts and captions",
+      "Audit image-caption humor",
+      "Adapt cultural references to the target audience",
+      "Produce original visual briefs and fallback concepts",
+      "Learn scoped preferences from approved feedback"
+    ],
+    "defaultPrompt": [
+      "Create three Egyptian Arabic memes about late client revisions, with visual briefs",
+      "Audit this meme and identify where the image repeats the caption",
+      "Adapt these memes to Saudi Arabic for operations managers"
+    ],
+    "brandColor": "#172A34",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo-light.svg",
+    "websiteURL": "https://github.com/imMamdouhaboammar/imMamdouhaboammar"
+  }
+}
