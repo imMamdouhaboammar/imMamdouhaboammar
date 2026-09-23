@@ -1,8 +1,8 @@
 ---
 name: portfolio-interview
-description: Interview the user through a short series of popup questions (field, goals, identity, work, avatar photo, social accounts), then generate a responsive, bilingual-ready personal portfolio website modelled on the imMamdouhaboammar portfolio, fully prepared for SEO and GEO (Person/ProfilePage/FAQPage JSON-LD, hreflang, llms.txt, AI-crawler robots, sitemap, share image). Use when someone asks to build, make or generate a portfolio, personal website, profile page, CV site, "about me" page or link-in-bio site, or says "اعملي بورتفوليو", "عايز موقع شخصي", "صفحة بروفايل", "موقع CV". Adapts sections, schema types, tone and visual style to the person's field (developer, designer, marketer, writer, creator, photographer, product, consultant, academic, educator, law/medicine/finance).
+description: Interview the user through a short guided interview rounds, using popups when the host provides them (field, goals, identity, work, avatar photo, social accounts), then generate a responsive, bilingual-ready personal portfolio website modelled on the imMamdouhaboammar portfolio, fully prepared for SEO and GEO (Person/ProfilePage/FAQPage JSON-LD, hreflang, llms.txt, AI-crawler robots, sitemap, share image). Use when someone asks to build, make or generate a portfolio, personal website, profile page, CV site, "about me" page or link-in-bio site, or says "اعملي بورتفوليو", "عايز موقع شخصي", "صفحة بروفايل", "موقع CV". Adapts sections, schema types, tone and visual style to the person's field (developer, designer, marketer, writer, creator, photographer, product, consultant, academic, educator, law/medicine/finance).
 metadata:
-  version: "1.2"
+  version: "1.3"
 ---
 
 # Portfolio Interview
@@ -21,6 +21,7 @@ The person is the source of truth. Draft copy freely, but every fact, number, em
 - `agents/*.md`: three Claude Code subagents (profile-miner, portfolio-copywriter, portfolio-qa). `agents/openai.yaml` holds Codex display metadata.
 - `hooks/`: two Claude Code hooks, loaded when the skill is installed as a plugin.
 - `.claude-plugin/plugin.json`: the Claude Code plugin manifest.
+- `../../../plugins/portfolio-interview/`: the separately packaged ChatGPT/Codex Plugin at repository level (available only in a full repository checkout). Its runtime files are kept in sync with this Skill.
 - `references/interview.md`: every popup round with the exact question payloads. **Read it before asking anything.**
 - `references/profile-schema.md`: the `profile.json` contract.
 - `references/field-playbook.md`: how each field changes sections, copy, style, colour and schema.
@@ -30,11 +31,11 @@ The person is the source of truth. Draft copy freely, but every fact, number, em
 
 ## Asking questions
 
-Use the host's interactive question tool so each round appears as a popup:
+Use the host's interactive question tool when it is actually available; otherwise present each round as a concise chat message:
 
 - **Claude Code:** `AskUserQuestion`. Each call takes 1 to 4 questions, each question 2 to 4 options, with a header of 12 characters or less. The tool adds "Other" automatically, so free text always works. Use `multiSelect: true` when choices can combine.
 - **claude.ai:** the ask-user-input widget, when it is available.
-- **No popup tool (Codex, API, plain chat):** send the same round as one short numbered message and wait.
+- **No popup tool (ChatGPT, Codex, API or plain chat):** send the same round as one short numbered message and wait.
 
 Free-text answers (name, handles, project details) still go through popups. Offer 2 to 4 **prefilled suggestions** drawn from what you already know: `git config user.name`, a GitHub profile, an attached CV, or earlier answers. The person picks one or types their own under "Other". A popup never shows only placeholder options like "I'll type it".
 
@@ -50,16 +51,22 @@ When the skill runs as the Claude Code plugin, three subagents are available. De
 | `portfolio-copywriter` | the `profile.json` path plus the collected answers | Step 5. Show its three headline options in the R8 review. |
 | `portfolio-qa` | the `profile.json` path and the output folder | Steps 7 and 8. Act on every finding before the handover. |
 
-If a subagent isn't available (a plain skill install, Codex, claude.ai), do that step yourself with the same references.
+If a subagent isn't available (a plain skill install, ChatGPT, Codex, claude.ai), do that step yourself with the same references. The separate OpenAI Plugin packages the workflow and scripts, not Claude-only subagent registrations or Claude hook execution.
 
 The plugin also runs two hooks:
 
 - **Before any Write or Edit** inside a folder that `build.mjs` generated, the edit is denied with a pointer to `profile.json`. Make the change there and rebuild.
 - **After every save of `profile.json`**, the copy rules and profile checks run. When they fail, the report comes back to you. Fix it before building.
 
+## Host portability
+
+Use Node.js 18+ for `build.mjs` and `check.mjs` **only when executable shell access exists**. Some ChatGPT sessions can read and create files but cannot execute Node.js. In that case complete the interview, prepare `profile.json`, validate its facts and structure as far as the available tools permit, and hand over exact local build/check commands. Do not report successful build, screenshots, hooks or browser tests that have not run. Always request approval before publishing contact details or deploying a site.
+
+Claude hooks and subagents only activate when that host loads them. In ChatGPT/Codex, explicitly check the profile after each meaningful edit and avoid direct edits to generated HTML. Refer to the OpenAI package's `references/host-compatibility.md` when present.
+
 ## Workflow
 
-1. **Kickoff.** Say in two lines what will happen: about 8 quick popups, a photo, social links, then a site they can publish. Check context first: an attached CV, LinkedIn export, GitHub username or old site can fill most answers. Offer to read it before asking.
+1. **Kickoff.** Say in two lines what will happen: up to eight short interview rounds, a photo, social links, then a site they can publish. Check context first: an attached CV, LinkedIn export, GitHub username or old site can fill most answers. Offer to read it before asking.
 2. **Interview.** Follow `references/interview.md` round by round:
    R1 setup (language, field, goal, look) → R2 field depth → R3 identity → R4 proof of work → R5 avatar → R6 social accounts → R7 contact and address → R8 review.
 3. **Classify the field.** Map the answers to one archetype in `references/field-playbook.md`. It sets section order, labels, schema type for work items, default style and colour, and what proof matters for that field. When a person spans two fields, pick the one their target reader hires for and pull vocabulary from the second.

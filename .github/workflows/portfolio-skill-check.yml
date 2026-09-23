@@ -27,6 +27,24 @@ jobs:
           node-version: "22"
       - name: Build fixtures, run static checks, confirm the invalid fixture fails
         run: node .claude/skills/portfolio-interview/scripts/selftest.mjs
+      - name: Validate the portable ChatGPT/Codex Plugin and runtime mirror
+        run: |
+          node .claude/skills/portfolio-interview/scripts/sync-openai.mjs --check
+          node .claude/skills/portfolio-interview/scripts/check-openai.mjs
+      - name: Scan the portable Plugin for credential leakage and permission-boundary regressions
+        run: node .claude/skills/portfolio-interview/scripts/security-openai.mjs
+      - name: Package the OpenAI Plugin twice, extract and smoke-test a clean copy
+        run: |
+          node .claude/skills/portfolio-interview/scripts/package-openai.mjs "$RUNNER_TEMP/portfolio-interview-openai-a.zip"
+          node .claude/skills/portfolio-interview/scripts/package-openai.mjs "$RUNNER_TEMP/portfolio-interview-openai-b.zip"
+          cmp "$RUNNER_TEMP/portfolio-interview-openai-a.zip" "$RUNNER_TEMP/portfolio-interview-openai-b.zip"
+          unzip -tq "$RUNNER_TEMP/portfolio-interview-openai-a.zip"
+          mkdir -p "$RUNNER_TEMP/openai-unpacked"
+          unzip -q "$RUNNER_TEMP/portfolio-interview-openai-a.zip" -d "$RUNNER_TEMP/openai-unpacked"
+          test -f "$RUNNER_TEMP/openai-unpacked/portfolio-interview/plugin.json"
+          test -f "$RUNNER_TEMP/openai-unpacked/portfolio-interview/skills/portfolio-interview/SKILL.md"
+          node "$RUNNER_TEMP/openai-unpacked/portfolio-interview/skills/portfolio-interview/scripts/build.mjs" "$GITHUB_WORKSPACE/.claude/skills/portfolio-interview/evals/fixtures/designer-bilingual.json" --out "$RUNNER_TEMP/openai-site"
+          node "$RUNNER_TEMP/openai-unpacked/portfolio-interview/skills/portfolio-interview/scripts/check.mjs" "$GITHUB_WORKSPACE/.claude/skills/portfolio-interview/evals/fixtures/designer-bilingual.json" "$RUNNER_TEMP/openai-site" --no-browser
       - name: Validate the Claude Code plugin and marketplace manifests
         run: |
           npx -y @anthropic-ai/claude-code@latest plugin validate .
@@ -60,4 +78,10 @@ jobs:
         with:
           name: portfolio-interview-skill
           path: ${{ runner.temp }}/portfolio-interview.zip
+          retention-days: 90
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-interview-chatgpt-codex-plugin
+          path: ${{ runner.temp }}/portfolio-interview-openai-a.zip
           retention-days: 90

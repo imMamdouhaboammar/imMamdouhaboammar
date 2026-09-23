@@ -36,6 +36,25 @@ You answer about eight rounds of multiple-choice popups. Every popup also accept
 
 ### Install
 
+<details>
+<summary><strong>ChatGPT and Codex: install the full Skills-only Plugin</strong></summary>
+
+The full OpenAI package is now under [`plugins/portfolio-interview`](../../../plugins/portfolio-interview/), registered in this repository's [OpenAI marketplace](../../../.agents/plugins/marketplace.json). It includes a portable root `plugin.json`, a Codex compatibility overlay, a self-contained interview Skill and a host-workspace helper, without assuming Claude subagents or Claude hooks run on OpenAI hosts.
+
+```bash
+# from a local checkout, verify canonical runtime and package deterministically
+node .claude/skills/portfolio-interview/scripts/sync-openai.mjs --check
+node .claude/skills/portfolio-interview/scripts/check-openai.mjs
+node .claude/skills/portfolio-interview/scripts/package-openai.mjs /tmp/portfolio-interview-plugin.zip
+```
+
+In a compatible Codex/ChatGPT Desktop local plugin flow, add this repository as a marketplace and select `portfolio-interview@mamdouh-plugins`. For a surface that accepts Skills-only Plugin archives, use the ZIP. Installation and public listing require separate user action; this repo's CI is not proof of a live hosted install.
+
+**Runtime:** Node.js 18+ is required for generated HTML and validation. When ChatGPT cannot execute Node.js, the Skill collects a confirmed `profile.json` and provides exact local build commands instead. Optional Playwright is required for browser screenshots. For standalone Skill installations, use the existing `npx skills` method below.
+
+</details>
+
+
 Pick the tool you use. Each method below was tested as written.
 
 <details open>
@@ -335,3 +354,7 @@ npx skills add imMamdouhaboammar/imMamdouhaboammar --skill portfolio-interview
 ولو عايز تعدل أي حاجة بعد كده، عدّل `profile.json` وابني الموقع تاني. متعدلش في ملفات الـ HTML نفسها، لإن أول Build جديد هيمسح تعديلاتك.
 
 </div>
+
+### إضافة ChatGPT وCodex
+
+الحزمة الكاملة موجودة الآن في [`plugins/portfolio-interview`](../../../plugins/portfolio-interview/) ومسجلة في `.agents/plugins/marketplace.json`. تقدر تثبّتها من الـ local marketplace في Codex أو ChatGPT Desktop إن كان الخيار متاحا، أو تحزمها ZIP بالأوامر أعلاه. الـ Claude subagents والـ hooks تخص Claude Code فقط. لو الجلسة مافيهاش Node.js، المهارة تجهز `profile.json` وتعطيك خطوات البناء المحلي، من غير ادعاء أن الموقع أو اختبارات المتصفح اتنفذت.
