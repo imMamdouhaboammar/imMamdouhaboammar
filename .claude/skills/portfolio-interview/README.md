@@ -30,6 +30,7 @@ You answer about eight rounds of multiple-choice popups. Every popup also accept
 | **Search and AI answers** | Person, ProfilePage, ItemList and FAQPage JSON-LD, plus hreflang, canonical, Open Graph, `sitemap.xml` and `llms.txt`. `robots.txt` allows GPTBot, ClaudeBot and PerplexityBot. The build also renders a 1200×630 share card. |
 | **No filler** | The build fails on invented-sounding copy (the "not just X, it's Y" formula, a list of buzzwords, em dashes), on numbers without a source, and on unnamed testimonials. |
 | **Easy to host** | Plain HTML, CSS and a small script with no dependencies. The output works on GitHub Pages, Netlify, Vercel or any static host. |
+| **Claude Code plugin** | Installs from this repo's marketplace with three subagents (profile miner, copywriter, QA) and two hooks: one lints `profile.json` on every save, the other blocks direct edits to generated pages. |
 
 <img src="docs/og-card.png" alt="Generated 1200x630 share card" width="60%">
 
@@ -48,6 +49,10 @@ Inside Claude Code:
 ```
 
 Then start it with `/portfolio-interview:portfolio-interview`, or just say "build me a portfolio". To update later, run `/plugin marketplace update mamdouh-skills`.
+
+This route installs everything: the skill, [three subagents](#subagents) and [two hooks](#hooks). Every other route installs the skill alone, and you can add the extras by hand.
+
+To try a local checkout without installing it: `claude --plugin-dir ./.claude/skills/portfolio-interview`.
 
 </details>
 
@@ -110,6 +115,58 @@ On claude.ai the rounds appear as popups when the question widget is available. 
 
 </details>
 
+### Subagents
+
+The plugin brings three specialists. The skill hands work to them on its own, and you can also call them directly with `@agent-portfolio-interview:<name>`.
+
+| Subagent | What it does | Model |
+|---|---|---|
+| `profile-miner` | Reads your CV, LinkedIn export, GitHub account or old site, and returns prefilled answers with the source of each one. It never fills a gap by guessing. | sonnet |
+| `portfolio-copywriter` | Writes every string in `profile.json` in your language and dialect, drafts three headlines, counts meta description characters, and keeps rerunning the checks until they pass. | same as your session |
+| `portfolio-qa` | Builds the site, reads the screenshots like a recruiter would, and returns fixes in priority order, each tied to a `profile.json` field. It never edits files. | sonnet |
+
+### Hooks
+
+| Event | What happens |
+|---|---|
+| Before `Write` / `Edit` | If the file sits inside a folder that `build.mjs` generated (marked by `.portfolio-build.json`), the edit is denied with a pointer to `profile.json`, since the next build would overwrite it anyway. |
+| After `Write` / `Edit` on `profile.json` | Runs the copy rules and profile checks. Problems come back to Claude straight away, before any build. |
+
+Both hooks read only the file path from the event, finish in well under a second, stay silent on every other file, and exit cleanly when they receive input they don't recognise.
+
+<details>
+<summary><strong>Add the subagents and hooks without the plugin</strong></summary>
+
+After a copy-the-folder or `npx skills` install into `~/.claude/skills/portfolio-interview`:
+
+```bash
+mkdir -p ~/.claude/agents
+cp ~/.claude/skills/portfolio-interview/agents/*.md ~/.claude/agents/
+```
+
+Then merge this into the `hooks` block of `~/.claude/settings.json`:
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      { "matcher": "Write|Edit|MultiEdit", "hooks": [
+        { "type": "command", "command": "node \"$HOME/.claude/skills/portfolio-interview/hooks/guard-generated.mjs\"", "timeout": 10 }
+      ] }
+    ],
+    "PostToolUse": [
+      { "matcher": "Write|Edit|MultiEdit", "hooks": [
+        { "type": "command", "command": "node \"$HOME/.claude/skills/portfolio-interview/hooks/lint-profile.mjs\"", "timeout": 30 }
+      ] }
+    ]
+  }
+}
+```
+
+Installed this way, the subagents are called `@agent-profile-miner`, `@agent-portfolio-copywriter` and `@agent-portfolio-qa`.
+
+</details>
+
 ### Requirements
 
 - **Node.js 18 or newer.** Needed for the build and the checks.
@@ -161,6 +218,7 @@ node $S/scripts/build.mjs portfolio/profile.json --out portfolio/site --og
 node $S/scripts/check.mjs portfolio/profile.json portfolio/site
 node $S/scripts/selftest.mjs --browser       # the skill's own tests
 node $S/scripts/package.mjs                  # ZIP for claude.ai
+node $S/scripts/check.mjs portfolio/profile.json --profile-only   # copy and profile only, what the hook runs
 ```
 
 To change anything later, edit `profile.json` and rebuild. Don't edit the generated HTML: the next build overwrites it.
@@ -185,7 +243,9 @@ references/
   copy-rules.md           the writing standard
 scripts/                  build, check, selftest, package
 assets/template/          site.css and site.js
-agents/openai.yaml        Codex display metadata
+agents/                   three Claude Code subagents, plus openai.yaml for Codex
+hooks/                    hooks.json and the two hook scripts
+.claude-plugin/           plugin.json, the Claude Code plugin manifest
 evals/fixtures/           example profiles, including one built to fail
 docs/                     the screenshots in this README
 ```
@@ -225,6 +285,18 @@ The design comes from the [portfolio page](https://immamdouhaboammar.github.io/i
 
 بعدها شغّله بـ `/portfolio-interview:portfolio-interview`، أو قول لـ Claude "اعملي بورتفوليو" وهو هيشغله لوحده.
 
+الـ Plugin بينزّل معاه كل حاجة. ده جدول باللي بيجي معاه:
+
+| الجزء | بيعمل إيه |
+|---|---|
+| `profile-miner` | Agent بيقرا الـ CV أو حسابك على GitHub أو موقعك القديم، ويطلع منهم إجابات جاهزة، وجنب كل معلومة مصدرها |
+| `portfolio-copywriter` | Agent بيكتب كل نصوص الموقع بلغتك ولهجتك، ويفضل يعيد المراجعة لحد ما تعدّي من غير أخطاء |
+| `portfolio-qa` | Agent بيبني الموقع ويراجعه بعين الـ Recruiter، ويديك التعديلات مرتبة حسب أهميتها |
+| Hook قبل التعديل | بيمنع التعديل المباشر في ملفات الموقع اللي اتولدت، وبيوجّهك لـ `profile.json` |
+| Hook بعد الحفظ | بيراجع `profile.json` كل مرة يتحفظ، ويرجّع الأخطاء لـ Claude على طول |
+
+تقدر تنادي أي Agent بنفسك كده: `@agent-portfolio-interview:portfolio-qa`.
+
 **في Claude Code أو Codex بأداة `npx skills`:**
 
 </div>
@@ -236,6 +308,8 @@ npx skills add imMamdouhaboammar/imMamdouhaboammar --skill portfolio-interview
 <div dir="rtl">
 
 في Claude Code شغّله بـ `/portfolio-interview`، وفي Codex بـ `$portfolio-interview`. ولو عايزه متاح في كل مشاريعك، زوّد `-g` على الأمر.
+
+الطرق اللي جاية بتنزّل السكيل لوحده. ولو عايز الـ Agents والـ Hooks معاه، الخطوات في جزء "Add the subagents and hooks without the plugin" في النسخة الإنجليزية فوق.
 
 **نسخ الفولدر بإيدك:** انسخ فولدر `.claude/skills/portfolio-interview` من الريبو لواحد من الأماكن دي:
 

@@ -2,7 +2,7 @@
 name: portfolio-interview
 description: Interview the user through a short series of popup questions (field, goals, identity, work, avatar photo, social accounts), then generate a responsive, bilingual-ready personal portfolio website modelled on the imMamdouhaboammar portfolio, fully prepared for SEO and GEO (Person/ProfilePage/FAQPage JSON-LD, hreflang, llms.txt, AI-crawler robots, sitemap, share image). Use when someone asks to build, make or generate a portfolio, personal website, profile page, CV site, "about me" page or link-in-bio site, or says "اعملي بورتفوليو", "عايز موقع شخصي", "صفحة بروفايل", "موقع CV". Adapts sections, schema types, tone and visual style to the person's field (developer, designer, marketer, writer, creator, photographer, product, consultant, academic, educator, law/medicine/finance).
 metadata:
-  version: "1.1"
+  version: "1.2"
 ---
 
 # Portfolio Interview
@@ -18,6 +18,9 @@ The person is the source of truth. Draft copy freely, but every fact, number, em
 - `scripts/selftest.mjs`: builds the fixtures and confirms that a bad profile fails.
 - `scripts/package.mjs [out.zip]`: packs the skill as a ZIP for claude.ai upload.
 - `README.md`: install methods for Claude Code, Codex and claude.ai.
+- `agents/*.md`: three Claude Code subagents (profile-miner, portfolio-copywriter, portfolio-qa). `agents/openai.yaml` holds Codex display metadata.
+- `hooks/`: two Claude Code hooks, loaded when the skill is installed as a plugin.
+- `.claude-plugin/plugin.json`: the Claude Code plugin manifest.
 - `references/interview.md`: every popup round with the exact question payloads. **Read it before asking anything.**
 - `references/profile-schema.md`: the `profile.json` contract.
 - `references/field-playbook.md`: how each field changes sections, copy, style, colour and schema.
@@ -36,6 +39,23 @@ Use the host's interactive question tool so each round appears as a popup:
 Free-text answers (name, handles, project details) still go through popups. Offer 2 to 4 **prefilled suggestions** drawn from what you already know: `git config user.name`, a GitHub profile, an attached CV, or earlier answers. The person picks one or types their own under "Other". A popup never shows only placeholder options like "I'll type it".
 
 Keep the interview to about 8 rounds. Skip a round when earlier answers or attached files already cover it. After each round, say in one line what you understood, then move on.
+
+## Subagents and hooks
+
+When the skill runs as the Claude Code plugin, three subagents are available. Delegate to them and pass `SKILL_DIR` (this folder's absolute path) in the prompt:
+
+| Subagent | Hand it | When |
+|---|---|---|
+| `profile-miner` | the CV path, LinkedIn export, GitHub username or old site URL | Step 1, as soon as a source exists. Turn its `prefill` into R3/R4 popup suggestions, and its `needs_confirmation` into questions. |
+| `portfolio-copywriter` | the `profile.json` path plus the collected answers | Step 5. Show its three headline options in the R8 review. |
+| `portfolio-qa` | the `profile.json` path and the output folder | Steps 7 and 8. Act on every finding before the handover. |
+
+If a subagent isn't available (a plain skill install, Codex, claude.ai), do that step yourself with the same references.
+
+The plugin also runs two hooks:
+
+- **Before any Write or Edit** inside a folder that `build.mjs` generated, the edit is denied with a pointer to `profile.json`. Make the change there and rebuild.
+- **After every save of `profile.json`**, the copy rules and profile checks run. When they fail, the report comes back to you. Fix it before building.
 
 ## Workflow
 

@@ -1160,7 +1160,7 @@ writeFileSync(join(OUT, 'llms.txt'), llms());
 writeFileSync(join(OUT, 'site.webmanifest'), manifest());
 writeFileSync(join(OUT, '404.html'), notFound());
 writeFileSync(join(OUT, '.nojekyll'), '');
-writeFileSync(RECORD, JSON.stringify({ locales: LOCALES, built: new Date().toISOString() }, null, 2));
+writeFileSync(RECORD, JSON.stringify({ locales: LOCALES, profile: resolve(profilePath), built: new Date().toISOString() }, null, 2));
 
 if (!BASE_URL) warnings.push('site.url is empty: canonical, hreflang, og:url and sitemap.xml were skipped. Set it once the address is known and rebuild.');
 console.log(`style=${STYLE} archetype=${FIELD.archetype || 'other'} brand=${BRAND} ink=${BRAND_INK} locales=${LOCALES.join(',')}`);

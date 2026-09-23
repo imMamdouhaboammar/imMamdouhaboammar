@@ -3,8 +3,8 @@
 // fixture is rejected. Browser checks run only with --browser.
 //   node scripts/selftest.mjs [--browser]
 
-import { execFileSync } from 'node:child_process';
-import { mkdtempSync, rmSync, existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { execFileSync, spawnSync } from 'node:child_process';
+import { mkdtempSync, rmSync, existsSync, readFileSync, writeFileSync, readdirSync, copyFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -74,6 +74,43 @@ try {
   let hiddenOut = '';
   try { run('check.mjs', [hidden, join(work, 'designer-bilingual'), '--no-browser']); } catch (e) { hiddenOut = e.stdout || ''; }
   expect(hiddenOut.includes('no public contact route'), 'hidden email with no other route is rejected');
+
+  // Hooks: feed them the same JSON Claude Code sends on stdin.
+  const hook = (name, payload) => spawnSync(process.execPath, [join(root, 'hooks', name)], { input: JSON.stringify(payload), encoding: 'utf8' });
+  const builtPage = join(work, 'designer-bilingual', 'index.html');
+  const guard = hook('guard-generated.mjs', { cwd: work, tool_name: 'Edit', tool_input: { file_path: builtPage } });
+  expect(guard.status === 0 && JSON.parse(guard.stdout || '{}').hookSpecificOutput?.permissionDecision === 'deny', 'guard hook denies edits inside a generated site');
+  const free = hook('guard-generated.mjs', { cwd: work, tool_name: 'Write', tool_input: { file_path: join(work, 'notes.md') } });
+  expect(free.status === 0 && !free.stdout, 'guard hook stays silent outside generated sites');
+  const lintDir = join(work, 'lint');
+  execFileSync('mkdir', ['-p', lintDir]);
+  copyFileSync(fx('invalid-copy.json'), join(lintDir, 'profile.json'));
+  const lintBad = hook('lint-profile.mjs', { cwd: lintDir, tool_name: 'Write', tool_input: { file_path: 'profile.json' } });
+  expect(lintBad.status === 2 && lintBad.stderr.includes('em dash'), 'lint hook reports copy errors with exit 2');
+  copyFileSync(fx('lawyer-arabic.json'), join(lintDir, 'profile.json'));
+  const lintGood = hook('lint-profile.mjs', { cwd: lintDir, tool_name: 'Edit', tool_input: { file_path: join(lintDir, 'profile.json') } });
+  expect(lintGood.status === 0, 'lint hook passes a clean profile');
+  writeFileSync(join(lintDir, 'package.json'), '{}');
+  const lintOther = hook('lint-profile.mjs', { cwd: lintDir, tool_name: 'Edit', tool_input: { file_path: join(lintDir, 'package.json') } });
+  expect(lintOther.status === 0, 'lint hook ignores files other than profile.json');
+  const lintJunk = spawnSync(process.execPath, [join(root, 'hooks', 'lint-profile.mjs')], { input: 'not json', encoding: 'utf8' });
+  expect(lintJunk.status === 0, 'hooks exit 0 on a malformed payload');
+
+  // Agents: every file has the frontmatter Claude Code needs.
+  const agents = readdirSync(join(root, 'agents')).filter((f) => f.endsWith('.md'));
+  expect(agents.length === 3, `three subagents ship (${agents.join(', ')})`);
+  for (const f of agents) {
+    const head = readFileSync(join(root, 'agents', f), 'utf8').split('---')[1] || '';
+    expect(/^name: [a-z0-9-]+$/m.test(head) && /^description: .{40,}/m.test(head), `agent ${f} has name and description`);
+  }
+
+  // One version everywhere it is declared.
+  const plugin = JSON.parse(readFileSync(join(root, '.claude-plugin', 'plugin.json'), 'utf8'));
+  const skillVersion = (readFileSync(join(root, 'SKILL.md'), 'utf8').match(/version: "([^"]+)"/) || [])[1];
+  const marketFile = join(root, '..', '..', '..', '.claude-plugin', 'marketplace.json');
+  const market = existsSync(marketFile) ? JSON.parse(readFileSync(marketFile, 'utf8')) : null;
+  expect(plugin.version.startsWith(`${skillVersion}.`), `plugin.json ${plugin.version} matches SKILL.md ${skillVersion}`);
+  if (market) expect(market.metadata?.version === plugin.version, `marketplace ${market.metadata?.version} matches plugin.json ${plugin.version}`);
 
   const bad = join(work, 'invalid');
   run('build.mjs', [fx('invalid-copy.json'), '--out', bad]);
