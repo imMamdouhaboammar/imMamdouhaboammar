@@ -31,6 +31,8 @@ jobs:
         run: |
           node .claude/skills/portfolio-interview/scripts/sync-openai.mjs --check
           node .claude/skills/portfolio-interview/scripts/check-openai.mjs
+      - name: Scan the portable Plugin for credential leakage and permission-boundary regressions
+        run: node .claude/skills/portfolio-interview/scripts/security-openai.mjs
       - name: Package the OpenAI Plugin twice, extract and smoke-test a clean copy
         run: |
           node .claude/skills/portfolio-interview/scripts/package-openai.mjs "$RUNNER_TEMP/portfolio-interview-openai-a.zip"
