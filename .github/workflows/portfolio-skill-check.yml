@@ -49,10 +49,13 @@ jobs:
             }
             console.log("marketplace entry ok:", p.source);
           '
-      - name: Package the claude.ai upload ZIP
+      - name: Package the claude.ai upload ZIP and run the selftest from the extracted copy
         run: |
           node .claude/skills/portfolio-interview/scripts/package.mjs "$RUNNER_TEMP/portfolio-interview.zip"
-          unzip -l "$RUNNER_TEMP/portfolio-interview.zip" | grep -q "portfolio-interview/SKILL.md"
+          unzip -tq "$RUNNER_TEMP/portfolio-interview.zip"
+          mkdir -p "$RUNNER_TEMP/unpacked" && cd "$RUNNER_TEMP/unpacked"
+          unzip -q "$RUNNER_TEMP/portfolio-interview.zip"
+          node portfolio-interview/scripts/selftest.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: portfolio-interview-skill
