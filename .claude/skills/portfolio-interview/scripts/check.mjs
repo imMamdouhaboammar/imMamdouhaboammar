@@ -2,6 +2,7 @@
 // Release checks for a generated portfolio.
 //
 //   node check.mjs <profile.json> <site-dir> [--shots <dir>] [--no-browser]
+//   node check.mjs <profile.json> --profile-only      (copy rules and profile only)
 //
 // 1. Copy rules on every string in profile.json (banned phrasing, em dash,
 //    unsourced numbers, missing essentials).
@@ -20,14 +21,21 @@ import { createRequire } from 'node:module';
 const argv = process.argv.slice(2);
 const positional = argv.filter((a, i) => !a.startsWith('--') && !['--shots'].includes(argv[i - 1]));
 const [profilePath, siteDir] = positional;
-if (!profilePath || !siteDir) {
-  console.error('usage: node check.mjs <profile.json> <site-dir> [--shots <dir>] [--no-browser]');
+const PROFILE_ONLY = argv.includes('--profile-only');
+if (!profilePath || (!siteDir && !PROFILE_ONLY)) {
+  console.error('usage: node check.mjs <profile.json> <site-dir> [--shots <dir>] [--no-browser]\n       node check.mjs <profile.json> --profile-only');
   process.exit(2);
 }
 const shotsIdx = argv.indexOf('--shots');
-const SHOTS = shotsIdx >= 0 ? resolve(argv[shotsIdx + 1]) : resolve(siteDir, '..', `${siteDir.replace(/\/$/, '').split('/').pop()}-qa`);
-const P = JSON.parse(readFileSync(profilePath, 'utf8'));
-const SITE = resolve(siteDir);
+const SHOTS = shotsIdx >= 0 ? resolve(argv[shotsIdx + 1]) : siteDir ? resolve(siteDir, '..', `${siteDir.replace(/\/$/, '').split('/').pop()}-qa`) : '';
+let P;
+try {
+  P = JSON.parse(readFileSync(profilePath, 'utf8'));
+} catch (e) {
+  console.log(`\nerrors (1):\n  x profile: ${profilePath} is not valid JSON (${e.message})`);
+  process.exit(1);
+}
+const SITE = siteDir ? resolve(siteDir) : '';
 
 const errors = [];
 const warns = [];
@@ -118,8 +126,8 @@ function htmlFiles(dir) {
   });
 }
 
-const pages = existsSync(SITE) ? htmlFiles(SITE) : [];
-if (!pages.length) err(`site: no index.html found under ${SITE}. Run build.mjs first.`);
+const pages = PROFILE_ONLY ? [] : existsSync(SITE) ? htmlFiles(SITE) : [];
+if (!PROFILE_ONLY && !pages.length) err(`site: no index.html found under ${SITE}. Run build.mjs first.`);
 
 const strip = (s) => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
@@ -162,8 +170,10 @@ for (const file of pages) {
     if (!exists) err(`html ${rel}: local reference not found: ${m[1]}`);
   }
 }
-for (const f of ['robots.txt', 'llms.txt']) if (!existsSync(join(SITE, f))) err(`site: ${f} missing`);
-if (P.site?.url && !existsSync(join(SITE, 'sitemap.xml'))) err('site: sitemap.xml missing');
+if (!PROFILE_ONLY) {
+  for (const f of ['robots.txt', 'llms.txt']) if (!existsSync(join(SITE, f))) err(`site: ${f} missing`);
+  if (P.site?.url && !existsSync(join(SITE, 'sitemap.xml'))) err('site: sitemap.xml missing');
+}
 
 /* ---------------------------------------------------------- browser checks ---- */
 
@@ -236,7 +246,7 @@ if (!argv.includes('--no-browser') && pages.length) {
 
 /* ------------------------------------------------------------------ report ---- */
 
-console.log(`checked ${pages.length} page(s) in ${SITE}`);
+console.log(PROFILE_ONLY ? `checked profile ${profilePath}` : `checked ${pages.length} page(s) in ${SITE}`);
 if (warns.length) { console.log(`\nwarnings (${warns.length}):`); warns.forEach((w) => console.log(`  - ${w}`)); }
 if (errors.length) {
   console.log(`\nerrors (${errors.length}):`);

@@ -1,0 +1,30 @@
+{
+  "name": "mamdouh-skills",
+  "owner": {
+    "name": "Mamdouh Aboammar",
+    "url": "https://github.com/imMamdouhaboammar"
+  },
+  "metadata": {
+    "description": "Agent skills and plugins by Mamdouh Aboammar for marketing, content and personal-brand work.",
+    "version": "1.2.0"
+  },
+  "plugins": [
+    {
+      "name": "portfolio-interview",
+      "source": "./.claude/skills/portfolio-interview",
+      "description": "Popup interview that builds a responsive, bilingual portfolio site ready for SEO and GEO, with subagents and hooks.",
+      "category": "productivity",
+      "tags": [
+        "portfolio",
+        "seo",
+        "geo",
+        "arabic"
+      ],
+      "homepage": "https://github.com/imMamdouhaboammar/imMamdouhaboammar/tree/main/.claude/skills/portfolio-interview",
+      "author": {
+        "name": "Mamdouh Aboammar",
+        "url": "https://github.com/imMamdouhaboammar"
+      }
+    }
+  ]
+}

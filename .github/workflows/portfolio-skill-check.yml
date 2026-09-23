@@ -4,10 +4,12 @@ on:
   pull_request:
     paths:
       - ".claude/skills/portfolio-interview/**"
+      - ".claude-plugin/marketplace.json"
       - ".github/workflows/portfolio-skill-check.yml"
   push:
     paths:
       - ".claude/skills/portfolio-interview/**"
+      - ".claude-plugin/marketplace.json"
       - ".github/workflows/portfolio-skill-check.yml"
   workflow_dispatch:
 
@@ -25,3 +27,37 @@ jobs:
           node-version: "22"
       - name: Build fixtures, run static checks, confirm the invalid fixture fails
         run: node .claude/skills/portfolio-interview/scripts/selftest.mjs
+      - name: Validate the Claude Code plugin and marketplace manifests
+        run: |
+          npx -y @anthropic-ai/claude-code@latest plugin validate .
+          npx -y @anthropic-ai/claude-code@latest plugin validate .claude/skills/portfolio-interview
+      - name: Marketplace entry points at a real, self-contained skill
+        run: |
+          node -e '
+            const fs = require("fs"), path = require("path");
+            const m = JSON.parse(fs.readFileSync(".claude-plugin/marketplace.json", "utf8"));
+            const p = m.plugins.find((x) => x.name === "portfolio-interview");
+            if (!p) throw new Error("portfolio-interview missing from marketplace.json");
+            const root = path.resolve(p.source);
+            const manifest = JSON.parse(fs.readFileSync(path.join(root, ".claude-plugin", "plugin.json"), "utf8"));
+            for (const s of manifest.skills || ["skills"]) {
+              const f = path.join(root, s, "SKILL.md");
+              if (!fs.existsSync(f)) throw new Error("no SKILL.md at " + f);
+            }
+            for (const f of ["hooks/hooks.json", "hooks/guard-generated.mjs", "hooks/lint-profile.mjs"]) {
+              if (!fs.existsSync(path.join(root, f))) throw new Error("missing " + f);
+            }
+            console.log("marketplace entry ok:", p.source);
+          '
+      - name: Package the claude.ai upload ZIP and run the selftest from the extracted copy
+        run: |
+          node .claude/skills/portfolio-interview/scripts/package.mjs "$RUNNER_TEMP/portfolio-interview.zip"
+          unzip -tq "$RUNNER_TEMP/portfolio-interview.zip"
+          mkdir -p "$RUNNER_TEMP/unpacked" && cd "$RUNNER_TEMP/unpacked"
+          unzip -q "$RUNNER_TEMP/portfolio-interview.zip"
+          node portfolio-interview/scripts/selftest.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-interview-skill
+          path: ${{ runner.temp }}/portfolio-interview.zip
+          retention-days: 90
