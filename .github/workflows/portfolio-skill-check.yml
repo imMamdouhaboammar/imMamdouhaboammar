@@ -4,10 +4,12 @@ on:
   pull_request:
     paths:
       - ".claude/skills/portfolio-interview/**"
+      - ".claude-plugin/marketplace.json"
       - ".github/workflows/portfolio-skill-check.yml"
   push:
     paths:
       - ".claude/skills/portfolio-interview/**"
+      - ".claude-plugin/marketplace.json"
       - ".github/workflows/portfolio-skill-check.yml"
   workflow_dispatch:
 
@@ -25,3 +27,26 @@ jobs:
           node-version: "22"
       - name: Build fixtures, run static checks, confirm the invalid fixture fails
         run: node .claude/skills/portfolio-interview/scripts/selftest.mjs
+      - name: Marketplace entry points at a real, self-contained skill
+        run: |
+          node -e '
+            const fs = require("fs"), path = require("path");
+            const m = JSON.parse(fs.readFileSync(".claude-plugin/marketplace.json", "utf8"));
+            const p = m.plugins.find((x) => x.name === "portfolio-interview");
+            if (!p) throw new Error("portfolio-interview missing from marketplace.json");
+            const root = path.resolve(p.source);
+            for (const s of p.skills || ["skills"]) {
+              const f = path.join(root, s, "SKILL.md");
+              if (!fs.existsSync(f)) throw new Error("no SKILL.md at " + f);
+            }
+            console.log("marketplace entry ok:", p.source);
+          '
+      - name: Package the claude.ai upload ZIP
+        run: |
+          node .claude/skills/portfolio-interview/scripts/package.mjs "$RUNNER_TEMP/portfolio-interview.zip"
+          unzip -l "$RUNNER_TEMP/portfolio-interview.zip" | grep -q "portfolio-interview/SKILL.md"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-interview-skill
+          path: ${{ runner.temp }}/portfolio-interview.zip
+          retention-days: 90

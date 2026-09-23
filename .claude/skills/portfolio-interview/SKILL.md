@@ -2,7 +2,7 @@
 name: portfolio-interview
 description: Interview the user through a short series of popup questions (field, goals, identity, work, avatar photo, social accounts), then generate a responsive, bilingual-ready personal portfolio website modelled on the imMamdouhaboammar portfolio, fully prepared for SEO and GEO (Person/ProfilePage/FAQPage JSON-LD, hreflang, llms.txt, AI-crawler robots, sitemap, share image). Use when someone asks to build, make or generate a portfolio, personal website, profile page, CV site, "about me" page or link-in-bio site, or says "اعملي بورتفوليو", "عايز موقع شخصي", "صفحة بروفايل", "موقع CV". Adapts sections, schema types, tone and visual style to the person's field (developer, designer, marketer, writer, creator, photographer, product, consultant, academic, educator, law/medicine/finance).
 metadata:
-  version: "1.0"
+  version: "1.1"
 ---
 
 # Portfolio Interview
@@ -16,6 +16,8 @@ The person is the source of truth. Draft copy freely, but every fact, number, em
 - `scripts/build.mjs <profile.json> [--out dir] [--og]`: writes the site. `--og` renders a 1200x630 share image when Playwright is installed.
 - `scripts/check.mjs <profile.json> <site-dir>`: copy rules, SEO checks, and, when Playwright is available, overflow checks from 320 to 2560 px in light and dark themes, with screenshots.
 - `scripts/selftest.mjs`: builds the fixtures and confirms that a bad profile fails.
+- `scripts/package.mjs [out.zip]`: packs the skill as a ZIP for claude.ai upload.
+- `README.md`: install methods for Claude Code, Codex and claude.ai.
 - `references/interview.md`: every popup round with the exact question payloads. **Read it before asking anything.**
 - `references/profile-schema.md`: the `profile.json` contract.
 - `references/field-playbook.md`: how each field changes sections, copy, style, colour and schema.

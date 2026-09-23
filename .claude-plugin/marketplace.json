@@ -1,0 +1,22 @@
+{
+  "name": "mamdouh-skills",
+  "owner": {
+    "name": "Mamdouh Aboammar",
+    "url": "https://github.com/imMamdouhaboammar"
+  },
+  "metadata": {
+    "description": "Agent skills by Mamdouh Aboammar for marketing, content and personal-brand work."
+  },
+  "plugins": [
+    {
+      "name": "portfolio-interview",
+      "source": "./.claude/skills/portfolio-interview",
+      "description": "Popup interview that builds a responsive, SEO and GEO ready personal portfolio site.",
+      "version": "1.1.0",
+      "strict": false,
+      "skills": [
+        "."
+      ]
+    }
+  ]
+}
