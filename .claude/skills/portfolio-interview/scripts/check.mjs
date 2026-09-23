@@ -90,7 +90,8 @@ for (const c of locales) {
   const desc = tx(person.metaDescription, c) || tx(person.summary, c);
   if (desc && (desc.length < 70 || desc.length > 170)) warn(`seo: meta description for "${c}" is ${desc.length} chars (aim for 120 to 160)`);
 }
-if (!person.email && !person.whatsapp && !(P.socials || []).length) err('profile: no contact route at all (email, WhatsApp or one social profile)');
+const publicEmail = person.email && person.showEmail !== false;
+if (!publicEmail && !person.whatsapp && !(P.socials || []).length) err('profile: no public contact route (a shown email, WhatsApp or one social profile). A hidden email does not count.');
 if (!person.avatar) warn('profile: no avatar, a monogram is used');
 if (!P.site?.url) warn('seo: site.url empty, so no canonical, hreflang, og:url or sitemap');
 else if (!/^https:\/\//.test(P.site.url)) err('seo: site.url must be an absolute https:// address');

@@ -249,6 +249,9 @@ const squiggle = () => '<svg class="squiggle" viewBox="0 0 240 12" preserveAspec
 
 const EXT = ' target="_blank" rel="noopener noreferrer"';
 const isExt = (href) => /^https?:/i.test(href || '');
+/** Local assets get the locale depth prefix; absolute URLs pass through untouched. */
+const assetHref = (p, d) => (isExt(p) ? p : `${d}${p}`);
+const assetAbs = (p) => (isExt(p) ? p : BASE_URL ? `${BASE_URL}${p}` : '');
 const srNewTab = (code) => `<span class="sr-only"> (${esc(ui(code).newTab)})</span>`;
 const jsonld = (obj) => `<script type="application/ld+json">${JSON.stringify(obj, null, 2).replace(/</g, '\\u003c')}</script>`;
 
@@ -385,7 +388,7 @@ const pageTitle = (code) => tx(SITE.title, code) || `${tx(PERSON.name, code)} | 
 function structuredData(code) {
   const url = absUrl(code);
   const personId = `${absUrl(DEFAULT) || ''}#person`;
-  const img = AVATAR && BASE_URL ? `${BASE_URL}${AVATAR}` : undefined;
+  const img = assetAbs(AVATAR) || undefined;
   const names = LOCALES.map((c) => tx(PERSON.name, c)).filter(Boolean);
   const alt = [...new Set([...names, ...(PERSON.alternateNames || []), ...SOCIALS.map((s) => s.handle).filter(Boolean)])].filter((n) => n !== tx(PERSON.name, code));
   const l = PERSON.location || {};
@@ -448,7 +451,7 @@ function structuredData(code) {
           description: tx(w.description, code),
           ...(w.url ? { url: w.url } : {}),
           ...(w.url && (w.schemaType || ARC.workType) === 'SoftwareSourceCode' && /github|gitlab|bitbucket/.test(w.url) ? { codeRepository: w.url } : {}),
-          ...(w._img && BASE_URL ? { image: isExt(w._img) ? w._img : `${BASE_URL}${w._img}` } : {}),
+          ...(w._img && assetAbs(w._img) ? { image: assetAbs(w._img) } : {}),
           ...(w.year ? { dateCreated: String(w.year) } : {}),
           ...((w.schemaType || ARC.workType) === 'Course' ? { provider: { '@id': personId } } : { author: { '@id': personId } }),
           ...(w.tags?.length ? { keywords: w.tags.join(', ') } : {}),
@@ -481,7 +484,7 @@ function head(code) {
   const title = pageTitle(code);
   const desc = metaDescription(code);
   const ogImg = OG || AVATAR;
-  const ogAbs = BASE_URL ? (isExt(ogImg) ? ogImg : `${BASE_URL}${ogImg}`) : '';
+  const ogAbs = assetAbs(ogImg);
   const x = SOCIALS.find((s) => s.platform === 'x');
   const xHandle = x ? (x.handle || x.url.split('/').filter(Boolean).pop()) : '';
   const keywords = [tx(PERSON.name, code), tx(PERSON.jobTitle, code), tx(FIELD.specialty, code), ...(PERSON.knowsAbout || []).slice(0, 8), place(code)].filter(Boolean).join(', ');
@@ -520,17 +523,17 @@ ${BASE_URL ? `
   <meta name="twitter:description" content="${esc(desc)}">
   ${ogAbs ? `<meta name="twitter:image" content="${ogAbs}">` : ''}
 
-  <link rel="icon" href="${d}${AVATAR}">
-  <link rel="apple-touch-icon" href="${d}${AVATAR}">
+  <link rel="icon" href="${assetHref(AVATAR, d)}">
+  <link rel="apple-touch-icon" href="${assetHref(AVATAR, d)}">
   <link rel="manifest" href="${d}site.webmanifest">
   <link rel="help" href="${d}llms.txt" type="text/plain" title="LLM context">
-  <link rel="sitemap" type="application/xml" href="${d}sitemap.xml">
+  ${BASE_URL ? `<link rel="sitemap" type="application/xml" href="${d}sitemap.xml">` : ''}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700${fontAr}&family=JetBrains+Mono:wght@500;700&display=swap">
   <link rel="stylesheet" href="${d}assets/site.css">
-  <link rel="preload" as="image" href="${d}${AVATAR}" fetchpriority="high">
+  <link rel="preload" as="image" href="${assetHref(AVATAR, d)}" fetchpriority="high">
 
   ${structuredData(code)}
   <noscript><style>
@@ -590,7 +593,7 @@ function header(code) {
   }).join('\n      ');
   return `<header class="topbar" id="top">
     <a class="brand" href="#top">
-      <img class="brand-avatar" src="${d}${AVATAR}" width="40" height="40" alt="" loading="eager" decoding="async">
+      <img class="brand-avatar" src="${assetHref(AVATAR, d)}" width="40" height="40" alt="" loading="eager" decoding="async">
       <span class="brand-text">
         <strong>${esc(tx(PERSON.name, code))}</strong>
         <small>${esc(tx(PERSON.roleLine, code) || tx(PERSON.jobTitle, code))}</small>
@@ -665,7 +668,7 @@ function hero(code) {
             </svg>
             <span class="spin-badge-core">${icon('arrow', 'i i-arrow')}</span>
           </div>` : ''}
-          <img src="${d}${AVATAR}" width="460" height="460" alt="${esc(tx(PERSON.avatarAlt, code) || (code === 'ar' ? `صورة ${tx(PERSON.name, code)}` : `Portrait of ${tx(PERSON.name, code)}`))}" loading="eager" decoding="async" fetchpriority="high">
+          <img src="${assetHref(AVATAR, d)}" width="460" height="460" alt="${esc(tx(PERSON.avatarAlt, code) || (code === 'ar' ? `صورة ${tx(PERSON.name, code)}` : `Portrait of ${tx(PERSON.name, code)}`))}" loading="eager" decoding="async" fetchpriority="high">
           <figcaption>
             ${open ? '<span class="status-dot" aria-hidden="true"></span>' : ''}
             ${esc(tx(avail.note, code) || (open ? `${u.availTitle} ${joinList(availabilityTypes(code), code)}` : tx(PERSON.jobTitle, code)))}
@@ -728,7 +731,7 @@ function work(code) {
       <div class="grid ${cols}">
         ${WORK.map((w, i) => {
           const name = tx(w.name, code);
-          const img = w._img ? `<div class="work-media"><img src="${isExt(w._img) ? w._img : d + w._img}" alt="${esc(tx(w.imageAlt, code) || name)}" width="800" height="500" loading="lazy" decoding="async"></div>` : '';
+          const img = w._img ? `<div class="work-media"><img src="${assetHref(w._img, d)}" alt="${esc(tx(w.imageAlt, code) || name)}" width="800" height="500" loading="lazy" decoding="async"></div>` : '';
           const meta = [w.year, tx(w.role, code), tx(w.client, code)].filter(Boolean);
           const title = w.url
             ? `<a class="project-link" href="${esc(w.url)}"${isExt(w.url) ? EXT : ''}><h3 class="card-title">${esc(name)}${isExt(w.url) ? srNewTab(code) : ''}<span class="project-go" aria-hidden="true">${icon('arrow', 'i i-arrow')}</span></h3></a>`
@@ -1035,7 +1038,7 @@ function manifest() {
     display: 'browser',
     background_color: '#f2efe9',
     theme_color: BRAND,
-    icons: [{ src: AVATAR, sizes: 'any', type: AVATAR.endsWith('.svg') ? 'image/svg+xml' : `image/${extname(AVATAR).slice(1).replace('jpg', 'jpeg')}` }],
+    icons: [{ src: AVATAR, sizes: 'any', type: AVATAR.endsWith('.svg') ? 'image/svg+xml' : `image/${(extname(new URL(AVATAR, 'file:///').pathname).slice(1) || 'png').replace('jpg', 'jpeg')}` }],
   }, null, 2);
 }
 
@@ -1082,7 +1085,7 @@ async function renderOg() {
   if (!pw) { warnings.push('--og skipped: Playwright is not installed. Share cards will use the avatar.'); return false; }
   const code = DEFAULT;
   const dir = RTL.has(code) ? 'rtl' : 'ltr';
-  const avatarUrl = pathToFileURL(join(OUT, AVATAR)).href;
+  const avatarUrl = isExt(AVATAR) ? AVATAR : pathToFileURL(join(OUT, AVATAR)).href;
   const html = `<!DOCTYPE html><html lang="${code}" dir="${dir}"><head><meta charset="utf-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@500;700&display=swap">
 <style>
@@ -1128,6 +1131,22 @@ if (flag('--og') && !SITE.ogImage) {
   if (await renderOg()) OG = 'assets/og.png';
 }
 
+// Pages from locales dropped since the last build would otherwise stay
+// published with stale details, so remove what this generator wrote before.
+const RECORD = join(OUT, '.portfolio-build.json');
+try {
+  const previous = JSON.parse(readFileSync(RECORD, 'utf8')).locales || [];
+  const current = new Set(LOCALES.map(pagePath));
+  for (const old of previous) {
+    const dir = `${old}/`;
+    if (/^[a-z]{2,3}$/.test(old) && !current.has(dir)) {
+      rmSync(join(OUT, old), { recursive: true, force: true });
+      console.log(`removed stale locale -> ${basename(OUT)}/${dir}`);
+    }
+  }
+} catch { /* first build into this folder */ }
+if (!BASE_URL) rmSync(join(OUT, 'sitemap.xml'), { force: true });
+
 for (const code of LOCALES) {
   const out = join(OUT, pagePath(code), 'index.html');
   mkdirSync(dirname(out), { recursive: true });
@@ -1141,6 +1160,7 @@ writeFileSync(join(OUT, 'llms.txt'), llms());
 writeFileSync(join(OUT, 'site.webmanifest'), manifest());
 writeFileSync(join(OUT, '404.html'), notFound());
 writeFileSync(join(OUT, '.nojekyll'), '');
+writeFileSync(RECORD, JSON.stringify({ locales: LOCALES, built: new Date().toISOString() }, null, 2));
 
 if (!BASE_URL) warnings.push('site.url is empty: canonical, hreflang, og:url and sitemap.xml were skipped. Set it once the address is known and rebuild.');
 console.log(`style=${STYLE} archetype=${FIELD.archetype || 'other'} brand=${BRAND} ink=${BRAND_INK} locales=${LOCALES.join(',')}`);
