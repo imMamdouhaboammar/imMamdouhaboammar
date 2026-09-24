@@ -25,6 +25,23 @@
         "name": "Mamdouh Aboammar",
         "url": "https://github.com/imMamdouhaboammar"
       }
+    },
+    {
+      "name": "written-as-spoken",
+      "source": "./.claude/skills/written-as-spoken",
+      "description": "Writes Egyptian Arabic social posts in the Written as Spoken voice, with a linter that blocks AI slop and denial-then-reveal contrasts.",
+      "category": "productivity",
+      "tags": [
+        "copywriting",
+        "arabic",
+        "linkedin",
+        "tone-of-voice"
+      ],
+      "homepage": "https://github.com/imMamdouhaboammar/imMamdouhaboammar/tree/main/.claude/skills/written-as-spoken",
+      "author": {
+        "name": "Mamdouh Aboammar",
+        "url": "https://github.com/imMamdouhaboammar"
+      }
     }
   ]
 }
