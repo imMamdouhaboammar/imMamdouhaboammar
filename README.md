@@ -58,6 +58,21 @@ I'm learning enough engineering to become much better at Product: what should be
 
 <br>
 
+
+<br>
+
+<div align="center">
+
+### Dev Journey · 182 Days
+
+**03 Oct 2026 to 02 Apr 2027** · 10 active projects · 6 delivery gates
+
+<a href="https://immamdouhaboammar.github.io/imMamdouhaboammar/dev-journey/"><img src="https://img.shields.io/badge/OPEN_INTERACTIVE-DEV_CALENDAR-d8f37b?style=for-the-badge&logo=githubpages&logoColor=0b1015&labelColor=0b1015" alt="Open the six-month interactive development calendar"></a>
+
+[Open calendar](https://immamdouhaboammar.github.io/imMamdouhaboammar/dev-journey/) · [Read the finish-line criteria](dev-journey/README.md)
+
+</div>
+
 <details>
 <summary><strong>Author of PrePilot</strong> · 526 marketing workflows for ChatGPT & Claude</summary>
 
