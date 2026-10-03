@@ -8,6 +8,7 @@ on:
       - 'index.html'
       - 'assets/**'
       - 'portfolio/**'
+      - 'dev-journey/**'
       - 'REPOSITORIES.md'
       - 'llms.txt'
       - 'llms-full.txt'
