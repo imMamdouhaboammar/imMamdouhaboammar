@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b1015">
+  <meta name="description" content="A six-month, evidence-led development calendar for ten active GitHub projects. October 2026 to April 2027.">
+  <title>Dev Journey | 182 days to evidence</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#agenda">Skip to daily tasks</a>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="https://github.com/imMamdouhaboammar/imMamdouhaboammar" aria-label="Back to GitHub profile"><span class="logo">M<span class="logo-accent">/</span></span><span>THE BUILD LOG<small>BY MAMDOUH ABOAMMAR</small></span></a>
+      <span class="top-center"><span class="live-dot"></span> PRIVATE PROGRESS · PUBLIC ROADMAP</span>
+      <a class="top-link" href="https://github.com/imMamdouhaboammar/imMamdouhaboammar/tree/main/dev-journey" target="_blank" rel="noopener noreferrer">VIEW SOURCE <span aria-hidden="true">↗</span></a>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-left"><p class="eyebrow"><span class="pulse"></span> SIX-MONTH ENGINEERING ROADMAP <span class="muted-number">/ 2026 — 2027</span></p>
+          <h1 id="page-title">Make the work<br><em>count.</em></h1>
+          <p class="intro">Ten active projects. One daily decision. A finish line defined by working software and evidence, not activity for its own sake.</p>
+          <div class="date-strip"><span>03 OCT 2026</span><span class="line"></span><span>02 APR 2027</span><span class="time-pill">182 DAYS</span></div>
+        </div>
+        <div class="hero-right" aria-label="Final objective">
+          <div class="objective-top"><span>THE FINISH LINE</span><span>DAY 182 <span aria-hidden="true">↗</span></span></div>
+          <div class="objective-symbol" aria-hidden="true">↗</div>
+          <p>Every project ends with one of two outcomes: <strong>verified release</strong> or <strong>documented stop / pivot decision.</strong></p>
+          <span class="objective-bottom">NO VAGUE “DONE” STATUS.</span>
+        </div>
+      </section>
+      <section class="metrics" aria-label="Journey progress">
+        <div class="metric"><span class="metric-label">CURRENT PHASE</span><strong id="metric-phase">01 <small>/ 06</small></strong><span id="metric-phase-name" class="metric-sub">Baseline</span></div>
+        <div class="metric"><span class="metric-label">SESSIONS COMPLETED</span><strong id="metric-done">0 <small>/ 494</small></strong><span class="metric-sub">Proof beats intention</span></div>
+        <div class="metric"><span class="metric-label">THIS WEEK</span><strong id="metric-week">0 <small>/ 19</small></strong><span class="metric-sub">Focused sessions</span></div>
+        <div class="metric"><span class="metric-label">DAYS REMAINING</span><strong id="metric-left">182</strong><span class="metric-sub">Until 02 April 2027</span></div>
+      </section>
+      <div class="workspace">
+        <aside class="sidebar">
+          <div class="section-heading"><span class="kicker">01 / DIRECTION</span><h2>Mission control</h2></div>
+          <section class="side-panel progress-panel" aria-label="Progress overview">
+            <div class="panel-top"><span>OVERALL SESSION PROGRESS</span><span id="progress-percent">0%</span></div>
+            <div class="progress-track" role="progressbar" aria-label="Completed planned project sessions" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressbar"><span id="progress-fill"></span></div>
+            <p>Checkmarks track your work locally. They do not certify a release.</p>
+          </section>
+          <section class="side-panel" aria-label="Monthly stages">
+            <div class="panel-top"><span>THE SIX GATES</span><span>06</span></div>
+            <div id="phase-list" class="phase-list"></div>
+          </section>
+          <section class="side-panel filter-panel" aria-label="Project focus filter">
+            <div class="panel-top"><span>FOCUS FILTER</span><span>10 REPOS</span></div>
+            <div class="filters" id="filters">
+              <button type="button" class="filter active" data-filter="ALL" aria-pressed="true"><span class="filter-dot all"></span>All workstreams</button>
+              <button type="button" class="filter" data-filter="MVP" aria-pressed="false"><span class="filter-dot mvp"></span>MVP · 3</button>
+              <button type="button" class="filter" data-filter="POC" aria-pressed="false"><span class="filter-dot poc"></span>Advanced POC · 6</button>
+              <button type="button" class="filter" data-filter="CONCEPT" aria-pressed="false"><span class="filter-dot concept"></span>Concept · 1</button>
+            </div>
+          </section>
+          <section class="side-note"><span class="note-star" aria-hidden="true">✳</span><p><strong>Operating rule</strong><br>One primary MVP session and two POC sessions Monday to Saturday. X experiment on Saturdays. Sunday is reflection, not feature work.</p></section>
+        </aside>
+        <div class="main-column">
+          <section class="calendar-section" aria-labelledby="calendar-title">
+            <div class="section-heading section-heading-row"><div><span class="kicker">02 / PLAN</span><h2 id="calendar-title">The calendar</h2></div><button type="button" class="today-button" id="today-button">GO TO TODAY <span aria-hidden="true">↗</span></button></div>
+            <div class="calendar-card">
+              <div class="month-header"><div><div class="month-eyebrow">SELECT A DAY TO SEE ITS MISSIONS</div><h3 id="month-title">October 2026</h3></div><div class="month-controls"><button id="prev-month" type="button" aria-label="Previous month">←</button><button id="next-month" type="button" aria-label="Next month">→</button></div></div>
+              <div class="weekday-grid" aria-hidden="true"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div>
+              <div id="calendar-grid" class="calendar-grid" role="group" aria-label="Choose a date"></div>
+              <div class="calendar-key"><span><i class="key-dot dot-mvp"></i> MVP</span><span><i class="key-dot dot-poc"></i> POC</span><span><i class="key-dot dot-concept"></i> CONCEPT</span><span class="calendar-key-end">OUTLINED = SELECTED DATE</span></div>
+            </div>
+          </section>
+          <section class="agenda-section" id="agenda" aria-labelledby="agenda-title">
+            <div class="section-heading section-heading-row"><div><span class="kicker">03 / EXECUTE</span><h2 id="agenda-title">Today's assignment</h2></div><span class="date-chip" id="selected-date">SAT 03 OCT</span></div>
+            <div class="agenda-head"><div><p class="agenda-eyebrow" id="day-label">YOUR FOCUS</p><p id="day-description">Small changes, verified outcomes.</p></div><strong id="day-estimate">3H 40M</strong></div>
+            <div id="agenda-items" class="agenda-items"></div>
+            <label class="notes-label" for="day-notes">DAY NOTES <span>Saved in this browser</span></label>
+            <textarea id="day-notes" rows="3" maxlength="2000" placeholder="What did you actually learn? What is blocking the next step?"></textarea>
+            <div class="save-row"><span id="save-status" role="status" aria-live="polite">Progress is local to your browser</span><button id="copy-plan" type="button" class="text-button">COPY DAY PLAN ↗</button></div>
+          </section>
+          <section class="gates-section" aria-labelledby="gate-title">
+            <div class="section-heading section-heading-row"><div><span class="kicker">04 / EVIDENCE</span><h2 id="gate-title">Monthly finish lines</h2></div><span class="gate-count" id="gate-count">0 / 10 VERIFIED</span></div>
+            <p class="gate-description" id="gate-description">Each project has one acceptance target this phase. Mark it only after you can point to evidence.</p>
+            <div id="gate-items" class="gate-items"></div>
+          </section>
+        </div>
+      </div>
+      <section class="finish-band"><div><span class="kicker">THE RULE</span><h2>No proof.<br><em>No progress.</em></h2></div><p>A green CI badge is a signal, not a user outcome. Keep a traceable artifact for completed work and make stopping a project an acceptable result when evidence demands it.</p></section>
+    </main>
+    <footer class="footer"><div><strong>DEV JOURNEY</strong><small>03.10.2026 — 02.04.2027 · CAIRO TIME</small></div><div class="backup"><button id="export-button" type="button">EXPORT JSON ↓</button><button id="import-button" type="button">IMPORT JSON ↑</button><input id="import-file" type="file" accept=".json,application/json" hidden><span>LOCAL ONLY · NO ACCOUNT · NO SYNC</span></div></footer>
+  </div>
+</body>
+</html>
