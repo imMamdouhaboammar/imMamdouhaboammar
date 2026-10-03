@@ -1,0 +1,33 @@
+name: Dev Journey verification
+on:
+  pull_request:
+    paths:
+      - "dev-journey/**"
+      - ".github/workflows/dev-journey-ci.yml"
+  push:
+    branches: [main]
+    paths:
+      - "dev-journey/**"
+      - ".github/workflows/dev-journey-ci.yml"
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax checks
+        run: |
+          node --check dev-journey/plan.mjs
+          node --check dev-journey/app.mjs
+      - name: Calendar contracts and scheduling tests
+        run: node --test dev-journey/tests/*.test.mjs
+      - name: Static page contract
+        run: |
+          test -s dev-journey/index.html
+          test -s dev-journey/styles.css
+          grep -q 'src="./app.mjs"' dev-journey/index.html
+          grep -q 'href="./styles.css"' dev-journey/index.html
