@@ -786,10 +786,10 @@ Founder of PrePilot around Arabic conversion work. Digital Director with a backg
 <div align="center">
   <table>
     <tr>
-      <td align="center" width="25%"><strong>5,217</strong><br /><sub>Commit contributions</sub></td>
-      <td align="center" width="25%"><strong>111 days</strong><br /><sub>Current streak</sub></td>
-      <td align="center" width="25%"><strong>111 days</strong><br /><sub>Longest streak</sub></td>
-      <td align="center" width="25%"><strong>10,384</strong><br /><sub>Contributions this year</sub></td>
+      <td align="center" width="25%"><strong>5,296</strong><br /><sub>Commit contributions</sub></td>
+      <td align="center" width="25%"><strong>112 days</strong><br /><sub>Current streak</sub></td>
+      <td align="center" width="25%"><strong>112 days</strong><br /><sub>Longest streak</sub></td>
+      <td align="center" width="25%"><strong>10,485</strong><br /><sub>Contributions this year</sub></td>
     </tr>
   </table>
 </div>
