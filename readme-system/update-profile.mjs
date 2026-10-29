@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { collectContributionWindows } from './lib/github.mjs';
+import { collectContributionWindows, collectPublicProfileStats } from './lib/github.mjs';
 import { replaceManagedBlock } from './lib/markers.mjs';
 import { collectPushedLineWindows } from './lib/push-lines.mjs';
 import { renderProfileMetricsBlock, renderPushonomicsBlock } from './lib/render.mjs';
@@ -27,7 +27,10 @@ async function readLineCache() {
   }
 }
 
-const windows = await collectContributionWindows({ username, token, now });
+const [windows, publicStats] = await Promise.all([
+  collectContributionWindows({ username, token, now }),
+  collectPublicProfileStats({ username, token }),
+]);
 const totals = aggregateContributionWindows(windows);
 const streaks = calculateStreaks(totals.days, now);
 const currentYear = windows.find((window) => window.year === now.getUTCFullYear());
@@ -37,6 +40,7 @@ const metricsBlock = renderProfileMetricsBlock({
   currentStreak: streaks.current,
   longestStreak: streaks.longest,
   yearContributions: currentYear?.calendarTotal || 0,
+  ...publicStats,
   updatedAt,
 });
 
@@ -68,4 +72,5 @@ const after = replaceManagedBlock(withMetrics, 'pushonomics', pushonomicsBlock);
 if (before !== after) await fs.writeFile(readmePath, after);
 
 console.log(`Profile metrics ${before === after ? 'already current' : 'updated'}: ${totals.commits} commits, ${streaks.current}-day current streak, ${streaks.longest}-day longest streak.`);
+console.log(`Public profile snapshot: ${publicStats.publicRepos} public repositories, ${publicStats.followers} followers.`);
 console.log(`Pushonomics updated from ${lineTotals.commits} non-merge commits and ${lineTotals.changedLines} changed lines.`);
