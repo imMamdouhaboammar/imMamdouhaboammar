@@ -34,6 +34,16 @@ function asDate(value) {
   return value ? new Date(value) : new Date(0);
 }
 
+export async function collectPublicProfileStats({ username, token, request = githubRequest }) {
+  const profile = await request(`/users/${encodeURIComponent(username)}`, { token });
+  for (const field of ['public_repos', 'followers']) {
+    if (!Number.isSafeInteger(profile?.[field]) || profile[field] < 0) {
+      throw new Error(`GitHub profile response is missing a valid ${field} count.`);
+    }
+  }
+  return { publicRepos: profile.public_repos, followers: profile.followers };
+}
+
 export async function collectRepositoryActivity({ repository, token, now = new Date(), primaryWindowDays = 1, fallbackWindowDays = 7 }) {
   const fallbackSince = new Date(now.getTime() - fallbackWindowDays * 86_400_000);
   const primarySince = new Date(now.getTime() - primaryWindowDays * 86_400_000);

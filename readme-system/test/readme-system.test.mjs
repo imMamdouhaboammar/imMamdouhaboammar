@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { replaceManagedBlock } from '../lib/markers.mjs';
+import { collectPublicProfileStats } from '../lib/github.mjs';
 import { deterministicSummary } from '../lib/summarize.mjs';
 import { renderProjectBlock, renderProfileMetricsBlock, renderPushonomicsBlock } from '../lib/render.mjs';
 import { calculateStreaks, aggregateContributionWindows } from '../lib/streaks.mjs';
@@ -106,14 +107,41 @@ test('renderProfileMetricsBlock is compact and excludes private names', () => {
     currentStreak: 9,
     longestStreak: 41,
     yearContributions: 356,
+    publicRepos: 129,
+    followers: 45,
     updatedAt: '2026-07-26T06:00:00.000Z',
   });
   assert.match(block, /1,200/);
   assert.match(block, /Current streak/);
   assert.match(block, /Longest streak/);
+  assert.match(block, /129<\/strong><br \/><sub>Public repositories/);
+  assert.match(block, /45<\/strong><br \/><sub>Followers/);
+  assert.match(block, /26 Jul 2026/);
   assert.doesNotMatch(block, /private\//i);
   assert.doesNotMatch(block, EMOJI_PATTERN);
   assert.doesNotMatch(block, /for-the-badge/i);
+});
+
+test('collectPublicProfileStats reads only public, non-sensitive GitHub counts', async () => {
+  const result = await collectPublicProfileStats({
+    username: 'imMamdouhaboammar',
+    token: 'test-token',
+    request: async (path) => {
+      assert.equal(path, '/users/imMamdouhaboammar');
+      return { public_repos: 129, followers: 45, total_private_repos: 77, email: 'private@example.test' };
+    },
+  });
+  assert.deepEqual(result, { publicRepos: 129, followers: 45 });
+});
+
+test('collectPublicProfileStats rejects missing counts instead of publishing zeros', async () => {
+  await assert.rejects(
+    collectPublicProfileStats({
+      username: 'imMamdouhaboammar',
+      request: async () => ({ public_repos: 129 }),
+    }),
+    /followers/,
+  );
 });
 
 test('mergeLineWindows sums line totals without exposing repository names', () => {

@@ -10,6 +10,7 @@ This directory powers the managed project cards and aggregate contribution metri
 - Falls back to deterministic wording when AI is unavailable.
 - Counts GitHub-recognized commit contributions across yearly windows.
 - Calculates current and longest streaks from commits, pull requests, issues, and reviews.
+- Refreshes public repository and follower counts daily from the GitHub user API, with a UTC snapshot date.
 - Never writes private repository names or private activity details.
 
 ## Required profile secret
