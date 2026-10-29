@@ -17,7 +17,7 @@
 
 <br><br>
 
-<a href="REPOSITORIES.md"><img src="https://img.shields.io/badge/Repository_Catalog-142_builds-059669?style=for-the-badge&logo=markdown&logoColor=white&labelColor=0D1117" alt="Complete repository catalog"></a>
+<a href="REPOSITORIES.md"><img src="https://img.shields.io/badge/Repository_Catalog-142_entries-059669?style=for-the-badge&logo=markdown&logoColor=white&labelColor=0D1117" alt="142 curated repository entries, including 140 owned repositories"></a>
 <a href="https://immamdouhaboammar.github.io/imMamdouhaboammar/"><img src="https://img.shields.io/badge/Portfolio-Live_Pages-4F46E5?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=0D1117" alt="Live portfolio"></a>
 <a href="https://immamdouhaboammar.github.io/imMamdouhaboammar/portfolio/"><img src="https://img.shields.io/badge/Profile_Page-English-df9367?style=for-the-badge&labelColor=0D1117" alt="Portfolio page in English"></a>
 <a href="https://immamdouhaboammar.github.io/imMamdouhaboammar/portfolio/ar/"><img src="https://img.shields.io/badge/%D8%B5%D9%81%D8%AD%D8%A9_%D8%A7%D9%84%D8%A8%D8%B1%D9%88%D9%81%D8%A7%D9%8A%D9%84-%D8%B9%D8%B1%D8%A8%D9%8A-c6e86c?style=for-the-badge&labelColor=0D1117" alt="Portfolio page in Arabic"></a>
@@ -792,6 +792,13 @@ Founder of PrePilot around Arabic conversion work. Digital Director with a backg
       <td align="center" width="25%"><strong>11,314</strong><br /><sub>Contributions this year</sub></td>
     </tr>
   </table>
+  <table>
+    <tr>
+      <td align="center" width="50%"><strong>129</strong><br /><sub>Public repositories</sub></td>
+      <td align="center" width="50%"><strong>45</strong><br /><sub>Followers</sub></td>
+    </tr>
+  </table>
+  <p><sub>GitHub snapshot: 29 Oct 2026 UTC · Public counts only · Updated automatically</sub></p>
 </div>
 <!-- profile-metrics:end -->
 
