@@ -56,7 +56,10 @@ ${bulletHtml}
 </details>`;
 }
 
-export function renderProfileMetricsBlock({ commits, currentStreak, longestStreak, yearContributions }) {
+export function renderProfileMetricsBlock({ commits, currentStreak, longestStreak, yearContributions, publicRepos, followers, updatedAt }) {
+  const snapshotDate = new Intl.DateTimeFormat('en-GB', {
+    day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC',
+  }).format(new Date(updatedAt));
   return `<div align="center">
   <table>
     <tr>
@@ -66,6 +69,13 @@ export function renderProfileMetricsBlock({ commits, currentStreak, longestStrea
       <td align="center" width="25%"><strong>${formatNumber(yearContributions)}</strong><br /><sub>Contributions this year</sub></td>
     </tr>
   </table>
+  <table>
+    <tr>
+      <td align="center" width="50%"><strong>${formatNumber(publicRepos)}</strong><br /><sub>Public repositories</sub></td>
+      <td align="center" width="50%"><strong>${formatNumber(followers)}</strong><br /><sub>Followers</sub></td>
+    </tr>
+  </table>
+  <p><sub>GitHub snapshot: ${escapeHtml(snapshotDate)} UTC · Public counts only · Updated automatically</sub></p>
 </div>`;
 }
 
