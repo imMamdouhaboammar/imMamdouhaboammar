@@ -786,19 +786,19 @@ Founder of PrePilot around Arabic conversion work. Digital Director with a backg
 <div align="center">
   <table>
     <tr>
-      <td align="center" width="25%"><strong>6,111</strong><br /><sub>Commit contributions</sub></td>
-      <td align="center" width="25%"><strong>132 days</strong><br /><sub>Current streak</sub></td>
-      <td align="center" width="25%"><strong>132 days</strong><br /><sub>Longest streak</sub></td>
-      <td align="center" width="25%"><strong>11,848</strong><br /><sub>Contributions this year</sub></td>
+      <td align="center" width="25%"><strong>6,198</strong><br /><sub>Commit contributions</sub></td>
+      <td align="center" width="25%"><strong>133 days</strong><br /><sub>Current streak</sub></td>
+      <td align="center" width="25%"><strong>133 days</strong><br /><sub>Longest streak</sub></td>
+      <td align="center" width="25%"><strong>11,969</strong><br /><sub>Contributions this year</sub></td>
     </tr>
   </table>
   <table>
     <tr>
-      <td align="center" width="50%"><strong>142</strong><br /><sub>Public repositories</sub></td>
-      <td align="center" width="50%"><strong>59</strong><br /><sub>Followers</sub></td>
+      <td align="center" width="50%"><strong>143</strong><br /><sub>Public repositories</sub></td>
+      <td align="center" width="50%"><strong>64</strong><br /><sub>Followers</sub></td>
     </tr>
   </table>
-  <p><sub>GitHub snapshot: 08 Nov 2026 UTC · Public counts only · Updated automatically</sub></p>
+  <p><sub>GitHub snapshot: 09 Nov 2026 UTC · Public counts only · Updated automatically</sub></p>
 </div>
 <!-- profile-metrics:end -->
 
