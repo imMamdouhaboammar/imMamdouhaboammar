@@ -2,6 +2,7 @@
 <div align="center">
 
 # Mamdouh Aboammar
+-- Chief of the Deterministic Tribe 
 
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=26&pause=1400&color=A371F7&center=true&vCenter=true&width=900&height=56&lines=product+architecture%2C+one+repo+at+a+time;business+%C3%97+product+%C3%97+AI+%C3%97+engineering;learning+software+by+building+in+public;%2F%2F+build+less.+understand+more." alt="Product architecture in training, business product AI and engineering, learning software by building in public">
 
