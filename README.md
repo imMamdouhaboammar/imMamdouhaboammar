@@ -790,16 +790,16 @@ Founder of PrePilot around Arabic conversion work. Digital Director with a backg
       <td align="center" width="25%"><strong>6,583</strong><br /><sub>Commit contributions</sub></td>
       <td align="center" width="25%"><strong>146 days</strong><br /><sub>Current streak</sub></td>
       <td align="center" width="25%"><strong>146 days</strong><br /><sub>Longest streak</sub></td>
-      <td align="center" width="25%"><strong>12,830</strong><br /><sub>Contributions this year</sub></td>
+      <td align="center" width="25%"><strong>12,829</strong><br /><sub>Contributions this year</sub></td>
     </tr>
   </table>
   <table>
     <tr>
       <td align="center" width="50%"><strong>139</strong><br /><sub>Public repositories</sub></td>
-      <td align="center" width="50%"><strong>69</strong><br /><sub>Followers</sub></td>
+      <td align="center" width="50%"><strong>73</strong><br /><sub>Followers</sub></td>
     </tr>
   </table>
-  <p><sub>GitHub snapshot: 22 Nov 2026 UTC · Public counts only · Updated automatically</sub></p>
+  <p><sub>GitHub snapshot: 23 Nov 2026 UTC · Public counts only · Updated automatically</sub></p>
 </div>
 <!-- profile-metrics:end -->
 
